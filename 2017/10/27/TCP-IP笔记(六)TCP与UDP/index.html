@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="洛洛爱吃肉" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="终于来到了传输层,这个面试问的最多了😁 传输层TCP/IP中有两个具有代表性的传输层协议,分别为:  TCP: 提供可靠的通信传输 UDP:用于让广播和细节控制交给应用的通信传输根据通信的具体特征,选择合适的传输层协议非常重要。  套接字(Socket):使用TCP或UDP时,会广泛使用到套接字(socket)的API。套接字原本是由BSD UNIX开发的,但是后被移植到了Windows的Win">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洛洛爱吃肉">
+<meta property="og:url" content="http://yoursite.com/2017/10/27/TCP-IP笔记(六)TCP与UDP/index.html">
+<meta property="og:site_name" content="洛洛爱吃肉">
+<meta property="og:description" content="终于来到了传输层,这个面试问的最多了😁 传输层TCP/IP中有两个具有代表性的传输层协议,分别为:  TCP: 提供可靠的通信传输 UDP:用于让广播和细节控制交给应用的通信传输根据通信的具体特征,选择合适的传输层协议非常重要。  套接字(Socket):使用TCP或UDP时,会广泛使用到套接字(socket)的API。套接字原本是由BSD UNIX开发的,但是后被移植到了Windows的Win">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-8fda5539e2a827c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-afc4629f1a207553.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-2816627c3f993fc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-80b631d1cdcf682a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-680b8aff0c72ad73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-560e4e1aa9e4964a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-0eebc3e6bf64ab02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-1558ed07037c992a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-10-27T06:19:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="洛洛爱吃肉">
+<meta name="twitter:description" content="终于来到了传输层,这个面试问的最多了😁 传输层TCP/IP中有两个具有代表性的传输层协议,分别为:  TCP: 提供可靠的通信传输 UDP:用于让广播和细节控制交给应用的通信传输根据通信的具体特征,选择合适的传输层协议非常重要。  套接字(Socket):使用TCP或UDP时,会广泛使用到套接字(socket)的API。套接字原本是由BSD UNIX开发的,但是后被移植到了Windows的Win">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1868951-8fda5539e2a827c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/27/TCP-IP笔记(六)TCP与UDP/"/>
+
+
+
+
+
+  <title> | 洛洛爱吃肉</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">洛洛爱吃肉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学海无涯,进一步有进一步的欢喜.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(六)TCP与UDP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loirou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛洛爱吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
+                2017-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>终于来到了传输层,这个面试问的最多了😁</p>
+<h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>TCP/IP中有两个具有代表性的传输层协议,分别为:</p>
+<ul>
+<li>TCP: 提供可靠的通信传输</li>
+<li>UDP:用于让广播和细节控制交给应用的通信传输<br>根据通信的具体特征,选择合适的传输层协议非常重要。</li>
+</ul>
+<p><strong>套接字(Socket):</strong><br>使用TCP或UDP时,会广泛使用到套接字(socket)的API。套接字原本是由BSD UNIX开发的,但是后被移植到了Windows的Winsock以及嵌入式操作系统中。<br>应用程序利用套接字,可以设置对端的IP地址、端口号,并实现数据的发送与接收。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-8fda5539e2a827c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Socket.png"></p>
+<h3 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h3><p>数据链路和IP中的地址,分别指的是MAC地址和IP地址。<br>前者用来识别同一链路中不同的计算机,后者用来识别TCP/IP网络中互连的主机和路由器。</p>
+<p>同样的,在传输层中也有类似于地址的概念,那就是端口号。</p>
+<p>端口号用来识别同一台计算机中进行通信的不同应用程序。因此,它也被称为程序地址。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-afc4629f1a207553.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="端口号.png"></p>
+<p>另:仅凭目标端口识别某一个通信是远远不够的。通常采用5个信息来识别一个通信。它们分别是:</p>
+<ul>
+<li>源IP地址</li>
+<li>目标IP地址</li>
+<li>协议号 :在IP协议部分我们提到IP首部中有一个协议字段,用来标识网络层(IP)的上层所采用的是哪一种传输层协议。根据这个字段的协议号,就可以识别IP传输的数据部分究竟是TCP的内容,还是UDP的内容。</li>
+<li>源端口号</li>
+<li>目标端口号</li>
+</ul>
+<h4 id="端口号如何确定"><a href="#端口号如何确定" class="headerlink" title="端口号如何确定"></a>端口号如何确定</h4><ul>
+<li>标准既定的端口号<br>也叫静态方法。是指每个应用程序都有其指定的端口号。但不是说可以随意使用任何一个端口号。每个端口号都有其对应的使用目的。<br>例如,HTTP、TELNET、FTP等应用协议使用的知名端口号:</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-2816627c3f993fc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="知名端口号.png"></p>
+<ul>
+<li>时序分配法<br>也叫动态分配法。服务端有必要确定监听端口号,但是客户端没必要确定端口号。<br>这种方法下,客户端不用自己设置端口号,而全权交给操作系统进行分配。操作系统可以为每个应用程序分配互不冲突的端口号。这种动态机制,即使同一个客户端程序发起多个TCP连接,识别这些通信连接的部分数字也不会全部相同。动态端口号取值范围在49152到65535之间。</li>
+</ul>
+<h4 id="端口号与协议"><a href="#端口号与协议" class="headerlink" title="端口号与协议"></a>端口号与协议</h4><p>端口号由其使用的传输层协议决定。因此,不同的传输协议可以使用相同的端口号。例如,TCP与UDP使用同一个端口号,但使用目的各不相同。这是因为端口号上的处理会根据每个传输协议的不同而进行的。<br>数据到达IP层后,会先检查IP首部中的协议号,再传给相应协议的模块。</p>
+<h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><p>UDP是User Datagram Protocol 的缩写。<br>UDP是利用IP提供面向无连接的通信服务,不提供复杂的控制机制。<br>并且它是将应用程序发来的数据在收到的那一刻,立刻按照鸳鸯发送到网络上的一种机制。<br>即使是出现网络拥堵的情况下,UDP也无法进行流量控制等避免网络拥堵的行为。此外,传输途中即使出现丢包,UDP也不负责重发。甚至当出现包的到达顺序乱掉是也没有纠正的功能。</p>
+<p>如果需要这些细节控制,那么不得不交有采用UDP的应用程序去处理。<br>由于UDP面向无连接,他可以随时发送数据。再加上UDP本身的处理既简单又高效,因此常用于以下几个方面:</p>
+<ul>
+<li>包总量较小的通信(DNS、SNMP等)</li>
+<li>视频、音频等多媒体通信(即时通信)</li>
+<li>限定于LAN等特定网络中的应用通信</li>
+<li>广播通信(广播、多播)</li>
+</ul>
+<h4 id="UDP-首部"><a href="#UDP-首部" class="headerlink" title="UDP 首部"></a>UDP 首部</h4><p>如下图,除去数据的部分就是UDP的首部。<br>UDP的首部源端口号,目标端口号,包长和校验和组成。<br><img src="http://upload-images.jianshu.io/upload_images/1868951-80b631d1cdcf682a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="UDP 首部.png"></p>
+<ul>
+<li>源端口号: 标识发送端端口号,字段长16位。该字段可以不设置,缺省值为0,可用于不需要返回的通信中。</li>
+<li>目标端口号: 标识接收端端口号,字段长16位。</li>
+<li>包长度: 指UDP首部的长度和数据的长度之和。为8位字节。</li>
+<li>检验和: 校验和用来判断数据在传输过程中是否损坏。计算这个校验和的时候，不仅考虑源端口号和目标端口号，还要考虑 IP 首部中的源 IP 地址，目标 IP 地址和协议号（这些又称为 UDP 伪首部）。这是因为以上五个要素用于识别通信时缺一不可，如果校验和只考虑端口号，那么另外三个要素收到破坏时，应用就无法得知。这有可能导致不该收到包的应用收到了包，改收到包的应用反而没有收到。</li>
+</ul>
+<p>这个概念同样适用于即将介绍的 TCP 首部,但是TCP的校验和无法关闭。</p>
+<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>与UDP不同,TCP则”人如其名”,可以说是对”传输、发送、通信”进行”控制”的”协议”。<br>TCP充分实现了数据传输时各种控制功能,可以进行丢包是的重发控制,还可以对次序乱掉的分包进行顺序控制。<br>此外,TCP作为一种面向连接的协议,只有在确认通信对端存在时才会发送数据,从而可以控制通信流量的浪费。</p>
+<h4 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h4><p>连接是指各种设备、线路,或网络中进行通信的两个应用程序为了相互传递消息而专有的、虚拟的通信线路,也叫做虚拟电路。</p>
+<p>一旦建立了连接,进行通信的应用程序只是用这个虚拟的通信线路发送和接收数据,就可以保障信息的传输。应用程序不用顾虑IP网络上可能发生的各种问题,依然可以转发数据。<br>TCP则负责控制链接的建立、断开、保持等管理工作。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-680b8aff0c72ad73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="连接.png"></p>
+<h4 id="TCP-首部"><a href="#TCP-首部" class="headerlink" title="TCP 首部"></a>TCP 首部</h4><p>和 UDP 首部相比，TCP 首部要复杂得多。解析这个首部的时间也相应的会增加，这是导致 TCP 连接的效率低于 UDP 的原因之一。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-560e4e1aa9e4964a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP 首部.png"></p>
+<p>其中某些关键字段解释如下：</p>
+<ul>
+<li><p>序列号: 字段长32位。它表示发送数据的位置，假设当前的序列号为 s，发送数据长度为 l，则下次发送数据时的序列号为 s + l。在建立连接时通常由计算机生成一个随机数作为序列号的初始值。</p>
+</li>
+<li><p>确认应答号: 字段长32位。它等于下一次应该接收到的数据的序列号。假设发送端的序列号为 s，发送数据的长度为 l，那么接收端返回的确认应答号也是 s + l。发送端接收到这个确认应答后，可以认为这个位置以前所有的数据都已被正常接收。</p>
+</li>
+<li><p>数据偏移: TCP 首部的长度，单位为 4 字节。如果没有可选字段，那么这里的值就是 5。表示 TCP 首部的长度为 20 字节。</p>
+</li>
+<li><p>保留: 该字段为以后拓展时使用,其长度为4位。一般设置为0,但即使受到的包在该字段不为0,此包也不会被丢弃。</p>
+</li>
+<li><p>控制位: 改字段长度为 8 比特，分别有 8 个控制标志。依次是 CWR，ECE，URG，ACK，PSH，RST，SYN 和 FIN。</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-0eebc3e6bf64ab02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="控制位.png"></p>
+<p>CWR: 与后面的ECE标志都用于IP首部的ECN字段。ECE标志为1时,则通知对方已将拥塞窗口缩小。</p>
+<p>ECE: 表示ECN-Echo。置为1会通知通信对方,从对方到这边的网络有拥塞。在收到数据包的IP首部中ECN为1时将TCP首部中的ECE置为1。 </p>
+<p>URG: 此标志表示TCP包的紧急指针域（后面马上就要说到）有效，用来保证TCP连接不被中断，并且督促中间层设备要尽快处理这些数据；</p>
+<p>ACK: 此标志表示应答域有效，就是说前面所说的TCP应答号将会包含在TCP数据包中；有两个取值：0和1，为1的时候表示应答域有效，反之为0；</p>
+<p> PSH: 这个标志位表示Push操作。所谓Push操作就是指在数据包到达接收端以后，立即传送给应用程序，而不是在缓冲区中排队；</p>
+<p> RST: 这个标志表示连接复位请求。用来复位那些产生错误的连接，也被用来拒绝错误和非法的数据包；</p>
+<p> SYN: 表示同步序号，用来建立连接。SYN标志位和ACK标志位搭配使用，当连接请求的时候，SYN=1，ACK=0；连接被响应的时候，SYN=1，ACK=1；这个标志的数据包经常被用来进行端口扫描。扫描者发送一个只有SYN的数据包，如果对方主机响应了一个数据包回来 ，就表明这台主机存在这个端口；但是由于这种扫描方式只是进行TCP三次握手的第一次握手，因此这种扫描的成功表示被扫描的机器不很安全，一台安全的主机将会强制要求一个连接严格的进行TCP的三次握手；</p>
+<p>FIN: 表示发送端已经达到数据末尾，也就是说双方的数据传送完成，没有数据可以传送了，发送FIN标志位的TCP数据包后，连接将被断开。这个标志的数据包也经常被用于进行端口扫描。</p>
+<ul>
+<li><p>窗口大小：该字段长16位。用于表示从应答号开始能够接受多少个 8 位字节。如果窗口大小为 0，可以发送窗口探测。</p>
+</li>
+<li><p>紧急指针: 仅在 URG 控制位为 1 时有效。表示紧急数据的末尾在 TCP 数据部分中的位置。通常在暂时中断通信时使用（比如输入 Ctrl + C）。</p>
+</li>
+<li><p>选项: 该字段长度最大为40字节,用于提高TCP的传输性能。选项字段尽量调整其为32位的整数倍。</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-1558ed07037c992a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选项.png"></p>
+<h3 id="TCP与UDP的区别"><a href="#TCP与UDP的区别" class="headerlink" title="TCP与UDP的区别"></a>TCP与UDP的区别</h3><p>TCP是面向连接的、传输可靠(保证数据正确性且保证数据顺序)、用于传输大量数据(流模式)、速度慢，建立连接需要开销较多(时间，系统资源)。</p>
+<p>　　TCP是一种流模式的协议，是面向连接的，也就是说，在连接持续的过程中，Socket 中收到的数据都是由同一台主机发出的（劫持什么的不考虑），因此，知道保证数据是有序的到达就行了，至于每次读取多少数据不关心。</p>
+<p>　　TCP：面向连接、传输可靠(保证数据正确性,保证数据顺序)、用于传输大量数据(流模式)、速度慢，建立连接需要开销较多(时间，系统资源)。<br>　　UDP：面向非连接、传输不可靠、用于传输少量数据(数据包模式)、速度快。</p>
+<p>　　关于TCP是一种流模式的协议，UDP是一种数据报模式的协议，这里要说明一下，TCP是面向连接的，也就是说，在连接持续的过程中，socket 中收到的数据都是由同一台主机发出的（劫持什么的不考虑），因此，知道保证数据是有序的到达就行了，至于每次读取多少数据自己看着办。</p>
+<p>　　而UDP是无连接的协议，也就是说，只要知道接收端的IP和端口，且网络是可达的，任何主机都可以向接收端发送数据。这时候，如果一次能读取超过一个报文的数据，则会乱套。比如，主机A向发送了报文P1，主机B发送了报文P2，如果能够读取超过一个报文的数据，那么就会将P1和P2的数据合并在了一 起，这样的数据是没有意义的。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/27/网络常见面试题/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTUzOS84MTAz"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">loirou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">Kategorien</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#传输层"><span class="nav-number">1.</span> <span class="nav-text">传输层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口号"><span class="nav-number">2.</span> <span class="nav-text">端口号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#端口号如何确定"><span class="nav-number">2.1.</span> <span class="nav-text">端口号如何确定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端口号与协议"><span class="nav-number">2.2.</span> <span class="nav-text">端口号与协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP"><span class="nav-number">3.</span> <span class="nav-text">UDP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP-首部"><span class="nav-number">3.1.</span> <span class="nav-text">UDP 首部</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP"><span class="nav-number">4.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#连接"><span class="nav-number">4.1.</span> <span class="nav-text">连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-首部"><span class="nav-number">4.2.</span> <span class="nav-text">TCP 首部</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP与UDP的区别"><span class="nav-number">5.</span> <span class="nav-text">TCP与UDP的区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">loirou</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
