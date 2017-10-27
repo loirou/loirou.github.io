@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、简单介绍1.什么是UIDynamicUIDynamic是从iOS 7开始引入的一种新技术，隶属于UIKit框架可以认为是一种物理引擎，能模拟和仿真现实生活中的物理现象如：重力、弹性碰撞等现象 2.物理引擎的价值广泛用于游戏开发，经典成功案例是“愤怒的小鸟”,让开发人员可以在远离物理学公式的情况下，实现炫酷的物理仿真效果提高了游戏开发效率，产生更多优秀好玩的物理仿真游戏 3.知名的2D物理引擎B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="带你了解UIKit动力学">
+<meta property="og:url" content="http://yoursite.com/2017/01/16/e5-b8-a6-e4-bd-a0-e4-ba-86-e8-a7-a3uikit-e5-8a-a8-e5-8a-9b-e5-ad-a6/index.html">
+<meta property="og:site_name" content="洛洛爱吃肉">
+<meta property="og:description" content="一、简单介绍1.什么是UIDynamicUIDynamic是从iOS 7开始引入的一种新技术，隶属于UIKit框架可以认为是一种物理引擎，能模拟和仿真现实生活中的物理现象如：重力、弹性碰撞等现象 2.物理引擎的价值广泛用于游戏开发，经典成功案例是“愤怒的小鸟”,让开发人员可以在远离物理学公式的情况下，实现炫酷的物理仿真效果提高了游戏开发效率，产生更多优秀好玩的物理仿真游戏 3.知名的2D物理引擎B">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-708e87550affbb35.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-52ed8f15d48010b5.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-1853b803c4d6db02.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-3cebeb72c623eb4e.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2017-10-27T04:14:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="带你了解UIKit动力学">
+<meta name="twitter:description" content="一、简单介绍1.什么是UIDynamicUIDynamic是从iOS 7开始引入的一种新技术，隶属于UIKit框架可以认为是一种物理引擎，能模拟和仿真现实生活中的物理现象如：重力、弹性碰撞等现象 2.物理引擎的价值广泛用于游戏开发，经典成功案例是“愤怒的小鸟”,让开发人员可以在远离物理学公式的情况下，实现炫酷的物理仿真效果提高了游戏开发效率，产生更多优秀好玩的物理仿真游戏 3.知名的2D物理引擎B">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1868951-708e87550affbb35.gif?imageMogr2/auto-orient/strip">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/16/e5-b8-a6-e4-bd-a0-e4-ba-86-e8-a7-a3uikit-e5-8a-a8-e5-8a-9b-e5-ad-a6/"/>
+
+
+
+
+
+  <title>带你了解UIKit动力学 | 洛洛爱吃肉</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">洛洛爱吃肉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学海无涯,进一步有进一步的欢喜.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/16/e5-b8-a6-e4-bd-a0-e4-ba-86-e8-a7-a3uikit-e5-8a-a8-e5-8a-9b-e5-ad-a6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loirou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛洛爱吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">带你了解UIKit动力学</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-16T14:20:51+08:00">
+                2017-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、简单介绍"><a href="#一、简单介绍" class="headerlink" title="一、简单介绍"></a>一、简单介绍</h3><p>1.什么是UIDynamic<br>UIDynamic是从iOS 7开始引入的一种新技术，隶属于UIKit框架可以认为是一种物理引擎，能模拟和仿真现实生活中的物理现象如：重力、弹性碰撞等现象</p>
+<p>2.物理引擎的价值<br>广泛用于游戏开发，经典成功案例是“愤怒的小鸟”,让开发人员可以在远离物理学公式的情况下，实现炫酷的物理仿真效果提高了游戏开发效率，产生更多优秀好玩的物理仿真游戏</p>
+<p>3.知名的2D物理引擎<br>Box2d<br>Chipmunk</p>
+<h3 id="二、使用步骤"><a href="#二、使用步骤" class="headerlink" title="二、使用步骤"></a>二、使用步骤</h3><p>要想使用UIDynamic来实现物理仿真效果，大致的步骤如下:</p>
+<p>1.创建一个物理仿真器（顺便设置仿真范围）<br>2.创建相应的物理仿真行为（顺便添加物理仿真元素）<br>3.将物理仿真行为添加到物理仿真器中开始仿真</p>
+<h3 id="三、相关说明"><a href="#三、相关说明" class="headerlink" title="三、相关说明"></a>三、相关说明</h3><p>1.三个概念</p>
+<ul>
+<li>谁要进行物理仿真？<br>　　物理仿真元素（Dynamic Item）</li>
+<li>执行怎样的物理仿真效果？怎样的动画效果？<br>　　物理仿真行为（Dynamic Behavior） </li>
+<li>让物理仿真元素执行具体的物理仿真行为<br>　　物理仿真器（Dynamic Animator）</li>
+</ul>
+<p>2.物理仿真元素<br>注意：<br>不是任何对象都能做物理仿真元素<br>不是任何对象都能进行物理仿真</p>
+<p>物理仿真元素要素：<br>任何遵守了UIDynamicItem协议的对象<br>UIView默认已经遵守了UIDynamicItem协议，因此任何UI控件都能做物理仿真</p>
+<p>UICollectionViewLayoutAttributes类默认也遵守UIDynamicItem协议</p>
+<p>3.物理仿真行为</p>
+<p>（1）UIDynamic提供了以下几种物理仿真行为</p>
+<ul>
+<li>UIGravityBehavior：重力行为</li>
+</ul>
+<ul>
+<li><p>UICollisionBehavior：碰撞行为</p>
+</li>
+<li><p>UISnapBehavior：捕捉行为</p>
+</li>
+<li><p>UIPushBehavior：推动行为</p>
+</li>
+<li><p>UIAttachmentBehavior：附着行为</p>
+</li>
+<li><p>UIDynamicItemBehavior：动力元素行为</p>
+</li>
+</ul>
+<p>（2）物理仿真行为须知<br>上述所有物理仿真行为都继承自UIDynamicBehavior，所有的UIDynamicBehavior都可以独立进行组合使用多种行为时，可以实现一些比较复杂的效果</p>
+<p>4.物理仿真器</p>
+<p>（1）物理仿真器须知<br>它可以让物理仿真元素执行物理仿真行为<br>它是UIDynamicAnimator类型的对象<br>（2）UIDynamicAnimator的初始化</p>
+<pre><code>- (instancetype)initWithReferenceView:(UIView *)view;
+`&lt;/pre&gt;
+
+view参数：是一个参照视图，表示物理仿真的范围
+
+5.物理仿真器的说明
+
+（1）UIDynamicAnimator的常见方法
+
+&lt;pre&gt;`//移除之前添加过的所有物理仿真行为  
+- (void)addBehavior:(UIDynamicBehavior *)behavior; 
+//移除之前添加过的所有物理仿真行为　
+- (void)removeBehavior:(UIDynamicBehavior *)behavior; 
+//添加1个物理仿真行为　
+- (void)removeAllBehaviors; 
+`&lt;/pre&gt;
+
+（2）UIDynamicAnimator的常见属性
+
+&lt;pre&gt;` //参照视图 
+@property (nonatomic, readonly) UIView* referenceView;  
+//添加到物理仿真器中的所有物理仿真行为
+@property (nonatomic, readonly, copy) NSArray* behaviors;
+//是否正在进行物理仿真
+@property (nonatomic, readonly, getter = isRunning) BOOL running;
+//代理对象（能监听物理仿真器的仿真过程，比如开始和结束）
+@property (nonatomic, assign) id 
+`&lt;/pre&gt;
+
+### 四、案例介绍
+
+**先看效果吧**
+- UIGravityBehavior：重力行为
+
+![UIGravityBehavior.gif](http://upload-images.jianshu.io/upload_images/1868951-9cd5fca7213318f5.gif?imageMogr2/auto-orient/strip)
+</code></pre><ul>
+<li><p>UICollisionBehavior：碰撞行为</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-708e87550affbb35.gif?imageMogr2/auto-orient/strip" alt="UICollisionBehavior.gif"></p>
+</li>
+<li><p>UISnapBehavior：捕捉行为</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-52ed8f15d48010b5.gif?imageMogr2/auto-orient/strip" alt="UISnapBehavior.gif"></p>
+</li>
+<li><p>UIPushBehavior：推动行为</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-1853b803c4d6db02.gif?imageMogr2/auto-orient/strip" alt="UIPushBehavior.gif"></p>
+</li>
+<li><p>复合效果</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3cebeb72c623eb4e.gif?imageMogr2/auto-orient/strip" alt="复合效果.gif"></p>
+<p><strong>最后是代码</strong></p>
+<p><pre>`#import &lt;UIKit/UIKit.h&gt;</pre></p>
+<p>@interface SecondViewController : UIViewController<br>@property (weak, nonatomic) IBOutlet UIView <em>blueView;<br>@property (weak, nonatomic) IBOutlet UIView </em>orangeView;<br>@property (weak, nonatomic) IBOutlet UISegmentedControl <em>segmented;<br>@property (weak, nonatomic) IBOutlet UIView </em>redView;<br>@property (nonatomic,strong) UIDynamicAnimator *animator;</p>
+<p>@end</p>
+<p>#import “SecondViewController.h”</p>
+<p>@interface SecondViewController ()<br>@property (nonatomic,strong)UISnapBehavior <em>snapBehavior;<br>@property (nonatomic,strong)UIPushBehavior </em>pushBehavior;<br>@property (nonatomic,strong)UIAttachmentBehavior *attachmentBehavior;</p>
+<p>@end</p>
+<p>@implementation SecondViewController</p>
+<ul>
+<li><p>(void)viewDidLoad {<br>  [super viewDidLoad];<br>  self.blueView.transform =  CGAffineTransformMakeRotation(M_PI_4);<br>  self.segmented.transform = CGAffineTransformMakeRotation(-M_PI / 8);</p>
+<p>  if (!_pushBehavior) {</p>
+<pre><code>_pushBehavior = [[UIPushBehavior alloc]initWithItems:@[_blueView] mode:UIPushBehaviorModeContinuous];
+</code></pre><p>  }</p>
+<p>  _pushBehavior.active = YES;<br>  _pushBehavior.pushDirection = CGVectorMake(10.0f, 10.0f);<br>  _pushBehavior.magnitude = 1.0f;<br>  [self.animator addBehavior:_pushBehavior];</p>
+</li>
+</ul>
+<p>}</p>
+<ul>
+<li><p>(void)touchesBegan:(NSSet&lt;UITouch <em>&gt; </em>)touches withEvent:    (UIEvent *)event {<br>  _pushBehavior.active = NO;</p>
+<p>  //创建重力行为<br>  UIGravityBehavior <em>gravityBehavior = [[UIGravityBehavior alloc]init];<br>  [gravityBehavior addItem:self.blueView];<br>  [gravityBehavior addItem:self.orangeView];<br>  [gravityBehavior addItem:self.segmented];<br>  gravityBehavior.gravityDirection = CGVectorMake(-0.3f, 1.0f);<br>  //加速度<br>  gravityBehavior.magnitude = 3;<br>  //创建碰撞行为<br>  UICollisionBehavior </em>collisionBehavior = [[UICollisionBehavior alloc]init];<br>  //碰撞类型为元素和边界<br>  collisionBehavior.collisionMode = UICollisionBehaviorModeEverything;</p>
+<p>  CGFloat Y = self.view.frame.size.height - CGRectGetHeight(self.redView.frame);<br>  CGFloat X = self.view.frame.size.width;<br>  CGFloat height = self.view.frame.size.height;</p>
+<p>  //设置红色的View为底边界,左边框跟右边框作为边界<br>  [collisionBehavior addBoundaryWithIdentifier:@”collision1” fromPoint:CGPointMake(0,Y) toPoint:CGPointMake(X, Y)];<br>  [collisionBehavior addBoundaryWithIdentifier:@”collision2” fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(0, height)];<br>  [collisionBehavior addBoundaryWithIdentifier:@”collision3” fromPoint:CGPointMake(X,0) toPoint:CGPointMake(X, height)];</p>
+<p>  [collisionBehavior addItem:self.blueView];<br>  [collisionBehavior addItem:self.segmented];<br>  [collisionBehavior addItem:self.orangeView];<br>  [self.animator addBehavior:collisionBehavior];<br>  [self.animator addBehavior:gravityBehavior];</p>
+<p>  UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.blueView]];<br>  [itemBehavior setElasticity:0.5];<br>  [self.animator addBehavior:itemBehavior];</p>
+<p>  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGesture:)];<br>  [self.view addGestureRecognizer:tap];<br>}</p>
+</li>
+<li>(void)tapGesture:(UITapGestureRecognizer *)gesture<br>{<br>  CGPoint tapPoint = [gesture locationInView:self.view];<br>  if (_snapBehavior) {<pre><code>[self.animator removeBehavior:_snapBehavior];
+_snapBehavior = nil;
+</code></pre>  }<br>  _snapBehavior = [[UISnapBehavior alloc]initWithItem:self.blueView snapToPoint:tapPoint];<br>  _snapBehavior.action = ^(){<pre><code>NSLog(@&quot;UISnapBehavior 在执行&quot;);
+</code></pre>  };<br>  _snapBehavior.damping = 0.9;<br>  [self.animator addBehavior:_snapBehavior];<br>}</li>
+<li><p>(UIDynamicAnimator *)animator{<br>  if (_animator == nil) {</p>
+<pre><code>_animator = [[UIDynamicAnimator alloc]init];
+</code></pre><p>  }<br>  return _animator;<br>}</p>
+</li>
+<li><p>(void)panGestureRecognizer:(UIPanGestureRecognizer *)gesture<br>{<br>  CGPoint location = [gesture locationInView:self.view];<br>  CGPoint imageLocation = [gesture locationInView:self.orangeView];<br>  switch (gesture.state) {</p>
+<pre><code>case UIGestureRecognizerStateBegan:
+{
+    NSLog(@&quot;touch position %@&quot;,NSStringFromCGPoint(location));
+    NSLog(@&quot;loction in image %@&quot;,NSStringFromCGPoint(imageLocation));
+    [self.animator removeAllBehaviors];
+
+    UIOffset centerOffset = UIOffsetMake(imageLocation.x - CGRectGetMidX(self.orangeView.bounds), imageLocation.y - CGRectGetMidY(self.orangeView.bounds));
+    _attachmentBehavior = [[UIAttachmentBehavior alloc]initWithItem:self.orangeView offsetFromCenter:centerOffset attachedToAnchor:location];
+    _attachmentBehavior.damping = 0.5;
+    _attachmentBehavior.frequency = 0.8;
+    [self.animator addBehavior:_attachmentBehavior];
+
+}
+    break;
+case UIGestureRecognizerStateEnded:
+{
+    [self.animator removeBehavior:_attachmentBehavior];
+}
+    break;
+default:
+{
+    [_attachmentBehavior setAnchorPoint:[gesture locationInView:self.view]];
+}
+    break;
+</code></pre><p>  }<br>}</p>
+</li>
+<li><p>(void)didReceiveMemoryWarning {<br>  [super didReceiveMemoryWarning];<br>  // Dispose of any resources that can be recreated.<br>}</p>
+</li>
+</ul>
+<p>/*<br> #pragma mark - Navigation</p>
+<p> // In a storyboard-based application, you will often want to do a little preparation before navigation</p>
+<ul>
+<li>(void)prepareForSegue:(UIStoryboardSegue <em>)segue sender:(id)sender {<br>// Get the new view controller using [segue destinationViewController].<br>// Pass the selected object to the new view controller.<br>}
+</em>/</li>
+</ul>
+<p>@end</p>
+</li>
+</ul>
+<p>UIKit动力学的部分介绍完了.<br>最开始项目中只是用到了重力跟碰撞行为,参考学习了:<a href="http://www.jianshu.com/p/07552fc17734" target="_blank" rel="external">UIDynamic 详细用法</a> 中的案例.然后自己又展开了解了下UIKit动力学的知识,把捕捉行为,推动行为加了进去,做个完善.整理了一下.就是这样.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/13/127-2/" rel="next" title="快速上手核心动画">
+                <i class="fa fa-chevron-left"></i> 快速上手核心动画
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/19/e5-bf-ab-e9-80-9f-e4-b8-8a-e6-89-8buibezierpath/" rel="prev" title="快速上手UIBezierPath">
+                快速上手UIBezierPath <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTUzOS84MTAz"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">loirou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">Kategorien</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、简单介绍"><span class="nav-number">1.</span> <span class="nav-text">一、简单介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、使用步骤"><span class="nav-number">2.</span> <span class="nav-text">二、使用步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、相关说明"><span class="nav-number">3.</span> <span class="nav-text">三、相关说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">loirou</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

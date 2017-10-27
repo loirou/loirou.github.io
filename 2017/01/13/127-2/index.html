@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、什么是核心动画Core Animation是一套包含图形绘制、投影、动画的Objective-C类集合，该框架包含在QuartzCore.framework中，它因为被用于处理更为强大的平滑的转场效果而引入OS X Leopard和iOS而出名。Core Animation和其它框架的位置关系如下图所示：     上图中的OpenGL ES是个C语言写的非常底层的图形处理框架，是个移动设备上绘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速上手核心动画">
+<meta property="og:url" content="http://yoursite.com/2017/01/13/127-2/index.html">
+<meta property="og:site_name" content="洛洛爱吃肉">
+<meta property="og:description" content="1、什么是核心动画Core Animation是一套包含图形绘制、投影、动画的Objective-C类集合，该框架包含在QuartzCore.framework中，它因为被用于处理更为强大的平滑的转场效果而引入OS X Leopard和iOS而出名。Core Animation和其它框架的位置关系如下图所示：     上图中的OpenGL ES是个C语言写的非常底层的图形处理框架，是个移动设备上绘">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-63095a6c66b74535.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-859569c019ae7c80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-e4d1ad43ae37c9ed.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-476e68184ac7d47a.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-730a29e7cfb59c3d.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-ba2c81b3cf9682ec.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-c3fdaa20b8feea52.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2017-10-27T04:14:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="快速上手核心动画">
+<meta name="twitter:description" content="1、什么是核心动画Core Animation是一套包含图形绘制、投影、动画的Objective-C类集合，该框架包含在QuartzCore.framework中，它因为被用于处理更为强大的平滑的转场效果而引入OS X Leopard和iOS而出名。Core Animation和其它框架的位置关系如下图所示：     上图中的OpenGL ES是个C语言写的非常底层的图形处理框架，是个移动设备上绘">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1868951-63095a6c66b74535.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/13/127-2/"/>
+
+
+
+
+
+  <title>快速上手核心动画 | 洛洛爱吃肉</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">洛洛爱吃肉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学海无涯,进一步有进一步的欢喜.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/13/127-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loirou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛洛爱吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">快速上手核心动画</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-13T16:25:03+08:00">
+                2017-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1、什么是核心动画"><a href="#1、什么是核心动画" class="headerlink" title="1、什么是核心动画"></a>1、什么是核心动画</h3><p>Core Animation是一套包含图形绘制、投影、动画的Objective-C类集合，该框架包含在QuartzCore.framework中，它因为被用于处理更为强大的平滑的转场效果而引入OS X Leopard和iOS而出名。Core Animation和其它框架的位置关系如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/1868951-63095a6c66b74535.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="核心动画.png"><br>     上图中的OpenGL ES是个C语言写的非常底层的图形处理框架，是个移动设备上绘制2D和3D计算机图形的标准开源库，广泛地被用在游戏的图形绘制上，负责直接驱动GPU，效率非常高，缺点是使用起来异常复杂。<br>　　Core Animation是对OpenGL ES的Objective-C封装，具有与OpenGL ES几乎等价的高性能，却隐藏了OpenGL ES的复杂性。</p>
+<h3 id="2、核心动画类的层次结构"><a href="#2、核心动画类的层次结构" class="headerlink" title="2、核心动画类的层次结构"></a>2、核心动画类的层次结构</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-859569c019ae7c80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Core Animation类图.png"><br>核心动画中可以直接使用的类有：</p>
+<p>　　CABasicAnimation<br>　　CAKeyframeAnimation<br>　　CAAnimationGroup<br>　　CATransition<br>　　CASpringAnimation</p>
+<p>常用属性有:</p>
+<ul>
+<li>duration : 动画的持续时间</li>
+<li>beginTime : 动画的开始时间</li>
+<li>repeatCount : 动画的重复次数</li>
+<li>autoreverses : 执行的动画按照原动画返回执行</li>
+<li>timingFunction : 控制动画的显示节奏系统提供五种值选择，分别是：<br>kCAMediaTimingFunctionLinear 线性动画<br>kCAMediaTimingFunctionEaseIn 先慢后快<br>kCAMediaTimingFunctionEaseOut 先快后慢<br>kCAMediaTimingFunctionEaseInEaseOut 先慢后快再慢<br>kCAMediaTimingFunctionDefault 默认，也属于中间比较快</li>
+<li>fillMode：决定当前对象在非active时间段的行为.比如动画开始之前,动画结束之后</li>
+<li>beginTime：可以用来设置动画延迟执行时间，若想延迟2s，就设置为CACurrentMediaTime()+2，CACurrentMediaTime()为图层的当前时间</li>
+</ul>
+<ul>
+<li><p>delegate ： 动画代理。能够检测动画的执行和结束。</p>
+<p>@interface NSObject (CAAnimationDelegate)<br>@optional</p>
+<ul>
+<li>(void)animationDidStart:(CAAnimation *)anim; </li>
+<li>(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag;<br>@end<br>`</li>
+</ul>
+</li>
+<li><p>path：关键帧动画中的执行路径</p>
+</li>
+<li>type ： 过渡动画的动画类型，系统提供了四种过渡动画。<br>kCATransitionFade 渐变效果<br>kCATransitionMoveIn 进入覆盖效果<br>kCATransitionPush 推出效果<br>kCATransitionReveal 揭露离开效果</li>
+<li><p>subtype : 过渡动画的动画方向<br>kCATransitionFromRight 从右侧进入<br>kCATransitionFromLeft 从左侧进入<br>kCATransitionFromTop 从顶部进入<br>kCATransitionFromBottom 从底部进入</p>
+<h3 id="3、常见类介绍"><a href="#3、常见类介绍" class="headerlink" title="3、常见类介绍"></a>3、常见类介绍</h3><h3 id="CABasicAnimation"><a href="#CABasicAnimation" class="headerlink" title="CABasicAnimation"></a>CABasicAnimation</h3><p>　　CABasicAnimation可以设定keyPath的起点，终点的值，动画会沿着设定点进行移动，CABasicAnimation可以看成是只有两个关键点的特殊的CAKeyFrameAnimation。</p>
+<p>重要属性:</p>
+<ul>
+<li>fromValue ： keyPath对应的初始值</li>
+<li>toValue ： keyPath对应的结束值</li>
+</ul>
+<p>基础动画主要提供了对于CALayer对象中的可变属性进行简单动画的操作。比如：位移、透明度、缩放、旋转、背景色等等。</p>
+<p>注意点:<br>如果 fillMode = kCAFillModeForwards 和 removedOnComletion = NO，那么在动画执行完毕后，图层会保持显示动画执行后的状态。但在实质上，图层的属性值还是动画执行前的初始值，并没有真正被改变。</p>
+<pre>`CABasicAnimation *positionAnima = [CABasicAnimation animationWithKeyPath:@"position.y"];
+positionAnima.duration = 0.8;
+positionAnima.fromValue = @(_iconView.center.y);
+positionAnima.toValue = @(_iconView.center.y-30);
+positionAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+positionAnima.repeatCount = HUGE_VALF;
+positionAnima.repeatDuration = 2;
+positionAnima.removedOnCompletion = NO;
+positionAnima.fillMode = kCAFillModeBackwards;
+positionAnima.delegate = self;
+[positionAnima setValue:@"PositionAnima" forKey:@"AnimationKey"];
+[_iconView.layer addAnimation:positionAnima forKey:@"AnimationMoveY"];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e4d1ad43ae37c9ed.gif?imageMogr2/auto-orient/strip" alt="CABasicAnimation.gif"></p>
+<h3 id="CAKeyframeAnimation"><a href="#CAKeyframeAnimation" class="headerlink" title="CAKeyframeAnimation"></a>CAKeyframeAnimation</h3><p>可以设定keyPath起点、中间关键点（不止一个）、终点的值，每一帧所对应的时间，动画会沿着设定点进行移动。</p>
+<p>重要属性:</p>
+<ul>
+<li>values ： 键帧数组对象，里面每一个元素即为一个关键帧，动画会在对应的时间段内，依次执行数组中每一个关键帧的动画。</li>
+<li>path ： 动画路径对象，可以设置一个CGPathRef\CGMutablePathRef,让层跟着路径移动。path只对CALayer的anchorPoint和position起作用。如果你设置了path，那么values将被忽略。</li>
+<li>keyTimes ： 可以为对应的关键帧指定对应的时间点,其取值范围为0到1.0,keyTimes中的每一个时间值都对应values中的每一帧.如果没有设置该属性，则每一帧的时间平分。</li>
+</ul>
+<pre>`CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation"];
+animation.duration = 0.25;
+animation.repeatCount = 10;
+animation.values = @[@0.0,@(-M_PI_4/4),@0.0,@(M_PI_4/4),@0.0];
+animation.keyTimes = @[@0.0,@0.25,@0.5,@0.75,@1.0];
+[_iconView.layer addAnimation:animation forKey:@"AnimationKey"];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-476e68184ac7d47a.gif?imageMogr2/auto-orient/strip" alt="CAKeyframeAnimation.gif"></p>
+<h3 id="CAAnimationGroup"><a href="#CAAnimationGroup" class="headerlink" title="CAAnimationGroup"></a>CAAnimationGroup</h3><p>CAAnimation的子类，可以保存一组动画对象，将CAAnimationGroup对象加入层后，组中所有动画对象可以同时并发运行。<br>重要属性:</p>
+<ul>
+<li>animations : 用来保存一组动画对象的NSArray</li>
+</ul>
+<pre>`CABasicAnimation *positionAnima = [CABasicAnimation animationWithKeyPath:@"position.y"];
+positionAnima.fromValue = @(self.iconView.center.y);
+positionAnima.toValue = @(self.iconView.center.y-30);
+positionAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+
+CABasicAnimation *transformAnima = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
+transformAnima.fromValue = @(0);
+transformAnima.toValue = @(M_PI);
+transformAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+
+CAAnimationGroup *animaGroup = [CAAnimationGroup animation];
+animaGroup.duration = 2.0f;
+animaGroup.fillMode = kCAFillModeForwards;
+animaGroup.removedOnCompletion = NO;
+animaGroup.animations = @[positionAnima,transformAnima];
+[self.iconView.layer addAnimation:animaGroup forKey:@"Animation"];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-730a29e7cfb59c3d.gif?imageMogr2/auto-orient/strip" alt="CAAnimationGroup.gif"></p>
+<h3 id="CATransition"><a href="#CATransition" class="headerlink" title="CATransition"></a>CATransition</h3><p>转场动画，比UIVIew转场动画具有更多的动画效果，比如Nav的默认Push视图的效果就是通过CATransition的kCATransitionPush类型来实现。<br>重要属性:</p>
+<ul>
+<li>type ：动画过渡类型<br>Apple 官方的SDK其实只提供了四种过渡效果。<br>kCATransitionFade 渐变效果<br>kCATransitionMoveIn 进入覆盖效果<br>kCATransitionPush 推出效果<br>kCATransitionReveal 揭露离开效果</li>
+</ul>
+<p>还有一些私有API的动画类型，效果很炫酷，不过不推荐使用。比如：”cube”、”suckEffect”、”oglFlip”、”rippleEffect”、”pageCurl”、”pageUnCurl”、”cameraIrisHollowOpen”、”cameraIrisHollowClose”等等。</p>
+</li>
+<li><p>subtype ：动画过渡方向<br>kCATransitionFromRight 从右侧进入<br>kCATransitionFromLeft 从左侧进入<br>kCATransitionFromTop 从顶部进入<br>kCATransitionFromBottom 从底部进入</p>
+</li>
+<li>startProgress ：动画起点(在整体动画的百分比)</li>
+<li><p>endProgress ：动画终点(在整体动画的百分比)<br>CATransition * transitionAnima = [CATransition animation];<br>transitionAnima.type = kCATransitionMoveIn;<br>transitionAnima.subtype = kCATransitionFromRight;<br>transitionAnima.duration = 2.5;<br>_iconView.image = [UIImage imageNamed:@”paopao”];<br>[_iconView.layer addAnimation:transitionAnima forKey:@”transitionAnima”];</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-ba2c81b3cf9682ec.gif?imageMogr2/auto-orient/strip" alt="CATransition.gif"></p>
+<h3 id="CASpringAnimation"><a href="#CASpringAnimation" class="headerlink" title="CASpringAnimation"></a>CASpringAnimation</h3><p>CASpringAnimation是iOS9新加入动画类型，是CABasicAnimation的子类，用于实现弹簧动画。</p>
+<p>CASpringAnimation和UIView的SpringAnimation对比：<br>　1.CASpringAnimation 可以设置更多影响弹簧动画效果的属性，可以实现更复杂的弹簧动画效果，且可以和其他动画组合。<br>　2.UIView的SpringAnimation实际上就是通过CASpringAnimation来实现。</p>
+<p>重要属性:</p>
+<ul>
+<li>mass：质量（影响弹簧的惯性，质量越大，弹簧惯性越大，运动的幅度越大）</li>
+<li>stiffness：弹性系数（弹性系数越大，弹簧的运动越快）</li>
+<li>damping：阻尼系数（阻尼系数越大，弹簧的停止越快）</li>
+<li>initialVelocity：初始速率（弹簧动画的初始速度大小，弹簧运动的初始方向与初始速率的正负一致，若初始速率为0，表示忽略该属性）</li>
+<li>settlingDuration：结算时间（根据动画参数估算弹簧开始运动到停止的时间，动画设置的时间最好根据此时间来设置）</li>
+</ul>
+<pre>`CASpringAnimation * springAnima = [CASpringAnimation animationWithKeyPath:@"bounds"];
+springAnima.mass = 10.0; //质量，影响图层运动时的弹簧惯性，质量越大，弹簧拉伸和压缩的幅度越大
+springAnima.stiffness = 5000; //刚度系数(劲度系数/弹性系数)，刚度系数越大，形变产生的力就越大，运动越快
+springAnima.damping = 100.0;//阻尼系数，阻止弹簧伸缩的系数，阻尼系数越大，停止越快
+springAnima.initialVelocity = 3.0;//初始速率，动画视图的初始速度大小;速率为正数时，速度方向与运动方向一致，速率为负数时，速度方向与运动方向相反
+springAnima.duration = springAnima.settlingDuration;
+springAnima.toValue = [NSValue valueWithCGRect:CGRectMake(100, 200, 200, 200)];
+springAnima.removedOnCompletion = NO;
+springAnima.fillMode = kCAFillModeForwards;
+springAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+[self.iconView.layer addAnimation:ani forKey:@"boundsAni"];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-c3fdaa20b8feea52.gif?imageMogr2/auto-orient/strip" alt="CASpringAnimation.gif"></p>
+<h3 id="CATransaction"><a href="#CATransaction" class="headerlink" title="CATransaction"></a>CATransaction</h3><p>CoreAnimation中还有一个非常重要的类：CATransaction事务类，这个可以同时设置多个layer层的动画效果。可以通过隐式和显式两种方式来进行动画操作。<br>　　事务实际上是Core Animation用来包含一系列属性动画集合的机制，任何用指定事务去改变可以做动画的图层属性都不会立刻发生变化，而是当事务一旦提交的时候开始用一个动画过渡到新值。<br>　　事务是通过CATransaction类来做管理，这个类的设计有些奇怪，不像你从它的命名预期的那样去管理一个简单的事务，而是管理了一叠你不能访问的事务。CATransaction没有属性或者实例方法，并且也不能用+alloc和-init方法创建它。但是可以用+begin和+commit分别来入栈或者出栈。<br>　　任何可以做动画的图层属性都会被添加到栈顶的事务，你可以通过+setAnimationDuration:方法设置当前事务的动画时间，或者通过+animationDuration方法来获取值（默认0.25秒）。<br>　　Core Animation在每个run loop周期中自动开始一次新的事务（run loop是iOS负责收集用户输入，处理定时器或者网络事件并且重新绘制屏幕的东西），即使你不显式的用[CATransaction begin]开始一次事务，任何在一次run loop循环中属性的改变都会被集中起来，然后做一次0.25秒的动画。<br>　　事务的作用：保证一个或多个layer的一个或多个属性变化同时进行<br>　　事务分为隐式和显式：<br>　　1.隐式：没有明显调用事务的方法，由系统自动生成事务。比如直接设置一个layer的position属性，则会在当前线程自动生成一个事务，并在下一个runLoop中自动commit事务。<br>　　2.显式：明显调用事务的方法（[CATransaction begin]和[CATransaction commit]）。</p>
+<p>对layer层的属性操作，都会形成隐式动画，要使用隐式动画，需要关闭layer层的animation动画属性，使用下面的方法：</p>
+<pre>`//关闭animation动画效果，开启隐式动画
++ (BOOL)disableActions;
++ (void)setDisableActions:(BOOL)flag;
+`</pre>
+
+<p>事务的可设置属性（会覆盖隐式动画的设置）：</p>
+<ul>
+<li>animationDuration：动画时间 </li>
+<li>animationTimingFunction：动画时间曲线 </li>
+<li>disableActions：是否关闭动画 </li>
+<li>completionBlock：动画执行完毕的回调</li>
+</ul>
+<p>事务支持嵌套使用：当最外层的事务commit后动画才会开始。<br>使用实例：</p>
+<p><pre>`[CATransaction begin];<br>[CATransaction setAnimationDuration:2.0];<br>[CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];<br> self.iconView.layer.bounds = self.showView.layer.bounds;<br>[CATransaction commit];</pre></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/06/71-2/" rel="next" title="快速上手UIView动画">
+                <i class="fa fa-chevron-left"></i> 快速上手UIView动画
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/16/e5-b8-a6-e4-bd-a0-e4-ba-86-e8-a7-a3uikit-e5-8a-a8-e5-8a-9b-e5-ad-a6/" rel="prev" title="带你了解UIKit动力学">
+                带你了解UIKit动力学 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTUzOS84MTAz"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">loirou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">Kategorien</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、什么是核心动画"><span class="nav-number">1.</span> <span class="nav-text">1、什么是核心动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、核心动画类的层次结构"><span class="nav-number">2.</span> <span class="nav-text">2、核心动画类的层次结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、常见类介绍"><span class="nav-number">3.</span> <span class="nav-text">3、常见类介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CABasicAnimation"><span class="nav-number">4.</span> <span class="nav-text">CABasicAnimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAKeyframeAnimation"><span class="nav-number">5.</span> <span class="nav-text">CAKeyframeAnimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAAnimationGroup"><span class="nav-number">6.</span> <span class="nav-text">CAAnimationGroup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CATransition"><span class="nav-number">7.</span> <span class="nav-text">CATransition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CASpringAnimation"><span class="nav-number">8.</span> <span class="nav-text">CASpringAnimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CATransaction"><span class="nav-number">9.</span> <span class="nav-text">CATransaction</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">loirou</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

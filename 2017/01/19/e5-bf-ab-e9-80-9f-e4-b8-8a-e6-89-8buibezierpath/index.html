@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。 使用方法UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速上手UIBezierPath">
+<meta property="og:url" content="http://yoursite.com/2017/01/19/e5-bf-ab-e9-80-9f-e4-b8-8a-e6-89-8buibezierpath/index.html">
+<meta property="og:site_name" content="洛洛爱吃肉">
+<meta property="og:description" content="UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。 使用方法UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-16ff36f673e553cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-aea9cce78dcbb04d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-8dbfcbd9be34a2fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-33d7bec06da43891.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-45261ea74f94f5e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-69993e6575524f1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-2eb9c4626845e02f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-e21ece42c37ee1d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-e7bacd50200981a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-f9c30b5d17806b03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-b576d92730e22a33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-4c5f96ba08475740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-3192e79c84b3393f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-7d3a6fbc364a219c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-0582260c77588276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-699954cefed52f84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-a86a7876b611d3c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-6834121170a017fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-91da4d71de0f0f28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-38adb693ff8fea97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-10-27T04:14:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="快速上手UIBezierPath">
+<meta name="twitter:description" content="UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。 使用方法UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1868951-16ff36f673e553cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/19/e5-bf-ab-e9-80-9f-e4-b8-8a-e6-89-8buibezierpath/"/>
+
+
+
+
+
+  <title>快速上手UIBezierPath | 洛洛爱吃肉</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">洛洛爱吃肉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学海无涯,进一步有进一步的欢喜.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/19/e5-bf-ab-e9-80-9f-e4-b8-8a-e6-89-8buibezierpath/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loirou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛洛爱吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">快速上手UIBezierPath</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-19T15:41:22+08:00">
+                2017-01-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。</p>
+<p>具体地：</p>
+<p>1.创建一个 UIBezierPath 对象<br>2.用 moveToPoint: 设置初始线段的起点<br>3.添加线段，定义一或多个子路径<br>4.修改 UIBezierPath 的绘图相关的属性，比如stroke path的属性 lineWidth 和 lineJoinStyle ，filled path的属性 usesEvenOddFillRule</p>
+<p>注意:如果是矩形或者圆之类的特殊图形，可以不用第2步。</p>
+<h3 id="代码案例"><a href="#代码案例" class="headerlink" title="代码案例"></a>代码案例</h3><ul>
+<li><p>画直线</p>
+<pre><code>UIBezierPath *path = [UIBezierPath bezierPath];
+
+[path moveToPoint:CGPointMake(50, 50)];
+[path addLineToPoint:CGPointMake(100, 50)];
+
+path.lineWidth = 5.0f;
+path.lineJoinStyle = kCGLineJoinRound;
+
+[path stroke];
+</code></pre><p>`</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-16ff36f673e553cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="直线.png"></p>
+</li>
+<li><p>创建三角形</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
+
+    [path moveToPoint:CGPointMake(50, 50)];
+    [path addLineToPoint:CGPointMake(300, 50)];
+    [path addLineToPoint:CGPointMake(200, 150)];
+
+    // 最后的闭合线是可以通过调用closePath方法来自动生成的，也可以调用-addLineToPoint:方法来添加
+    //  [path addLineToPoint:CGPointMake(50, 50)];
+
+    [path closePath];
+
+    path.lineWidth = 5.0f;
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-aea9cce78dcbb04d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三角形.png"></p>
+</li>
+<li><p>创建矩形</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(50, 100, 50, 50)];
+
+    path.lineWidth = 5.0f;
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-8dbfcbd9be34a2fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="矩形.png"></p>
+</li>
+<li><p>创建内切曲线</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 200, 50, 50)];
+
+    path.lineWidth = 5.0f;
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-33d7bec06da43891.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="圆.png"></p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 200, 50, 100)];
+
+    path.lineWidth = 5.0f;
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-45261ea74f94f5e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="椭圆.png"></p>
+</li>
+<li><p>创建带有圆角的矩形，当矩形变成正圆的时候，Radius就不再起作用</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(50, 300, 50, 50) cornerRadius:15.0f];
+
+    path.lineWidth = 5.0f;
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-69993e6575524f1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="带有圆角的矩形.png"></p>
+</li>
+<li><p>设定特定的角为圆角的矩形</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(50, 400, 50, 50) byRoundingCorners:UIRectCornerBottomLeft cornerRadii:CGSizeMake(5,5)];
+
+    path.lineWidth = 5.0f;
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-2eb9c4626845e02f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="特定的角为圆角的矩形.png"></p>
+</li>
+<li><p>创建圆弧</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(100, 550) radius:25 startAngle:0 endAngle:1.5*M_PI clockwise:YES];
+
+    path.lineWidth = 5.0f;
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e21ece42c37ee1d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建圆弧.png"></p>
+</li>
+<li><p>通过路径A创建路径B</p>
+<pre>`    UIBezierPath *path_A = [UIBezierPath bezierPath];
+
+    [path_A moveToPoint:CGPointMake(200, 50)];
+
+    [path_A addLineToPoint:CGPointMake(250, 100)];
+
+    path_A.lineWidth = 5.0f;
+
+    UIBezierPath *path_B = [UIBezierPath bezierPathWithCGPath:path_A.CGPath];
+
+    [path_B stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e7bacd50200981a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通过路径A创建路径B.png"></p>
+</li>
+<li><p>创建三次贝塞尔曲线</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
+
+    [path moveToPoint:CGPointMake(100, 200)];
+
+    [path addCurveToPoint:CGPointMake(300, 200) controlPoint1:CGPointMake(150, 150) controlPoint2:CGPointMake(250, 250)];
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-f9c30b5d17806b03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三次贝塞尔曲线.png"></p>
+</li>
+<li><p>创建二次贝塞尔曲线</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
+
+    [path moveToPoint:CGPointMake(100, 200)];
+
+    [path addQuadCurveToPoint:CGPointMake(300, 200) controlPoint:CGPointMake(150, 150)];
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b576d92730e22a33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="二次贝塞尔曲线.png"></p>
+</li>
+<li><p>添加圆弧</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
+
+    [path moveToPoint:CGPointMake(200, 400)];
+    [path addLineToPoint:CGPointMake(225, 410)];
+
+    [path addArcWithCenter:CGPointMake(200, 400) radius:25 startAngle:0 endAngle:1.5*M_PI clockwise:YES];
+
+//    [path closePath];
+//    [path removeAllPoints];
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-4c5f96ba08475740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加圆弧.png"></p>
+</li>
+<li><p>追加路径</p>
+<pre>`    UIBezierPath *path_A = [UIBezierPath bezierPath];
+
+    [path_A moveToPoint:CGPointMake(200, 500)];
+    [path_A addLineToPoint:CGPointMake(225, 410)];
+
+    UIBezierPath *path_B = [UIBezierPath bezierPath];
+
+    [path_B moveToPoint:CGPointMake(200, 600)];
+    [path_B addLineToPoint:CGPointMake(225, 500)];
+
+    [path_A appendPath:path_B];
+
+    [path_A stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3192e79c84b3393f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="追加路径.png"></p>
+</li>
+<li><p>创建翻转路径，即起点变成终点，终点变成起点</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
+
+    [path moveToPoint:CGPointMake(50, 50)];
+    [path addLineToPoint:CGPointMake(100, 50)];
+
+    path.lineWidth = 5.0f;
+
+    NSLog(@"%@",NSStringFromCGPoint(path.currentPoint));
+
+    UIBezierPath *path_b = [path bezierPathByReversingPath];
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(200, 0);
+    [path_b applyTransform: transform];
+    // 两条路径分别添加一条直接到 self.center
+    [path addLineToPoint: CGPointMake(self.frame.size.width*0.5, self.frame.size.height*0.5)];
+    [path_b addLineToPoint: CGPointMake(self.frame.size.width*0.5, self.frame.size.height*0.5)];
+
+    NSLog(@"%@",NSStringFromCGPoint(path_b.currentPoint));
+    [[UIColor redColor] set];
+    [path stroke];
+    [[UIColor blueColor] set];
+    [path_b stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-7d3a6fbc364a219c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建翻转路径.png"></p>
+</li>
+<li><p>路径进行仿射变换</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
+
+    [path moveToPoint:CGPointMake(100, 50)];
+    [path addLineToPoint:CGPointMake(200, 50)];
+
+    CGAffineTransform transform =  CGAffineTransformRotate(self.transform, M_PI_4);
+    [path applyTransform:transform];
+
+    path.lineWidth = 5.0f;
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-0582260c77588276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="仿射变换.png"></p>
+</li>
+<li><p>创建虚线</p>
+<pre>`    CGFloat dashStyle[] = {1.0f, 2.0f};
+
+    UIBezierPath *path = [UIBezierPath bezierPath];
+
+    [path moveToPoint:CGPointMake(50, 50)];
+    [path addLineToPoint:CGPointMake(100, 50)];
+
+    [path setLineDash:dashStyle count:2 phase:0.0];
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-699954cefed52f84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建虚线.png"></p>
+</li>
+<li><p>设置颜色</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];
+
+    [[UIColor greenColor] setStroke];
+
+    [[UIColor redColor] setFill];
+
+    [path stroke];
+    [path fill];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-a86a7876b611d3c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-01-19 下午1.49.31.png"></p>
+</li>
+<li><p>设置描边混合模式</p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];
+
+    [[UIColor greenColor] setStroke];
+
+    path.lineWidth = 10.0f;
+
+    [path strokeWithBlendMode:kCGBlendModeSaturation alpha:1.0];
+
+    [path stroke];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6834121170a017fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Stroke混合.png"></p>
+<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];
+
+    [[UIColor redColor] setFill];
+
+    [path fillWithBlendMode:kCGBlendModeSaturation alpha:0.6];
+
+    [path fill];
+`</pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-91da4d71de0f0f28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Fill混合.png"></p>
+</li>
+<li><p>修改当前图形上下文的绘图区域可见,随后的绘图操作导致呈现内容只有发生在指定路径的填充区域</p>
+<p><pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];</pre></p>
+<pre><code>[[UIColor greenColor] setStroke];
+
+[path addClip];
+
+[path stroke];
+</code></pre></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-38adb693ff8fea97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Clip.png"></p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>关于UIBezierPath的简单介绍就到这了,主要是用代码做了展示,属性跟方法,没详细去介绍,我觉得可以直接看苹果的api写的也蛮清楚的.或者自己试试不同的参数样式也能大概理解了.另外简书上看到有篇文章对属性及方法介绍的蛮详细的,可以去看看:<a href="http://www.jianshu.com/p/6130b51a0b71" target="_blank" rel="external">UIBezierPath</a></p>
+<p>核心动画跟贝赛尔曲线都有了简单的介绍了,接下来就可以动手做点简单的自定义动画了.会在下一篇更新.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/16/e5-b8-a6-e4-bd-a0-e4-ba-86-e8-a7-a3uikit-e5-8a-a8-e5-8a-9b-e5-ad-a6/" rel="next" title="带你了解UIKit动力学">
+                <i class="fa fa-chevron-left"></i> 带你了解UIKit动力学
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/13/e7-bd-91-e7-bb-9c-e5-9f-ba-e7-a1-80-e7-9f-a5-e8-af-86/" rel="prev" title="网络基础知识">
+                网络基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTUzOS84MTAz"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">loirou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">Kategorien</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">Tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码案例"><span class="nav-number">2.</span> <span class="nav-text">代码案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">loirou</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
