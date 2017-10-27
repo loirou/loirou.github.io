@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -204,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -214,7 +214,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -251,6 +251,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(二)TCP-IP简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loirou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛洛爱吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(二)TCP-IP简介/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
+                2017-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>  <a href="http://www.jianshu.com/p/782be6ec66ab" target="_blank" rel="external">上回</a>,主要介绍了下协议和OSI参考模型,并简单了解下网络构成要素,这回该说说TCP/IP了</p>
+<h3 id="互联网与TCP-IP的关系"><a href="#互联网与TCP-IP的关系" class="headerlink" title="互联网与TCP/IP的关系"></a>互联网与TCP/IP的关系</h3><p>  互联网进行通信时,需要相应的网络协议,TCP/IP原本就是为使用互联网而开发定制的协议族。因此,互联网的协议就是TCP/IP,TCP/IP就是互联网的协议。<br>  <strong>知道了解TCP/IP的重要性了吧,那就好好看看吧</strong></p>
+<h3 id="TCP-IP的诞生"><a href="#TCP-IP的诞生" class="headerlink" title="TCP/IP的诞生"></a>TCP/IP的诞生</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-3f6079fcf1afc2e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="诞生.png"></p>
+<h3 id="TCP-IP的标准化"><a href="#TCP-IP的标准化" class="headerlink" title="TCP/IP的标准化"></a>TCP/IP的标准化</h3><p>  20世纪90年代,ISO开展了OSI这一国际标准协议的标准化进程。然而OSI协议并没有得到普及,真正被广泛使用的是TCP/IP协议。</p>
+<p>  那么为什么OSI失败了呢?</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-afe17e0fd73484b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="OSI失败.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-9c09038c5230ce00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="OSI失败原因.png"></p>
+<p>那TCP/IP好在哪儿呢?</p>
+<ul>
+<li>开放性</li>
+<li>注重实用性</li>
+</ul>
+<p>  由于TCP/IP尽早地制定了可行性较强的协议，提出了应对技术快速革新的协议，并及时进行后期改良的方案，因此打败了OSI模型，成为了事实上的标准。</p>
+<h3 id="TCP-IP协议分层模型"><a href="#TCP-IP协议分层模型" class="headerlink" title="TCP/IP协议分层模型"></a>TCP/IP协议分层模型</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-4b513cf743603420.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分层模型.png"></p>
+<p>　　上图列出了TCP/IP与OSI分层之间的大概关系，不难看出，TCP/IP与OSI在分层模块上稍有区别。OSI参考模型注重“通信协议必要的功能是什么”，而TCP/IP则更强调<strong>“在计算机上实现协议应该开发哪种程序”</strong>。</p>
+<p>　在 TCP/IP 模型中,网络访问层是 TCP/IP 模型的最低层,负责接收从网际层交来的 IP 数据报并将 IP 数据报通过底层物理网络发送出去,或者从底层物理网络上接收物理帧,抽出 IP 数据报,交给互联网层。网络访问层使采用不同技术和网络硬件的网络之间能够互联, 它包括属于操作系统的设备驱动器和计算机网络接口卡,以处理具体的硬件物理接口。</p>
+<p>　　网际层负责独立地将分组从源主机送往目标主机,涉及为分组提供最佳路径的选择和 交换功能,并使这一过程与它们所经过的路径和网络无关。这好比你寄信时,你并不需要知道它是如何到达目的地的,而只关心它是否到达了。TCP/IP 模型的互联网层在功能上非常类似于 OSI 参考模型中的网络层。</p>
+<p>　　传输层的作用与 OSI 参考模型中传输层的作用是类似的,即在源结点和目的结点的两个对等实体间提供可靠的端到端的数据通信。为保证数据传输的可靠性,传输层协议也提供了确认、差错控制和流量控制等机制。另外,由在一般的计算机中,常常是多个应用程序同时访问网络,所以传输层还要提供不同应用程序的标识。</p>
+<p>　　应用层涉及为用户提供网络应用,并为这些应用提供网络支撑服务。由于 TCP/IP 将所有与应用相关的内容都有归为一层,所以在应用层要处理高层协议、数据表达和对话控制等任务。 </p>
+<h3 id="OSI-模型和-TCP-IP-模型的区别"><a href="#OSI-模型和-TCP-IP-模型的区别" class="headerlink" title="OSI 模型和 TCP/IP 模型的区别"></a>OSI 模型和 TCP/IP 模型的区别</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-a898ac81a2a44779.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="区别.png"></p>
+<p>  OSI 模型包括了七层,而 TCP/IP 模型只有四层。虽然它们具有功能相当的网络层、传输层和应用层,但其它层并不相同。</p>
+<p>  TCP/IP 模型中没有专门的表示层和会话层,它将与这两层相关的表达、编码和会话控制等功能包含到了应用层中去完成。另外,TCP/IP 模型还将 OSI 的数据链路层和物理层包括到了一个网络访问层中。</p>
+<p>  OSI 模型在网络层支持无连接和面向连接的两种服务,而在传输层仅支持面向连接的服 务。TCP/IP 模型在互联网层则只支持无连接的一种服务,但在传输层支持面向连接和无连 接两种服务。</p>
+<p>  TCP/IP 由于有较少的层次,因而显得更简单,并且作为从因特网(INTERNET)上发展起来的协议,已经成了网络互连的事实标准。但是,目前还没有实际网络是建立在 OSI 七层模型基础上的,OSI 仅仅作为理论的参考模型被广泛使用。</p>
+<h3 id="TCP-IP-通信示例"><a href="#TCP-IP-通信示例" class="headerlink" title="TCP/IP 通信示例"></a>TCP/IP 通信示例</h3><h4 id="数据包首部"><a href="#数据包首部" class="headerlink" title="数据包首部"></a>数据包首部</h4><p><img src="http://upload-images.jianshu.io/upload_images/1868951-945f3b55eb76f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据包首部.png"></p>
+<p>  每个分层中,都会对所发送的数据附加一个首部,在这个首部中包含了该层必要的信息,如发送的目标地址以及协议相关信息。通常,为协议提供的信息为包首部,所要发送的内容为数据。</p>
+<p>  现在再来看看主机A向主机B发送一封电子邮件，在TCP/IP模型下的处理过程：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-09c5c11ee5b527d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="电子邮件.png"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(六)TCP与UDP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -270,7 +417,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(六)TCP与UDP/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(六)TCP与UDP/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -280,7 +427,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
                 2017-10-27
@@ -456,7 +603,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/网络常见面试题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(一)网络基础知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="loirou">
@@ -475,7 +622,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/27/网络常见面试题/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(一)网络基础知识/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -485,7 +632,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
                 2017-10-27
@@ -527,75 +674,476 @@
       
         
           
-            <p>前一阵子把《图解http》、《图解tcp/ip》、《计算机网络》都看了看,整理点常见的面试题吧。</p>
-<h3 id="网络体系结构"><a href="#网络体系结构" class="headerlink" title="网络体系结构"></a>网络体系结构</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-fe03a1158d8c4e6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网络体系结构.png"></p>
-<h3 id="中继系统的一些疑问？"><a href="#中继系统的一些疑问？" class="headerlink" title="中继系统的一些疑问？"></a><a href="https://www.zhihu.com/question/51403704/answer/125927499" target="_blank" rel="external">中继系统的一些疑问？</a></h3><h3 id="TCP和UDP的区别？"><a href="#TCP和UDP的区别？" class="headerlink" title="TCP和UDP的区别？"></a>TCP和UDP的区别？</h3><p>主要是以下几个方面的区别:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">TCP</th>
-<th style="text-align:center">UDP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">可靠性</td>
-<td style="text-align:center">可靠</td>
-<td style="text-align:center">不可靠</td>
-</tr>
-<tr>
-<td style="text-align:center">连接性</td>
-<td style="text-align:center">面向连接</td>
-<td style="text-align:center">无连接</td>
-</tr>
-<tr>
-<td style="text-align:center">报文</td>
-<td style="text-align:center">面向字节流</td>
-<td style="text-align:center">面向报文</td>
-</tr>
-<tr>
-<td style="text-align:center">效率</td>
-<td style="text-align:center">传输效率低</td>
-<td style="text-align:center">传输效率高</td>
-</tr>
-<tr>
-<td style="text-align:center">双工性</td>
-<td style="text-align:center">全双工</td>
-<td style="text-align:center">一对一、一对多、多对一、多对多</td>
-</tr>
-<tr>
-<td style="text-align:center">流量控制</td>
-<td style="text-align:center">有(滑动窗口)</td>
-<td style="text-align:center">无</td>
-</tr>
-<tr>
-<td style="text-align:center">拥塞控制</td>
-<td style="text-align:center">有(慢开始、拥塞避免、快重传、快恢复)</td>
-<td style="text-align:center">无</td>
-</tr>
-</tbody>
-</table>
-<h3 id="TCP对应的协议和UDP对应的协议"><a href="#TCP对应的协议和UDP对应的协议" class="headerlink" title="TCP对应的协议和UDP对应的协议"></a>TCP对应的协议和UDP对应的协议</h3><p>TCP对应的协议：<br>（1） FTP：定义了文件传输协议，使用21端口。<br>（2） Telnet：一种用于远程登陆的端口，使用23端口，用户可以以自己的身份远程连接到计算机上，可提供基于DOS模式下的通信服务。<br>（3） SMTP：邮件传送协议，用于发送邮件。服务器开放的是25号端口。<br>（4） POP3：它是和SMTP对应，POP3用于接收邮件。POP3协议所用的是110端口。<br>（5）HTTP：是从Web服务器传输超文本到本地浏览器的传送协议。</p>
-<p>UDP对应的协议：<br>（1） DNS：用于域名解析服务，将域名地址转换为IP地址。DNS用的是53号端口。<br>（2） SNMP：简单网络管理协议，使用161号端口，是用来管理网络设备的。由于网络设备很多，无连接的服务就体现出其优势。<br>（3） TFTP(Trival File Tran敏感词er Protocal)，简单文件传输协议，该协议在熟知端口69上使用UDP服务。</p>
-<h3 id="简析TCP的三次握手与四次分手"><a href="#简析TCP的三次握手与四次分手" class="headerlink" title="简析TCP的三次握手与四次分手"></a><a href="http://www.jellythink.com/archives/705" target="_blank" rel="external">简析TCP的三次握手与四次分手</a></h3><h3 id="TCP-为什么是三次握手，为什么不是两次或四次？"><a href="#TCP-为什么是三次握手，为什么不是两次或四次？" class="headerlink" title="TCP 为什么是三次握手，为什么不是两次或四次？"></a><a href="https://www.zhihu.com/question/24853633/answer/115173386" target="_blank" rel="external">TCP 为什么是三次握手，为什么不是两次或四次？</a></h3><h3 id="网络通信过程中，建立连接的本质是什么？"><a href="#网络通信过程中，建立连接的本质是什么？" class="headerlink" title="网络通信过程中，建立连接的本质是什么？"></a><a href="https://www.zhihu.com/question/38483035/answer/106683865" target="_blank" rel="external">网络通信过程中，建立连接的本质是什么？</a></h3><h3 id="从输入网址到显示网页的全过程分析"><a href="#从输入网址到显示网页的全过程分析" class="headerlink" title="从输入网址到显示网页的全过程分析"></a><a href="http://www.itmian4.com/forum.php?mod=viewthread&amp;tid=1655&amp;fromuid=1931" target="_blank" rel="external">从输入网址到显示网页的全过程分析</a></h3><ul>
-<li>查找域名对应的IP地址。这一步会依次查找浏览器缓存，系统缓存，路由器缓存，ISPDNS缓存，根域名服务器</li>
-<li>浏览器向IP对应的web服务器发送一个HTTP请求</li>
-<li>服务器响应请求，发回网页内容</li>
-<li>浏览器解析网页内容</li>
+            <h3 id="计算机与网络发展"><a href="#计算机与网络发展" class="headerlink" title="计算机与网络发展"></a>计算机与网络发展</h3><p>  计算机自诞生伊始,经历了一系列演变与发展。大型通用机计算机、超级计算机、小型机、个人电脑、工作站、便携式电以及现如今的智能手机终端都是这一过程的产物。它们性能逐年增强,价格却逐年下降,机体规模也在逐渐变小。</p>
+<p>  随着计算机的发展,人们不再局限于单机模式,而是将一个个计算机连接在一起,形成一个计算机网络。从而实现信息共享,同事在能在两台物理位置较远的机器之间即时传递消息。</p>
+<p>  计算机网络根据规模可以分为WAN(Wide Area Network,广域网)和LAN(Local Area Network,局域网)。</p>
+<p>将有业务往来的计算机连在一起便组成了私有网络,将多个私有网络连接一起就成了为公众使用的互联网。</p>
+<p>  随着互联网爆发性地发展与普及,信息网络如同我们身边的空气,触手可及。但是在以前,对一般人来说使用一台计算机都不是那么容易的事情。</p>
+<p><strong>计算机与网络大致可以分为7个阶段:</strong></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-24fdc0e1beb7860a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="计算机使用模式的演变.png"><br>  互联网是由许多独立发展的网络通信技术融合而成。能够使它们之间不断融合并实现统一的正是TCP/IP技术。<br>   那什么是TCP/IP呢?<br>    TCP/IP是通信协议的统称。<br>    那什么是协议呢?</p>
+<h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><h4 id="协议的必要性"><a href="#协议的必要性" class="headerlink" title="协议的必要性"></a>协议的必要性</h4><p>协议就是计算机与计算机之间通过网络实现通信事先达成的一种“约定”。这种“约定”使那些由不同厂商的设备、不同的CPU以及不同的操作系统组成的计算机之间，只要遵循相同的协议就能够实现通信。反之，如果使用的协议不同，就无法通信。</p>
+<p>计算机与网络设备要相互通信，双方就必须基于相同的方法。比如，如何探测到通信目标、由哪一边先发起通信、使用哪种语言进行通信、怎样结束通信等规则都需要事先确定。不同的硬件、操作系统之间的通信，所有的这一切都需要一种规则。而我们就把这种规则称为协议（protocol）。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-9a37ee1163e62d2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP/IP 是互联网相关的各类协议族的总称 .png"></p>
+<p>协议中存在各式各样的内容。从电缆的规格到 IP 地址的选定方法、寻找异地用户的方法、双方建立通信的顺序，以及 Web 页面显示需要处理的步骤，等等。</p>
+<p>像这样把与互联网相关联的协议集合起来总称为 TCP/IP。也有说法认为，TCP/IP 是指 TCP 和 IP 这两种协议。还有一种说法认为，TCP/ IP 是在 IP 协议的通信过程中，使用到的协议族的统称。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-fbb4ff87606a98bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="计算机通信协议.png"></p>
+<p><strong>分组交换</strong> 是将大数据分割为一个个叫做包（Packet）的较小单位进行传输的方法。这里所说的包，就如同我们平常在邮局里见到的邮包。分组交换就是将大数据分装为一个个这样的邮包交给对方。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3f6b62eeab6be537.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分组交换.png"></p>
+<h4 id="协议的标准化"><a href="#协议的标准化" class="headerlink" title="协议的标准化"></a>协议的标准化</h4><p>  在计算机通信诞生之初,系统化和标准化并未得到足够的重视。因此不同厂商的设备,由于支持的协议不同,仍然无法实现正常的通信。<br>就好比语言交流:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-48973be1fb252968.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="协议的标准化.png"><br>随着计算机重要性的不断提高,很多公司开始逐渐意思是兼容性的重要意义。<br>为了解决上述问题,ISO组织制定了一个国际标准OSI,对通信系统进行标准化。</p>
+<p><strong>现在OSI所定义的协议虽然并没有得到普及,但是在OSI协议设计之初作为其指导方针的OSI参考模型却常被用于网络协议的制定当中。</strong></p>
+<p>TCP/IP并非是ISO定制的国际标准,而是由IETF所致力与推进标准化作业的一种协议。现在也作为业界标准,俨然已成为全世界所广泛应用的通信协议。</p>
+<p>   协议的标准化使得所有遵循标准协议的设备不再因计算机硬件或操作系统的差异而无法通信。因此,协议的标准化推动了计算机网络的普及。</p>
+<h4 id="协议分层"><a href="#协议分层" class="headerlink" title="协议分层"></a>协议分层</h4><p>  ISO在制定标准化OSI之前,对网络体系结构相关的问题进行了充分的讨论并提出了作为通信协议涉及指标的OSI参考模型。这一模型将通信协议中的必要功能分成了7层。</p>
+<p>  <strong> 为什么要分层呢?</strong></p>
+<p>　如果互联网只由一个协议统筹，某个地方需要改变设计时，就必须把所有部分整体替换掉。而分层之后只需把变动的层替换掉即可。把各层之间的接口部分规划好之后，每个层次内部的设计就能够自由改动了。</p>
+<p>   值得一提的是，层次化之后，设计也变得相对简单了。处于应用层上的应用可以只考虑分派给自己的任务，而不需要弄清对方在地球上哪个地方、对方的传输路线是怎样的、是否能确保传输送达等问题。</p>
+<p>   协议分层就如同计算机软件中的<strong>模块化开发</strong></p>
+<p>举个打电话的例子:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-1ba9d663f91f31bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="电话.png"></p>
+<h3 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-e6c32d0a8db7ee0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="OSI参考模型.png"></p>
+<h4 id="OSI参考模型中每个层的作用："><a href="#OSI参考模型中每个层的作用：" class="headerlink" title="OSI参考模型中每个层的作用："></a>OSI参考模型中每个层的作用：</h4><p>1.物理层(Physical Layer)</p>
+<p>　　物理层位于 OSI 参考模型的最低层,它直接面向原始比特流的传输。为了实现原始比特流的物理传输,物理层必须解决好包括传输介质、信道类型、数据与信号之间的转换、信号传输中的衰减和噪声等在内的一系列问题。另外,物理层标准要给出关于物理接口的机械、 电气、功能和规程特性,以便于不同的制造厂家既能够根据公认的标准各自独立地制造设备,又能使各个厂家的产品能够相互兼容。</p>
+<p>2.数据链路层(Data Link Layer)</p>
+<p>　　在物理层发送和接收数据的过程中,会出现一些物理层自己不能解决的问题。例如, 当两个节点同时试图在一条线路上发送数据时该如何处理?节点如何知道它所接收的数据 是否正确?如果噪声改变了一个分组的目标地址,节点如何察觉它丢失了本应收到的分组呢?这些都是数据链路层所必须负责的工作。</p>
+<p>　　数据链路层涉及相邻节点之间的可靠数据传输,数据链路层通过加强物理层传输原始比特的功能,使之对网络层表现为一条无错线路。为了能够实现相邻节点之间无差错的数据传送,数据链路层在数据传输过程中提供了确认、差错控制和流量控制等机制。</p>
+<p>3.网络层(Network Layer)</p>
+<p>　　网络中的两台计算机进行通信时,中间可能要经过许多中间结点甚至不同的通信子网。 网络层的任务就是在通信子网中选择一条合适的路径,使发送端传输层所传下来的数据能 够通过所选择的路径到达目的端。</p>
+<p>　　为了实现路径选择,网络层必须使用寻址方案来确定存在哪些网络以及设备在这些网络中所处的位置,不同网络层协议所采用的寻址方案是不同的。在确定了目标结点的位置后, 网络层还要负责引导数据包正确地通过网络,找到通过网络的最优路径,即路由选择。如果子网中同时出现过多的分组,它们将相互阻塞通路并可能形成网络瓶颈,所以网络层还需要提供拥塞控制机制以避免此类现象的出现。另外,网络层还要解决异构网络互连问题。</p>
+<p>4.传输层(Transport Layer)</p>
+<p>　　传输层是 OSI 七层模型中唯一负责端到端节点间数据传输和控制功能的层。传输层是 OSI 七层模型中承上启下的层,它下面的三层主要面向网络通信,以确保信息被准确有效地传输;它上面的三个层次则面向用户主机,为用户提供各种服务。</p>
+<p>　　传输层通过弥补网络层服务质量的不足,为会话层提供端到端的可靠数据传输服务。它为会话层屏蔽了传输层以下的数据通信的细节,使会话层不会受到下三层技术变化的影响。但同时,它又依靠下面的三个层次控制实际的网络通信操作,来完成数据从源到目标的传输。传输层为了向会话层提供可靠的端到端传输服务,也使用了差错控制和流量控制等机制。</p>
+<p>5.会话层(Session Layer)</p>
+<p>　　会话层的功能是在两个节点间建立、维护和释放面向用户的连接。它是在传输连接的基础上建立会话连接,并进行数据交换管理,允许数据进行单工、半双工和全双工的传送。会话层提供了令牌管理和同步两种服务功能。</p>
+<p>6.表示层(Presentation Layer)</p>
+<p>　　表示层以下的各层只关心可靠的数据传输,而表示层关心的是所传输数据的语法和语义。它主要涉及处理在两个通信系统之间所交换信息的表示方式,包括数据格式变换、数据加密与解密、数据压缩与恢复等功能。</p>
+<p>7.应用层(Application Layer)</p>
+<p>　　应用层是 OSI 参考模型的最高层,负责为用户的应用程序提供网络服务。与 OSI 其他层不同的是,它不为任何其他 OSI 层提供服务,而只是为 OSI 模型以外的应用程序提供服务。包括为相互通信的应用程序或进行之间建立连接、进行同步,建立关于错误纠正和控 制数据完整性过程的协商等。应用层还包含大量的应用协议,如分布式数据库的访问、文件的交换、电子邮件、虚拟终端等。 </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-d13f6ca5798b3f50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="每个层的作用.png"></p>
+<p>许多通信协议,都对应了OSI参考模型7个分层中的某层。通过这一点,可以大致了解该协议在整个通信功能中的位置和作用。<br><img src="http://upload-images.jianshu.io/upload_images/1868951-b70b962052e39a50.gif?imageMogr2/auto-orient/strip" alt="各层对应的协议"></p>
+<p>举个例子：假设主机A的用户A要给主机B的用户B发送一封电子邮件：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6ea6ba3cc3d59b92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-10 上午10.27.04.png"></p>
+<p>　发送方从第7层、第6层到第1层由上至下按照顺序传输数据，而接收端则从第1层、第2层到第7层由下至上向每个上一级分层传输数据。每个分层上，在处理由上一层传过来的数据时可以附上当前分层的协议所必须的“首部”信息。然后接收端对收到的数据进行数据“首部”与“内容”的分离，再转发给上一分层，并最终将发送端的数据恢复为原状。</p>
+<h3 id="传输方式的分类"><a href="#传输方式的分类" class="headerlink" title="传输方式的分类"></a>传输方式的分类</h3><p>网络与通信中可以根据其数据发送方法进行多种分类。</p>
+<ol>
+<li>面向连接与面向无连接</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e0860a956a3d7dbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏面向连接与面向无连接.png"></p>
+<p>2.电路交换与分组交换</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-0a259607b181f0e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="电路交换与分组交换.png"></p>
+<p>3.根据接收端数量来分</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-191e8eef54b435a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="单播,广播,多播,任播.png"></p>
+<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p>   通信传输中,发送端和接收端都可以被视作通讯主体。它们都能由一个所谓的”地址”的信息标识出来。比如打电话,电话号码就是”地址”,比如寄快递,家庭住址就是”地址”。</p>
+<p>在TCP/IP通信中使用MAC地址,IP地址,端口号等信息作为地址标识。甚至在应用层中可以将电子邮件地址作为网络通信的地址。</p>
+<p>地址具有<strong>唯一性</strong><br>当地址总数多时,需要有<strong>层次性</strong>来快速定位。</p>
+<h3 id="网络的构成要素"><a href="#网络的构成要素" class="headerlink" title="网络的构成要素"></a>网络的构成要素</h3><p>搭建一套网络环境要涉及到各种各样的电缆和网络设备。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6e189b0afaffd65b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="构成及作用.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-9d29c855104afad4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="各设备对应的网络分层.png"></p>
+<ul>
+<li>数据链路与通信媒介</li>
 </ul>
-<h3 id="常见端口号"><a href="#常见端口号" class="headerlink" title="常见端口号"></a>常见端口号</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-5642f3853c486a3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="常见端口号.png"></p>
-<h3 id="TCP协议中的端口具体指的是什么，为什么要有端口，你是怎么理解的？"><a href="#TCP协议中的端口具体指的是什么，为什么要有端口，你是怎么理解的？" class="headerlink" title="TCP协议中的端口具体指的是什么，为什么要有端口，你是怎么理解的？"></a><a href="https://www.zhihu.com/question/22577025/answer/103910378" target="_blank" rel="external">TCP协议中的端口具体指的是什么，为什么要有端口，你是怎么理解的？</a></h3><h3 id="ARP是地址解析协议，简单语言解释一下工作原理"><a href="#ARP是地址解析协议，简单语言解释一下工作原理" class="headerlink" title="ARP是地址解析协议，简单语言解释一下工作原理"></a>ARP是地址解析协议，简单语言解释一下工作原理</h3><p>答:1：首先，每个主机都会在自己的ARP缓冲区中建立一个ARP列表，以表示IP地址和MAC地址之间的对应关系。<br>2：当源主机要发送数据时，首先检查ARP列表中是否有对应IP地址的目的主机的MAC地址，如果有，则直接发送数据，如果没有，就向本网段的所有主机发送ARP数据包，该数据包包括的内容有：源主机 IP地址，源主机MAC地址，目的主机的IP 地址。<br>3：当本网络的所有主机收到该ARP数据包时，首先检查数据包中的IP地址是否是自己的IP地址，如果不是，则忽略该数据包，如果是，则首先从数据包中取出源主机的IP和MAC地址写入到ARP列表中，如果已经存在，则覆盖，然后将自己的MAC地址写入ARP响应包中，告诉源主机自己是它想要找的MAC地址。<br>4：源主机收到ARP响应包后。将目的主机的IP和MAC地址写入ARP列表，并利用此信息发送数据。如果源主机一直没有收到ARP响应数据包，表示ARP查询失败。广播发送ARP请求，单播发送ARP响应。</p>
-<h3 id="IP地址的分类"><a href="#IP地址的分类" class="headerlink" title="IP地址的分类"></a>IP地址的分类</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-4353e4bffd7a4aec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IP地址的分类.png"><br>IPv6 – 采用128bit，首部固定部分为40字节。</p>
-<h3 id="有了-IP-地址，为什么还要用-MAC-地址？"><a href="#有了-IP-地址，为什么还要用-MAC-地址？" class="headerlink" title="有了 IP 地址，为什么还要用 MAC 地址？"></a><a href="https://www.zhihu.com/question/21546408/answer/104113095" target="_blank" rel="external">有了 IP 地址，为什么还要用 MAC 地址？</a></h3><h3 id="HTTP-协议包括哪些请求？"><a href="#HTTP-协议包括哪些请求？" class="headerlink" title="HTTP 协议包括哪些请求？"></a>HTTP 协议包括哪些请求？</h3><pre><code>GET：对服务器资源的简单请求
-POST：用于发送包含用户提交数据的请求
-HEAD：类似于GET请求，不过返回的响应中没有具体内容，用于获取报头
-PUT：传说中请求文档的一个版本
-DELETE：发出一个删除指定文档的请求
-TRACE：发送一个请求副本，以跟踪其处理进程
-OPTIONS：返回所有可用的方法，检查服务器支持哪些方法
-CONNECT：用于ssl隧道的基于代理的请求
-</code></pre><h3 id="浅谈HTTP中Get与Post的区别"><a href="#浅谈HTTP中Get与Post的区别" class="headerlink" title="浅谈HTTP中Get与Post的区别"></a><a href="http://www.cnblogs.com/hyddd/archive/2009/03/31/1426026.html" target="_blank" rel="external">浅谈HTTP中Get与Post的区别</a></h3>
+<p>计算机之间通过电缆相互连接。电缆可以分为多种,包括双绞线电缆、光纤电缆、同轴电缆、串行电缆等。而媒介本身也可以被划分为电波、微波等不同类型的电磁波。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-520f38933628a5af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据链路.png"></p>
+<ul>
+<li>网卡<br>计算机连接网络时,必须要使用网卡,也被称作网络适配器、LAN卡。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-56fc60b0220828c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网卡.png"></p>
+<ul>
+<li>中继器</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3620a28242606b22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="中继器.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-1c6682f5e6511f76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="中继集线器.png"></p>
+<ul>
+<li>网桥<br>位于OSI模型中的第二层–数据链路层上连接两个网络的设备。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3de2632f11c7ef7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网桥.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-2c56652f52fe6368.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="自学式网桥及交换集线器.png"></p>
+<ul>
+<li>路由器<br>路由器位于第三层–网络层上连接两个设备、并对分组保温进行转发的设备。<br>网桥是根据MAC地质处理的,路由器是根据IP地址进行处理的。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-8b75041239d274fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="路由器.png"></p>
+<ul>
+<li><p>4~7层交换机<br>负责处理OSI模型中从传输层至应用层的数据。用TCP/IP来表述的话,就是以TCP/IP等协议的传输层及其上面的应用层为基础,分析首发数据,并对其进行特定的处理。<br>主要功能:负载均衡器,带宽控制,广域网加速器,特殊应用访问加速,及防火墙等。</p>
+</li>
+<li><p>网关</p>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e423d61f84e63f05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网关.png"></p>
+<p>举个例子:电脑跟手机邮件有时候会不兼容,需要网关的转换<br><img src="http://upload-images.jianshu.io/upload_images/1868951-206c0ce693b39859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-10 下午3.17.19.png"></p>
+<p>有时候为了控制流量或保证安全,会有代理服务器,防火墙等都是网关的一种。</p>
+<p>比如谷歌被墙啊:<br><img src="http://upload-images.jianshu.io/upload_images/1868951-0b2d9c28f4005719.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="防火墙.png"></p>
+<h3 id="现代网络实态"><a href="#现代网络实态" class="headerlink" title="现代网络实态"></a>现代网络实态</h3><p>看图吧:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-d45d0cd64a4725d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际网络构成.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-1e57df41ae6e9aa4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="移动通信.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-f6e9e4649b6ac32e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据中心.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-96ccc729e8e096dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="云服务.png"></p>
+<p>来个总结:</p>
+<p>学习TCP/IP知识前需要先了解下计算机网络出现的背景及发展阶段,了解矛盾才能明白出现TCP/IP的必然性。<br>另外我们知道想要通信需要先遵守协议,为了更好的互联,要推动协议的标准化,然后标准化又促进了计算机网络的发展。<br>然后为了简便,谈到了协议的分层从而出现了OSI参考模型,知道了各层的分类及作用后,我们再看看现实生活中的网络构成及应用实态。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(三)数据链路层/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loirou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛洛爱吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(三)数据链路层/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
+                2017-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数据链路的作用"><a href="#数据链路的作用" class="headerlink" title="数据链路的作用"></a>数据链路的作用</h3><p>数据链路层的协议定义了通过通信媒介互连的设备之间传输的规范。通信媒介包括双绞线电缆、同轴电缆、光纤、电波以及红外线等介质。此外,各个设备之间有时也会通过交换机、网桥、中继器等中转数据。</p>
+<p>实际上,各个设备之间在数据传输时,数据链路层和物理层都是必不可少的。众所周知,计算机以二级制0、1来表示信息,然而实际的通信媒介之间处理的却是电压的高低、光的闪灭以及光波的强弱等信号。把这些信号与二进制的0、1进行转换正式物理层的责任。数据链路层处理的数据也不是单纯的0、1序列,该层把他们集合为一个叫做帧的块,然后再进行传输。</p>
+<p>网络的连接和构成的形态成为<strong>网络拓扑</strong><br>包括:总线型,环型,星型和网状型。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-ade6679c7c100837.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网络拓扑.png"></p>
+<h3 id="数据链路相关作用"><a href="#数据链路相关作用" class="headerlink" title="数据链路相关作用"></a>数据链路相关作用</h3><h4 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h4><p>用于识别数据链路中互连的节点,地址长48比特,一般用16进制数表示。在使用网卡的情况下,MAC地址会被烧入到ROM中。因此,任何一个网卡的MAC地址都是唯一的。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-7b2d9e2617377b98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="MAC地址.png"></p>
+<p>从通信介质的使用方法上看,网络可分为共享介质型和非共享介质型。<br>共享介质型有两种介质访问控制方式:一种是争用方式,另一种是令牌传递方式。</p>
+<h4 id="MAC地址转发"><a href="#MAC地址转发" class="headerlink" title="MAC地址转发"></a>MAC地址转发</h4><p>以太网交互机会根据数据链路层中每个目标MAC地址,决定从哪个网络接口发送数据。这时所参考的、用意记录发送接口的表就叫做转发表。<br>转发表并非手动设置，而是交换机自动学习得到的。当某个设备向交换机发送帧时，交换机将帧的源 MAC 地址和接口对应起来，作为一条记录添加到转发表中。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-2663e11f7777955a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="自学.png"><br>当设备数量增加时,转发表也会随之变大,检索转发表所用的时间就越来越长,所有,有必要将网络分成多个数据链路,采用类似于网络层的IP地址一样对地址进行分层管理。</p>
+<h4 id="环路检测方式"><a href="#环路检测方式" class="headerlink" title="环路检测方式"></a>环路检测方式</h4><ul>
+<li>生成树方式</li>
+<li>源路由法</li>
+</ul>
+<h3 id="以太网帧"><a href="#以太网帧" class="headerlink" title="以太网帧"></a>以太网帧</h3><p>以太网帧的开头是“前导码(Preamble)”，长度为 8 字节，这一段没什么用，重点在于以太网帧的本体。</p>
+<p>本体由首部，数据和 FCS 三部分组成：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-bc39f19caf6de988.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="以太网帧.png"></p>
+<p>类型部分存储了上层协议的编号，比如上层是 IP 协议，则编号为 0800。</p>
+<p>FCS 表示帧校验序列(Frame Check Sequence)，用于判断帧是否在传输过程中有损坏(比如电子噪声干扰)。FCS 保存着发送帧除以某个多项式的余数，接收到的帧也做相同计算，如果得到的值与 FCS 相同则表示没有出错。</p>
+<h3 id="无线通信"><a href="#无线通信" class="headerlink" title="无线通信"></a>无线通信</h3><p> 无线通信通常使用电磁波、红外线、激光等方式进行传播数据。一般在办公室的局域网范围内组成的较高速的连接成为无线局域网。</p>
+<h4 id="IEEE802-11"><a href="#IEEE802-11" class="headerlink" title="IEEE802.11"></a>IEEE802.11</h4><p>IEEE802.11定义了无线LAN协议中物理层与数据链路层的一部分(MAC层)。IEEE802.11这个编号有时指众多标准的统称,有时也只无线LAN的一种通信方式。主要针对笔记本电脑这样较大的计算机设备的标准。</p>
+<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>是使用2.4GHz频率无线电波的一种标准,主要为手机或者智能手机、键盘、鼠标等较小设备而设计的标准。</p>
+<h3 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h3><p>PPP是指点对点,及1对1连接计算机的协议。<br>以太网使用同轴电缆或双绞线电缆,它可以决定其中的0,1该被解释为何种电子信号。与之相比,PPP属于纯粹的数据链路层,与物理层没有任何关系。及仅有PPP无法实现通信,还需要有物理层的支持。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-138ac0a0cdd1ab48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="PPP.png"><br>PPP可以使用电话线或ISDN、专线、ATM线路。</p>
+<h4 id="LCP与NCP"><a href="#LCP与NCP" class="headerlink" title="LCP与NCP"></a>LCP与NCP</h4><p>在开始进行数据传输前,要先建立一个PPP级连接。这个连接建立以后就可以进行身份认证、压缩与加密。<br>PPP包括两个协议:</p>
+<ul>
+<li><p>不依赖上层的LCP协议: 主要负责建立和断开连接、设置最大接收单元、设置验证协议以及设置是否进行通信质量的监控。</p>
+</li>
+<li><p>依赖上层的NCP(如上层为IP,也叫做IPCP)协议:负责IP地址设置以及是否进行TCP/IP首部压缩设备。</p>
+<h4 id="PPP的帧格式"><a href="#PPP的帧格式" class="headerlink" title="PPP的帧格式"></a>PPP的帧格式</h4></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-278edc30b081b163.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=" PPP的帧格式.png"></p>
+<h4 id="PPP0E"><a href="#PPP0E" class="headerlink" title="PPP0E"></a>PPP0E</h4><p>单纯的以太网没有验证功能,也没有建立和断开连接的处理,因此无法按时计费。而如果采用PPPoE管理以太网连接,就可以利用PPP的验证等功能使各家ISP可以有效地管理终端用户的使用。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b47a14f7efc3c4ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="PPP0E.png"></p>
+<h3 id="主要数据链路类型及特点"><a href="#主要数据链路类型及特点" class="headerlink" title="主要数据链路类型及特点"></a>主要数据链路类型及特点</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-c8803ccde6b8a280.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-14 上午9.47.42.png"></p>
+<h3 id="公共网络"><a href="#公共网络" class="headerlink" title="公共网络"></a>公共网络</h3><p>公共通信服务类似于电信运营商(如NTT、KDDI或软银等)提供的电话网络。人们通过这些运营商签约、付费不仅可以实现联网还可以与距离遥远的机构组织进行通信。<br>常见的有模拟电话线路、移动通信、ADSL、FTTH、有线电视、专线、VPB以及公共无线LAN等内容。自行了解下就好,就不一一介绍了。</p>
+<p>关于数据链路层，最重要的一点还是它的定义：“通过通信介质相互连接的设备之间，数据传输的规范”。这说明数据链路层的协议适用于处于同一种数据链路两端的节点。如果不能理解这一点，就无法理解网络层和 IP 协议。</p>
+<p>数据链路层的意义在于，如果没有数据链路层，数据只能以流的形式存在与通信介质中，不知道该发送往哪里，过长的数据流可能无法在通信介质中传输。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(七)TCP详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loirou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛洛爱吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(七)TCP详解/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
+                2017-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="TCP的特点及其目的"><a href="#TCP的特点及其目的" class="headerlink" title="TCP的特点及其目的"></a>TCP的特点及其目的</h3><p>  为了通过数据包实现可靠性传输,需要考虑很多事情,例如数据的破坏、丢包、重复记忆分片顺序混乱等问题。如不能解决这些问题,也就无从谈起可靠传输。<br>TCP通过检验和、序列号、确认应答、重发控制、连接管理以及窗口控制等机制实现可靠性传输。</p>
+<h3 id="通过序列号与确认应答提高可靠性"><a href="#通过序列号与确认应答提高可靠性" class="headerlink" title="通过序列号与确认应答提高可靠性"></a>通过序列号与确认应答提高可靠性</h3><p>在TCP中,当发送端的数据到达接收主机时,接收端主机会番号一个已收到消息的通知。这个消息叫做确认应答–ACK(Positive Acknowled-gement 意指已经接收。)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-91892d00cf216bc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="正常的数据传输.png"></p>
+<p>TCP通过肯定的确认应答(ACK)实现可靠的数据传输。当发送端将数据发生之后会等待对端的确认应答。如果有确认应答,说明数据已经成功到达对端。反之,则数据丢失的可能性很大。</p>
+<p>当然,在一定时间内没有等到确认应答,发送端就可以认为数据已经丢失,并进行重发。由此,即使产生了丢包,仍然能够保证数据能够到达对端,实现可靠传输。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b6cb6c12465ed4f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据包丢失的情况.png"></p>
+<p>未收到确认应答并不意味着数据一定丢失。也有可能是数据对方已经收到,知识返回的确认应答在途中丢失。这种情况也会导致发送端因没有收到确认应答,而认为数据没有到达目的地,从而进行重新发送,如下图:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6588851c3553d3d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="确认应答丢失的情况.png"><br>此外,也有可能因为一些其他原因导致确认应答延迟到达,在源主机重发数据以后才到达的情况也屡见不鲜。此时,源发送主机只需重发数据即可,但是对目标主机,反复收到相同的数据,确是一种”灾难”。而为了对上层应用提供可靠的传输,必须得放弃重复的数据包。</p>
+<p>为此,必须引入一种机制,它能够识别出是否已经接收数据,又能够判断是否需要接收。<br>上述这些确认应答处理、重发控制以及重复控制等功能都可以通过<strong>序列号</strong>实现。<br>序列号是按顺序给发送数据的每一个字节(8位字节)都标上号码的编号。<br>接收到查询接收数据TCP首部中的序列号和数据的长度,将自己下一步应该接收的序号作为确认应答返送回去。<br>就这样,通过序列号和确认应答号,TCP可以实现可靠传输。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6453ddc87ed87740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="发送数据.png"></p>
+<h3 id="重发超时"><a href="#重发超时" class="headerlink" title="重发超时"></a>重发超时</h3><p>重发超时是指在重发数据之前,等待确认应答到来的那个特定时间间隔。如果超过了这个时间仍未收到确认应答,发送端将进行数据重发。</p>
+<p>在BSD的Unix以及Windows系统中,超时都以0.5秒为单位进行控制,因此重发超时都是0.5秒的整数倍。不过,由于最初的数据包还不知从往返时间,所以其重发超时一般设置为6秒左右。</p>
+<p>数据被重发之后如还是收不到确认应答,则进行再次发送。此时,等待确认应答的时间将会以2倍、4倍的指数函数延长。</p>
+<p>此外,数据也不会被无限、反复地重发。达到一定重发次数之后,如果人没有任何确认应答返回,就会判断为网络或对端主机发生了异常,强制关闭连接。并且通知应用通信异常强行终止。</p>
+<h3 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h3><p>TCP提供面向有连接的通信传输。面向有链接是指在数据通信开始之前先做好通信两端之间的准备工作。<br>一个连接的建立与断开,正常过程至少需要来回发送7个包才能完成。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-425ec4bbedcbf6d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP连接的建立与断开.png"></p>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>TCP是面向连接的，无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。在TCP/IP协议中，TCP协议提供可靠的连接服务，连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。这就是面试中经常会被问到的TCP三次握手。只是了解TCP三次握手的概念，对你获得一份工作是没有任何帮助的，你需要去了解TCP三次握手中的一些细节。先来看图说话。 </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3f85c6bc89d1824c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP三次握手.png"></p>
+<ol>
+<li><p>第一次握手：建立连接。客户端发送连接请求报文段，将SYN位置为1，Sequence Number为x；然后，客户端进入SYN_SEND状态，等待服务器的确认；</p>
+</li>
+<li><p>第二次握手：服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为x+1(Sequence Number+1)；同时，自己自己还要发送SYN请求信息，将SYN位置为1，Sequence Number为y；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RECV状态；</p>
+</li>
+<li><p>第三次握手：客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为y+1，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
+</li>
+</ol>
+<p>完成了三次握手，客户端和服务器端就可以开始传送数据。以上就是TCP三次握手的总体介绍。</p>
+<h3 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手"></a>为什么要三次握手</h3><p>既然总结了TCP的三次握手，那为什么非要三次呢？怎么觉得两次就可以完成了。那TCP为什么非要进行三次连接呢？在谢希仁的《计算机网络》中是这样说的：</p>
+<pre><code>为了防止已失效的连接请求报文段突然又传送到了服务端，因而产生错误。
+</code></pre><p>在书中同时举了一个例子，如下：</p>
+<blockquote>
+<p>   已失效的连接请求报文段”的产生在这样一种情况下：client发出的第一个连接请求报文段并没有丢失，而是在某个网络结点长时间的滞留了，以致延误到连接释放以后的某个时间才到达server。本来这是一个早已失效的报文段。但server收到此失效的连接请求报文段后，就误认为是client再次发出的一个新的连接请求。于是就向client发出确认报文段，同意建立连接。假设不采用“三次握手”，那么只要server发出确认，新的连接就建立了。由于现在client并没有发出建立连接的请求，因此不会理睬server的确认，也不会向server发送数据。但server却以为新的运输连接已经建立，并一直等待client发来数据。这样，server的很多资源就白白浪费掉了。采用“三次握手”的办法可以防止上述现象发生。例如刚才那种情况，client不会向server的确认发出确认。server由于收不到确认，就知道client并没有要求建立连接。</p>
+</blockquote>
+<p>这就很明白了，<strong>防止了服务器端的一直等待而浪费资源。</strong></p>
+<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>当客户端和服务器通过三次握手建立了TCP连接以后，当数据传送完毕，肯定是要断开TCP连接的啊。那对于TCP的断开连接，这里就有了神秘的“四次挥手”。</p>
+<p>在socket编程中，任何一方执行close()操作即可产生挥手操作。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-7734f69f8b86c584.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP四次挥手.png"></p>
+<ol>
+<li><p>第一次挥手：主机1（可以使客户端，也可以是服务器端），设置Sequence Number和Acknowledgment Number，向主机2发送一个FIN报文段；此时，主机1进入FIN_WAIT_1状态；这表示主机1没有数据要发送给主机2了；</p>
+</li>
+<li><p>第二次挥手：主机2收到了主机1发送的FIN报文段，向主机1回一个ACK报文段，Acknowledgment Number为Sequence Number加1；主机1进入FIN_WAIT_2状态；主机2告诉主机1，我“同意”你的关闭请求；</p>
+</li>
+<li><p>第三次挥手：主机2向主机1发送FIN报文段，请求关闭连接，同时主机2进入LAST_ACK状态；</p>
+</li>
+<li><p>第四次挥手：主机1收到主机2发送的FIN报文段，向主机2发送ACK报文段，然后主机1进入TIME_WAIT状态；主机2收到主机1的ACK报文段以后，就关闭连接；此时，主机1等待2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，主机1也可以关闭连接了。</p>
+</li>
+</ol>
+<p>至此，TCP的四次挥手就这么愉快的完成了。当你看到这里，你的脑子里会有很多的疑问，很多的不懂，感觉很凌乱；没事，我们继续总结。    </p>
+<h4 id="为什么要四次挥手"><a href="#为什么要四次挥手" class="headerlink" title="为什么要四次挥手"></a>为什么要四次挥手</h4><p>那四次挥手又是为何呢？TCP协议是一种面向连接的、可靠的、基于字节流的运输层通信协议。TCP是全双工模式，这就意味着，当主机1发出FIN报文段时，只是表示主机1已经没有数据要发送了，主机1告诉主机2，它的数据已经全部发送完毕了；但是，这个时候主机1还是可以接受来自主机2的数据；当主机2返回ACK报文段时，表示它已经知道主机1没有数据发送了，但是主机2还是可以发送数据到主机1的；当主机2也发送了FIN报文段时，这个时候就表示主机2也没有数据要发送了，就会告诉主机1，我也没有数据要发送了，之后彼此就会愉快的中断这次TCP连接。</p>
+<p>如果要正确的理解四次挥手的原理，就需要了解四次挥手过程中的状态变化。</p>
+<ul>
+<li><p>FIN_WAIT_1: 这个状态要好好解释一下，其实FIN_WAIT_1和FIN_WAIT_2状态的真正含义都是表示等待对方的FIN报文。而这两种状态的区别是：FIN_WAIT_1状态实际上是当SOCKET在ESTABLISHED状态时，它想主动关闭连接，向对方发送了FIN报文，此时该SOCKET即进入到FIN_WAIT_1状态。而当对方回应ACK报文后，则进入到FIN_WAIT_2状态，当然在实际的正常情况下，无论对方何种情况下，都应该马上回应ACK报文，所以FIN_WAIT_1状态一般是比较难见到的，而FIN_WAIT_2状态还有时常常可以用netstat看到。（主动方）</p>
+</li>
+<li><p>FIN_WAIT_2：上面已经详细解释了这种状态，实际上FIN_WAIT_2状态下的SOCKET，表示半连接，也即有一方要求close连接，但另外还告诉对方，我暂时还有点数据需要传送给你(ACK信息)，稍后再关闭连接。（主动方）</p>
+</li>
+<li><p>CLOSE_WAIT：这种状态的含义其实是表示在等待关闭。怎么理解呢？当对方close一个SOCKET后发送FIN报文给自己，你系统毫无疑问地会回应一个ACK报文给对方，此时则进入到CLOSE_WAIT状态。接下来呢，实际上你真正需要考虑的事情是察看你是否还有数据发送给对方，如果没有的话，那么你也就可以 close这个SOCKET，发送FIN报文给对方，也即关闭连接。所以你在CLOSE_WAIT状态下，需要完成的事情是等待你去关闭连接。（被动方）</p>
+</li>
+<li><p>LAST_ACK: 这个状态还是比较容易好理解的，它是被动关闭一方在发送FIN报文后，最后等待对方的ACK报文。当收到ACK报文后，也即可以进入到CLOSED可用状态了。（被动方）</p>
+</li>
+<li><p>TIME_WAIT: 表示收到了对方的FIN报文，并发送出了ACK报文，就等2MSL后即可回到CLOSED可用状态了。如果FINWAIT1状态下，收到了对方同时带FIN标志和ACK标志的报文时，可以直接进入到TIME_WAIT状态，而无须经过FIN_WAIT_2状态。（主动方）</p>
+</li>
+<li><p>CLOSED: 表示连接中断。</p>
+</li>
+</ul>
+<h3 id="TCP以段为单位发送数据"><a href="#TCP以段为单位发送数据" class="headerlink" title="TCP以段为单位发送数据"></a>TCP以段为单位发送数据</h3><p>TCP在传送大量数据时,是以MSS(Maximum Segment Size 最大消息长度)的大小将数据进行分割发送。进行重发是也是以MSS为单位。<br>MSS是在三次握手的时候,在两端主机之间被计算得出剧好两端的主机在发出建立连接的请求是,会在TCP首部中写入MSS选项,告诉对方自己的接口能够适的MSS的大小。然后会在两者之间选择一个较小的值投入使用。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-c9efbb3f75cb0026.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选较小的MSS.png"></p>
+<h3 id="利用窗口控制提高速度"><a href="#利用窗口控制提高速度" class="headerlink" title="利用窗口控制提高速度"></a>利用窗口控制提高速度</h3><p>TCP以1个段为单位,每发一个段进行一次确认应答的处理。<br>如图:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-16ace958aa720fcf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="按数据包进行确认应答.png"></p>
+<p>为了解决通信性能的问题,TCP引入了<strong>窗口</strong>这个概念。<br>确认应答不再以每个分段,而是以更大的单位进行确认时,转发时间将会被大幅度的缩短。也就是说,发送端主机,在发送了一个段以后不必要一直等待确认应答,而是继续发送。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-a95b6a70a6b2561b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用滑动窗口方式并行处理.png"></p>
+<p>窗口大小就是指无需等待确认应答而可以继续发送数据的最大值。上图中的窗口大小为4个段。<br>这个机制实现了使用大量的缓冲区,通过对多个段同时进行确认应答的功能。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-f9c5f50664cee2ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-15 下午2.08.17.png"><br>如上图中,发送数据中高亮圈起的部分正是前面所提到的窗口。<br>在收到确认应答后,将窗口滑动到确认应答中的序列号的位置。这样可以顺序地将多个段同时发送提高通信性能。这种机制也被称为滑动窗口控制。</p>
+<h3 id="窗口控制与重发控制"><a href="#窗口控制与重发控制" class="headerlink" title="窗口控制与重发控制"></a>窗口控制与重发控制</h3><p>在未使用窗口控制时,没有收到确认应答的数据都会被重发。而是用了窗口控制,某些确认应答即使丢失也无需重发</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-dcd5eefd4a7098f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="没有确认应答也不受影响.png"></p>
+<p>其次,我们来考虑一下某个报文段丢失的情况。接收主机如果收到一个自己应该接收的序号以外的数据时,会针对当前位置收到的数据返回确认应答。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-88fa4df7026201ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="重发控制.png"></p>
+<p>当某一报文段丢失后,发送端会一直收到序号为1001的确认应答,这个确认应答提醒发送端,”我想接收的是从1001开始的数据”。</p>
+<p>因此,当窗口比较大时,又出现报文段丢失是,同一序号的确认应答会不断重复的返回。<br>当发送端主机如果连续3次收到同一个确认应答,就会将其所对应的数据进行重发。</p>
+<p>这种机制,比之前提到超时管理更搞笑,因此也被称作高速重发控制。</p>
+<h3 id="流控制"><a href="#流控制" class="headerlink" title="流控制"></a>流控制</h3><p>流控制是TCP提供的一种可以让发送端根据接受端的实际接收能力控制发送的数据量的机制。<br>具体操作是,接收端主机箱发送端主机通知自己可以接收数据的大小,于是发送端会发送不超过这个限度的数据。该大小限度就被称作窗口大小。<br>TCP首部中,专门有一个字段用来通知窗口大小。<br>接收主机将自己可以接收的缓存区大小放入这个字段中通知给发送端。这个字段的值越大,说明网络的吞吐量越高。<br>不过,当接收端的缓冲区面临数据溢出时,窗口大小的值也会随之呗设置为一个更小的值通知给发送端,从而控制数据发送量。<br>也就是说,发送端主机会根据接收端主机的指示,对发送数据的量进行控制。这也就形成了一个完整的TCP流控制(流量控制)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-bac76fbc083e437a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="流量控制.png"><br>如上图,当接收端从3001号开始的数据段后其缓冲区即满,不得不暂时停止接收数据。之后,在收到发送窗口更新通知后通信才得以继续进行。</p>
+<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>有了窗口控制,首发主机之间可以不再以一个数据段为单位发送确认应答,也能够连续发送大量数据包。但是如果在通信刚开始时就发送大量数据,也有可能会引发其他问题。<br>TCP为了防止该问题的出现,在通信一开始时就会通过一个叫做慢启动的算法得出的数值,对发送数据量进行控制。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-20db3532f42cbafa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-15 下午2.39.30.png"><br>首先,为了在发送端调节所要发送数据的量,定义了一个叫做”拥堵窗口”的概念。于是在慢启动的时候,将这个拥堵窗口的大小设置为1个数据段(1MSS)发送数据,之后每收到一次确认应答(ACK),拥堵窗口的值就加1。在发送数据包时,将拥堵窗口的大小与接收端主机通知的窗口大小做比较,然后按照它们当中较小那个值,发送比其还要小的数据量。<br>如果重发采用超时机制,那么拥塞窗口的初始值可以设置为1以后再进行慢启动修正。有了上述这些机制,就可以有限的减少通信开始时连续发包导致的网络拥堵,还可以避免网络拥塞情况的发生。<br>不过,随着包的每次往返,拥塞窗口也会以1、2、4等指数函数的增长,拥堵状况激增甚至导致网络拥塞的发生。为了防止这些,引入了慢启动阀值的概念。只要拥塞窗口的值超出这个阀值,在每收到一次确认应答时,只允许以下面这种比例方法拥塞窗口:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b36ac71de7daf1c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式.png"><br><img src="http://upload-images.jianshu.io/upload_images/1868951-c71265a3e7831314.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="拥塞窗口的大小.png"><br>当TCP通信开始以后,网络吞吐量会逐渐上升,但是随着网络拥堵的发生吞吐量也会急剧下降。于是会再次进入吞吐量慢慢上升的过程。因此所谓TCP的吞吐量的特点就好像是在逐步占领网络带宽的感觉。</p>
+<h3 id="提高网络利用率的规范"><a href="#提高网络利用率的规范" class="headerlink" title="提高网络利用率的规范"></a>提高网络利用率的规范</h3><ul>
+<li>Nagle算法</li>
+<li>延迟确认应答</li>
+<li>捎带应答</li>
+</ul>
+
           
         
       
@@ -662,7 +1210,7 @@ CONNECT：用于ssl隧道的基于代理的请求
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/27/HTTP笔记/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/10/27/HTTP笔记/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -672,7 +1220,7 @@ CONNECT：用于ssl隧道的基于代理的请求
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
                 2017-10-27
@@ -906,594 +1454,6 @@ CONNECT：用于ssl隧道的基于代理的请求
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(七)TCP详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="loirou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="洛洛爱吃肉">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(七)TCP详解/" itemprop="url">Unbenannt</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
-                2017-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="TCP的特点及其目的"><a href="#TCP的特点及其目的" class="headerlink" title="TCP的特点及其目的"></a>TCP的特点及其目的</h3><p>  为了通过数据包实现可靠性传输,需要考虑很多事情,例如数据的破坏、丢包、重复记忆分片顺序混乱等问题。如不能解决这些问题,也就无从谈起可靠传输。<br>TCP通过检验和、序列号、确认应答、重发控制、连接管理以及窗口控制等机制实现可靠性传输。</p>
-<h3 id="通过序列号与确认应答提高可靠性"><a href="#通过序列号与确认应答提高可靠性" class="headerlink" title="通过序列号与确认应答提高可靠性"></a>通过序列号与确认应答提高可靠性</h3><p>在TCP中,当发送端的数据到达接收主机时,接收端主机会番号一个已收到消息的通知。这个消息叫做确认应答–ACK(Positive Acknowled-gement 意指已经接收。)</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-91892d00cf216bc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="正常的数据传输.png"></p>
-<p>TCP通过肯定的确认应答(ACK)实现可靠的数据传输。当发送端将数据发生之后会等待对端的确认应答。如果有确认应答,说明数据已经成功到达对端。反之,则数据丢失的可能性很大。</p>
-<p>当然,在一定时间内没有等到确认应答,发送端就可以认为数据已经丢失,并进行重发。由此,即使产生了丢包,仍然能够保证数据能够到达对端,实现可靠传输。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b6cb6c12465ed4f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据包丢失的情况.png"></p>
-<p>未收到确认应答并不意味着数据一定丢失。也有可能是数据对方已经收到,知识返回的确认应答在途中丢失。这种情况也会导致发送端因没有收到确认应答,而认为数据没有到达目的地,从而进行重新发送,如下图:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6588851c3553d3d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="确认应答丢失的情况.png"><br>此外,也有可能因为一些其他原因导致确认应答延迟到达,在源主机重发数据以后才到达的情况也屡见不鲜。此时,源发送主机只需重发数据即可,但是对目标主机,反复收到相同的数据,确是一种”灾难”。而为了对上层应用提供可靠的传输,必须得放弃重复的数据包。</p>
-<p>为此,必须引入一种机制,它能够识别出是否已经接收数据,又能够判断是否需要接收。<br>上述这些确认应答处理、重发控制以及重复控制等功能都可以通过<strong>序列号</strong>实现。<br>序列号是按顺序给发送数据的每一个字节(8位字节)都标上号码的编号。<br>接收到查询接收数据TCP首部中的序列号和数据的长度,将自己下一步应该接收的序号作为确认应答返送回去。<br>就这样,通过序列号和确认应答号,TCP可以实现可靠传输。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6453ddc87ed87740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="发送数据.png"></p>
-<h3 id="重发超时"><a href="#重发超时" class="headerlink" title="重发超时"></a>重发超时</h3><p>重发超时是指在重发数据之前,等待确认应答到来的那个特定时间间隔。如果超过了这个时间仍未收到确认应答,发送端将进行数据重发。</p>
-<p>在BSD的Unix以及Windows系统中,超时都以0.5秒为单位进行控制,因此重发超时都是0.5秒的整数倍。不过,由于最初的数据包还不知从往返时间,所以其重发超时一般设置为6秒左右。</p>
-<p>数据被重发之后如还是收不到确认应答,则进行再次发送。此时,等待确认应答的时间将会以2倍、4倍的指数函数延长。</p>
-<p>此外,数据也不会被无限、反复地重发。达到一定重发次数之后,如果人没有任何确认应答返回,就会判断为网络或对端主机发生了异常,强制关闭连接。并且通知应用通信异常强行终止。</p>
-<h3 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h3><p>TCP提供面向有连接的通信传输。面向有链接是指在数据通信开始之前先做好通信两端之间的准备工作。<br>一个连接的建立与断开,正常过程至少需要来回发送7个包才能完成。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-425ec4bbedcbf6d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP连接的建立与断开.png"></p>
-<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>TCP是面向连接的，无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。在TCP/IP协议中，TCP协议提供可靠的连接服务，连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。这就是面试中经常会被问到的TCP三次握手。只是了解TCP三次握手的概念，对你获得一份工作是没有任何帮助的，你需要去了解TCP三次握手中的一些细节。先来看图说话。 </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3f85c6bc89d1824c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP三次握手.png"></p>
-<ol>
-<li><p>第一次握手：建立连接。客户端发送连接请求报文段，将SYN位置为1，Sequence Number为x；然后，客户端进入SYN_SEND状态，等待服务器的确认；</p>
-</li>
-<li><p>第二次握手：服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为x+1(Sequence Number+1)；同时，自己自己还要发送SYN请求信息，将SYN位置为1，Sequence Number为y；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RECV状态；</p>
-</li>
-<li><p>第三次握手：客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为y+1，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
-</li>
-</ol>
-<p>完成了三次握手，客户端和服务器端就可以开始传送数据。以上就是TCP三次握手的总体介绍。</p>
-<h3 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手"></a>为什么要三次握手</h3><p>既然总结了TCP的三次握手，那为什么非要三次呢？怎么觉得两次就可以完成了。那TCP为什么非要进行三次连接呢？在谢希仁的《计算机网络》中是这样说的：</p>
-<pre><code>为了防止已失效的连接请求报文段突然又传送到了服务端，因而产生错误。
-</code></pre><p>在书中同时举了一个例子，如下：</p>
-<blockquote>
-<p>   已失效的连接请求报文段”的产生在这样一种情况下：client发出的第一个连接请求报文段并没有丢失，而是在某个网络结点长时间的滞留了，以致延误到连接释放以后的某个时间才到达server。本来这是一个早已失效的报文段。但server收到此失效的连接请求报文段后，就误认为是client再次发出的一个新的连接请求。于是就向client发出确认报文段，同意建立连接。假设不采用“三次握手”，那么只要server发出确认，新的连接就建立了。由于现在client并没有发出建立连接的请求，因此不会理睬server的确认，也不会向server发送数据。但server却以为新的运输连接已经建立，并一直等待client发来数据。这样，server的很多资源就白白浪费掉了。采用“三次握手”的办法可以防止上述现象发生。例如刚才那种情况，client不会向server的确认发出确认。server由于收不到确认，就知道client并没有要求建立连接。</p>
-</blockquote>
-<p>这就很明白了，<strong>防止了服务器端的一直等待而浪费资源。</strong></p>
-<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>当客户端和服务器通过三次握手建立了TCP连接以后，当数据传送完毕，肯定是要断开TCP连接的啊。那对于TCP的断开连接，这里就有了神秘的“四次挥手”。</p>
-<p>在socket编程中，任何一方执行close()操作即可产生挥手操作。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-7734f69f8b86c584.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP四次挥手.png"></p>
-<ol>
-<li><p>第一次挥手：主机1（可以使客户端，也可以是服务器端），设置Sequence Number和Acknowledgment Number，向主机2发送一个FIN报文段；此时，主机1进入FIN_WAIT_1状态；这表示主机1没有数据要发送给主机2了；</p>
-</li>
-<li><p>第二次挥手：主机2收到了主机1发送的FIN报文段，向主机1回一个ACK报文段，Acknowledgment Number为Sequence Number加1；主机1进入FIN_WAIT_2状态；主机2告诉主机1，我“同意”你的关闭请求；</p>
-</li>
-<li><p>第三次挥手：主机2向主机1发送FIN报文段，请求关闭连接，同时主机2进入LAST_ACK状态；</p>
-</li>
-<li><p>第四次挥手：主机1收到主机2发送的FIN报文段，向主机2发送ACK报文段，然后主机1进入TIME_WAIT状态；主机2收到主机1的ACK报文段以后，就关闭连接；此时，主机1等待2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，主机1也可以关闭连接了。</p>
-</li>
-</ol>
-<p>至此，TCP的四次挥手就这么愉快的完成了。当你看到这里，你的脑子里会有很多的疑问，很多的不懂，感觉很凌乱；没事，我们继续总结。    </p>
-<h4 id="为什么要四次挥手"><a href="#为什么要四次挥手" class="headerlink" title="为什么要四次挥手"></a>为什么要四次挥手</h4><p>那四次挥手又是为何呢？TCP协议是一种面向连接的、可靠的、基于字节流的运输层通信协议。TCP是全双工模式，这就意味着，当主机1发出FIN报文段时，只是表示主机1已经没有数据要发送了，主机1告诉主机2，它的数据已经全部发送完毕了；但是，这个时候主机1还是可以接受来自主机2的数据；当主机2返回ACK报文段时，表示它已经知道主机1没有数据发送了，但是主机2还是可以发送数据到主机1的；当主机2也发送了FIN报文段时，这个时候就表示主机2也没有数据要发送了，就会告诉主机1，我也没有数据要发送了，之后彼此就会愉快的中断这次TCP连接。</p>
-<p>如果要正确的理解四次挥手的原理，就需要了解四次挥手过程中的状态变化。</p>
-<ul>
-<li><p>FIN_WAIT_1: 这个状态要好好解释一下，其实FIN_WAIT_1和FIN_WAIT_2状态的真正含义都是表示等待对方的FIN报文。而这两种状态的区别是：FIN_WAIT_1状态实际上是当SOCKET在ESTABLISHED状态时，它想主动关闭连接，向对方发送了FIN报文，此时该SOCKET即进入到FIN_WAIT_1状态。而当对方回应ACK报文后，则进入到FIN_WAIT_2状态，当然在实际的正常情况下，无论对方何种情况下，都应该马上回应ACK报文，所以FIN_WAIT_1状态一般是比较难见到的，而FIN_WAIT_2状态还有时常常可以用netstat看到。（主动方）</p>
-</li>
-<li><p>FIN_WAIT_2：上面已经详细解释了这种状态，实际上FIN_WAIT_2状态下的SOCKET，表示半连接，也即有一方要求close连接，但另外还告诉对方，我暂时还有点数据需要传送给你(ACK信息)，稍后再关闭连接。（主动方）</p>
-</li>
-<li><p>CLOSE_WAIT：这种状态的含义其实是表示在等待关闭。怎么理解呢？当对方close一个SOCKET后发送FIN报文给自己，你系统毫无疑问地会回应一个ACK报文给对方，此时则进入到CLOSE_WAIT状态。接下来呢，实际上你真正需要考虑的事情是察看你是否还有数据发送给对方，如果没有的话，那么你也就可以 close这个SOCKET，发送FIN报文给对方，也即关闭连接。所以你在CLOSE_WAIT状态下，需要完成的事情是等待你去关闭连接。（被动方）</p>
-</li>
-<li><p>LAST_ACK: 这个状态还是比较容易好理解的，它是被动关闭一方在发送FIN报文后，最后等待对方的ACK报文。当收到ACK报文后，也即可以进入到CLOSED可用状态了。（被动方）</p>
-</li>
-<li><p>TIME_WAIT: 表示收到了对方的FIN报文，并发送出了ACK报文，就等2MSL后即可回到CLOSED可用状态了。如果FINWAIT1状态下，收到了对方同时带FIN标志和ACK标志的报文时，可以直接进入到TIME_WAIT状态，而无须经过FIN_WAIT_2状态。（主动方）</p>
-</li>
-<li><p>CLOSED: 表示连接中断。</p>
-</li>
-</ul>
-<h3 id="TCP以段为单位发送数据"><a href="#TCP以段为单位发送数据" class="headerlink" title="TCP以段为单位发送数据"></a>TCP以段为单位发送数据</h3><p>TCP在传送大量数据时,是以MSS(Maximum Segment Size 最大消息长度)的大小将数据进行分割发送。进行重发是也是以MSS为单位。<br>MSS是在三次握手的时候,在两端主机之间被计算得出剧好两端的主机在发出建立连接的请求是,会在TCP首部中写入MSS选项,告诉对方自己的接口能够适的MSS的大小。然后会在两者之间选择一个较小的值投入使用。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-c9efbb3f75cb0026.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选较小的MSS.png"></p>
-<h3 id="利用窗口控制提高速度"><a href="#利用窗口控制提高速度" class="headerlink" title="利用窗口控制提高速度"></a>利用窗口控制提高速度</h3><p>TCP以1个段为单位,每发一个段进行一次确认应答的处理。<br>如图:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-16ace958aa720fcf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="按数据包进行确认应答.png"></p>
-<p>为了解决通信性能的问题,TCP引入了<strong>窗口</strong>这个概念。<br>确认应答不再以每个分段,而是以更大的单位进行确认时,转发时间将会被大幅度的缩短。也就是说,发送端主机,在发送了一个段以后不必要一直等待确认应答,而是继续发送。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-a95b6a70a6b2561b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用滑动窗口方式并行处理.png"></p>
-<p>窗口大小就是指无需等待确认应答而可以继续发送数据的最大值。上图中的窗口大小为4个段。<br>这个机制实现了使用大量的缓冲区,通过对多个段同时进行确认应答的功能。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-f9c5f50664cee2ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-15 下午2.08.17.png"><br>如上图中,发送数据中高亮圈起的部分正是前面所提到的窗口。<br>在收到确认应答后,将窗口滑动到确认应答中的序列号的位置。这样可以顺序地将多个段同时发送提高通信性能。这种机制也被称为滑动窗口控制。</p>
-<h3 id="窗口控制与重发控制"><a href="#窗口控制与重发控制" class="headerlink" title="窗口控制与重发控制"></a>窗口控制与重发控制</h3><p>在未使用窗口控制时,没有收到确认应答的数据都会被重发。而是用了窗口控制,某些确认应答即使丢失也无需重发</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-dcd5eefd4a7098f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="没有确认应答也不受影响.png"></p>
-<p>其次,我们来考虑一下某个报文段丢失的情况。接收主机如果收到一个自己应该接收的序号以外的数据时,会针对当前位置收到的数据返回确认应答。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-88fa4df7026201ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="重发控制.png"></p>
-<p>当某一报文段丢失后,发送端会一直收到序号为1001的确认应答,这个确认应答提醒发送端,”我想接收的是从1001开始的数据”。</p>
-<p>因此,当窗口比较大时,又出现报文段丢失是,同一序号的确认应答会不断重复的返回。<br>当发送端主机如果连续3次收到同一个确认应答,就会将其所对应的数据进行重发。</p>
-<p>这种机制,比之前提到超时管理更搞笑,因此也被称作高速重发控制。</p>
-<h3 id="流控制"><a href="#流控制" class="headerlink" title="流控制"></a>流控制</h3><p>流控制是TCP提供的一种可以让发送端根据接受端的实际接收能力控制发送的数据量的机制。<br>具体操作是,接收端主机箱发送端主机通知自己可以接收数据的大小,于是发送端会发送不超过这个限度的数据。该大小限度就被称作窗口大小。<br>TCP首部中,专门有一个字段用来通知窗口大小。<br>接收主机将自己可以接收的缓存区大小放入这个字段中通知给发送端。这个字段的值越大,说明网络的吞吐量越高。<br>不过,当接收端的缓冲区面临数据溢出时,窗口大小的值也会随之呗设置为一个更小的值通知给发送端,从而控制数据发送量。<br>也就是说,发送端主机会根据接收端主机的指示,对发送数据的量进行控制。这也就形成了一个完整的TCP流控制(流量控制)</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-bac76fbc083e437a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="流量控制.png"><br>如上图,当接收端从3001号开始的数据段后其缓冲区即满,不得不暂时停止接收数据。之后,在收到发送窗口更新通知后通信才得以继续进行。</p>
-<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>有了窗口控制,首发主机之间可以不再以一个数据段为单位发送确认应答,也能够连续发送大量数据包。但是如果在通信刚开始时就发送大量数据,也有可能会引发其他问题。<br>TCP为了防止该问题的出现,在通信一开始时就会通过一个叫做慢启动的算法得出的数值,对发送数据量进行控制。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-20db3532f42cbafa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-15 下午2.39.30.png"><br>首先,为了在发送端调节所要发送数据的量,定义了一个叫做”拥堵窗口”的概念。于是在慢启动的时候,将这个拥堵窗口的大小设置为1个数据段(1MSS)发送数据,之后每收到一次确认应答(ACK),拥堵窗口的值就加1。在发送数据包时,将拥堵窗口的大小与接收端主机通知的窗口大小做比较,然后按照它们当中较小那个值,发送比其还要小的数据量。<br>如果重发采用超时机制,那么拥塞窗口的初始值可以设置为1以后再进行慢启动修正。有了上述这些机制,就可以有限的减少通信开始时连续发包导致的网络拥堵,还可以避免网络拥塞情况的发生。<br>不过,随着包的每次往返,拥塞窗口也会以1、2、4等指数函数的增长,拥堵状况激增甚至导致网络拥塞的发生。为了防止这些,引入了慢启动阀值的概念。只要拥塞窗口的值超出这个阀值,在每收到一次确认应答时,只允许以下面这种比例方法拥塞窗口:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b36ac71de7daf1c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式.png"><br><img src="http://upload-images.jianshu.io/upload_images/1868951-c71265a3e7831314.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="拥塞窗口的大小.png"><br>当TCP通信开始以后,网络吞吐量会逐渐上升,但是随着网络拥堵的发生吞吐量也会急剧下降。于是会再次进入吞吐量慢慢上升的过程。因此所谓TCP的吞吐量的特点就好像是在逐步占领网络带宽的感觉。</p>
-<h3 id="提高网络利用率的规范"><a href="#提高网络利用率的规范" class="headerlink" title="提高网络利用率的规范"></a>提高网络利用率的规范</h3><ul>
-<li>Nagle算法</li>
-<li>延迟确认应答</li>
-<li>捎带应答</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(三)数据链路层/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="loirou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="洛洛爱吃肉">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(三)数据链路层/" itemprop="url">Unbenannt</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
-                2017-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="数据链路的作用"><a href="#数据链路的作用" class="headerlink" title="数据链路的作用"></a>数据链路的作用</h3><p>数据链路层的协议定义了通过通信媒介互连的设备之间传输的规范。通信媒介包括双绞线电缆、同轴电缆、光纤、电波以及红外线等介质。此外,各个设备之间有时也会通过交换机、网桥、中继器等中转数据。</p>
-<p>实际上,各个设备之间在数据传输时,数据链路层和物理层都是必不可少的。众所周知,计算机以二级制0、1来表示信息,然而实际的通信媒介之间处理的却是电压的高低、光的闪灭以及光波的强弱等信号。把这些信号与二进制的0、1进行转换正式物理层的责任。数据链路层处理的数据也不是单纯的0、1序列,该层把他们集合为一个叫做帧的块,然后再进行传输。</p>
-<p>网络的连接和构成的形态成为<strong>网络拓扑</strong><br>包括:总线型,环型,星型和网状型。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-ade6679c7c100837.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网络拓扑.png"></p>
-<h3 id="数据链路相关作用"><a href="#数据链路相关作用" class="headerlink" title="数据链路相关作用"></a>数据链路相关作用</h3><h4 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h4><p>用于识别数据链路中互连的节点,地址长48比特,一般用16进制数表示。在使用网卡的情况下,MAC地址会被烧入到ROM中。因此,任何一个网卡的MAC地址都是唯一的。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-7b2d9e2617377b98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="MAC地址.png"></p>
-<p>从通信介质的使用方法上看,网络可分为共享介质型和非共享介质型。<br>共享介质型有两种介质访问控制方式:一种是争用方式,另一种是令牌传递方式。</p>
-<h4 id="MAC地址转发"><a href="#MAC地址转发" class="headerlink" title="MAC地址转发"></a>MAC地址转发</h4><p>以太网交互机会根据数据链路层中每个目标MAC地址,决定从哪个网络接口发送数据。这时所参考的、用意记录发送接口的表就叫做转发表。<br>转发表并非手动设置，而是交换机自动学习得到的。当某个设备向交换机发送帧时，交换机将帧的源 MAC 地址和接口对应起来，作为一条记录添加到转发表中。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-2663e11f7777955a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="自学.png"><br>当设备数量增加时,转发表也会随之变大,检索转发表所用的时间就越来越长,所有,有必要将网络分成多个数据链路,采用类似于网络层的IP地址一样对地址进行分层管理。</p>
-<h4 id="环路检测方式"><a href="#环路检测方式" class="headerlink" title="环路检测方式"></a>环路检测方式</h4><ul>
-<li>生成树方式</li>
-<li>源路由法</li>
-</ul>
-<h3 id="以太网帧"><a href="#以太网帧" class="headerlink" title="以太网帧"></a>以太网帧</h3><p>以太网帧的开头是“前导码(Preamble)”，长度为 8 字节，这一段没什么用，重点在于以太网帧的本体。</p>
-<p>本体由首部，数据和 FCS 三部分组成：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-bc39f19caf6de988.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="以太网帧.png"></p>
-<p>类型部分存储了上层协议的编号，比如上层是 IP 协议，则编号为 0800。</p>
-<p>FCS 表示帧校验序列(Frame Check Sequence)，用于判断帧是否在传输过程中有损坏(比如电子噪声干扰)。FCS 保存着发送帧除以某个多项式的余数，接收到的帧也做相同计算，如果得到的值与 FCS 相同则表示没有出错。</p>
-<h3 id="无线通信"><a href="#无线通信" class="headerlink" title="无线通信"></a>无线通信</h3><p> 无线通信通常使用电磁波、红外线、激光等方式进行传播数据。一般在办公室的局域网范围内组成的较高速的连接成为无线局域网。</p>
-<h4 id="IEEE802-11"><a href="#IEEE802-11" class="headerlink" title="IEEE802.11"></a>IEEE802.11</h4><p>IEEE802.11定义了无线LAN协议中物理层与数据链路层的一部分(MAC层)。IEEE802.11这个编号有时指众多标准的统称,有时也只无线LAN的一种通信方式。主要针对笔记本电脑这样较大的计算机设备的标准。</p>
-<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>是使用2.4GHz频率无线电波的一种标准,主要为手机或者智能手机、键盘、鼠标等较小设备而设计的标准。</p>
-<h3 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h3><p>PPP是指点对点,及1对1连接计算机的协议。<br>以太网使用同轴电缆或双绞线电缆,它可以决定其中的0,1该被解释为何种电子信号。与之相比,PPP属于纯粹的数据链路层,与物理层没有任何关系。及仅有PPP无法实现通信,还需要有物理层的支持。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-138ac0a0cdd1ab48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="PPP.png"><br>PPP可以使用电话线或ISDN、专线、ATM线路。</p>
-<h4 id="LCP与NCP"><a href="#LCP与NCP" class="headerlink" title="LCP与NCP"></a>LCP与NCP</h4><p>在开始进行数据传输前,要先建立一个PPP级连接。这个连接建立以后就可以进行身份认证、压缩与加密。<br>PPP包括两个协议:</p>
-<ul>
-<li><p>不依赖上层的LCP协议: 主要负责建立和断开连接、设置最大接收单元、设置验证协议以及设置是否进行通信质量的监控。</p>
-</li>
-<li><p>依赖上层的NCP(如上层为IP,也叫做IPCP)协议:负责IP地址设置以及是否进行TCP/IP首部压缩设备。</p>
-<h4 id="PPP的帧格式"><a href="#PPP的帧格式" class="headerlink" title="PPP的帧格式"></a>PPP的帧格式</h4></li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-278edc30b081b163.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=" PPP的帧格式.png"></p>
-<h4 id="PPP0E"><a href="#PPP0E" class="headerlink" title="PPP0E"></a>PPP0E</h4><p>单纯的以太网没有验证功能,也没有建立和断开连接的处理,因此无法按时计费。而如果采用PPPoE管理以太网连接,就可以利用PPP的验证等功能使各家ISP可以有效地管理终端用户的使用。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b47a14f7efc3c4ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="PPP0E.png"></p>
-<h3 id="主要数据链路类型及特点"><a href="#主要数据链路类型及特点" class="headerlink" title="主要数据链路类型及特点"></a>主要数据链路类型及特点</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-c8803ccde6b8a280.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-14 上午9.47.42.png"></p>
-<h3 id="公共网络"><a href="#公共网络" class="headerlink" title="公共网络"></a>公共网络</h3><p>公共通信服务类似于电信运营商(如NTT、KDDI或软银等)提供的电话网络。人们通过这些运营商签约、付费不仅可以实现联网还可以与距离遥远的机构组织进行通信。<br>常见的有模拟电话线路、移动通信、ADSL、FTTH、有线电视、专线、VPB以及公共无线LAN等内容。自行了解下就好,就不一一介绍了。</p>
-<p>关于数据链路层，最重要的一点还是它的定义：“通过通信介质相互连接的设备之间，数据传输的规范”。这说明数据链路层的协议适用于处于同一种数据链路两端的节点。如果不能理解这一点，就无法理解网络层和 IP 协议。</p>
-<p>数据链路层的意义在于，如果没有数据链路层，数据只能以流的形式存在与通信介质中，不知道该发送往哪里，过长的数据流可能无法在通信介质中传输。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(一)网络基础知识/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="loirou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="洛洛爱吃肉">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(一)网络基础知识/" itemprop="url">Unbenannt</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
-                2017-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="计算机与网络发展"><a href="#计算机与网络发展" class="headerlink" title="计算机与网络发展"></a>计算机与网络发展</h3><p>  计算机自诞生伊始,经历了一系列演变与发展。大型通用机计算机、超级计算机、小型机、个人电脑、工作站、便携式电以及现如今的智能手机终端都是这一过程的产物。它们性能逐年增强,价格却逐年下降,机体规模也在逐渐变小。</p>
-<p>  随着计算机的发展,人们不再局限于单机模式,而是将一个个计算机连接在一起,形成一个计算机网络。从而实现信息共享,同事在能在两台物理位置较远的机器之间即时传递消息。</p>
-<p>  计算机网络根据规模可以分为WAN(Wide Area Network,广域网)和LAN(Local Area Network,局域网)。</p>
-<p>将有业务往来的计算机连在一起便组成了私有网络,将多个私有网络连接一起就成了为公众使用的互联网。</p>
-<p>  随着互联网爆发性地发展与普及,信息网络如同我们身边的空气,触手可及。但是在以前,对一般人来说使用一台计算机都不是那么容易的事情。</p>
-<p><strong>计算机与网络大致可以分为7个阶段:</strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-24fdc0e1beb7860a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="计算机使用模式的演变.png"><br>  互联网是由许多独立发展的网络通信技术融合而成。能够使它们之间不断融合并实现统一的正是TCP/IP技术。<br>   那什么是TCP/IP呢?<br>    TCP/IP是通信协议的统称。<br>    那什么是协议呢?</p>
-<h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><h4 id="协议的必要性"><a href="#协议的必要性" class="headerlink" title="协议的必要性"></a>协议的必要性</h4><p>协议就是计算机与计算机之间通过网络实现通信事先达成的一种“约定”。这种“约定”使那些由不同厂商的设备、不同的CPU以及不同的操作系统组成的计算机之间，只要遵循相同的协议就能够实现通信。反之，如果使用的协议不同，就无法通信。</p>
-<p>计算机与网络设备要相互通信，双方就必须基于相同的方法。比如，如何探测到通信目标、由哪一边先发起通信、使用哪种语言进行通信、怎样结束通信等规则都需要事先确定。不同的硬件、操作系统之间的通信，所有的这一切都需要一种规则。而我们就把这种规则称为协议（protocol）。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-9a37ee1163e62d2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP/IP 是互联网相关的各类协议族的总称 .png"></p>
-<p>协议中存在各式各样的内容。从电缆的规格到 IP 地址的选定方法、寻找异地用户的方法、双方建立通信的顺序，以及 Web 页面显示需要处理的步骤，等等。</p>
-<p>像这样把与互联网相关联的协议集合起来总称为 TCP/IP。也有说法认为，TCP/IP 是指 TCP 和 IP 这两种协议。还有一种说法认为，TCP/ IP 是在 IP 协议的通信过程中，使用到的协议族的统称。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-fbb4ff87606a98bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="计算机通信协议.png"></p>
-<p><strong>分组交换</strong> 是将大数据分割为一个个叫做包（Packet）的较小单位进行传输的方法。这里所说的包，就如同我们平常在邮局里见到的邮包。分组交换就是将大数据分装为一个个这样的邮包交给对方。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3f6b62eeab6be537.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分组交换.png"></p>
-<h4 id="协议的标准化"><a href="#协议的标准化" class="headerlink" title="协议的标准化"></a>协议的标准化</h4><p>  在计算机通信诞生之初,系统化和标准化并未得到足够的重视。因此不同厂商的设备,由于支持的协议不同,仍然无法实现正常的通信。<br>就好比语言交流:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-48973be1fb252968.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="协议的标准化.png"><br>随着计算机重要性的不断提高,很多公司开始逐渐意思是兼容性的重要意义。<br>为了解决上述问题,ISO组织制定了一个国际标准OSI,对通信系统进行标准化。</p>
-<p><strong>现在OSI所定义的协议虽然并没有得到普及,但是在OSI协议设计之初作为其指导方针的OSI参考模型却常被用于网络协议的制定当中。</strong></p>
-<p>TCP/IP并非是ISO定制的国际标准,而是由IETF所致力与推进标准化作业的一种协议。现在也作为业界标准,俨然已成为全世界所广泛应用的通信协议。</p>
-<p>   协议的标准化使得所有遵循标准协议的设备不再因计算机硬件或操作系统的差异而无法通信。因此,协议的标准化推动了计算机网络的普及。</p>
-<h4 id="协议分层"><a href="#协议分层" class="headerlink" title="协议分层"></a>协议分层</h4><p>  ISO在制定标准化OSI之前,对网络体系结构相关的问题进行了充分的讨论并提出了作为通信协议涉及指标的OSI参考模型。这一模型将通信协议中的必要功能分成了7层。</p>
-<p>  <strong> 为什么要分层呢?</strong></p>
-<p>　如果互联网只由一个协议统筹，某个地方需要改变设计时，就必须把所有部分整体替换掉。而分层之后只需把变动的层替换掉即可。把各层之间的接口部分规划好之后，每个层次内部的设计就能够自由改动了。</p>
-<p>   值得一提的是，层次化之后，设计也变得相对简单了。处于应用层上的应用可以只考虑分派给自己的任务，而不需要弄清对方在地球上哪个地方、对方的传输路线是怎样的、是否能确保传输送达等问题。</p>
-<p>   协议分层就如同计算机软件中的<strong>模块化开发</strong></p>
-<p>举个打电话的例子:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-1ba9d663f91f31bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="电话.png"></p>
-<h3 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-e6c32d0a8db7ee0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="OSI参考模型.png"></p>
-<h4 id="OSI参考模型中每个层的作用："><a href="#OSI参考模型中每个层的作用：" class="headerlink" title="OSI参考模型中每个层的作用："></a>OSI参考模型中每个层的作用：</h4><p>1.物理层(Physical Layer)</p>
-<p>　　物理层位于 OSI 参考模型的最低层,它直接面向原始比特流的传输。为了实现原始比特流的物理传输,物理层必须解决好包括传输介质、信道类型、数据与信号之间的转换、信号传输中的衰减和噪声等在内的一系列问题。另外,物理层标准要给出关于物理接口的机械、 电气、功能和规程特性,以便于不同的制造厂家既能够根据公认的标准各自独立地制造设备,又能使各个厂家的产品能够相互兼容。</p>
-<p>2.数据链路层(Data Link Layer)</p>
-<p>　　在物理层发送和接收数据的过程中,会出现一些物理层自己不能解决的问题。例如, 当两个节点同时试图在一条线路上发送数据时该如何处理?节点如何知道它所接收的数据 是否正确?如果噪声改变了一个分组的目标地址,节点如何察觉它丢失了本应收到的分组呢?这些都是数据链路层所必须负责的工作。</p>
-<p>　　数据链路层涉及相邻节点之间的可靠数据传输,数据链路层通过加强物理层传输原始比特的功能,使之对网络层表现为一条无错线路。为了能够实现相邻节点之间无差错的数据传送,数据链路层在数据传输过程中提供了确认、差错控制和流量控制等机制。</p>
-<p>3.网络层(Network Layer)</p>
-<p>　　网络中的两台计算机进行通信时,中间可能要经过许多中间结点甚至不同的通信子网。 网络层的任务就是在通信子网中选择一条合适的路径,使发送端传输层所传下来的数据能 够通过所选择的路径到达目的端。</p>
-<p>　　为了实现路径选择,网络层必须使用寻址方案来确定存在哪些网络以及设备在这些网络中所处的位置,不同网络层协议所采用的寻址方案是不同的。在确定了目标结点的位置后, 网络层还要负责引导数据包正确地通过网络,找到通过网络的最优路径,即路由选择。如果子网中同时出现过多的分组,它们将相互阻塞通路并可能形成网络瓶颈,所以网络层还需要提供拥塞控制机制以避免此类现象的出现。另外,网络层还要解决异构网络互连问题。</p>
-<p>4.传输层(Transport Layer)</p>
-<p>　　传输层是 OSI 七层模型中唯一负责端到端节点间数据传输和控制功能的层。传输层是 OSI 七层模型中承上启下的层,它下面的三层主要面向网络通信,以确保信息被准确有效地传输;它上面的三个层次则面向用户主机,为用户提供各种服务。</p>
-<p>　　传输层通过弥补网络层服务质量的不足,为会话层提供端到端的可靠数据传输服务。它为会话层屏蔽了传输层以下的数据通信的细节,使会话层不会受到下三层技术变化的影响。但同时,它又依靠下面的三个层次控制实际的网络通信操作,来完成数据从源到目标的传输。传输层为了向会话层提供可靠的端到端传输服务,也使用了差错控制和流量控制等机制。</p>
-<p>5.会话层(Session Layer)</p>
-<p>　　会话层的功能是在两个节点间建立、维护和释放面向用户的连接。它是在传输连接的基础上建立会话连接,并进行数据交换管理,允许数据进行单工、半双工和全双工的传送。会话层提供了令牌管理和同步两种服务功能。</p>
-<p>6.表示层(Presentation Layer)</p>
-<p>　　表示层以下的各层只关心可靠的数据传输,而表示层关心的是所传输数据的语法和语义。它主要涉及处理在两个通信系统之间所交换信息的表示方式,包括数据格式变换、数据加密与解密、数据压缩与恢复等功能。</p>
-<p>7.应用层(Application Layer)</p>
-<p>　　应用层是 OSI 参考模型的最高层,负责为用户的应用程序提供网络服务。与 OSI 其他层不同的是,它不为任何其他 OSI 层提供服务,而只是为 OSI 模型以外的应用程序提供服务。包括为相互通信的应用程序或进行之间建立连接、进行同步,建立关于错误纠正和控 制数据完整性过程的协商等。应用层还包含大量的应用协议,如分布式数据库的访问、文件的交换、电子邮件、虚拟终端等。 </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-d13f6ca5798b3f50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="每个层的作用.png"></p>
-<p>许多通信协议,都对应了OSI参考模型7个分层中的某层。通过这一点,可以大致了解该协议在整个通信功能中的位置和作用。<br><img src="http://upload-images.jianshu.io/upload_images/1868951-b70b962052e39a50.gif?imageMogr2/auto-orient/strip" alt="各层对应的协议"></p>
-<p>举个例子：假设主机A的用户A要给主机B的用户B发送一封电子邮件：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6ea6ba3cc3d59b92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-10 上午10.27.04.png"></p>
-<p>　发送方从第7层、第6层到第1层由上至下按照顺序传输数据，而接收端则从第1层、第2层到第7层由下至上向每个上一级分层传输数据。每个分层上，在处理由上一层传过来的数据时可以附上当前分层的协议所必须的“首部”信息。然后接收端对收到的数据进行数据“首部”与“内容”的分离，再转发给上一分层，并最终将发送端的数据恢复为原状。</p>
-<h3 id="传输方式的分类"><a href="#传输方式的分类" class="headerlink" title="传输方式的分类"></a>传输方式的分类</h3><p>网络与通信中可以根据其数据发送方法进行多种分类。</p>
-<ol>
-<li>面向连接与面向无连接</li>
-</ol>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e0860a956a3d7dbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏面向连接与面向无连接.png"></p>
-<p>2.电路交换与分组交换</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-0a259607b181f0e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="电路交换与分组交换.png"></p>
-<p>3.根据接收端数量来分</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-191e8eef54b435a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="单播,广播,多播,任播.png"></p>
-<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p>   通信传输中,发送端和接收端都可以被视作通讯主体。它们都能由一个所谓的”地址”的信息标识出来。比如打电话,电话号码就是”地址”,比如寄快递,家庭住址就是”地址”。</p>
-<p>在TCP/IP通信中使用MAC地址,IP地址,端口号等信息作为地址标识。甚至在应用层中可以将电子邮件地址作为网络通信的地址。</p>
-<p>地址具有<strong>唯一性</strong><br>当地址总数多时,需要有<strong>层次性</strong>来快速定位。</p>
-<h3 id="网络的构成要素"><a href="#网络的构成要素" class="headerlink" title="网络的构成要素"></a>网络的构成要素</h3><p>搭建一套网络环境要涉及到各种各样的电缆和网络设备。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6e189b0afaffd65b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="构成及作用.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-9d29c855104afad4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="各设备对应的网络分层.png"></p>
-<ul>
-<li>数据链路与通信媒介</li>
-</ul>
-<p>计算机之间通过电缆相互连接。电缆可以分为多种,包括双绞线电缆、光纤电缆、同轴电缆、串行电缆等。而媒介本身也可以被划分为电波、微波等不同类型的电磁波。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-520f38933628a5af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据链路.png"></p>
-<ul>
-<li>网卡<br>计算机连接网络时,必须要使用网卡,也被称作网络适配器、LAN卡。</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-56fc60b0220828c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网卡.png"></p>
-<ul>
-<li>中继器</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3620a28242606b22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="中继器.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-1c6682f5e6511f76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="中继集线器.png"></p>
-<ul>
-<li>网桥<br>位于OSI模型中的第二层–数据链路层上连接两个网络的设备。</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3de2632f11c7ef7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网桥.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-2c56652f52fe6368.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="自学式网桥及交换集线器.png"></p>
-<ul>
-<li>路由器<br>路由器位于第三层–网络层上连接两个设备、并对分组保温进行转发的设备。<br>网桥是根据MAC地质处理的,路由器是根据IP地址进行处理的。</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-8b75041239d274fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="路由器.png"></p>
-<ul>
-<li><p>4~7层交换机<br>负责处理OSI模型中从传输层至应用层的数据。用TCP/IP来表述的话,就是以TCP/IP等协议的传输层及其上面的应用层为基础,分析首发数据,并对其进行特定的处理。<br>主要功能:负载均衡器,带宽控制,广域网加速器,特殊应用访问加速,及防火墙等。</p>
-</li>
-<li><p>网关</p>
-</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e423d61f84e63f05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网关.png"></p>
-<p>举个例子:电脑跟手机邮件有时候会不兼容,需要网关的转换<br><img src="http://upload-images.jianshu.io/upload_images/1868951-206c0ce693b39859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-10 下午3.17.19.png"></p>
-<p>有时候为了控制流量或保证安全,会有代理服务器,防火墙等都是网关的一种。</p>
-<p>比如谷歌被墙啊:<br><img src="http://upload-images.jianshu.io/upload_images/1868951-0b2d9c28f4005719.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="防火墙.png"></p>
-<h3 id="现代网络实态"><a href="#现代网络实态" class="headerlink" title="现代网络实态"></a>现代网络实态</h3><p>看图吧:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-d45d0cd64a4725d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际网络构成.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-1e57df41ae6e9aa4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="移动通信.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-f6e9e4649b6ac32e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据中心.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-96ccc729e8e096dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="云服务.png"></p>
-<p>来个总结:</p>
-<p>学习TCP/IP知识前需要先了解下计算机网络出现的背景及发展阶段,了解矛盾才能明白出现TCP/IP的必然性。<br>另外我们知道想要通信需要先遵守协议,为了更好的互联,要推动协议的标准化,然后标准化又促进了计算机网络的发展。<br>然后为了简便,谈到了协议的分层从而出现了OSI参考模型,知道了各层的分类及作用后,我们再看看现实生活中的网络构成及应用实态。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(八)应用层协议/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1513,7 +1473,7 @@ CONNECT：用于ssl隧道的基于代理的请求
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(八)应用层协议/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(八)应用层协议/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -1523,7 +1483,7 @@ CONNECT：用于ssl隧道的基于代理的请求
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
                 2017-10-27
@@ -1641,153 +1601,6 @@ CONNECT：用于ssl隧道的基于代理的请求
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(二)TCP-IP简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="loirou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="洛洛爱吃肉">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(二)TCP-IP简介/" itemprop="url">Unbenannt</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
-                2017-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>  <a href="http://www.jianshu.com/p/782be6ec66ab" target="_blank" rel="external">上回</a>,主要介绍了下协议和OSI参考模型,并简单了解下网络构成要素,这回该说说TCP/IP了</p>
-<h3 id="互联网与TCP-IP的关系"><a href="#互联网与TCP-IP的关系" class="headerlink" title="互联网与TCP/IP的关系"></a>互联网与TCP/IP的关系</h3><p>  互联网进行通信时,需要相应的网络协议,TCP/IP原本就是为使用互联网而开发定制的协议族。因此,互联网的协议就是TCP/IP,TCP/IP就是互联网的协议。<br>  <strong>知道了解TCP/IP的重要性了吧,那就好好看看吧</strong></p>
-<h3 id="TCP-IP的诞生"><a href="#TCP-IP的诞生" class="headerlink" title="TCP/IP的诞生"></a>TCP/IP的诞生</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-3f6079fcf1afc2e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="诞生.png"></p>
-<h3 id="TCP-IP的标准化"><a href="#TCP-IP的标准化" class="headerlink" title="TCP/IP的标准化"></a>TCP/IP的标准化</h3><p>  20世纪90年代,ISO开展了OSI这一国际标准协议的标准化进程。然而OSI协议并没有得到普及,真正被广泛使用的是TCP/IP协议。</p>
-<p>  那么为什么OSI失败了呢?</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-afe17e0fd73484b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="OSI失败.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-9c09038c5230ce00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="OSI失败原因.png"></p>
-<p>那TCP/IP好在哪儿呢?</p>
-<ul>
-<li>开放性</li>
-<li>注重实用性</li>
-</ul>
-<p>  由于TCP/IP尽早地制定了可行性较强的协议，提出了应对技术快速革新的协议，并及时进行后期改良的方案，因此打败了OSI模型，成为了事实上的标准。</p>
-<h3 id="TCP-IP协议分层模型"><a href="#TCP-IP协议分层模型" class="headerlink" title="TCP/IP协议分层模型"></a>TCP/IP协议分层模型</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-4b513cf743603420.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分层模型.png"></p>
-<p>　　上图列出了TCP/IP与OSI分层之间的大概关系，不难看出，TCP/IP与OSI在分层模块上稍有区别。OSI参考模型注重“通信协议必要的功能是什么”，而TCP/IP则更强调<strong>“在计算机上实现协议应该开发哪种程序”</strong>。</p>
-<p>　在 TCP/IP 模型中,网络访问层是 TCP/IP 模型的最低层,负责接收从网际层交来的 IP 数据报并将 IP 数据报通过底层物理网络发送出去,或者从底层物理网络上接收物理帧,抽出 IP 数据报,交给互联网层。网络访问层使采用不同技术和网络硬件的网络之间能够互联, 它包括属于操作系统的设备驱动器和计算机网络接口卡,以处理具体的硬件物理接口。</p>
-<p>　　网际层负责独立地将分组从源主机送往目标主机,涉及为分组提供最佳路径的选择和 交换功能,并使这一过程与它们所经过的路径和网络无关。这好比你寄信时,你并不需要知道它是如何到达目的地的,而只关心它是否到达了。TCP/IP 模型的互联网层在功能上非常类似于 OSI 参考模型中的网络层。</p>
-<p>　　传输层的作用与 OSI 参考模型中传输层的作用是类似的,即在源结点和目的结点的两个对等实体间提供可靠的端到端的数据通信。为保证数据传输的可靠性,传输层协议也提供了确认、差错控制和流量控制等机制。另外,由在一般的计算机中,常常是多个应用程序同时访问网络,所以传输层还要提供不同应用程序的标识。</p>
-<p>　　应用层涉及为用户提供网络应用,并为这些应用提供网络支撑服务。由于 TCP/IP 将所有与应用相关的内容都有归为一层,所以在应用层要处理高层协议、数据表达和对话控制等任务。 </p>
-<h3 id="OSI-模型和-TCP-IP-模型的区别"><a href="#OSI-模型和-TCP-IP-模型的区别" class="headerlink" title="OSI 模型和 TCP/IP 模型的区别"></a>OSI 模型和 TCP/IP 模型的区别</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-a898ac81a2a44779.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="区别.png"></p>
-<p>  OSI 模型包括了七层,而 TCP/IP 模型只有四层。虽然它们具有功能相当的网络层、传输层和应用层,但其它层并不相同。</p>
-<p>  TCP/IP 模型中没有专门的表示层和会话层,它将与这两层相关的表达、编码和会话控制等功能包含到了应用层中去完成。另外,TCP/IP 模型还将 OSI 的数据链路层和物理层包括到了一个网络访问层中。</p>
-<p>  OSI 模型在网络层支持无连接和面向连接的两种服务,而在传输层仅支持面向连接的服 务。TCP/IP 模型在互联网层则只支持无连接的一种服务,但在传输层支持面向连接和无连 接两种服务。</p>
-<p>  TCP/IP 由于有较少的层次,因而显得更简单,并且作为从因特网(INTERNET)上发展起来的协议,已经成了网络互连的事实标准。但是,目前还没有实际网络是建立在 OSI 七层模型基础上的,OSI 仅仅作为理论的参考模型被广泛使用。</p>
-<h3 id="TCP-IP-通信示例"><a href="#TCP-IP-通信示例" class="headerlink" title="TCP/IP 通信示例"></a>TCP/IP 通信示例</h3><h4 id="数据包首部"><a href="#数据包首部" class="headerlink" title="数据包首部"></a>数据包首部</h4><p><img src="http://upload-images.jianshu.io/upload_images/1868951-945f3b55eb76f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据包首部.png"></p>
-<p>  每个分层中,都会对所发送的数据附加一个首部,在这个首部中包含了该层必要的信息,如发送的目标地址以及协议相关信息。通常,为协议提供的信息为包首部,所要发送的内容为数据。</p>
-<p>  现在再来看看主机A向主机B发送一封电子邮件，在TCP/IP模型下的处理过程：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-09c5c11ee5b527d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="电子邮件.png"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/TCP-IP笔记(五)IP协议相关技术/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1807,7 +1620,7 @@ CONNECT：用于ssl隧道的基于代理的请求
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(五)IP协议相关技术/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(五)IP协议相关技术/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -1817,7 +1630,7 @@ CONNECT：用于ssl隧道的基于代理的请求
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
                 2017-10-27
@@ -1978,7 +1791,7 @@ CONNECT：用于ssl隧道的基于代理的请求
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(四)IP协议/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/10/27/TCP-IP笔记(四)IP协议/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -1988,7 +1801,7 @@ CONNECT：用于ssl隧道的基于代理的请求
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:19:52+08:00">
                 2017-10-27
@@ -2157,6 +1970,147 @@ CONNECT：用于ssl隧道的基于代理的请求
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loirou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛洛爱吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/27/test/" itemprop="url">test</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T10:35:27+08:00">
+                2017-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cate/" itemprop="url" rel="index">
+                    <span itemprop="name">cate</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2208,7 +2162,7 @@ CONNECT：用于ssl隧道的基于代理的请求
                 <a href="/archives/">
               
                   <span class="site-state-item-count">18</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -2219,7 +2173,7 @@ CONNECT：用于ssl隧道的基于代理的请求
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">Kategorien</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
               </div>
             
@@ -2230,7 +2184,7 @@ CONNECT：用于ssl隧道的基于代理的请求
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -2285,7 +2239,7 @@ CONNECT：用于ssl隧道的基于代理的请求
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
