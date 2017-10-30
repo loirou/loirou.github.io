@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="计算机网络,读书笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="洛洛爱吃肉" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="TCP的特点及其目的  为了通过数据包实现可靠性传输,需要考虑很多事情,例如数据的破坏、丢包、重复记忆分片顺序混乱等问题。如不能解决这些问题,也就无从谈起可靠传输。TCP通过检验和、序列号、确认应答、重发控制、连接管理以及窗口控制等机制实现可靠性传输。 通过序列号与确认应答提高可靠性在TCP中,当发送端的数据到达接收主机时,接收端主机会番号一个已收到消息的通知。这个消息叫做确认应答–ACK(Pos">
+<meta name="keywords" content="计算机网络,读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP-IP笔记(七)TCP详解">
+<meta property="og:url" content="http://yoursite.com/2017/03/17/计算机网络/TCP-IP笔记(七)TCP详解/index.html">
+<meta property="og:site_name" content="洛洛爱吃肉">
+<meta property="og:description" content="TCP的特点及其目的  为了通过数据包实现可靠性传输,需要考虑很多事情,例如数据的破坏、丢包、重复记忆分片顺序混乱等问题。如不能解决这些问题,也就无从谈起可靠传输。TCP通过检验和、序列号、确认应答、重发控制、连接管理以及窗口控制等机制实现可靠性传输。 通过序列号与确认应答提高可靠性在TCP中,当发送端的数据到达接收主机时,接收端主机会番号一个已收到消息的通知。这个消息叫做确认应答–ACK(Pos">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-91892d00cf216bc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-b6cb6c12465ed4f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-6588851c3553d3d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-6453ddc87ed87740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-425ec4bbedcbf6d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-3f85c6bc89d1824c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-7734f69f8b86c584.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-c9efbb3f75cb0026.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-16ace958aa720fcf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-a95b6a70a6b2561b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-f9c5f50664cee2ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-dcd5eefd4a7098f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-88fa4df7026201ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-bac76fbc083e437a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-20db3532f42cbafa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-b36ac71de7daf1c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-c71265a3e7831314.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-10-30T05:52:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TCP-IP笔记(七)TCP详解">
+<meta name="twitter:description" content="TCP的特点及其目的  为了通过数据包实现可靠性传输,需要考虑很多事情,例如数据的破坏、丢包、重复记忆分片顺序混乱等问题。如不能解决这些问题,也就无从谈起可靠传输。TCP通过检验和、序列号、确认应答、重发控制、连接管理以及窗口控制等机制实现可靠性传输。 通过序列号与确认应答提高可靠性在TCP中,当发送端的数据到达接收主机时,接收端主机会番号一个已收到消息的通知。这个消息叫做确认应答–ACK(Pos">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1868951-91892d00cf216bc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'HYD1K2Q0X8',
+      apiKey: 'bc57eb508190643696cd1f13aa415337',
+      indexName: 'loirou',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键词进行搜索","hits_empty":"找不到关于\" ${query} \"的文章","hits_stats":"共找到 ${hits} 篇文章,花了 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/17/计算机网络/TCP-IP笔记(七)TCP详解/"/>
+
+
+
+
+
+  <title>TCP-IP笔记(七)TCP详解 | 洛洛爱吃肉</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">洛洛爱吃肉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学海无涯,进一步有进一步的欢喜.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/17/计算机网络/TCP-IP笔记(七)TCP详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loirou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛洛爱吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TCP-IP笔记(七)TCP详解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-17T10:11:00+08:00">
+                2017-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/03/17/计算机网络/TCP-IP笔记(七)TCP详解/" class="leancloud_visitors" data-flag-title="TCP-IP笔记(七)TCP详解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="TCP的特点及其目的"><a href="#TCP的特点及其目的" class="headerlink" title="TCP的特点及其目的"></a>TCP的特点及其目的</h3><p>  为了通过数据包实现可靠性传输,需要考虑很多事情,例如数据的破坏、丢包、重复记忆分片顺序混乱等问题。如不能解决这些问题,也就无从谈起可靠传输。<br>TCP通过检验和、序列号、确认应答、重发控制、连接管理以及窗口控制等机制实现可靠性传输。</p>
+<h3 id="通过序列号与确认应答提高可靠性"><a href="#通过序列号与确认应答提高可靠性" class="headerlink" title="通过序列号与确认应答提高可靠性"></a>通过序列号与确认应答提高可靠性</h3><p>在TCP中,当发送端的数据到达接收主机时,接收端主机会番号一个已收到消息的通知。这个消息叫做确认应答–ACK(Positive Acknowled-gement 意指已经接收。)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-91892d00cf216bc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="正常的数据传输.png"></p>
+<p>TCP通过肯定的确认应答(ACK)实现可靠的数据传输。当发送端将数据发生之后会等待对端的确认应答。如果有确认应答,说明数据已经成功到达对端。反之,则数据丢失的可能性很大。</p>
+<p>当然,在一定时间内没有等到确认应答,发送端就可以认为数据已经丢失,并进行重发。由此,即使产生了丢包,仍然能够保证数据能够到达对端,实现可靠传输。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b6cb6c12465ed4f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据包丢失的情况.png"></p>
+<p>未收到确认应答并不意味着数据一定丢失。也有可能是数据对方已经收到,知识返回的确认应答在途中丢失。这种情况也会导致发送端因没有收到确认应答,而认为数据没有到达目的地,从而进行重新发送,如下图:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6588851c3553d3d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="确认应答丢失的情况.png"><br>此外,也有可能因为一些其他原因导致确认应答延迟到达,在源主机重发数据以后才到达的情况也屡见不鲜。此时,源发送主机只需重发数据即可,但是对目标主机,反复收到相同的数据,确是一种”灾难”。而为了对上层应用提供可靠的传输,必须得放弃重复的数据包。</p>
+<p>为此,必须引入一种机制,它能够识别出是否已经接收数据,又能够判断是否需要接收。<br>上述这些确认应答处理、重发控制以及重复控制等功能都可以通过<strong>序列号</strong>实现。<br>序列号是按顺序给发送数据的每一个字节(8位字节)都标上号码的编号。<br>接收到查询接收数据TCP首部中的序列号和数据的长度,将自己下一步应该接收的序号作为确认应答返送回去。<br>就这样,通过序列号和确认应答号,TCP可以实现可靠传输。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6453ddc87ed87740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="发送数据.png"></p>
+<h3 id="重发超时"><a href="#重发超时" class="headerlink" title="重发超时"></a>重发超时</h3><p>重发超时是指在重发数据之前,等待确认应答到来的那个特定时间间隔。如果超过了这个时间仍未收到确认应答,发送端将进行数据重发。</p>
+<p>在BSD的Unix以及Windows系统中,超时都以0.5秒为单位进行控制,因此重发超时都是0.5秒的整数倍。不过,由于最初的数据包还不知从往返时间,所以其重发超时一般设置为6秒左右。</p>
+<p>数据被重发之后如还是收不到确认应答,则进行再次发送。此时,等待确认应答的时间将会以2倍、4倍的指数函数延长。</p>
+<p>此外,数据也不会被无限、反复地重发。达到一定重发次数之后,如果人没有任何确认应答返回,就会判断为网络或对端主机发生了异常,强制关闭连接。并且通知应用通信异常强行终止。</p>
+<h3 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h3><p>TCP提供面向有连接的通信传输。面向有链接是指在数据通信开始之前先做好通信两端之间的准备工作。<br>一个连接的建立与断开,正常过程至少需要来回发送7个包才能完成。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-425ec4bbedcbf6d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP连接的建立与断开.png"></p>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>TCP是面向连接的，无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。在TCP/IP协议中，TCP协议提供可靠的连接服务，连接是通过三次握手进行初始化的。三次握手的目的是同步连接双方的序列号和确认号并交换 TCP窗口大小信息。这就是面试中经常会被问到的TCP三次握手。只是了解TCP三次握手的概念，对你获得一份工作是没有任何帮助的，你需要去了解TCP三次握手中的一些细节。先来看图说话。 </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3f85c6bc89d1824c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP三次握手.png"></p>
+<ol>
+<li><p>第一次握手：建立连接。客户端发送连接请求报文段，将SYN位置为1，Sequence Number为x；然后，客户端进入SYN_SEND状态，等待服务器的确认；</p>
+</li>
+<li><p>第二次握手：服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认，设置Acknowledgment Number为x+1(Sequence Number+1)；同时，自己自己还要发送SYN请求信息，将SYN位置为1，Sequence Number为y；服务器端将上述所有信息放到一个报文段（即SYN+ACK报文段）中，一并发送给客户端，此时服务器进入SYN_RECV状态；</p>
+</li>
+<li><p>第三次握手：客户端收到服务器的SYN+ACK报文段。然后将Acknowledgment Number设置为y+1，向服务器发送ACK报文段，这个报文段发送完毕以后，客户端和服务器端都进入ESTABLISHED状态，完成TCP三次握手。</p>
+</li>
+</ol>
+<p>完成了三次握手，客户端和服务器端就可以开始传送数据。以上就是TCP三次握手的总体介绍。</p>
+<h3 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手"></a>为什么要三次握手</h3><p>既然总结了TCP的三次握手，那为什么非要三次呢？怎么觉得两次就可以完成了。那TCP为什么非要进行三次连接呢？在谢希仁的《计算机网络》中是这样说的：</p>
+<pre><code>为了防止已失效的连接请求报文段突然又传送到了服务端，因而产生错误。
+</code></pre><p>在书中同时举了一个例子，如下：</p>
+<blockquote>
+<p>   已失效的连接请求报文段”的产生在这样一种情况下：client发出的第一个连接请求报文段并没有丢失，而是在某个网络结点长时间的滞留了，以致延误到连接释放以后的某个时间才到达server。本来这是一个早已失效的报文段。但server收到此失效的连接请求报文段后，就误认为是client再次发出的一个新的连接请求。于是就向client发出确认报文段，同意建立连接。假设不采用“三次握手”，那么只要server发出确认，新的连接就建立了。由于现在client并没有发出建立连接的请求，因此不会理睬server的确认，也不会向server发送数据。但server却以为新的运输连接已经建立，并一直等待client发来数据。这样，server的很多资源就白白浪费掉了。采用“三次握手”的办法可以防止上述现象发生。例如刚才那种情况，client不会向server的确认发出确认。server由于收不到确认，就知道client并没有要求建立连接。</p>
+</blockquote>
+<p>这就很明白了，<strong>防止了服务器端的一直等待而浪费资源。</strong></p>
+<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>当客户端和服务器通过三次握手建立了TCP连接以后，当数据传送完毕，肯定是要断开TCP连接的啊。那对于TCP的断开连接，这里就有了神秘的“四次挥手”。</p>
+<p>在socket编程中，任何一方执行close()操作即可产生挥手操作。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-7734f69f8b86c584.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP四次挥手.png"></p>
+<ol>
+<li><p>第一次挥手：主机1（可以使客户端，也可以是服务器端），设置Sequence Number和Acknowledgment Number，向主机2发送一个FIN报文段；此时，主机1进入FIN_WAIT_1状态；这表示主机1没有数据要发送给主机2了；</p>
+</li>
+<li><p>第二次挥手：主机2收到了主机1发送的FIN报文段，向主机1回一个ACK报文段，Acknowledgment Number为Sequence Number加1；主机1进入FIN_WAIT_2状态；主机2告诉主机1，我“同意”你的关闭请求；</p>
+</li>
+<li><p>第三次挥手：主机2向主机1发送FIN报文段，请求关闭连接，同时主机2进入LAST_ACK状态；</p>
+</li>
+<li><p>第四次挥手：主机1收到主机2发送的FIN报文段，向主机2发送ACK报文段，然后主机1进入TIME_WAIT状态；主机2收到主机1的ACK报文段以后，就关闭连接；此时，主机1等待2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，主机1也可以关闭连接了。</p>
+</li>
+</ol>
+<p>至此，TCP的四次挥手就这么愉快的完成了。当你看到这里，你的脑子里会有很多的疑问，很多的不懂，感觉很凌乱；没事，我们继续总结。    </p>
+<h4 id="为什么要四次挥手"><a href="#为什么要四次挥手" class="headerlink" title="为什么要四次挥手"></a>为什么要四次挥手</h4><p>那四次挥手又是为何呢？TCP协议是一种面向连接的、可靠的、基于字节流的运输层通信协议。TCP是全双工模式，这就意味着，当主机1发出FIN报文段时，只是表示主机1已经没有数据要发送了，主机1告诉主机2，它的数据已经全部发送完毕了；但是，这个时候主机1还是可以接受来自主机2的数据；当主机2返回ACK报文段时，表示它已经知道主机1没有数据发送了，但是主机2还是可以发送数据到主机1的；当主机2也发送了FIN报文段时，这个时候就表示主机2也没有数据要发送了，就会告诉主机1，我也没有数据要发送了，之后彼此就会愉快的中断这次TCP连接。</p>
+<p>如果要正确的理解四次挥手的原理，就需要了解四次挥手过程中的状态变化。</p>
+<ul>
+<li><p>FIN_WAIT_1: 这个状态要好好解释一下，其实FIN_WAIT_1和FIN_WAIT_2状态的真正含义都是表示等待对方的FIN报文。而这两种状态的区别是：FIN_WAIT_1状态实际上是当SOCKET在ESTABLISHED状态时，它想主动关闭连接，向对方发送了FIN报文，此时该SOCKET即进入到FIN_WAIT_1状态。而当对方回应ACK报文后，则进入到FIN_WAIT_2状态，当然在实际的正常情况下，无论对方何种情况下，都应该马上回应ACK报文，所以FIN_WAIT_1状态一般是比较难见到的，而FIN_WAIT_2状态还有时常常可以用netstat看到。（主动方）</p>
+</li>
+<li><p>FIN_WAIT_2：上面已经详细解释了这种状态，实际上FIN_WAIT_2状态下的SOCKET，表示半连接，也即有一方要求close连接，但另外还告诉对方，我暂时还有点数据需要传送给你(ACK信息)，稍后再关闭连接。（主动方）</p>
+</li>
+<li><p>CLOSE_WAIT：这种状态的含义其实是表示在等待关闭。怎么理解呢？当对方close一个SOCKET后发送FIN报文给自己，你系统毫无疑问地会回应一个ACK报文给对方，此时则进入到CLOSE_WAIT状态。接下来呢，实际上你真正需要考虑的事情是察看你是否还有数据发送给对方，如果没有的话，那么你也就可以 close这个SOCKET，发送FIN报文给对方，也即关闭连接。所以你在CLOSE_WAIT状态下，需要完成的事情是等待你去关闭连接。（被动方）</p>
+</li>
+<li><p>LAST_ACK: 这个状态还是比较容易好理解的，它是被动关闭一方在发送FIN报文后，最后等待对方的ACK报文。当收到ACK报文后，也即可以进入到CLOSED可用状态了。（被动方）</p>
+</li>
+<li><p>TIME_WAIT: 表示收到了对方的FIN报文，并发送出了ACK报文，就等2MSL后即可回到CLOSED可用状态了。如果FINWAIT1状态下，收到了对方同时带FIN标志和ACK标志的报文时，可以直接进入到TIME_WAIT状态，而无须经过FIN_WAIT_2状态。（主动方）</p>
+</li>
+<li><p>CLOSED: 表示连接中断。</p>
+</li>
+</ul>
+<h3 id="TCP以段为单位发送数据"><a href="#TCP以段为单位发送数据" class="headerlink" title="TCP以段为单位发送数据"></a>TCP以段为单位发送数据</h3><p>TCP在传送大量数据时,是以MSS(Maximum Segment Size 最大消息长度)的大小将数据进行分割发送。进行重发是也是以MSS为单位。<br>MSS是在三次握手的时候,在两端主机之间被计算得出剧好两端的主机在发出建立连接的请求是,会在TCP首部中写入MSS选项,告诉对方自己的接口能够适的MSS的大小。然后会在两者之间选择一个较小的值投入使用。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-c9efbb3f75cb0026.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选较小的MSS.png"></p>
+<h3 id="利用窗口控制提高速度"><a href="#利用窗口控制提高速度" class="headerlink" title="利用窗口控制提高速度"></a>利用窗口控制提高速度</h3><p>TCP以1个段为单位,每发一个段进行一次确认应答的处理。<br>如图:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-16ace958aa720fcf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="按数据包进行确认应答.png"></p>
+<p>为了解决通信性能的问题,TCP引入了<strong>窗口</strong>这个概念。<br>确认应答不再以每个分段,而是以更大的单位进行确认时,转发时间将会被大幅度的缩短。也就是说,发送端主机,在发送了一个段以后不必要一直等待确认应答,而是继续发送。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-a95b6a70a6b2561b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用滑动窗口方式并行处理.png"></p>
+<p>窗口大小就是指无需等待确认应答而可以继续发送数据的最大值。上图中的窗口大小为4个段。<br>这个机制实现了使用大量的缓冲区,通过对多个段同时进行确认应答的功能。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-f9c5f50664cee2ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-15 下午2.08.17.png"><br>如上图中,发送数据中高亮圈起的部分正是前面所提到的窗口。<br>在收到确认应答后,将窗口滑动到确认应答中的序列号的位置。这样可以顺序地将多个段同时发送提高通信性能。这种机制也被称为滑动窗口控制。</p>
+<h3 id="窗口控制与重发控制"><a href="#窗口控制与重发控制" class="headerlink" title="窗口控制与重发控制"></a>窗口控制与重发控制</h3><p>在未使用窗口控制时,没有收到确认应答的数据都会被重发。而是用了窗口控制,某些确认应答即使丢失也无需重发</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-dcd5eefd4a7098f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="没有确认应答也不受影响.png"></p>
+<p>其次,我们来考虑一下某个报文段丢失的情况。接收主机如果收到一个自己应该接收的序号以外的数据时,会针对当前位置收到的数据返回确认应答。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-88fa4df7026201ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="重发控制.png"></p>
+<p>当某一报文段丢失后,发送端会一直收到序号为1001的确认应答,这个确认应答提醒发送端,”我想接收的是从1001开始的数据”。</p>
+<p>因此,当窗口比较大时,又出现报文段丢失是,同一序号的确认应答会不断重复的返回。<br>当发送端主机如果连续3次收到同一个确认应答,就会将其所对应的数据进行重发。</p>
+<p>这种机制,比之前提到超时管理更搞笑,因此也被称作高速重发控制。</p>
+<h3 id="流控制"><a href="#流控制" class="headerlink" title="流控制"></a>流控制</h3><p>流控制是TCP提供的一种可以让发送端根据接受端的实际接收能力控制发送的数据量的机制。<br>具体操作是,接收端主机箱发送端主机通知自己可以接收数据的大小,于是发送端会发送不超过这个限度的数据。该大小限度就被称作窗口大小。<br>TCP首部中,专门有一个字段用来通知窗口大小。<br>接收主机将自己可以接收的缓存区大小放入这个字段中通知给发送端。这个字段的值越大,说明网络的吞吐量越高。<br>不过,当接收端的缓冲区面临数据溢出时,窗口大小的值也会随之呗设置为一个更小的值通知给发送端,从而控制数据发送量。<br>也就是说,发送端主机会根据接收端主机的指示,对发送数据的量进行控制。这也就形成了一个完整的TCP流控制(流量控制)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-bac76fbc083e437a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="流量控制.png"><br>如上图,当接收端从3001号开始的数据段后其缓冲区即满,不得不暂时停止接收数据。之后,在收到发送窗口更新通知后通信才得以继续进行。</p>
+<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>有了窗口控制,首发主机之间可以不再以一个数据段为单位发送确认应答,也能够连续发送大量数据包。但是如果在通信刚开始时就发送大量数据,也有可能会引发其他问题。<br>TCP为了防止该问题的出现,在通信一开始时就会通过一个叫做慢启动的算法得出的数值,对发送数据量进行控制。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-20db3532f42cbafa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-03-15 下午2.39.30.png"><br>首先,为了在发送端调节所要发送数据的量,定义了一个叫做”拥堵窗口”的概念。于是在慢启动的时候,将这个拥堵窗口的大小设置为1个数据段(1MSS)发送数据,之后每收到一次确认应答(ACK),拥堵窗口的值就加1。在发送数据包时,将拥堵窗口的大小与接收端主机通知的窗口大小做比较,然后按照它们当中较小那个值,发送比其还要小的数据量。<br>如果重发采用超时机制,那么拥塞窗口的初始值可以设置为1以后再进行慢启动修正。有了上述这些机制,就可以有限的减少通信开始时连续发包导致的网络拥堵,还可以避免网络拥塞情况的发生。<br>不过,随着包的每次往返,拥塞窗口也会以1、2、4等指数函数的增长,拥堵状况激增甚至导致网络拥塞的发生。为了防止这些,引入了慢启动阀值的概念。只要拥塞窗口的值超出这个阀值,在每收到一次确认应答时,只允许以下面这种比例方法拥塞窗口:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b36ac71de7daf1c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式.png"><br><img src="http://upload-images.jianshu.io/upload_images/1868951-c71265a3e7831314.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="拥塞窗口的大小.png"><br>当TCP通信开始以后,网络吞吐量会逐渐上升,但是随着网络拥堵的发生吞吐量也会急剧下降。于是会再次进入吞吐量慢慢上升的过程。因此所谓TCP的吞吐量的特点就好像是在逐步占领网络带宽的感觉。</p>
+<h3 id="提高网络利用率的规范"><a href="#提高网络利用率的规范" class="headerlink" title="提高网络利用率的规范"></a>提高网络利用率的规范</h3><ul>
+<li>Nagle算法</li>
+<li>延迟确认应答</li>
+<li>捎带应答</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+          
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/17/计算机网络/TCP-IP笔记(六)TCP与UDP/" rel="next" title="TCP-IP笔记(六)TCP与UDP">
+                <i class="fa fa-chevron-left"></i> TCP-IP笔记(六)TCP与UDP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/21/计算机网络/TCP-IP笔记(八)应用层协议/" rel="prev" title="TCP-IP笔记(八)应用层协议">
+                TCP-IP笔记(八)应用层协议 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTUzOS84MTAz"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">loirou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/loirou" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP的特点及其目的"><span class="nav-number">1.</span> <span class="nav-text">TCP的特点及其目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过序列号与确认应答提高可靠性"><span class="nav-number">2.</span> <span class="nav-text">通过序列号与确认应答提高可靠性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重发超时"><span class="nav-number">3.</span> <span class="nav-text">重发超时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接管理"><span class="nav-number">4.</span> <span class="nav-text">连接管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手"><span class="nav-number">5.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要三次握手"><span class="nav-number">6.</span> <span class="nav-text">为什么要三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四次挥手"><span class="nav-number">7.</span> <span class="nav-text">四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要四次挥手"><span class="nav-number">7.1.</span> <span class="nav-text">为什么要四次挥手</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP以段为单位发送数据"><span class="nav-number">8.</span> <span class="nav-text">TCP以段为单位发送数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用窗口控制提高速度"><span class="nav-number">9.</span> <span class="nav-text">利用窗口控制提高速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#窗口控制与重发控制"><span class="nav-number">10.</span> <span class="nav-text">窗口控制与重发控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流控制"><span class="nav-number">11.</span> <span class="nav-text">流控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拥塞控制"><span class="nav-number">12.</span> <span class="nav-text">拥塞控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提高网络利用率的规范"><span class="nav-number">13.</span> <span class="nav-text">提高网络利用率的规范</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">loirou</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.3"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("H1dTuun8VxmsjT227Ei2mpWW-gzGzoHsz", "mGURbecfAmYLFQFpSC79Nbrq");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

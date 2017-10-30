@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="动画与绘图,iOS," />
+  <meta name="keywords" content="计算机网络,读书笔记," />
 
 
 
@@ -81,39 +81,26 @@
 
 
 
-<meta name="description" content="UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。 使用方法UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。">
-<meta name="keywords" content="动画与绘图,iOS">
+<meta name="description" content="上回,主要介绍了下协议和OSI参考模型,并简单了解下网络构成要素,这回该说说TCP/IP了 互联网与TCP/IP的关系  互联网进行通信时,需要相应的网络协议,TCP/IP原本就是为使用互联网而开发定制的协议族。因此,互联网的协议就是TCP/IP,TCP/IP就是互联网的协议。  知道了解TCP/IP的重要性了吧,那就好好看看吧 TCP/IP的诞生 TCP/IP的标准化  20世纪90年代,I">
+<meta name="keywords" content="计算机网络,读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速上手UIBezierPath">
-<meta property="og:url" content="http://yoursite.com/2017/01/19/快速上手UIBezierPath/index.html">
+<meta property="og:title" content="TCP-IP笔记(二)TCP-IP简介">
+<meta property="og:url" content="http://yoursite.com/2017/03/13/计算机网络/TCP-IP笔记(二)TCP-IP简介/index.html">
 <meta property="og:site_name" content="洛洛爱吃肉">
-<meta property="og:description" content="UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。 使用方法UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。">
+<meta property="og:description" content="上回,主要介绍了下协议和OSI参考模型,并简单了解下网络构成要素,这回该说说TCP/IP了 互联网与TCP/IP的关系  互联网进行通信时,需要相应的网络协议,TCP/IP原本就是为使用互联网而开发定制的协议族。因此,互联网的协议就是TCP/IP,TCP/IP就是互联网的协议。  知道了解TCP/IP的重要性了吧,那就好好看看吧 TCP/IP的诞生 TCP/IP的标准化  20世纪90年代,I">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-16ff36f673e553cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-aea9cce78dcbb04d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-8dbfcbd9be34a2fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-33d7bec06da43891.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-45261ea74f94f5e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-69993e6575524f1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-2eb9c4626845e02f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-e21ece42c37ee1d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-e7bacd50200981a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-f9c30b5d17806b03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-b576d92730e22a33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-4c5f96ba08475740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-3192e79c84b3393f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-7d3a6fbc364a219c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-0582260c77588276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-699954cefed52f84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-a86a7876b611d3c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-6834121170a017fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-91da4d71de0f0f28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-38adb693ff8fea97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-30T04:23:39.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-3f6079fcf1afc2e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-afe17e0fd73484b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-9c09038c5230ce00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-4b513cf743603420.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-a898ac81a2a44779.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-945f3b55eb76f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-09c5c11ee5b527d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-10-30T05:56:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速上手UIBezierPath">
-<meta name="twitter:description" content="UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。 使用方法UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1868951-16ff36f673e553cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="TCP-IP笔记(二)TCP-IP简介">
+<meta name="twitter:description" content="上回,主要介绍了下协议和OSI参考模型,并简单了解下网络构成要素,这回该说说TCP/IP了 互联网与TCP/IP的关系  互联网进行通信时,需要相应的网络协议,TCP/IP原本就是为使用互联网而开发定制的协议族。因此,互联网的协议就是TCP/IP,TCP/IP就是互联网的协议。  知道了解TCP/IP的重要性了吧,那就好好看看吧 TCP/IP的诞生 TCP/IP的标准化  20世纪90年代,I">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1868951-3f6079fcf1afc2e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -143,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/01/19/快速上手UIBezierPath/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/13/计算机网络/TCP-IP笔记(二)TCP-IP简介/"/>
 
 
 
 
 
-  <title>快速上手UIBezierPath | 洛洛爱吃肉</title>
+  <title>TCP-IP笔记(二)TCP-IP简介 | 洛洛爱吃肉</title>
   
 
 
@@ -324,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/19/快速上手UIBezierPath/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/13/计算机网络/TCP-IP笔记(二)TCP-IP简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="loirou">
@@ -341,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">快速上手UIBezierPath</h1>
+          <h1 class="post-title" itemprop="name headline">TCP-IP笔记(二)TCP-IP简介</h1>
         
 
         <div class="post-meta">
@@ -353,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-19T15:41:22+08:00">
-                2017-01-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-13T16:04:00+08:00">
+                2017-03-13
               </time>
             
 
@@ -376,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
                   </a>
                 </span>
 
@@ -393,7 +380,7 @@
 
           
           
-             <span id="/2017/01/19/快速上手UIBezierPath/" class="leancloud_visitors" data-flag-title="快速上手UIBezierPath">
+             <span id="/2017/03/13/计算机网络/TCP-IP笔记(二)TCP-IP简介/" class="leancloud_visitors" data-flag-title="TCP-IP笔记(二)TCP-IP简介">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -424,282 +411,34 @@
       
 
       
-        <p>UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。</p>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。</p>
-<p>具体地：</p>
-<p>1.创建一个 UIBezierPath 对象<br>2.用 moveToPoint: 设置初始线段的起点<br>3.添加线段，定义一或多个子路径<br>4.修改 UIBezierPath 的绘图相关的属性，比如stroke path的属性 lineWidth 和 lineJoinStyle ，filled path的属性 usesEvenOddFillRule</p>
-<p>注意:如果是矩形或者圆之类的特殊图形，可以不用第2步。</p>
-<h3 id="代码案例"><a href="#代码案例" class="headerlink" title="代码案例"></a>代码案例</h3><ul>
-<li><p>画直线</p>
-<pre><code>UIBezierPath *path = [UIBezierPath bezierPath];
-
-[path moveToPoint:CGPointMake(50, 50)];
-[path addLineToPoint:CGPointMake(100, 50)];
-
-path.lineWidth = 5.0f;
-path.lineJoinStyle = kCGLineJoinRound;
-
-[path stroke];
-</code></pre><p>`</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-16ff36f673e553cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="直线.png"></p>
-</li>
-<li><p>创建三角形</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(50, 50)];
-    [path addLineToPoint:CGPointMake(300, 50)];
-    [path addLineToPoint:CGPointMake(200, 150)];
-
-    // 最后的闭合线是可以通过调用closePath方法来自动生成的，也可以调用-addLineToPoint:方法来添加
-    //  [path addLineToPoint:CGPointMake(50, 50)];
-
-    [path closePath];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-aea9cce78dcbb04d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三角形.png"></p>
-</li>
-<li><p>创建矩形</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(50, 100, 50, 50)];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-8dbfcbd9be34a2fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="矩形.png"></p>
-</li>
-<li><p>创建内切曲线</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 200, 50, 50)];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-33d7bec06da43891.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="圆.png"></p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 200, 50, 100)];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-45261ea74f94f5e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="椭圆.png"></p>
-</li>
-<li><p>创建带有圆角的矩形，当矩形变成正圆的时候，Radius就不再起作用</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(50, 300, 50, 50) cornerRadius:15.0f];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-69993e6575524f1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="带有圆角的矩形.png"></p>
-</li>
-<li><p>设定特定的角为圆角的矩形</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(50, 400, 50, 50) byRoundingCorners:UIRectCornerBottomLeft cornerRadii:CGSizeMake(5,5)];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-2eb9c4626845e02f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="特定的角为圆角的矩形.png"></p>
-</li>
-<li><p>创建圆弧</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(100, 550) radius:25 startAngle:0 endAngle:1.5*M_PI clockwise:YES];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e21ece42c37ee1d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建圆弧.png"></p>
-</li>
-<li><p>通过路径A创建路径B</p>
-<pre>`    UIBezierPath *path_A = [UIBezierPath bezierPath];
-
-    [path_A moveToPoint:CGPointMake(200, 50)];
-
-    [path_A addLineToPoint:CGPointMake(250, 100)];
-
-    path_A.lineWidth = 5.0f;
-
-    UIBezierPath *path_B = [UIBezierPath bezierPathWithCGPath:path_A.CGPath];
-
-    [path_B stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e7bacd50200981a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通过路径A创建路径B.png"></p>
-</li>
-<li><p>创建三次贝塞尔曲线</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(100, 200)];
-
-    [path addCurveToPoint:CGPointMake(300, 200) controlPoint1:CGPointMake(150, 150) controlPoint2:CGPointMake(250, 250)];
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-f9c30b5d17806b03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三次贝塞尔曲线.png"></p>
-</li>
-<li><p>创建二次贝塞尔曲线</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(100, 200)];
-
-    [path addQuadCurveToPoint:CGPointMake(300, 200) controlPoint:CGPointMake(150, 150)];
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b576d92730e22a33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="二次贝塞尔曲线.png"></p>
-</li>
-<li><p>添加圆弧</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(200, 400)];
-    [path addLineToPoint:CGPointMake(225, 410)];
-
-    [path addArcWithCenter:CGPointMake(200, 400) radius:25 startAngle:0 endAngle:1.5*M_PI clockwise:YES];
-
-//    [path closePath];
-//    [path removeAllPoints];
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-4c5f96ba08475740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加圆弧.png"></p>
-</li>
-<li><p>追加路径</p>
-<pre>`    UIBezierPath *path_A = [UIBezierPath bezierPath];
-
-    [path_A moveToPoint:CGPointMake(200, 500)];
-    [path_A addLineToPoint:CGPointMake(225, 410)];
-
-    UIBezierPath *path_B = [UIBezierPath bezierPath];
-
-    [path_B moveToPoint:CGPointMake(200, 600)];
-    [path_B addLineToPoint:CGPointMake(225, 500)];
-
-    [path_A appendPath:path_B];
-
-    [path_A stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3192e79c84b3393f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="追加路径.png"></p>
-</li>
-<li><p>创建翻转路径，即起点变成终点，终点变成起点</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(50, 50)];
-    [path addLineToPoint:CGPointMake(100, 50)];
-
-    path.lineWidth = 5.0f;
-
-    NSLog(@"%@",NSStringFromCGPoint(path.currentPoint));
-
-    UIBezierPath *path_b = [path bezierPathByReversingPath];
-    CGAffineTransform transform = CGAffineTransformMakeTranslation(200, 0);
-    [path_b applyTransform: transform];
-    // 两条路径分别添加一条直接到 self.center
-    [path addLineToPoint: CGPointMake(self.frame.size.width*0.5, self.frame.size.height*0.5)];
-    [path_b addLineToPoint: CGPointMake(self.frame.size.width*0.5, self.frame.size.height*0.5)];
-
-    NSLog(@"%@",NSStringFromCGPoint(path_b.currentPoint));
-    [[UIColor redColor] set];
-    [path stroke];
-    [[UIColor blueColor] set];
-    [path_b stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-7d3a6fbc364a219c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建翻转路径.png"></p>
-</li>
-<li><p>路径进行仿射变换</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(100, 50)];
-    [path addLineToPoint:CGPointMake(200, 50)];
-
-    CGAffineTransform transform =  CGAffineTransformRotate(self.transform, M_PI_4);
-    [path applyTransform:transform];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-0582260c77588276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="仿射变换.png"></p>
-</li>
-<li><p>创建虚线</p>
-<pre>`    CGFloat dashStyle[] = {1.0f, 2.0f};
-
-    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(50, 50)];
-    [path addLineToPoint:CGPointMake(100, 50)];
-
-    [path setLineDash:dashStyle count:2 phase:0.0];
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-699954cefed52f84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建虚线.png"></p>
-</li>
-<li><p>设置颜色</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];
-
-    [[UIColor greenColor] setStroke];
-
-    [[UIColor redColor] setFill];
-
-    [path stroke];
-    [path fill];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-a86a7876b611d3c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-01-19 下午1.49.31.png"></p>
-</li>
-<li><p>设置描边混合模式</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];
-
-    [[UIColor greenColor] setStroke];
-
-    path.lineWidth = 10.0f;
-
-    [path strokeWithBlendMode:kCGBlendModeSaturation alpha:1.0];
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6834121170a017fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Stroke混合.png"></p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];
-
-    [[UIColor redColor] setFill];
-
-    [path fillWithBlendMode:kCGBlendModeSaturation alpha:0.6];
-
-    [path fill];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-91da4d71de0f0f28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Fill混合.png"></p>
-</li>
-<li><p>修改当前图形上下文的绘图区域可见,随后的绘图操作导致呈现内容只有发生在指定路径的填充区域</p>
-<p><pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];</pre></p>
-<pre><code>[[UIColor greenColor] setStroke];
-
-[path addClip];
-
-[path stroke];
-</code></pre></li>
+        <p>  <a href="http://www.jianshu.com/p/782be6ec66ab" target="_blank" rel="external">上回</a>,主要介绍了下协议和OSI参考模型,并简单了解下网络构成要素,这回该说说TCP/IP了</p>
+<h3 id="互联网与TCP-IP的关系"><a href="#互联网与TCP-IP的关系" class="headerlink" title="互联网与TCP/IP的关系"></a>互联网与TCP/IP的关系</h3><p>  互联网进行通信时,需要相应的网络协议,TCP/IP原本就是为使用互联网而开发定制的协议族。因此,互联网的协议就是TCP/IP,TCP/IP就是互联网的协议。<br>  <strong>知道了解TCP/IP的重要性了吧,那就好好看看吧</strong></p>
+<h3 id="TCP-IP的诞生"><a href="#TCP-IP的诞生" class="headerlink" title="TCP/IP的诞生"></a>TCP/IP的诞生</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-3f6079fcf1afc2e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="诞生.png"></p>
+<h3 id="TCP-IP的标准化"><a href="#TCP-IP的标准化" class="headerlink" title="TCP/IP的标准化"></a>TCP/IP的标准化</h3><p>  20世纪90年代,ISO开展了OSI这一国际标准协议的标准化进程。然而OSI协议并没有得到普及,真正被广泛使用的是TCP/IP协议。</p>
+<p>  那么为什么OSI失败了呢?</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-afe17e0fd73484b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="OSI失败.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-9c09038c5230ce00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="OSI失败原因.png"></p>
+<p>那TCP/IP好在哪儿呢?</p>
+<ul>
+<li>开放性</li>
+<li>注重实用性</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-38adb693ff8fea97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Clip.png"></p>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>关于UIBezierPath的简单介绍就到这了,主要是用代码做了展示,属性跟方法,没详细去介绍,我觉得可以直接看苹果的api写的也蛮清楚的.或者自己试试不同的参数样式也能大概理解了.另外简书上看到有篇文章对属性及方法介绍的蛮详细的,可以去看看:<a href="http://www.jianshu.com/p/6130b51a0b71" target="_blank" rel="external">UIBezierPath</a></p>
-<p>核心动画跟贝赛尔曲线都有了简单的介绍了,接下来就可以动手做点简单的自定义动画了.会在下一篇更新.</p>
+<p>  由于TCP/IP尽早地制定了可行性较强的协议，提出了应对技术快速革新的协议，并及时进行后期改良的方案，因此打败了OSI模型，成为了事实上的标准。</p>
+<h3 id="TCP-IP协议分层模型"><a href="#TCP-IP协议分层模型" class="headerlink" title="TCP/IP协议分层模型"></a>TCP/IP协议分层模型</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-4b513cf743603420.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分层模型.png"></p>
+<p>　　上图列出了TCP/IP与OSI分层之间的大概关系，不难看出，TCP/IP与OSI在分层模块上稍有区别。OSI参考模型注重“通信协议必要的功能是什么”，而TCP/IP则更强调<strong>“在计算机上实现协议应该开发哪种程序”</strong>。</p>
+<p>　在 TCP/IP 模型中,网络访问层是 TCP/IP 模型的最低层,负责接收从网际层交来的 IP 数据报并将 IP 数据报通过底层物理网络发送出去,或者从底层物理网络上接收物理帧,抽出 IP 数据报,交给互联网层。网络访问层使采用不同技术和网络硬件的网络之间能够互联, 它包括属于操作系统的设备驱动器和计算机网络接口卡,以处理具体的硬件物理接口。</p>
+<p>　　网际层负责独立地将分组从源主机送往目标主机,涉及为分组提供最佳路径的选择和 交换功能,并使这一过程与它们所经过的路径和网络无关。这好比你寄信时,你并不需要知道它是如何到达目的地的,而只关心它是否到达了。TCP/IP 模型的互联网层在功能上非常类似于 OSI 参考模型中的网络层。</p>
+<p>　　传输层的作用与 OSI 参考模型中传输层的作用是类似的,即在源结点和目的结点的两个对等实体间提供可靠的端到端的数据通信。为保证数据传输的可靠性,传输层协议也提供了确认、差错控制和流量控制等机制。另外,由在一般的计算机中,常常是多个应用程序同时访问网络,所以传输层还要提供不同应用程序的标识。</p>
+<p>　　应用层涉及为用户提供网络应用,并为这些应用提供网络支撑服务。由于 TCP/IP 将所有与应用相关的内容都有归为一层,所以在应用层要处理高层协议、数据表达和对话控制等任务。 </p>
+<h3 id="OSI-模型和-TCP-IP-模型的区别"><a href="#OSI-模型和-TCP-IP-模型的区别" class="headerlink" title="OSI 模型和 TCP/IP 模型的区别"></a>OSI 模型和 TCP/IP 模型的区别</h3><p><img src="http://upload-images.jianshu.io/upload_images/1868951-a898ac81a2a44779.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="区别.png"></p>
+<p>  OSI 模型包括了七层,而 TCP/IP 模型只有四层。虽然它们具有功能相当的网络层、传输层和应用层,但其它层并不相同。</p>
+<p>  TCP/IP 模型中没有专门的表示层和会话层,它将与这两层相关的表达、编码和会话控制等功能包含到了应用层中去完成。另外,TCP/IP 模型还将 OSI 的数据链路层和物理层包括到了一个网络访问层中。</p>
+<p>  OSI 模型在网络层支持无连接和面向连接的两种服务,而在传输层仅支持面向连接的服 务。TCP/IP 模型在互联网层则只支持无连接的一种服务,但在传输层支持面向连接和无连 接两种服务。</p>
+<p>  TCP/IP 由于有较少的层次,因而显得更简单,并且作为从因特网(INTERNET)上发展起来的协议,已经成了网络互连的事实标准。但是,目前还没有实际网络是建立在 OSI 七层模型基础上的,OSI 仅仅作为理论的参考模型被广泛使用。</p>
+<h3 id="TCP-IP-通信示例"><a href="#TCP-IP-通信示例" class="headerlink" title="TCP/IP 通信示例"></a>TCP/IP 通信示例</h3><h4 id="数据包首部"><a href="#数据包首部" class="headerlink" title="数据包首部"></a>数据包首部</h4><p><img src="http://upload-images.jianshu.io/upload_images/1868951-945f3b55eb76f974.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据包首部.png"></p>
+<p>  每个分层中,都会对所发送的数据附加一个首部,在这个首部中包含了该层必要的信息,如发送的目标地址以及协议相关信息。通常,为协议提供的信息为包首部,所要发送的内容为数据。</p>
+<p>  现在再来看看主机A向主机B发送一封电子邮件，在TCP/IP模型下的处理过程：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-09c5c11ee5b527d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="电子邮件.png"></p>
 
       
     </div>
@@ -717,9 +456,9 @@ path.lineJoinStyle = kCGLineJoinRound;
       
         <div class="post-tags">
           
-            <a href="/tags/动画与绘图/" rel="tag"># 动画与绘图</a>
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
           
-            <a href="/tags/iOS/" rel="tag"># iOS</a>
+            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
           
         </div>
       
@@ -732,8 +471,8 @@ path.lineJoinStyle = kCGLineJoinRound;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/13/快速上手核心动画/" rel="next" title="快速上手核心动画">
-                <i class="fa fa-chevron-left"></i> 快速上手核心动画
+              <a href="/2017/03/10/计算机网络/TCP-IP笔记(一)网络基础知识/" rel="next" title="TCP-IP笔记(一)网络基础知识">
+                <i class="fa fa-chevron-left"></i> TCP-IP笔记(一)网络基础知识
               </a>
             
           </div>
@@ -742,8 +481,8 @@ path.lineJoinStyle = kCGLineJoinRound;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/06/PHP/PHP案例-信息管理系统/" rel="prev" title="PHP案例-信息管理系统">
-                PHP案例-信息管理系统 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/14/动画与绘图/带你了解UIKit动力学/" rel="prev" title="带你了解UIKit动力学">
+                带你了解UIKit动力学 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -832,7 +571,7 @@ path.lineJoinStyle = kCGLineJoinRound;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -854,7 +593,7 @@ path.lineJoinStyle = kCGLineJoinRound;
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -904,7 +643,7 @@ path.lineJoinStyle = kCGLineJoinRound;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码案例"><span class="nav-number">2.</span> <span class="nav-text">代码案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#互联网与TCP-IP的关系"><span class="nav-number">1.</span> <span class="nav-text">互联网与TCP/IP的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP的诞生"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP的诞生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP的标准化"><span class="nav-number">3.</span> <span class="nav-text">TCP/IP的标准化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP协议分层模型"><span class="nav-number">4.</span> <span class="nav-text">TCP/IP协议分层模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI-模型和-TCP-IP-模型的区别"><span class="nav-number">5.</span> <span class="nav-text">OSI 模型和 TCP/IP 模型的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP-通信示例"><span class="nav-number">6.</span> <span class="nav-text">TCP/IP 通信示例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据包首部"><span class="nav-number">6.1.</span> <span class="nav-text">数据包首部</span></a></li></ol></li></ol></div>
             
 
           </div>
