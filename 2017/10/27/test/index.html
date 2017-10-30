@@ -81,15 +81,23 @@
 
 
 
+<meta name="description" content="一、简单介绍1.什么是UIDynamicUIDynamic是从iOS 7开始引入的一种新技术，隶属于UIKit框架可以认为是一种物理引擎，能模拟和仿真现实生活中的物理现象如：重力、弹性碰撞等现象 2.物理引擎的价值广泛用于游戏开发，经典成功案例是“愤怒的小鸟”,让开发人员可以在远离物理学公式的情况下，实现炫酷的物理仿真效果提高了游戏开发效率，产生更多优秀好玩的物理仿真游戏 3.知名的2D物理引擎B">
 <meta name="keywords" content="Tag1,Tag2,Tag3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test">
 <meta property="og:url" content="http://yoursite.com/2017/10/27/test/index.html">
 <meta property="og:site_name" content="洛洛爱吃肉">
+<meta property="og:description" content="一、简单介绍1.什么是UIDynamicUIDynamic是从iOS 7开始引入的一种新技术，隶属于UIKit框架可以认为是一种物理引擎，能模拟和仿真现实生活中的物理现象如：重力、弹性碰撞等现象 2.物理引擎的价值广泛用于游戏开发，经典成功案例是“愤怒的小鸟”,让开发人员可以在远离物理学公式的情况下，实现炫酷的物理仿真效果提高了游戏开发效率，产生更多优秀好玩的物理仿真游戏 3.知名的2D物理引擎B">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-30T03:41:01.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-708e87550affbb35.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-52ed8f15d48010b5.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-1853b803c4d6db02.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-3cebeb72c623eb4e.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2017-10-30T03:47:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test">
+<meta name="twitter:description" content="一、简单介绍1.什么是UIDynamicUIDynamic是从iOS 7开始引入的一种新技术，隶属于UIKit框架可以认为是一种物理引擎，能模拟和仿真现实生活中的物理现象如：重力、弹性碰撞等现象 2.物理引擎的价值广泛用于游戏开发，经典成功案例是“愤怒的小鸟”,让开发人员可以在远离物理学公式的情况下，实现炫酷的物理仿真效果提高了游戏开发效率，产生更多优秀好玩的物理仿真游戏 3.知名的2D物理引擎B">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1868951-708e87550affbb35.gif?imageMogr2/auto-orient/strip">
 
 
 
@@ -400,7 +408,162 @@
       
 
       
-        
+        <h3 id="一、简单介绍"><a href="#一、简单介绍" class="headerlink" title="一、简单介绍"></a>一、简单介绍</h3><p>1.什么是UIDynamic<br>UIDynamic是从iOS 7开始引入的一种新技术，隶属于UIKit框架可以认为是一种物理引擎，能模拟和仿真现实生活中的物理现象如：重力、弹性碰撞等现象</p>
+<p>2.物理引擎的价值<br>广泛用于游戏开发，经典成功案例是“愤怒的小鸟”,让开发人员可以在远离物理学公式的情况下，实现炫酷的物理仿真效果提高了游戏开发效率，产生更多优秀好玩的物理仿真游戏</p>
+<p>3.知名的2D物理引擎<br>Box2d<br>Chipmunk</p>
+<h3 id="二、使用步骤"><a href="#二、使用步骤" class="headerlink" title="二、使用步骤"></a>二、使用步骤</h3><p>要想使用UIDynamic来实现物理仿真效果，大致的步骤如下:</p>
+<p>1.创建一个物理仿真器（顺便设置仿真范围）<br>2.创建相应的物理仿真行为（顺便添加物理仿真元素）<br>3.将物理仿真行为添加到物理仿真器中开始仿真</p>
+<h3 id="三、相关说明"><a href="#三、相关说明" class="headerlink" title="三、相关说明"></a>三、相关说明</h3><p>1.三个概念</p>
+<ul>
+<li>谁要进行物理仿真？<br>　　物理仿真元素（Dynamic Item）</li>
+<li>执行怎样的物理仿真效果？怎样的动画效果？<br>　　物理仿真行为（Dynamic Behavior） </li>
+<li>让物理仿真元素执行具体的物理仿真行为<br>　　物理仿真器（Dynamic Animator）</li>
+</ul>
+<p>2.物理仿真元素<br>注意：<br>不是任何对象都能做物理仿真元素<br>不是任何对象都能进行物理仿真</p>
+<p>物理仿真元素要素：<br>任何遵守了UIDynamicItem协议的对象<br>UIView默认已经遵守了UIDynamicItem协议，因此任何UI控件都能做物理仿真</p>
+<p>UICollectionViewLayoutAttributes类默认也遵守UIDynamicItem协议</p>
+<p>3.物理仿真行为</p>
+<p>（1）UIDynamic提供了以下几种物理仿真行为</p>
+<ul>
+<li>UIGravityBehavior：重力行为</li>
+</ul>
+<ul>
+<li><p>UICollisionBehavior：碰撞行为</p>
+</li>
+<li><p>UISnapBehavior：捕捉行为</p>
+</li>
+<li><p>UIPushBehavior：推动行为</p>
+</li>
+<li><p>UIAttachmentBehavior：附着行为</p>
+</li>
+<li><p>UIDynamicItemBehavior：动力元素行为</p>
+</li>
+</ul>
+<p>（2）物理仿真行为须知<br>上述所有物理仿真行为都继承自UIDynamicBehavior，所有的UIDynamicBehavior都可以独立进行组合使用多种行为时，可以实现一些比较复杂的效果</p>
+<p>4.物理仿真器</p>
+<p>（1）物理仿真器须知<br>它可以让物理仿真元素执行物理仿真行为<br>它是UIDynamicAnimator类型的对象<br>（2）UIDynamicAnimator的初始化</p>
+<pre><code>- (instancetype)initWithReferenceView:(UIView *)view;
+`&lt;/pre&gt;
+
+view参数：是一个参照视图，表示物理仿真的范围
+
+5.物理仿真器的说明
+
+（1）UIDynamicAnimator的常见方法
+
+&lt;pre&gt;`//移除之前添加过的所有物理仿真行为  
+- (void)addBehavior:(UIDynamicBehavior *)behavior; 
+//移除之前添加过的所有物理仿真行为　
+- (void)removeBehavior:(UIDynamicBehavior *)behavior; 
+//添加1个物理仿真行为　
+- (void)removeAllBehaviors; 
+`&lt;/pre&gt;
+
+（2）UIDynamicAnimator的常见属性
+
+&lt;pre&gt;` //参照视图 
+@property (nonatomic, readonly) UIView* referenceView;  
+//添加到物理仿真器中的所有物理仿真行为
+@property (nonatomic, readonly, copy) NSArray* behaviors;
+//是否正在进行物理仿真
+@property (nonatomic, readonly, getter = isRunning) BOOL running;
+//代理对象（能监听物理仿真器的仿真过程，比如开始和结束）
+@property (nonatomic, assign) id 
+`&lt;/pre&gt;
+
+### 四、案例介绍
+
+**先看效果吧**
+- UIGravityBehavior：重力行为
+
+![UIGravityBehavior.gif](http://upload-images.jianshu.io/upload_images/1868951-9cd5fca7213318f5.gif?imageMogr2/auto-orient/strip)
+</code></pre><ul>
+<li><p>UICollisionBehavior：碰撞行为</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-708e87550affbb35.gif?imageMogr2/auto-orient/strip" alt="UICollisionBehavior.gif"></p>
+</li>
+<li><p>UISnapBehavior：捕捉行为</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-52ed8f15d48010b5.gif?imageMogr2/auto-orient/strip" alt="UISnapBehavior.gif"></p>
+</li>
+<li><p>UIPushBehavior：推动行为</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-1853b803c4d6db02.gif?imageMogr2/auto-orient/strip" alt="UIPushBehavior.gif"></p>
+</li>
+<li><p>复合效果</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3cebeb72c623eb4e.gif?imageMogr2/auto-orient/strip" alt="复合效果.gif"></p>
+<p><strong>最后是代码</strong></p>
+<p><pre>`#import &lt;UIKit/UIKit.h&gt;</pre></p>
+<p>@interface SecondViewController : UIViewController<br>@property (weak, nonatomic) IBOutlet UIView <em>blueView;<br>@property (weak, nonatomic) IBOutlet UIView </em>orangeView;<br>@property (weak, nonatomic) IBOutlet UISegmentedControl <em>segmented;<br>@property (weak, nonatomic) IBOutlet UIView </em>redView;<br>@property (nonatomic,strong) UIDynamicAnimator *animator;</p>
+<p>@end</p>
+<p>#import “SecondViewController.h”</p>
+<p>@interface SecondViewController ()<br>@property (nonatomic,strong)UISnapBehavior <em>snapBehavior;<br>@property (nonatomic,strong)UIPushBehavior </em>pushBehavior;<br>@property (nonatomic,strong)UIAttachmentBehavior *attachmentBehavior;</p>
+<p>@end</p>
+<p>@implementation SecondViewController</p>
+<ul>
+<li><p>(void)viewDidLoad {<br>  [super viewDidLoad];<br>  self.blueView.transform =  CGAffineTransformMakeRotation(M_PI_4);<br>  self.segmented.transform = CGAffineTransformMakeRotation(-M_PI / 8);</p>
+<p>  if (!_pushBehavior) {</p>
+<pre><code>_pushBehavior = [[UIPushBehavior alloc]initWithItems:@[_blueView] mode:UIPushBehaviorModeContinuous];
+</code></pre><p>  }</p>
+<p>  _pushBehavior.active = YES;<br>  _pushBehavior.pushDirection = CGVectorMake(10.0f, 10.0f);<br>  _pushBehavior.magnitude = 1.0f;<br>  [self.animator addBehavior:_pushBehavior];</p>
+</li>
+</ul>
+<p>}</p>
+<ul>
+<li><p>(void)touchesBegan:(NSSet&lt;UITouch <em>&gt; </em>)touches withEvent:    (UIEvent *)event {<br>  _pushBehavior.active = NO;</p>
+<p>  //创建重力行为<br>  UIGravityBehavior <em>gravityBehavior = [[UIGravityBehavior alloc]init];<br>  [gravityBehavior addItem:self.blueView];<br>  [gravityBehavior addItem:self.orangeView];<br>  [gravityBehavior addItem:self.segmented];<br>  gravityBehavior.gravityDirection = CGVectorMake(-0.3f, 1.0f);<br>  //加速度<br>  gravityBehavior.magnitude = 3;<br>  //创建碰撞行为<br>  UICollisionBehavior </em>collisionBehavior = [[UICollisionBehavior alloc]init];<br>  //碰撞类型为元素和边界<br>  collisionBehavior.collisionMode = UICollisionBehaviorModeEverything;</p>
+<p>  CGFloat Y = self.view.frame.size.height - CGRectGetHeight(self.redView.frame);<br>  CGFloat X = self.view.frame.size.width;<br>  CGFloat height = self.view.frame.size.height;</p>
+<p>  //设置红色的View为底边界,左边框跟右边框作为边界<br>  [collisionBehavior addBoundaryWithIdentifier:@”collision1” fromPoint:CGPointMake(0,Y) toPoint:CGPointMake(X, Y)];<br>  [collisionBehavior addBoundaryWithIdentifier:@”collision2” fromPoint:CGPointMake(0, 0) toPoint:CGPointMake(0, height)];<br>  [collisionBehavior addBoundaryWithIdentifier:@”collision3” fromPoint:CGPointMake(X,0) toPoint:CGPointMake(X, height)];</p>
+<p>  [collisionBehavior addItem:self.blueView];<br>  [collisionBehavior addItem:self.segmented];<br>  [collisionBehavior addItem:self.orangeView];<br>  [self.animator addBehavior:collisionBehavior];<br>  [self.animator addBehavior:gravityBehavior];</p>
+<p>  UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.blueView]];<br>  [itemBehavior setElasticity:0.5];<br>  [self.animator addBehavior:itemBehavior];</p>
+<p>  UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGesture:)];<br>  [self.view addGestureRecognizer:tap];<br>}</p>
+</li>
+<li>(void)tapGesture:(UITapGestureRecognizer *)gesture<br>{<br>  CGPoint tapPoint = [gesture locationInView:self.view];<br>  if (_snapBehavior) {<pre><code>[self.animator removeBehavior:_snapBehavior];
+_snapBehavior = nil;
+</code></pre>  }<br>  _snapBehavior = [[UISnapBehavior alloc]initWithItem:self.blueView snapToPoint:tapPoint];<br>  _snapBehavior.action = ^(){<pre><code>NSLog(@&quot;UISnapBehavior 在执行&quot;);
+</code></pre>  };<br>  _snapBehavior.damping = 0.9;<br>  [self.animator addBehavior:_snapBehavior];<br>}</li>
+<li><p>(UIDynamicAnimator *)animator{<br>  if (_animator == nil) {</p>
+<pre><code>_animator = [[UIDynamicAnimator alloc]init];
+</code></pre><p>  }<br>  return _animator;<br>}</p>
+</li>
+<li><p>(void)panGestureRecognizer:(UIPanGestureRecognizer *)gesture<br>{<br>  CGPoint location = [gesture locationInView:self.view];<br>  CGPoint imageLocation = [gesture locationInView:self.orangeView];<br>  switch (gesture.state) {</p>
+<pre><code>case UIGestureRecognizerStateBegan:
+{
+    NSLog(@&quot;touch position %@&quot;,NSStringFromCGPoint(location));
+    NSLog(@&quot;loction in image %@&quot;,NSStringFromCGPoint(imageLocation));
+    [self.animator removeAllBehaviors];
+
+    UIOffset centerOffset = UIOffsetMake(imageLocation.x - CGRectGetMidX(self.orangeView.bounds), imageLocation.y - CGRectGetMidY(self.orangeView.bounds));
+    _attachmentBehavior = [[UIAttachmentBehavior alloc]initWithItem:self.orangeView offsetFromCenter:centerOffset attachedToAnchor:location];
+    _attachmentBehavior.damping = 0.5;
+    _attachmentBehavior.frequency = 0.8;
+    [self.animator addBehavior:_attachmentBehavior];
+
+}
+    break;
+case UIGestureRecognizerStateEnded:
+{
+    [self.animator removeBehavior:_attachmentBehavior];
+}
+    break;
+default:
+{
+    [_attachmentBehavior setAnchorPoint:[gesture locationInView:self.view]];
+}
+    break;
+</code></pre><p>  }<br>}</p>
+</li>
+<li><p>(void)didReceiveMemoryWarning {<br>  [super didReceiveMemoryWarning];<br>  // Dispose of any resources that can be recreated.<br>}</p>
+</li>
+</ul>
+<p>/*<br> #pragma mark - Navigation</p>
+<p> // In a storyboard-based application, you will often want to do a little preparation before navigation</p>
+<ul>
+<li>(void)prepareForSegue:(UIStoryboardSegue <em>)segue sender:(id)sender {<br>// Get the new view controller using [segue destinationViewController].<br>// Pass the selected object to the new view controller.<br>}
+</em>/</li>
+</ul>
+<p>@end</p>
+</li>
+</ul>
+<p>UIKit动力学的部分介绍完了.<br>最开始项目中只是用到了重力跟碰撞行为,参考学习了:<a href="http://www.jianshu.com/p/07552fc17734" target="_blank" rel="external">UIDynamic 详细用法</a> 中的案例.然后自己又展开了解了下UIKit动力学的知识,把捕捉行为,推动行为加了进去,做个完善.整理了一下.就是这样.</p>
+
       
     </div>
     
@@ -509,8 +672,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -525,7 +697,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -587,6 +759,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、简单介绍"><span class="nav-number">1.</span> <span class="nav-text">一、简单介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、使用步骤"><span class="nav-number">2.</span> <span class="nav-text">二、使用步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、相关说明"><span class="nav-number">3.</span> <span class="nav-text">三、相关说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
