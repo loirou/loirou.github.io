@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="动画与绘图,iOS," />
+  <meta name="keywords" content="PHP," />
 
 
 
@@ -81,39 +81,18 @@
 
 
 
-<meta name="description" content="UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。 使用方法UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。">
-<meta name="keywords" content="动画与绘图,iOS">
+<meta name="description" content="一、创建节点eg: //用三种方式创建三个段落（包括标签节点、属性节点和文本节点）并添加到文档中去$(““).attr({title:”p1”,id:”p1”}).html(“这是第一个段落”).appendTo(“body”);$(““,{title:”p2”,id:”p2”}).html(“这是第二个段落”).appendTo(“body”);$(“这是第三个段落 “).appendTo(“b">
+<meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速上手UIBezierPath">
-<meta property="og:url" content="http://yoursite.com/2017/01/19/动画与绘图/快速上手UIBezierPath/index.html">
+<meta property="og:title" content="jQuery之DOM操作">
+<meta property="og:url" content="http://yoursite.com/2016/08/30/PHP/jQuery之DOM操作/index.html">
 <meta property="og:site_name" content="洛洛爱吃肉">
-<meta property="og:description" content="UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。 使用方法UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。">
+<meta property="og:description" content="一、创建节点eg: //用三种方式创建三个段落（包括标签节点、属性节点和文本节点）并添加到文档中去$(““).attr({title:”p1”,id:”p1”}).html(“这是第一个段落”).appendTo(“body”);$(““,{title:”p2”,id:”p2”}).html(“这是第二个段落”).appendTo(“body”);$(“这是第三个段落 “).appendTo(“b">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-16ff36f673e553cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-aea9cce78dcbb04d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-8dbfcbd9be34a2fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-33d7bec06da43891.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-45261ea74f94f5e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-69993e6575524f1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-2eb9c4626845e02f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-e21ece42c37ee1d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-e7bacd50200981a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-f9c30b5d17806b03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-b576d92730e22a33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-4c5f96ba08475740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-3192e79c84b3393f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-7d3a6fbc364a219c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-0582260c77588276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-699954cefed52f84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-a86a7876b611d3c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-6834121170a017fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-91da4d71de0f0f28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1868951-38adb693ff8fea97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-30T04:23:39.000Z">
+<meta property="og:updated_time" content="2017-10-30T06:40:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速上手UIBezierPath">
-<meta name="twitter:description" content="UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。 使用方法UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1868951-16ff36f673e553cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="jQuery之DOM操作">
+<meta name="twitter:description" content="一、创建节点eg: //用三种方式创建三个段落（包括标签节点、属性节点和文本节点）并添加到文档中去$(““).attr({title:”p1”,id:”p1”}).html(“这是第一个段落”).appendTo(“body”);$(““,{title:”p2”,id:”p2”}).html(“这是第二个段落”).appendTo(“body”);$(“这是第三个段落 “).appendTo(“b">
 
 
 
@@ -143,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/01/19/动画与绘图/快速上手UIBezierPath/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/30/PHP/jQuery之DOM操作/"/>
 
 
 
 
 
-  <title>快速上手UIBezierPath | 洛洛爱吃肉</title>
+  <title>jQuery之DOM操作 | 洛洛爱吃肉</title>
   
 
 
@@ -324,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/19/动画与绘图/快速上手UIBezierPath/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/30/PHP/jQuery之DOM操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="loirou">
@@ -341,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">快速上手UIBezierPath</h1>
+          <h1 class="post-title" itemprop="name headline">jQuery之DOM操作</h1>
         
 
         <div class="post-meta">
@@ -353,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-19T15:41:22+08:00">
-                2017-01-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-30T11:33:00+08:00">
+                2016-08-30
               </time>
             
 
@@ -376,8 +355,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
                   </a>
                 </span>
 
@@ -393,7 +372,7 @@
 
           
           
-             <span id="/2017/01/19/动画与绘图/快速上手UIBezierPath/" class="leancloud_visitors" data-flag-title="快速上手UIBezierPath">
+             <span id="/2016/08/30/PHP/jQuery之DOM操作/" class="leancloud_visitors" data-flag-title="jQuery之DOM操作">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -424,282 +403,18 @@
       
 
       
-        <p>UIBezierPath主要用来绘制矢量图形，它是基于Core Graphics对CGPathRef数据类型和path绘图属性的一个封装，所以是需要图形上下文的（CGContextRef），所以一般UIBezierPath在drawRect中使用。</p>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>UIBezierPath 是对 CGPathRef 的封装。创建矢量图形时，拆解成一或多条线段，拼接起来，每条线段的终点都是下一条线段的起点。</p>
-<p>具体地：</p>
-<p>1.创建一个 UIBezierPath 对象<br>2.用 moveToPoint: 设置初始线段的起点<br>3.添加线段，定义一或多个子路径<br>4.修改 UIBezierPath 的绘图相关的属性，比如stroke path的属性 lineWidth 和 lineJoinStyle ，filled path的属性 usesEvenOddFillRule</p>
-<p>注意:如果是矩形或者圆之类的特殊图形，可以不用第2步。</p>
-<h3 id="代码案例"><a href="#代码案例" class="headerlink" title="代码案例"></a>代码案例</h3><ul>
-<li><p>画直线</p>
-<pre><code>UIBezierPath *path = [UIBezierPath bezierPath];
-
-[path moveToPoint:CGPointMake(50, 50)];
-[path addLineToPoint:CGPointMake(100, 50)];
-
-path.lineWidth = 5.0f;
-path.lineJoinStyle = kCGLineJoinRound;
-
-[path stroke];
-</code></pre><p>`</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-16ff36f673e553cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="直线.png"></p>
-</li>
-<li><p>创建三角形</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(50, 50)];
-    [path addLineToPoint:CGPointMake(300, 50)];
-    [path addLineToPoint:CGPointMake(200, 150)];
-
-    // 最后的闭合线是可以通过调用closePath方法来自动生成的，也可以调用-addLineToPoint:方法来添加
-    //  [path addLineToPoint:CGPointMake(50, 50)];
-
-    [path closePath];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-aea9cce78dcbb04d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三角形.png"></p>
-</li>
-<li><p>创建矩形</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(50, 100, 50, 50)];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-8dbfcbd9be34a2fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="矩形.png"></p>
-</li>
-<li><p>创建内切曲线</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 200, 50, 50)];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-33d7bec06da43891.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="圆.png"></p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 200, 50, 100)];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-45261ea74f94f5e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="椭圆.png"></p>
-</li>
-<li><p>创建带有圆角的矩形，当矩形变成正圆的时候，Radius就不再起作用</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(50, 300, 50, 50) cornerRadius:15.0f];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-69993e6575524f1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="带有圆角的矩形.png"></p>
-</li>
-<li><p>设定特定的角为圆角的矩形</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(50, 400, 50, 50) byRoundingCorners:UIRectCornerBottomLeft cornerRadii:CGSizeMake(5,5)];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-2eb9c4626845e02f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="特定的角为圆角的矩形.png"></p>
-</li>
-<li><p>创建圆弧</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(100, 550) radius:25 startAngle:0 endAngle:1.5*M_PI clockwise:YES];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e21ece42c37ee1d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建圆弧.png"></p>
-</li>
-<li><p>通过路径A创建路径B</p>
-<pre>`    UIBezierPath *path_A = [UIBezierPath bezierPath];
-
-    [path_A moveToPoint:CGPointMake(200, 50)];
-
-    [path_A addLineToPoint:CGPointMake(250, 100)];
-
-    path_A.lineWidth = 5.0f;
-
-    UIBezierPath *path_B = [UIBezierPath bezierPathWithCGPath:path_A.CGPath];
-
-    [path_B stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-e7bacd50200981a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通过路径A创建路径B.png"></p>
-</li>
-<li><p>创建三次贝塞尔曲线</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(100, 200)];
-
-    [path addCurveToPoint:CGPointMake(300, 200) controlPoint1:CGPointMake(150, 150) controlPoint2:CGPointMake(250, 250)];
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-f9c30b5d17806b03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三次贝塞尔曲线.png"></p>
-</li>
-<li><p>创建二次贝塞尔曲线</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(100, 200)];
-
-    [path addQuadCurveToPoint:CGPointMake(300, 200) controlPoint:CGPointMake(150, 150)];
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-b576d92730e22a33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="二次贝塞尔曲线.png"></p>
-</li>
-<li><p>添加圆弧</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(200, 400)];
-    [path addLineToPoint:CGPointMake(225, 410)];
-
-    [path addArcWithCenter:CGPointMake(200, 400) radius:25 startAngle:0 endAngle:1.5*M_PI clockwise:YES];
-
-//    [path closePath];
-//    [path removeAllPoints];
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-4c5f96ba08475740.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="添加圆弧.png"></p>
-</li>
-<li><p>追加路径</p>
-<pre>`    UIBezierPath *path_A = [UIBezierPath bezierPath];
-
-    [path_A moveToPoint:CGPointMake(200, 500)];
-    [path_A addLineToPoint:CGPointMake(225, 410)];
-
-    UIBezierPath *path_B = [UIBezierPath bezierPath];
-
-    [path_B moveToPoint:CGPointMake(200, 600)];
-    [path_B addLineToPoint:CGPointMake(225, 500)];
-
-    [path_A appendPath:path_B];
-
-    [path_A stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-3192e79c84b3393f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="追加路径.png"></p>
-</li>
-<li><p>创建翻转路径，即起点变成终点，终点变成起点</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(50, 50)];
-    [path addLineToPoint:CGPointMake(100, 50)];
-
-    path.lineWidth = 5.0f;
-
-    NSLog(@"%@",NSStringFromCGPoint(path.currentPoint));
-
-    UIBezierPath *path_b = [path bezierPathByReversingPath];
-    CGAffineTransform transform = CGAffineTransformMakeTranslation(200, 0);
-    [path_b applyTransform: transform];
-    // 两条路径分别添加一条直接到 self.center
-    [path addLineToPoint: CGPointMake(self.frame.size.width*0.5, self.frame.size.height*0.5)];
-    [path_b addLineToPoint: CGPointMake(self.frame.size.width*0.5, self.frame.size.height*0.5)];
-
-    NSLog(@"%@",NSStringFromCGPoint(path_b.currentPoint));
-    [[UIColor redColor] set];
-    [path stroke];
-    [[UIColor blueColor] set];
-    [path_b stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-7d3a6fbc364a219c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建翻转路径.png"></p>
-</li>
-<li><p>路径进行仿射变换</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(100, 50)];
-    [path addLineToPoint:CGPointMake(200, 50)];
-
-    CGAffineTransform transform =  CGAffineTransformRotate(self.transform, M_PI_4);
-    [path applyTransform:transform];
-
-    path.lineWidth = 5.0f;
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-0582260c77588276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="仿射变换.png"></p>
-</li>
-<li><p>创建虚线</p>
-<pre>`    CGFloat dashStyle[] = {1.0f, 2.0f};
-
-    UIBezierPath *path = [UIBezierPath bezierPath];
-
-    [path moveToPoint:CGPointMake(50, 50)];
-    [path addLineToPoint:CGPointMake(100, 50)];
-
-    [path setLineDash:dashStyle count:2 phase:0.0];
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-699954cefed52f84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建虚线.png"></p>
-</li>
-<li><p>设置颜色</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];
-
-    [[UIColor greenColor] setStroke];
-
-    [[UIColor redColor] setFill];
-
-    [path stroke];
-    [path fill];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-a86a7876b611d3c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-01-19 下午1.49.31.png"></p>
-</li>
-<li><p>设置描边混合模式</p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];
-
-    [[UIColor greenColor] setStroke];
-
-    path.lineWidth = 10.0f;
-
-    [path strokeWithBlendMode:kCGBlendModeSaturation alpha:1.0];
-
-    [path stroke];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-6834121170a017fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Stroke混合.png"></p>
-<pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];
-
-    [[UIColor redColor] setFill];
-
-    [path fillWithBlendMode:kCGBlendModeSaturation alpha:0.6];
-
-    [path fill];
-`</pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-91da4d71de0f0f28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Fill混合.png"></p>
-</li>
-<li><p>修改当前图形上下文的绘图区域可见,随后的绘图操作导致呈现内容只有发生在指定路径的填充区域</p>
-<p><pre>`    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(100, 100, 100, 100)];</pre></p>
-<pre><code>[[UIColor greenColor] setStroke];
-
-[path addClip];
-
-[path stroke];
-</code></pre></li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1868951-38adb693ff8fea97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Clip.png"></p>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>关于UIBezierPath的简单介绍就到这了,主要是用代码做了展示,属性跟方法,没详细去介绍,我觉得可以直接看苹果的api写的也蛮清楚的.或者自己试试不同的参数样式也能大概理解了.另外简书上看到有篇文章对属性及方法介绍的蛮详细的,可以去看看:<a href="http://www.jianshu.com/p/6130b51a0b71" target="_blank" rel="external">UIBezierPath</a></p>
-<p>核心动画跟贝赛尔曲线都有了简单的介绍了,接下来就可以动手做点简单的自定义动画了.会在下一篇更新.</p>
+        <h3 id="一、创建节点"><a href="#一、创建节点" class="headerlink" title="一、创建节点"></a>一、创建节点</h3><p>eg: //用三种方式创建三个段落（包括标签节点、属性节点和文本节点）并添加到文档中去<br>$(“</p><p></p>“).attr({title:”p1”,id:”p1”}).html(“这是第一个段落”).appendTo(“body”);<br>$(“<p></p>“,{title:”p2”,id:”p2”}).html(“这是第二个段落”).appendTo(“body”);<br>$(“这是第三个段落 “).appendTo(“body”);<p></p>
+<h3 id="二、查找节点"><a href="#二、查找节点" class="headerlink" title="二、查找节点"></a>二、查找节点</h3><p>eg: //采用上面已经创建的节点，下面进行查找标签节点、属性节点和文本节点的操作<br>var p1 = $(“p:first”);//获取第一个段落节点<br>console.log(p1);//打印标签节点 result: Object[p#p1]<br>console.log(p1.attr(“title”));//打印属性节点 result: p1<br>console.log(p1.text());//打印文本节点 result: 这是第一个段落 </p>
+<h3 id="三、插入节点"><a href="#三、插入节点" class="headerlink" title="三、插入节点"></a>三、插入节点</h3><p> $(target).append(content)/$(content).appendTo(target) - 在被选元素的内部的结尾插入内容<br> $(target).prepend(content)/$(content).prependTo(target) - 在被选元素的内部的开头插入内容<br> $(target).after(content)/$(content).insertAfter(target) - 在被选元的素外部之后插入内容<br> $(target).before(content)/$(content).insertBefore(target) - 在被选元素的外部之前插入内容 </p>
+<h3 id="四、替换节点"><a href="#四、替换节点" class="headerlink" title="四、替换节点"></a>四、替换节点</h3><p> 　$(target).replaceWith(content)/$(content).replaceAll(target)-将目标元素替换为内容<br>　 eg: $(“<ul><li>html</li><li>css</li></ul>“).appendTo(“body”);<br>　　　　console.log($(“ul”).html()); //result: <li>html</li><li>css</li><br>　　　 $(“<li>html5</li>“).replaceAll($(“ul li:eq(0)”));<br>　　　　 console.log($(“ul”).html()); //result: <li>html5</li><li>css</li><br>　　　$(“ul li:eq(1)”).replaceWith(“<li>css3</li>“);<br>　　　　 console.log($(“ul”).html()); //result: <li>html5</li><li>css3</li></p>
+<p>　 2.如果替换之前，已经为元素绑定事件，替换后原先绑定的事件将会与被替换的元素一起消失，需要在新元素上重新绑定事件 </p>
+<h3 id="五、复制节点"><a href="#五、复制节点" class="headerlink" title="五、复制节点"></a>五、复制节点</h3><p>　　eg: $(this).clone(); //仅复制节点，不复制元素所绑定的事件 $(this).clone(true); //既复制节点，也复制元素所绑定的事件<br>　　如果不理解上面的两句话，自己打一下下面的具体代码，运行一次，应该就能明白了:<br>　　　　1)html代码：<br>　　　　2）引入jQuery库（根据自己的情况自行引入）<br>　　　　3）script代码： $(function(){<br>　　　　　　　　　　　　　　$(“input:eq(0)”).click(function(){<br>　　　　　　　　　　　　　　　　 $(this).clone().appendTo(“body”);<br>　　　　　　　　　　　　});<br>　　　　　　　　　　　　$(“input:eq(1)”).click(function(){<br>　　　　　　　　　　　　　　 $(this).clone(true).appendTo(“body”);<br>　　　　　　　　　　　　});<br>　　　　　　　　　　});</p>
+<h3 id="六、删除节点"><a href="#六、删除节点" class="headerlink" title="六、删除节点"></a>六、删除节点</h3><p>　　$(element).remove()返回值是一个指向删除的节点的引用，因此可以在以后再使用这些元素，但是它绑定的事件、附加的数据无法再次使用了<br>　　$(element).detach()使用之后，重新追加该元素，所有绑定的事件、附加的数据都能够使用<br>　   $(element).empty()严格来说并不是删除节点，而是清空节点，它能清空元素中的所有后代节点<br>　　eg://下面两个例子意在解释empty()<br>　　　　1）$(“<div><p><span>啦啦啦</span></p></div>“).appendTo(“body”);<br>　　　　　　 console.log($(“div”).html()); //result: </p><p><span>啦啦啦</span></p><br>　　　　 $(“p”).empty();<br>　　　　 console.log($(“div”).html()); //result:<p></p><br>　　　　2）$(element).empty()类比：<br>　　　　 你可以把element看做电脑的回收站，把$(element).empty()看做是清空回收站的操作，把包含在element中的标签节点看做回收 站中的文件夹，把包含在element中的文本节点看做是回收站中的文件，而清空回收站就是把回收站里的所有文件夹和文件都彻底删除，并且回收站自身并不 会被删除，这就类似于清空节点，该操作把某节点里的所有后代标签节点包括文本节点都彻底删除，但该节点本身没有被删除。 
+　　　　 <p></p>
+<h3 id="七、包裹节点"><a href="#七、包裹节点" class="headerlink" title="七、包裹节点"></a>七、包裹节点</h3><p>  　　wrap()将所有匹配的元素进行单独的包裹,在原来的元素的外部实施包裹<br>　　  wrapAll()将匹配的元素集合当做一个整体来包裹，在元素的外部实施包裹<br>　　  wrapInner()经所有匹配的元素进行单独的包裹，在原来的元素额内部实施包裹  </p>
+<h3 id="八、遍历节点"><a href="#八、遍历节点" class="headerlink" title="八、遍历节点"></a>八、遍历节点</h3><p>　　1.往上遍历<br>　　　　1)parent() 方法返回被选元素的直接祖先元素，即父元素。<br>　　　　2)parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 ()<br>　　　　3)parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。<br>　　　　4)closest()方法从元素本身开始，逐级向上级元素匹配，并返回最先匹配的祖先元素。<br>　　2.往下遍历<br>　　　　1)children() 方法返回被选元素的所有直接后代元素，即子元素。（跟parent（）方向恰好相反，一个是往上找，一个是往下查）<br>　　　　2)find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。（跟parents（）方向恰好相反）<br>　　3.同级遍历<br>　　　　1)siblings() 方法返回被选元素的所有同辈元素。<br>　　　　2)next() 方法返回被选元素的下一个同辈元素。 nextAll() 方法返回被选元素的后面所有的同辈元素。 nextUntil() 方法返回介于两个给定参数之间的所有的同辈元素。<br>　　　　3)prev(), prevAll() 以及 prevUntil() 方法的跟上面三个方法的原理是一样的（都是找同辈元素），但是方向恰好相反（next()/ nextAll()/nextUntil() 是往后找，而prev()/ prevAll() / prevUntil() 则是往前找）。<br>　　4.过滤（相当于基本过滤选择器）<br>　　　　1)first() 方法返回被选元素的首个元素。 last() 方法返回被选元素的最后一个元素。 eq() 方法返回被选元素中带有指定索引号的元素。<br>　　　　2)filter() 方法允许规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。<br>　　　　3)not() 方法返回不匹配标准的所有元素。（not() 方法与 filter() 相反。）</p>
+<h3 id="九、cssDOM"><a href="#九、cssDOM" class="headerlink" title="九、cssDOM"></a>九、cssDOM</h3><p>　　1).在css()方法中，如果属性中带有“-”符号，例如font-size和background-color属性，如果在设置这些属性的值的时候不 带引号，那么就要用驼峰命名法，例如： $(“p”).css({ fontSize:”30px”,backgroundColor:”#888888”}); 如果带上了引号，既可以写成”font-size”,也可以写成“fontSize”。 总之，带上引号是一个好习惯。<br>　　2).获取高度值用css()和height()的差别： css()方法获取的高度值与样式的设置有关，可能得到”auto”,也可能得到“10px”之类的字符串；而height()方法获取的高度值则是元素 在页面中的实际高度，与样式的设置无关，并且不带单位<br>　　3).css ()与addClass()设置样式的区别<br>　　　　1）可维护性：addClass()优于css()<br>　　　　2）灵活性：css()优于addClass()<br>　　　　3）样式值:css()可以获取到指定的样式值，而addClass()无法获取指定的属性的值。<br>　　　　4）样式优先级：css()的样式优先级高于addClass()。（理由：addClass()方法是通过增加class名的方式，那么这个样式是在外 部文件或者内部样式中先定义好的，等到需要的时候附加到元素上；css()处理的是内联样式，直接通过元素的style属性附加到元素上） 总结：两个方法各有利弊，一般是静态的结果，都确定了布局的规则，可以用addClass的方法，增加统一的类规则；如果是动态的HTML结构，在不确定 规则，或者经常变化的情况下，一般多考虑css()方式。<br>　　4).总结样式操作：<br>　　　　js中：<br>　　　　　　1）通过类名： element.className = theClassName或者element.setAttribute(“class”,theClassName) eg: document.getElementById(“p1”).className = “active”; 或document.getElementById(“p1”).setAttribute(“class”,”active”);<br>　　　　　　2）通过element.style eg: document.getElementById(“p1”).style.color=”blue”;<br>　　　　jquery中：<br>　　　　　　1）通过类名： $(element).addClass(theClassName)或者$(element).attr(“class”,theClassName) eg: $(“p1”).addClass(“active”); 或$(“p1”).attr(“class”,”active”);<br>　　　　　　2）通过css() eg: $(“p1”).css(“color”,”blue”); </p>
+<h3 id="十、jQuery-尺寸"><a href="#十、jQuery-尺寸" class="headerlink" title="十、jQuery-尺寸"></a>十、jQuery-尺寸</h3><p>　　width()/height() 方法设置或返回元素的宽度/高度（不包括内边距、边框或外边距）。<br>　　　　　　innerWidth()/innerHeight() 方法返回元素的宽度/高度（包括内边距）。<br>　　　　　　outerWidth()/outerHeight() 方法返回元素的宽度/高度（包括内边距和边框）。<br>　　　　　　outerWidth(true)/outerHeight(true) 方法返回元素的宽度/高度（包括内边距、边框和外边距）。<br>　　attentions:<br>　　　　1)根据盒子模型，可知：<br>　　　　　　 width()/height()获得的是盒子模型最内层（content)的宽、高<br>　　　　　　 innerWidth()/innerHeight()获取的是盒子模型内两层(content、padding)的宽、高<br>　　　　　　 outerWidth()/outerHeight()获取的是盒子模型内三层的(content、padding、border)宽、高<br>　　　　　　 outerWidth(true)/outerHeight(true)获取的是盒子模型的整个盒子（content、padding、border、 margin）的宽、高</p>
 
       
     </div>
@@ -717,9 +432,7 @@ path.lineJoinStyle = kCGLineJoinRound;
       
         <div class="post-tags">
           
-            <a href="/tags/动画与绘图/" rel="tag"># 动画与绘图</a>
-          
-            <a href="/tags/iOS/" rel="tag"># iOS</a>
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
           
         </div>
       
@@ -732,8 +445,8 @@ path.lineJoinStyle = kCGLineJoinRound;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/13/动画与绘图/快速上手核心动画/" rel="next" title="快速上手核心动画">
-                <i class="fa fa-chevron-left"></i> 快速上手核心动画
+              <a href="/2016/08/24/PHP/jQuery选择器/" rel="next" title="jQuery选择器">
+                <i class="fa fa-chevron-left"></i> jQuery选择器
               </a>
             
           </div>
@@ -742,8 +455,8 @@ path.lineJoinStyle = kCGLineJoinRound;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/10/计算机网络/TCP-IP笔记(一)网络基础知识/" rel="prev" title="TCP-IP笔记(一)网络基础知识">
-                TCP-IP笔记(一)网络基础知识 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/16/PHP/PHP变量/" rel="prev" title="PHP变量">
+                PHP变量 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -904,7 +617,7 @@ path.lineJoinStyle = kCGLineJoinRound;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码案例"><span class="nav-number">2.</span> <span class="nav-text">代码案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、创建节点"><span class="nav-number">1.</span> <span class="nav-text">一、创建节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、查找节点"><span class="nav-number">2.</span> <span class="nav-text">二、查找节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、插入节点"><span class="nav-number">3.</span> <span class="nav-text">三、插入节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、替换节点"><span class="nav-number">4.</span> <span class="nav-text">四、替换节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、复制节点"><span class="nav-number">5.</span> <span class="nav-text">五、复制节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、删除节点"><span class="nav-number">6.</span> <span class="nav-text">六、删除节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、包裹节点"><span class="nav-number">7.</span> <span class="nav-text">七、包裹节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、遍历节点"><span class="nav-number">8.</span> <span class="nav-text">八、遍历节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、cssDOM"><span class="nav-number">9.</span> <span class="nav-text">九、cssDOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十、jQuery-尺寸"><span class="nav-number">10.</span> <span class="nav-text">十、jQuery-尺寸</span></a></li></ol></div>
             
 
           </div>
