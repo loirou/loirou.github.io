@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/myIcon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/myIcon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/myIcon.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/myIcon.png?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="tips,mac," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="洛洛爱吃肉" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="基本命令 1、列出文件 ls 参数 目录名        例: 看看驱动目录下有什么:ls /System/Library/Extensions参数 -w 显示中文，-l 详细信息， -a 包括隐藏文件 2、转换目录    cd    例：想到驱动目录下溜达一圈   cd /System/Library/Extensions 3、建立新目录 mkdir 目录名     例：在驱动目录下建一个备份目">
+<meta name="keywords" content="tips,mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac 终端常见指令">
+<meta property="og:url" content="http://yoursite.com/2016/02/23/tips/mac 终端常见指令/index.html">
+<meta property="og:site_name" content="洛洛爱吃肉">
+<meta property="og:description" content="基本命令 1、列出文件 ls 参数 目录名        例: 看看驱动目录下有什么:ls /System/Library/Extensions参数 -w 显示中文，-l 详细信息， -a 包括隐藏文件 2、转换目录    cd    例：想到驱动目录下溜达一圈   cd /System/Library/Extensions 3、建立新目录 mkdir 目录名     例：在驱动目录下建一个备份目">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-31T03:12:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mac 终端常见指令">
+<meta name="twitter:description" content="基本命令 1、列出文件 ls 参数 目录名        例: 看看驱动目录下有什么:ls /System/Library/Extensions参数 -w 显示中文，-l 详细信息， -a 包括隐藏文件 2、转换目录    cd    例：想到驱动目录下溜达一圈   cd /System/Library/Extensions 3、建立新目录 mkdir 目录名     例：在驱动目录下建一个备份目">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'HYD1K2Q0X8',
+      apiKey: 'bc57eb508190643696cd1f13aa415337',
+      indexName: 'loirou',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键词进行搜索","hits_empty":"找不到关于\" ${query} \"的文章","hits_stats":"共找到 ${hits} 篇文章,花了 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/02/23/tips/mac 终端常见指令/"/>
+
+
+
+
+
+  <title>mac 终端常见指令 | 洛洛爱吃肉</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">洛洛爱吃肉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学海无涯,进一步有进一步的欢喜.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/23/tips/mac 终端常见指令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loirou">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myIcon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洛洛爱吃肉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mac 终端常见指令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-23T16:47:00+08:00">
+                2016-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tips/" itemprop="url" rel="index">
+                    <span itemprop="name">tips</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/02/23/tips/mac 终端常见指令/" class="leancloud_visitors" data-flag-title="mac 终端常见指令">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>基本命令</p>
+<p>1、列出文件</p>
+<p>ls 参数 目录名        例: 看看驱动目录下有什么:ls /System/Library/Extensions<br>参数 -w 显示中文，-l 详细信息， -a 包括隐藏文件</p>
+<p>2、转换目录   </p>
+<p>cd    例：想到驱动目录下溜达一圈   cd /System/Library/Extensions</p>
+<p>3、建立新目录</p>
+<p>mkdir 目录名     例：在驱动目录下建一个备份目录 backup     mkdir /System/Library/Extensions/backup<br>在桌面上建一个备份目录 backup    mkdir /User/用户名/Desktop/backup</p>
+<p>4、拷贝文件</p>
+<p>cp 参数 源文件 目标文件    例：想把桌面的Natit.kext 拷贝到驱动目录中  cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions<br>参数R表示对目录进行递归操作，kext在图形界面下看起来是个文件，实际上是个文件夹。<br>把驱动目录下的所有文件备份到桌面backup<br>cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup</p>
+<p>5、删除文件</p>
+<p>rm 参数 文件   例：想删除驱动的缓存  rm -rf /System/Library/Extensions.kextcache     rm -rf /System/Library/Extensions.mkext<br>参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了</p>
+<p>6、移动文件</p>
+<p>mv 文件   例：想把AppleHDA.Kext 移到桌面    mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop<br>想把AppleHDA.Kext 移到备份目录中   mv /System/Library/Extensions/AppleHDA.kext /System/Library/Extensions/backup</p>
+<p>7、文本编辑</p>
+<p>nano 文件名   例：编辑natit Info.plist     nano /System/Library/Extensions/Natit.kext/Info.plist</p>
+<p>目录操作</p>
+<p>命令名                        功能描述                                             使用举例</p>
+<p>mkdir                        创建一个目录                                       mkdir dirname</p>
+<p>rmdir                         删除一个目录                                       rmdir dirname</p>
+<p>mvdir                        移动或重命名一个目录                            mvdir dir1 dir2</p>
+<p>cd（folder）               改变当前目录                                        cd dirname</p>
+<p>cd（不加参数）　　　　 进root</p>
+<p>cd ..　　　　　　　　　上级目录　　</p>
+<p>cd ~　　　　　　　　　返回root</p>
+<p>cd -　　　　　　　　　 返回上一个访问的目录</p>
+<p>pwd                          显示当前目录的路径名                         　 pwd</p>
+<p>ls                              显示当前目录的内容                            　 ls -la</p>
+<p>文件操作</p>
+<p>命令名                                 功能描述                                  使用举例</p>
+<p>cat                                      显示或连接文件                       cat filename</p>
+<p>od                                       显示非文本文件的内容                od -c filename</p>
+<p>cp                                       复制文件或目录                         cp file1 file2</p>
+<p>rm                                       删除文件或目录                        rm filename</p>
+<p>mv                                      改变文件名或所在目录                mv file1 file2</p>
+<p>find                                    使用匹配表达式查找文件            　 find . -name “*.c” -print</p>
+<p>file                                     显示文件类型                              file filename</p>
+<p>选择操作</p>
+<p>命令名                             功能描述                                      　　 使用举例</p>
+<p>head                              显示文件的最初几行                     　　  head -20 filename</p>
+<p>tail                                 显示文件的最后几行                    　　   tail -15 filename</p>
+<p>cut                                 显示文件每行中的某些域               　　  cut -f1,7 -d: /etc/passwd</p>
+<p>colrm                             从标准输入中删除若干列                　　  colrm 8 20 file2</p>
+<p>diff                                比较并显示两个文件的差异               　　 diff file1 file2</p>
+<p>sort                               排序或归并文件                                     sort -d -f -u file1</p>
+<p>uniq                              去掉文件中的重复行                                uniq file1 file2</p>
+<p>comm                            显示两有序文件的公共和非公共行               comm file1 file2</p>
+<p>wc                           　   统计文件的字符数、词数和行数                  wc filename</p>
+<p>nl                             　  给文件加上行号                                      nl file1 &gt;file2</p>
+<p>进程操作</p>
+<p>命令名                     功能描述                                                 使用举例</p>
+<p>ps                          显示进程当前状态                                      ps u</p>
+<p>kill                         终止进程                                                  kill -9 30142</p>
+<p>时间操作</p>
+<p>命令名                             功能描述                                            使用举例</p>
+<p>date                    显示系统的当前日期和时间                           　　date</p>
+<p>cal                                   显示日历                                      　  cal 8 1996</p>
+<p>time                         统计程序的执行时间                         　　　   time a.out</p>
+<p>网络与通信操作</p>
+<p>命令名                               功能描述                                      　　 使用举例</p>
+<p>telnet                               远程登录                                   telnet hpc.sp.net.edu.cn</p>
+<p>rlogin                               远程登录                                    rlogin hostname -l username</p>
+<p>rsh                       在远程主机执行指定命令                             rsh f01n03 date</p>
+<p>ftp                   在本地主机与远程主机之间传输文件               　 ftpftp.sp.net.edu.cn</p>
+<p>rcp                 在本地主机与远程主机 之间复制文件             　　 rcp file1 host1:file2</p>
+<p>ping                     给一个网络主机发送 回应请求                  　 ping hpc.sp.net.edu.cn</p>
+<p>mail                          阅读和发送电子邮件                                         mail</p>
+<p>write                     　　 给另一用户发送报文                             write username pts/1</p>
+<p>mesg                    　　允许或拒绝接收报文                                       mesg n</p>
+<p>Korn Shell 命令              </p>
+<p> 命令名                                 功能描述                                        使用举例</p>
+<p>history               列出最近执行过的 几条命令及编号                       history</p>
+<p>r                         重复执行最近执行过的 某条命令                            r -2</p>
+<p>alias                            给某个命令定义别名                                  alias del=rm -i</p>
+<p>unalias                     取消对某个别名的定义                                  unalias del</p>
+<p>其它命令</p>
+<p>命令名                                  功能描述                                         使用举例</p>
+<p>uname                    显示操作系统的有关信息                              uname -a</p>
+<p>clear                       清除屏幕或窗口内容                                       clear</p>
+<p>env                         显示当前所有设置过的环境变量                         env</p>
+<p>who                        列出当前登录的所有用户                                   who</p>
+<p>whoami                   显示当前正进行操作的用户名                           whoami</p>
+<p>tty                          显示终端或伪终端的名称                                     tty</p>
+<p>stty                         显示或重置控制键定义                                     stty -a</p>
+<p>du                          查询磁盘使用情况                         　　　　　　du -k subdir</p>
+<p>df /tmp                   显示文件系统的总空间和可用空间</p>
+<p>w                           显示当前系统活动的总信息</p>
+
+      
+    </div>
+    
+    
+    
+
+<div>
+      
+        
+      
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tips/" rel="tag"># tips</a>
+          
+            <a href="/tags/mac/" rel="tag"># mac</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/15/tips/git常见指令/" rel="next" title="git常见指令">
+                <i class="fa fa-chevron-left"></i> git常见指令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/15/iOS/iOS多线程编程之GCD的使用/" rel="prev" title="iOS多线程编程之GCD的使用">
+                iOS多线程编程之GCD的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTUzOS84MTAz"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myIcon.png"
+                alt="loirou" />
+            
+              <p class="site-author-name" itemprop="name">loirou</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/loirou" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">loirou</span>
+
+  
+</div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.3"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("H1dTuun8VxmsjT227Ei2mpWW-gzGzoHsz", "mGURbecfAmYLFQFpSC79Nbrq");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
