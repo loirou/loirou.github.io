@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Blocks是C语言的扩充功能。用一句话来表示Blocks的扩充功能:带有自动变量(局部变量)的匿名函数。 　　block其实是一个代码块，但是它的神奇之处在于在内联(inline)执行的时候(这和C++很像)还可以传递参数。同时block本身也可以被作为参数在方法和函数间传递，这就给予了block无限的可能。 Block一般有如下几种使用情况:1、作为一个本地变量（local variabl">
+<meta name="description" content="Blocks是C语言的扩充功能。用一句话来表示Blocks的扩充功能:带有自动变量(局部变量)的匿名函数。 block其实是一个代码块，但是它的神奇之处在于在内联(inline)执行的时候(这和C++很像)还可以传递参数。同时block本身也可以被作为参数在方法和函数间传递，这就给予了block无限的可能。 Block一般有如下几种使用情况:1、作为一个本地变量（local variable） 1">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Block小结">
 <meta property="og:url" content="http://yoursite.com/2016/04/25/iOS/Block小结/index.html">
 <meta property="og:site_name" content="洛洛爱吃肉">
-<meta property="og:description" content="Blocks是C语言的扩充功能。用一句话来表示Blocks的扩充功能:带有自动变量(局部变量)的匿名函数。 　　block其实是一个代码块，但是它的神奇之处在于在内联(inline)执行的时候(这和C++很像)还可以传递参数。同时block本身也可以被作为参数在方法和函数间传递，这就给予了block无限的可能。 Block一般有如下几种使用情况:1、作为一个本地变量（local variabl">
+<meta property="og:description" content="Blocks是C语言的扩充功能。用一句话来表示Blocks的扩充功能:带有自动变量(局部变量)的匿名函数。 block其实是一个代码块，但是它的神奇之处在于在内联(inline)执行的时候(这和C++很像)还可以传递参数。同时block本身也可以被作为参数在方法和函数间传递，这就给予了block无限的可能。 Block一般有如下几种使用情况:1、作为一个本地变量（local variable） 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-31T08:18:00.000Z">
+<meta property="og:updated_time" content="2017-10-31T08:22:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block小结">
-<meta name="twitter:description" content="Blocks是C语言的扩充功能。用一句话来表示Blocks的扩充功能:带有自动变量(局部变量)的匿名函数。 　　block其实是一个代码块，但是它的神奇之处在于在内联(inline)执行的时候(这和C++很像)还可以传递参数。同时block本身也可以被作为参数在方法和函数间传递，这就给予了block无限的可能。 Block一般有如下几种使用情况:1、作为一个本地变量（local variabl">
+<meta name="twitter:description" content="Blocks是C语言的扩充功能。用一句话来表示Blocks的扩充功能:带有自动变量(局部变量)的匿名函数。 block其实是一个代码块，但是它的神奇之处在于在内联(inline)执行的时候(这和C++很像)还可以传递参数。同时block本身也可以被作为参数在方法和函数间传递，这就给予了block无限的可能。 Block一般有如下几种使用情况:1、作为一个本地变量（local variable） 1">
 
 
 
@@ -403,8 +403,8 @@
       
 
       
-        <p>　　Blocks是C语言的扩充功能。用一句话来表示Blocks的扩充功能:带有自动变量(局部变量)的匿名函数。</p>
-<p>　　block其实是一个代码块，但是它的神奇之处在于在内联(inline)执行的时候(这和C++很像)还可以传递参数。同时block本身也可以被作为参数在方法和函数间传递，这就给予了block无限的可能。</p>
+        <p>Blocks是C语言的扩充功能。用一句话来表示Blocks的扩充功能:带有自动变量(局部变量)的匿名函数。</p>
+<p>block其实是一个代码块，但是它的神奇之处在于在内联(inline)执行的时候(这和C++很像)还可以传递参数。同时block本身也可以被作为参数在方法和函数间传递，这就给予了block无限的可能。</p>
 <h4 id="Block一般有如下几种使用情况"><a href="#Block一般有如下几种使用情况" class="headerlink" title="Block一般有如下几种使用情况:"></a>Block一般有如下几种使用情况:</h4><p>1、作为一个本地变量（local variable）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　returnType (^blockName)(parameterTypes) = ^returnType(parameters) &#123;...&#125;;</div></pre></td></tr></table></figure>
 <p>2、作为@property</p>
@@ -416,66 +416,30 @@
 <p>5、使用typedef来定义block，可以事半功倍</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">　　typedef returnType (^TypeName)(parameterTypes);</div><div class="line">　　TypeName blockName = ^returnType(parameters) &#123;...&#125;;</div></pre></td></tr></table></figure>
 <p>Block与C语言的函数指针是类似的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">//C的函数</div><div class="line">//格式：返回值 方法名 (参数...)</div><div class="line"></div><div class="line">//1.返回值是void 没有参数的C函数</div><div class="line">void cfun (void)&#123;</div><div class="line">    //调用时才执行函数里面的内容</div><div class="line">    printf(&quot;this is a c method\n&quot;);</div><div class="line">&#125;</div><div class="line">//2.返回值是void 带两个参数的C函数</div><div class="line">void cfun1(int a,int b)&#123;</div><div class="line">    printf(&quot;%d\n&quot;,a+b);</div><div class="line">&#125;</div><div class="line">//3.有返回值 带两个参数的C函数</div><div class="line">int cfun2(int c,int d)&#123;</div><div class="line">    int muli = c*d;</div><div class="line">    return muli;</div><div class="line">&#125;</div><div class="line">-(void)testC&#123;</div><div class="line">    cfun();</div><div class="line">    cfun1(2, 3);</div><div class="line">    int muli = cfun2(4, 5);</div><div class="line">    NSLog(@&quot;乘积是%d&quot;,muli);</div><div class="line">    </div><div class="line">    //1.声明一个返回值是void,不带参数的函数指针</div><div class="line">    //格式:返回值(*xxx)(参数...)</div><div class="line">    void (*fun1)(void);</div><div class="line">    fun1 = &amp;cfun;   //函数名本身就是一个地址，&amp;可加可不加</div><div class="line">    fun1();</div><div class="line">    //2.声明一个返回值是void,带两个参数的函数指针</div><div class="line">    void (*fun2)(int a,int b);</div><div class="line">    fun2 = cfun1;</div><div class="line">    fun2(6,7);</div><div class="line">    //3.声明一个返回值是int,带两个参数的函数指针</div><div class="line">    int (*fun3)(int a,int b);</div><div class="line">    fun3 = cfun2;</div><div class="line">    NSLog(@&quot;%d&quot;,fun3(8,9));</div><div class="line">&#125;</div><div class="line">``` </div><div class="line"></div><div class="line">#### 下面我们来看怎么定义Block</div><div class="line"></div><div class="line">1.无参数无返回值的Block</div></pre></td></tr></table></figure>
-<p>/**</p>
-<pre><code> *  void ：就是无返回值
- *  emptyBlock：就是该 bloc k的名字
- *  ()：这里相当于放参数。由于这里是无参数，所以就什么都不写
- */
-void (^emptyBlock)() = ^(){
-    NSLog(@&quot;无参数,无返回值的Block&quot;);
-};
-emptyBlock();
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2.有参数无返回值的Block</div></pre></td></tr></table></figure>
-<p>/**</p>
-<pre><code> *  调用这个block进行两个参数相加
- *
- *  @param int 参数A
- *  @param int 参数B
- *
- *  @return 无返回值
- */
-void (^sumBlock)(int ,int ) = ^(int a,int b){
-    NSLog(@&quot;%d + %d = %d&quot;,a,b,a+b);
-};
-/**
- *  调用这个sumBlock的Block，得到的结果是20
- */
-sumBlock(10,10);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line">3.有参数有返回值的Block</div></pre></td></tr></table></figure>
-<p>/**</p>
-<ul>
-<li>有参数有返回值<br>*</li>
-<li>@param NSString 字符串1</li>
-<li>@param NSString 字符串2<br>*</li>
-<li>@return 返回拼接好的字符串3<br><em>/<br>NSString</em> (^logBlock)(NSString <em>,NSString </em>) = ^(NSString <em> str1,NSString </em>str2){<pre><code>return [NSString stringWithFormat:@&quot;%@%@&quot;,str1,str2];
-</code></pre>};<br>//调用logBlock,输出的是 我是Block<br>NSLog(@”%@”, logBlock(@”我是”,@”Block”));<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 那么block与函数指针有什么区别呢</div><div class="line"></div><div class="line">　　首先:函数指针是对一个函数地址的引用，这个函数在编译的时候就已经确定了。而block是一个函数对象，是在程序运行过程中产生的。在一个作用域中生成的block对象分配在栈(stack)上，和其他所有分配在栈上的对象一样，离开这个作用域，就不存在了。Block允许开发者在两个对象之间将任意的语句当做数据进行传递，往往这要比引用定义在别处的函数直观。</div><div class="line"></div><div class="line">　　其次:blocks是inline的，并且它对局部变量是只读的。</div><div class="line"> </div><div class="line"></div><div class="line">#### 修改 block 之外的变量</div><div class="line"></div><div class="line">　　默认情况下，在程序块中访问的外部变量是复制过去的，即写操作不对原变量生效。比如下面的语句:</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>(void)viewDidLoad<br>{<br>  //将Block定义在方法内部<br>  int x = 100;<br>  void (^sumXAndYBlock)(int) = ^(int y){<br>  x = x+y;<br>  printf(“new x value is %d”,x);<br>  };<br>  sumXAndYBlock(50);<br>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　这段代码有什么问题呢，Xcode会提示x变量错误信息：Variable is not assigning (missing __block type)，这时候给int x = 100;语句前面加上__block关键字即可，如下:</div><div class="line"></div><div class="line">　　__block int x = 100;//这样在Block的&#123;&#125;体内，就可以修改外部变量了。</div><div class="line"> </div><div class="line"></div><div class="line">#### Block循环引用</div><div class="line"></div><div class="line">　　刚刚说过，block在iOS开发中被视作是对象，因此其生命周期会一直等到持有者的生命周期结束了才会结束。另一方面，由于block捕获变量的机制，使得持有block的对象也可能被block持有，从而形成循环引用，导致两者都不能被释放:</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>@interface ViewController (){<br>   void (^_cycleReferenceBlock)(void);<br>}</p>
-<p>@end</p>
-<p>@implementation ViewController</p>
-<ul>
-<li>(void)viewDidLoad {<br>　　　[super viewDidLoad];<br>　　　　_cycleReferenceBlock = ^{<br>　　　　　　NSLog(@”%@”, self);<br>　　　　　　//引发循环引用<br>　　　　 };<br>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">遇到这种代码编译器只会告诉你存在警告，很多时候我们都是忽略警告的，这最后会导致内存泄露，两者都无法释放。跟普通变量存在__block关键字一样的，系统提供给我们__weak的关键字用来修饰对象变量，声明这是一个弱引用的对象，从而解决了循环引用的问题：</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>　　__weak typeof(*&amp;self) weakSelf = self;<br>　　_cycleReferenceBlock = ^{<br>  　　  NSLog(@”%@”, weakSelf);   //弱指针引用，不会造成循环引用<br>　　};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　Block作为property属性实现页面之间传值</div><div class="line"></div><div class="line">　　这里举例一个Block回调修改上一下界面的背景颜色。控制器1跳转到控制器2，然后在控制器2触发事件回调修改控制器1的背景颜色为红色。</div><div class="line"></div><div class="line">　　VC2的实现</div></pre></td></tr></table></figure></p>
-<p>#import <uikit uikit.h=""><br>/**</uikit></p>
-<ul>
-<li>定义了一个changeColor的Block。这个changeColor必须带一个参数，这个参数的类型必须为id类型的</li>
-<li>无返回值</li>
-<li>@param id<br>*/<br>typedef void(^changeColor)(id);<br>@interface ViewController2 : UIViewController </li>
-</ul>
-<p>/**</p>
-<ul>
-<li>用上面定义的changeColor声明一个Block,声明的这个Block必须遵守声明的要求。<br>*/<br>@property (nonatomic, copy) changeColor backgroundColor;</li>
-</ul>
-<p>@end<br>-(void)touchesBegan:(NSSet<uitouch *=""> <em>)touches withEvent:(UIEvent </em>)event{<br>    //声明一个颜色<br>    UIColor *color = [UIColor redColor];<br>    //用刚刚声明的那个Block去回调修改上一界面的背景色<br>    self.backgroundColor(color);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　VC1的实现</div></pre></td></tr></table></figure></uitouch></p>
-<p>-(void)touchesBegan:(NSSet<uitouch *=""> <em>)touches withEvent:(UIEvent </em>)event{<br>    ViewController2 <em>vc =[[ViewController2 alloc]init];<br>    // 回调修改颜色<br>    vc.backgroundColor = ^(UIColor </em>color){<br>        self.view.backgroundColor = color;<br>    };<br>    [self.navigationController pushViewController:vc animated:YES];<br>}<br>```</uitouch></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">//C的函数</div><div class="line">//格式：返回值 方法名 (参数...)</div><div class="line"></div><div class="line">//1.返回值是void 没有参数的C函数</div><div class="line">void cfun (void)&#123;</div><div class="line">//调用时才执行函数里面的内容</div><div class="line">printf(&quot;this is a c method\n&quot;);</div><div class="line">&#125;</div><div class="line">//2.返回值是void 带两个参数的C函数</div><div class="line">void cfun1(int a,int b)&#123;</div><div class="line">printf(&quot;%d\n&quot;,a+b);</div><div class="line">&#125;</div><div class="line">//3.有返回值 带两个参数的C函数</div><div class="line">int cfun2(int c,int d)&#123;</div><div class="line">int muli = c*d;</div><div class="line">return muli;</div><div class="line">&#125;</div><div class="line">-(void)testC&#123;</div><div class="line">cfun();</div><div class="line">cfun1(2, 3);</div><div class="line">int muli = cfun2(4, 5);</div><div class="line">NSLog(@&quot;乘积是%d&quot;,muli);</div><div class="line"></div><div class="line">//1.声明一个返回值是void,不带参数的函数指针</div><div class="line">//格式:返回值(*xxx)(参数...)</div><div class="line">void (*fun1)(void);</div><div class="line">fun1 = &amp;cfun; //函数名本身就是一个地址，&amp;可加可不加</div><div class="line">fun1();</div><div class="line">//2.声明一个返回值是void,带两个参数的函数指针</div><div class="line">void (*fun2)(int a,int b);</div><div class="line">fun2 = cfun1;</div><div class="line">fun2(6,7);</div><div class="line">//3.声明一个返回值是int,带两个参数的函数指针</div><div class="line">int (*fun3)(int a,int b);</div><div class="line">fun3 = cfun2;</div><div class="line">NSLog(@&quot;%d&quot;,fun3(8,9));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="下面我们来看怎么定义Block"><a href="#下面我们来看怎么定义Block" class="headerlink" title="下面我们来看怎么定义Block"></a>下面我们来看怎么定义Block</h4><p>1.无参数无返回值的Block</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* void ：就是无返回值</div><div class="line">* emptyBlock：就是该 bloc k的名字</div><div class="line">* ()：这里相当于放参数。由于这里是无参数，所以就什么都不写</div><div class="line">*/</div><div class="line">void (^emptyBlock)() = ^()&#123;</div><div class="line">NSLog(@&quot;无参数,无返回值的Block&quot;);</div><div class="line">&#125;;</div><div class="line">emptyBlock();</div></pre></td></tr></table></figure>
+<p>2.有参数无返回值的Block</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 调用这个block进行两个参数相加</div><div class="line">*</div><div class="line">* @param int 参数A</div><div class="line">* @param int 参数B</div><div class="line">*</div><div class="line">* @return 无返回值</div><div class="line">*/</div><div class="line">void (^sumBlock)(int ,int ) = ^(int a,int b)&#123;</div><div class="line">NSLog(@&quot;%d + %d = %d&quot;,a,b,a+b);</div><div class="line">&#125;;</div><div class="line">/**</div><div class="line">* 调用这个sumBlock的Block，得到的结果是20</div><div class="line">*/</div><div class="line">sumBlock(10,10);</div></pre></td></tr></table></figure>
+<p>3.有参数有返回值的Block</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 有参数有返回值</div><div class="line">*</div><div class="line">* @param NSString 字符串1</div><div class="line">* @param NSString 字符串2</div><div class="line">*</div><div class="line">* @return 返回拼接好的字符串3</div><div class="line">*/ </div><div class="line">NSString* (^logBlock)(NSString *,NSString *) = ^(NSString * str1,NSString *str2)&#123;</div><div class="line">return [NSString stringWithFormat:@&quot;%@%@&quot;,str1,str2];</div><div class="line">&#125;;</div><div class="line">//调用logBlock,输出的是 我是Block</div><div class="line">NSLog(@&quot;%@&quot;, logBlock(@&quot;我是&quot;,@&quot;Block&quot;));</div></pre></td></tr></table></figure>
+<h4 id="那么block与函数指针有什么区别呢"><a href="#那么block与函数指针有什么区别呢" class="headerlink" title="那么block与函数指针有什么区别呢"></a>那么block与函数指针有什么区别呢</h4><p>　　首先:函数指针是对一个函数地址的引用，这个函数在编译的时候就已经确定了。而block是一个函数对象，是在程序运行过程中产生的。在一个作用域中生成的block对象分配在栈(stack)上，和其他所有分配在栈上的对象一样，离开这个作用域，就不存在了。Block允许开发者在两个对象之间将任意的语句当做数据进行传递，往往这要比引用定义在别处的函数直观。</p>
+<p>　　其次:blocks是inline的，并且它对局部变量是只读的。
+　　</p>
+<h4 id="修改-block-之外的变量"><a href="#修改-block-之外的变量" class="headerlink" title="修改 block 之外的变量"></a>修改 block 之外的变量</h4><p>　　默认情况下，在程序块中访问的外部变量是复制过去的，即写操作不对原变量生效。比如下面的语句:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">//将Block定义在方法内部</div><div class="line">int x = 100;</div><div class="line">void (^sumXAndYBlock)(int) = ^(int y)&#123;</div><div class="line">x = x+y;</div><div class="line">printf(&quot;new x value is %d&quot;,x);</div><div class="line">&#125;;</div><div class="line">sumXAndYBlock(50);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>　　这段代码有什么问题呢，Xcode会提示x变量错误信息：Variable is not assigning (missing <strong>block type)，这时候给int x = 100;语句前面加上</strong>block关键字即可，如下:</p>
+<p>　　__block int x = 100;//这样在Block的{}体内，就可以修改外部变量了。</p>
+<h4 id="Block循环引用"><a href="#Block循环引用" class="headerlink" title="Block循环引用"></a>Block循环引用</h4><p>　　刚刚说过，block在iOS开发中被视作是对象，因此其生命周期会一直等到持有者的生命周期结束了才会结束。另一方面，由于block捕获变量的机制，使得持有block的对象也可能被block持有，从而形成循环引用，导致两者都不能被释放:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@interface ViewController ()&#123;</div><div class="line">void (^_cycleReferenceBlock)(void);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@implementation ViewController</div><div class="line"></div><div class="line">- (void)viewDidLoad &#123; </div><div class="line">　　　[super viewDidLoad]; </div><div class="line">　　　　_cycleReferenceBlock = ^&#123; </div><div class="line">　　　　　　NSLog(@&quot;%@&quot;, self); </div><div class="line">　　　　　　//引发循环引用 </div><div class="line">　　　　 &#125;; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>遇到这种代码编译器只会告诉你存在警告，很多时候我们都是忽略警告的，这最后会导致内存泄露，两者都无法释放。跟普通变量存在<strong>block关键字一样的，系统提供给我们</strong>weak的关键字用来修饰对象变量，声明这是一个弱引用的对象，从而解决了循环引用的问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　__weak typeof(*&amp;self) weakSelf = self;</div><div class="line">　　_cycleReferenceBlock = ^&#123; </div><div class="line">　　 NSLog(@&quot;%@&quot;, weakSelf); //弱指针引用，不会造成循环引用</div><div class="line">　　&#125;;</div></pre></td></tr></table></figure>
+<p>　　Block作为property属性实现页面之间传值</p>
+<p>　　这里举例一个Block回调修改上一下界面的背景颜色。控制器1跳转到控制器2，然后在控制器2触发事件回调修改控制器1的背景颜色为红色。</p>
+<p>　　VC2的实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#import &lt;UIKit/UIKit.h&gt;</div><div class="line">/**</div><div class="line">* 定义了一个changeColor的Block。这个changeColor必须带一个参数，这个参数的类型必须为id类型的</div><div class="line">* 无返回值</div><div class="line">* @param id</div><div class="line">*/</div><div class="line">typedef void(^changeColor)(id);</div><div class="line">@interface ViewController2 : UIViewController</div><div class="line"></div><div class="line">/**</div><div class="line">* 用上面定义的changeColor声明一个Block,声明的这个Block必须遵守声明的要求。</div><div class="line">*/ </div><div class="line">@property (nonatomic, copy) changeColor backgroundColor;</div><div class="line"></div><div class="line">@end</div><div class="line">-(void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event&#123;</div><div class="line">//声明一个颜色</div><div class="line">UIColor *color = [UIColor redColor];</div><div class="line">//用刚刚声明的那个Block去回调修改上一界面的背景色</div><div class="line">self.backgroundColor(color);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>　　VC1的实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">-(void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event&#123;</div><div class="line">ViewController2 *vc =[[ViewController2 alloc]init];</div><div class="line">// 回调修改颜色</div><div class="line">vc.backgroundColor = ^(UIColor *color)&#123;</div><div class="line">self.view.backgroundColor = color;</div><div class="line">&#125;;</div><div class="line">[self.navigationController pushViewController:vc animated:YES];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><a href="https://github.com/loirou/blocksDemo" target="_blank" rel="external">查看demo</a></p>
 
       
@@ -689,7 +653,7 @@ sumBlock(10,10);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Block一般有如下几种使用情况"><span class="nav-number">1.</span> <span class="nav-text">Block一般有如下几种使用情况:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Block一般有如下几种使用情况"><span class="nav-number">1.</span> <span class="nav-text">Block一般有如下几种使用情况:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下面我们来看怎么定义Block"><span class="nav-number">2.</span> <span class="nav-text">下面我们来看怎么定义Block</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#那么block与函数指针有什么区别呢"><span class="nav-number">3.</span> <span class="nav-text">那么block与函数指针有什么区别呢</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-block-之外的变量"><span class="nav-number">4.</span> <span class="nav-text">修改 block 之外的变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Block循环引用"><span class="nav-number">5.</span> <span class="nav-text">Block循环引用</span></a></li></ol></div>
             
 
           </div>
