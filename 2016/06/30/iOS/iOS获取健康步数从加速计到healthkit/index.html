@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="洛洛爱吃肉">
 <meta property="og:description" content="又改需求了,所以又换了全新的统计步数的方法,整理一下吧。 在iPhone5s以前机型因为没有陀螺仪的存在,所以需要用加速度传感器来采集加速度值信息,然后根据震动幅度让其加入踩点数组并过滤,获取自己需要的步数数据。 直接上代码吧: 首先需要一个步数的model如下: 12345678910111213141516#import &amp;lt;Foundation/Foundation.h&amp;gt;@inte">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-31T10:28:04.000Z">
+<meta property="og:updated_time" content="2017-10-31T10:30:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS获取健康步数从加速计到healthkit">
 <meta name="twitter:description" content="又改需求了,所以又换了全新的统计步数的方法,整理一下吧。 在iPhone5s以前机型因为没有陀螺仪的存在,所以需要用加速度传感器来采集加速度值信息,然后根据震动幅度让其加入踩点数组并过滤,获取自己需要的步数数据。 直接上代码吧: 首先需要一个步数的model如下: 12345678910111213141516#import &amp;lt;Foundation/Foundation.h&amp;gt;@inte">
@@ -447,7 +447,6 @@ Discussion
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">if ([CMStepCounter isStepCountingAvailable]) &#123;</div><div class="line">    self.stepCounter = [[CMStepCounter alloc] init];</div><div class="line">    [self.stepCounter startStepCountingUpdatesToQueue:self.operationQueue</div><div class="line">                                             updateOn:1</div><div class="line">                                          withHandler:</div><div class="line">     ^(NSInteger numberOfSteps, NSDate *timestamp, NSError *error) &#123;</div><div class="line"></div><div class="line">         dispatch_async(dispatch_get_main_queue(), ^&#123;</div><div class="line"></div><div class="line">             if (error) &#123;</div><div class="line">                 UIAlertView *error = [[UIAlertView alloc] initWithTitle:@&quot;Opps!&quot; message:@&quot;error&quot; delegate:self cancelButtonTitle:@&quot;OK&quot; otherButtonTitles:nil, nil];</div><div class="line">                 [error show];</div><div class="line">             &#125;</div><div class="line">             else &#123;</div><div class="line"></div><div class="line">                 NSString *text = [NSString stringWithFormat:@&quot;当前步数: %ld&quot;, (long)numberOfSteps];</div><div class="line">                 //这里是步数</div><div class="line">                 weakSelf.stepsLabel.text = text;</div><div class="line">             &#125;</div><div class="line">         &#125;);</div><div class="line">     &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>计步 第二种方法</p>
 <pre><code>queryStepCountStartingFrom:to:toQueue:withHandler:
-
  收集并返回某一时间段内的历史步数数据
 
  - (void)queryStepCountStartingFrom:(NSDate *)start to:(NSDate *)end toQueue:(NSOperationQueue *)queuewithHandler:(CMStepQueryHandler)handler
