@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/10/27/hello-worldfafdsfsdfs/"/>
-    <id>http://yoursite.com/2017/10/27/hello-worldfafdsfsdfs/</id>
+    <link href="http://yoursite.com/2017/10/27/hello-world/"/>
+    <id>http://yoursite.com/2017/10/27/hello-world/</id>
     <published>2017-10-27T02:28:02.000Z</published>
     <updated>2017-10-27T02:28:02.000Z</updated>
     
@@ -34,56 +34,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>重置mac网络设置</title>
-    <link href="http://yoursite.com/2017/10/24/tips/%E9%87%8D%E7%BD%AEmac%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%89%AF%E6%9C%AC%204/"/>
-    <id>http://yoursite.com/2017/10/24/tips/重置mac网络设置的副本 4/</id>
-    <published>2017-10-24T03:22:00.000Z</published>
-    <updated>2017-10-30T06:06:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/1868951-a5e6281a5fdcf2a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-10-24 上午11.19.27.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1868951-a5e6281a5fdcf2a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; 
-      
-    
-    </summary>
-    
-      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
-    
-    
-      <category term="tips" scheme="http://yoursite.com/tags/tips/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>重置mac网络设置</title>
-    <link href="http://yoursite.com/2017/10/24/tips/%E9%87%8D%E7%BD%AEmac%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/"/>
-    <id>http://yoursite.com/2017/10/24/tips/重置mac网络设置/</id>
-    <published>2017-10-24T03:22:00.000Z</published>
-    <updated>2017-10-30T06:06:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/1868951-a5e6281a5fdcf2a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-10-24 上午11.19.27.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1868951-a5e6281a5fdcf2a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; 
-      
-    
-    </summary>
-    
-      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
-    
-    
-      <category term="tips" scheme="http://yoursite.com/tags/tips/"/>
     
   </entry>
   
@@ -164,8 +114,33 @@
   
   <entry>
     <title>重置mac网络设置</title>
-    <link href="http://yoursite.com/2017/10/24/iOS/%E9%87%8D%E7%BD%AEmac%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%89%AF%E6%9C%AC%202/"/>
-    <id>http://yoursite.com/2017/10/24/iOS/重置mac网络设置的副本 2/</id>
+    <link href="http://yoursite.com/2017/10/24/tips/%E9%87%8D%E7%BD%AEmac%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/"/>
+    <id>http://yoursite.com/2017/10/24/tips/重置mac网络设置/</id>
+    <published>2017-10-24T03:22:00.000Z</published>
+    <updated>2017-10-30T06:06:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/1868951-a5e6281a5fdcf2a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2017-10-24 上午11.19.27.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1868951-a5e6281a5fdcf2a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; 
+      
+    
+    </summary>
+    
+      <category term="tips" scheme="http://yoursite.com/categories/tips/"/>
+    
+    
+      <category term="tips" scheme="http://yoursite.com/tags/tips/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重置mac网络设置</title>
+    <link href="http://yoursite.com/2017/10/24/tips/%E9%87%8D%E7%BD%AEmac%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%89%AF%E6%9C%AC%204/"/>
+    <id>http://yoursite.com/2017/10/24/tips/重置mac网络设置的副本 4/</id>
     <published>2017-10-24T03:22:00.000Z</published>
     <updated>2017-10-30T06:06:29.000Z</updated>
     
@@ -217,9 +192,9 @@
     <link href="http://yoursite.com/2017/09/28/iOS/%E6%97%A5%E6%9C%9F%E5%B0%8Fdemo/"/>
     <id>http://yoursite.com/2017/09/28/iOS/日期小demo/</id>
     <published>2017-09-28T08:26:00.000Z</published>
-    <updated>2017-10-31T09:43:02.000Z</updated>
+    <updated>2017-10-31T09:56:11.000Z</updated>
     
-    <content type="html"><![CDATA[<p>有个项目需求是做个在日期上选择的,就是这种:<br><img src="http://upload-images.jianshu.io/upload_images/1868951-f9743a36922cc91e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="需求"></p><p>网上看了几个日期的demo都太厚重了,移植起来太麻烦,然后打算自己写。</p><p>就先写个简化的demo看看,主要有几个关键点:</p><ul><li>首先要根据当前日期获取这个月有几天</li><li>然后判断这个月份第一天是周几</li><li>再根据上面两个数据在合理的位置显示数据</li><li>还要记录下当前的日期方便切换月份</li><li>如果调接口的话其实根据后台给数据比对下对应的日期展示数据即可</li></ul><p>其中有一个容易迷糊的是获取的星期天是第一天,下标是1<br>所以我们的数组是这样的</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_weekdays = [NSArray arrayWithObjects: [NSNull null],@&quot;星期日&quot;, @&quot;周一&quot;, @&quot;周二&quot;, @&quot;周三&quot;, @&quot;周四&quot;, @&quot;周五&quot;, @&quot;周六&quot;, nil];</div></pre></td></tr></table></figure><p>好吧,看下写出来的效果:</p><p><img src="http://upload-images.jianshu.io/upload_images/1868951-05c9fbf48e14ddd7.gif?imageMogr2/auto-orient/strip" alt="demo"></p><p>总的来说没什么难度,就是要熟悉下关于日期的api.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//3.获取这个月总天数,填充数据源</div><div class="line"> NSRange range = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:self.currentDate];</div><div class="line"> NSUInteger numberOfDaysInMonth = range.length;</div><div class="line"> NSLog(@&quot;%lu&quot;, (unsigned long)numberOfDaysInMonth);</div><div class="line"> </div><div class="line"> //4.获取这个月的第一天为周几</div><div class="line"> NSCalendar *cal = [NSCalendar currentCalendar];</div><div class="line"> NSDateComponents *comps = [cal</div><div class="line">                            components:NSCalendarUnitYear | NSCalendarUnitMonth</div><div class="line">                            fromDate:self.currentDate];</div><div class="line"> lastMonthComps.day = 1;</div><div class="line"> NSDate *firstDay = [cal dateFromComponents:comps];</div><div class="line"> NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;</div><div class="line"> NSDateComponents *firsComponents = [cal components:calendarUnit fromDate:firstDay];</div><div class="line"> </div><div class="line"> NSLog(@&quot;%@&quot;, [_weekdays objectAtIndex:firsComponents.weekday]);</div></pre></td></tr></table></figure><p><a href="https://github.com/liudong945/datePicker" target="_blank" rel="external">demo完整代码</a></p>]]></content>
+    <content type="html"><![CDATA[<p>有个项目需求是做个在日期上选择的,就是这种:<br><img src="http://upload-images.jianshu.io/upload_images/1868951-f9743a36922cc91e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="需求"></p><p>网上看了几个日期的demo都太厚重了,移植起来太麻烦,然后打算自己写。</p><p>就先写个简化的demo看看,主要有几个关键点:</p><ul><li>首先要根据当前日期获取这个月有几天</li><li>然后判断这个月份第一天是周几</li><li>再根据上面两个数据在合理的位置显示数据</li><li>还要记录下当前的日期方便切换月份</li><li>如果调接口的话其实根据后台给数据比对下对应的日期展示数据即可</li></ul><p>其中有一个容易迷糊的是获取的星期天是第一天,下标是1<br>所以我们的数组是这样的</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_weekdays = [NSArray arrayWithObjects: [NSNull null],@&quot;星期日&quot;, @&quot;周一&quot;, @&quot;周二&quot;, @&quot;周三&quot;, @&quot;周四&quot;, @&quot;周五&quot;, @&quot;周六&quot;, nil];</div></pre></td></tr></table></figure><p>好吧,看下写出来的效果:</p><p><img src="http://upload-images.jianshu.io/upload_images/1868951-05c9fbf48e14ddd7.gif?imageMogr2/auto-orient/strip" alt="demo"></p><p>总的来说没什么难度,就是要熟悉下关于日期的api.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//3.获取这个月总天数,填充数据源</div><div class="line"> NSRange range = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:self.currentDate];</div><div class="line"> NSUInteger numberOfDaysInMonth = range.length;</div><div class="line"> NSLog(@&quot;%lu&quot;, (unsigned long)numberOfDaysInMonth);</div><div class="line"> </div><div class="line"> //4.获取这个月的第一天为周几</div><div class="line"> NSCalendar *cal = [NSCalendar currentCalendar];</div><div class="line"> NSDateComponents *comps = [cal</div><div class="line">                            components:NSCalendarUnitYear | NSCalendarUnitMonth</div><div class="line">                            fromDate:self.currentDate];</div><div class="line"> lastMonthComps.day = 1;</div><div class="line"> NSDate *firstDay = [cal dateFromComponents:comps];</div><div class="line"> NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;</div><div class="line"> NSDateComponents *firsComponents = [cal components:calendarUnit fromDate:firstDay];</div><div class="line"> </div><div class="line"> NSLog(@&quot;%@&quot;, [_weekdays objectAtIndex:firsComponents.weekday]);</div></pre></td></tr></table></figure><p><a href="https://github.com/loirou/datePicker" target="_blank" rel="external">demo完整代码</a></p>]]></content>
     
     <summary type="html">
     
@@ -340,31 +315,6 @@
   </entry>
   
   <entry>
-    <title>iOS在控制器中监听是否点击Home键以及重新进入界面的方法</title>
-    <link href="http://yoursite.com/2017/07/31/iOS/iOS%E5%9C%A8%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B8%AD%E7%9B%91%E5%90%AC%E6%98%AF%E5%90%A6%E7%82%B9%E5%87%BBHome%E9%94%AE%E4%BB%A5%E5%8F%8A%E9%87%8D%E6%96%B0%E8%BF%9B%E5%85%A5%E7%95%8C%E9%9D%A2%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2017/07/31/iOS/iOS在控制器中监听是否点击Home键以及重新进入界面的方法/</id>
-    <published>2017-07-31T02:18:00.000Z</published>
-    <updated>2017-10-31T09:36:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>第一步:<br>创建2个NSNotificationCenter监听<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:)</div><div class="line">name:UIApplicationWillResignActiveNotification object:nil]; //监听是否触发home键挂起程序.</div><div class="line">    </div><div class="line">[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:)</div><div class="line">name:UIApplicationDidBecomeActiveNotification object:nil]; //监听是否重新进入程序程序.</div></pre></td></tr></table></figure></p><p>第二步:<br>实现2个NSNotificationCenter所触发的事件方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (void)applicationWillResignActive:(NSNotification *)notification</div><div class="line"></div><div class="line">&#123;</div><div class="line">    printf(&quot;按理说是触发home按下\n&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)applicationDidBecomeActive:(NSNotification *)notification</div><div class="line">&#123;</div><div class="line">    printf(&quot;按理说是重新进来后响应\n&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>注: 在home键触发后,AppDelegate响应的方法为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (void)applicationDidEnterBackground:(UIApplication *)application</div><div class="line">&#123;</div><div class="line">    /*</div><div class="line">     Use this method to release shared resources, save user data, invalidate timers, </div><div class="line"></div><div class="line">     and store enough application state information to restore your application to its current state in case it is terminated later.</div><div class="line">     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.</div><div class="line">     */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;第一步:&lt;br&gt;创建2个NSNotificationCenter监听&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div cl
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>iOS获取Label高度的几种方法与对比</title>
     <link href="http://yoursite.com/2017/07/31/iOS/iOS%E8%8E%B7%E5%8F%96Label%E9%AB%98%E5%BA%A6%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E4%B8%8E%E5%AF%B9%E6%AF%94/"/>
     <id>http://yoursite.com/2017/07/31/iOS/iOS获取Label高度的几种方法与对比/</id>
@@ -378,6 +328,31 @@
       
       
         &lt;h4 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h4&gt;&lt;p&gt;在设置 UILabel 的 Frame 高度时，不能简单的设置为字体的 font size。否则会将字体的一部分裁剪掉。因为 UILabel
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS在控制器中监听是否点击Home键以及重新进入界面的方法</title>
+    <link href="http://yoursite.com/2017/07/31/iOS/iOS%E5%9C%A8%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B8%AD%E7%9B%91%E5%90%AC%E6%98%AF%E5%90%A6%E7%82%B9%E5%87%BBHome%E9%94%AE%E4%BB%A5%E5%8F%8A%E9%87%8D%E6%96%B0%E8%BF%9B%E5%85%A5%E7%95%8C%E9%9D%A2%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2017/07/31/iOS/iOS在控制器中监听是否点击Home键以及重新进入界面的方法/</id>
+    <published>2017-07-31T02:18:00.000Z</published>
+    <updated>2017-10-31T09:36:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一步:<br>创建2个NSNotificationCenter监听<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:)</div><div class="line">name:UIApplicationWillResignActiveNotification object:nil]; //监听是否触发home键挂起程序.</div><div class="line">    </div><div class="line">[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:)</div><div class="line">name:UIApplicationDidBecomeActiveNotification object:nil]; //监听是否重新进入程序程序.</div></pre></td></tr></table></figure></p><p>第二步:<br>实现2个NSNotificationCenter所触发的事件方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (void)applicationWillResignActive:(NSNotification *)notification</div><div class="line"></div><div class="line">&#123;</div><div class="line">    printf(&quot;按理说是触发home按下\n&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)applicationDidBecomeActive:(NSNotification *)notification</div><div class="line">&#123;</div><div class="line">    printf(&quot;按理说是重新进来后响应\n&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>注: 在home键触发后,AppDelegate响应的方法为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (void)applicationDidEnterBackground:(UIApplication *)application</div><div class="line">&#123;</div><div class="line">    /*</div><div class="line">     Use this method to release shared resources, save user data, invalidate timers, </div><div class="line"></div><div class="line">     and store enough application state information to restore your application to its current state in case it is terminated later.</div><div class="line">     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.</div><div class="line">     */</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;第一步:&lt;br&gt;创建2个NSNotificationCenter监听&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div cl
       
     
     </summary>
@@ -461,9 +436,9 @@
       <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
-    
       <category term="动画与绘图" scheme="http://yoursite.com/tags/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BB%98%E5%9B%BE/"/>
+    
+      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
   </entry>
   
@@ -515,9 +490,37 @@
       <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
     
     
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
       <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+  </entry>
+  
+  <entry>
+    <title>动画切换效果之push、pop、present、dismiss</title>
+    <link href="http://yoursite.com/2017/05/08/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BB%98%E5%9B%BE/%E5%8A%A8%E7%94%BB%E5%88%87%E6%8D%A2%E6%95%88%E6%9E%9C%E4%B9%8Bpush%E3%80%81pop%E3%80%81present%E3%80%81dismiss/"/>
+    <id>http://yoursite.com/2017/05/08/动画与绘图/动画切换效果之push、pop、present、dismiss/</id>
+    <published>2017-05-08T02:55:03.000Z</published>
+    <updated>2017-10-30T05:48:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>有时候页面跳转或视图切换的时候,需要做成特定的效果,常见的push、pop、present、dismiss效果如下,注意要添加<strong><caanimationdelegate></caanimationdelegate></strong>代理</p><h4 id="push默认动画效果"><a href="#push默认动画效果" class="headerlink" title="push默认动画效果"></a>push默认动画效果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">    CATransition *transition = [CATransition animation];</div><div class="line">    transition.duration = 0.3f;</div><div class="line">    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];</div><div class="line">    transition.type = kCATransitionPush;</div><div class="line">    transition.subtype = kCATransitionFromRight;</div><div class="line">    transition.delegate = self;</div><div class="line">    [self.contentView.layer addAnimation:transition forKey:nil];</div><div class="line">    [self.contentView addSubview:self.productDetailController.view];</div><div class="line"></div><div class="line">```  </div><div class="line">#### pop默认动画效果</div></pre></td></tr></table></figure><pre><code>CATransition *transition = [CATransition animation];transition.duration = 0.3f;transition.timingFunction = [CAMediaTimingFunctionfunctionWithName:kCAMediaTimingFunctionEaseInEaseOut];transition.type = kCATransitionPush;transition.subtype = kCATransitionFromLeft;transition.delegate = self;[self.view.superview.layer addAnimation:transition forKey:nil];[self.view removeFromSuperview];</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### present默认动画效果</div></pre></td></tr></table></figure><pre><code>CATransition *transition = [CATransition animation];transition.duration = 0.4f;transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];transition.type = kCATransitionMoveIn;transition.subtype = kCATransitionFromTop;transition.delegate = self;[[self currentNavigationController].view.layer addAnimation:transition forKey:nil];[[self currentNavigationController] pushViewController:playVC animated:NO];</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#### dismiss默认动画效果</div></pre></td></tr></table></figure><pre><code>CATransition *transition = [CATransition animation];transition.duration = 0.3f;transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];transition.type = kCATransitionReveal;transition.subtype = kCATransitionFromBottom;transition.delegate = self;[self.navigationController.view.layer addAnimation:transition forKey:nil];[self.navigationController popViewControllerAnimated:NO];</code></pre><p>```</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;有时候页面跳转或视图切换的时候,需要做成特定的效果,常见的push、pop、present、dismiss效果如下,注意要添加&lt;strong&gt;&lt;caanimationdelegate&gt;&lt;/caanimationdelegate&gt;&lt;/strong&gt;代理&lt;/p&gt;
+&lt;h4 id=
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://yoursite.com/categories/iOS/"/>
+    
+    
+      <category term="动画与绘图" scheme="http://yoursite.com/tags/%E5%8A%A8%E7%94%BB%E4%B8%8E%E7%BB%98%E5%9B%BE/"/>
+    
+      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
   </entry>
   
