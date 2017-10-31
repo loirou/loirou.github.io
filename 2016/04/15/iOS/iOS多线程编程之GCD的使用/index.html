@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="什么是线程呢? 　　1个CPU执行的CPU命令列为一条无分叉的路径即为线程。 　　这种无分叉路径不止1条,存在多条时即为多线程。 　　什么是GCD? 　　Grand Central Dispatch (GCD)是异步执行任务的技术之一。一般将应用程序中计述的线程管理用的代码在系统级中实现。开发者只需要定义想执行的任务并追加到Dispatch Queue中,GCD就能生成必要的线程并计划执行任务">
+<meta name="description" content="什么是线程呢? 　　1个CPU执行的CPU命令列为一条无分叉的路径即为线程。 　　这种无分叉路径不止1条,存在多条时即为多线程。 　　什么是GCD? 　　Grand Central Dispatch (GCD)是异步执行任务的技术之一。一般将应用程序中计述的线程管理用的代码在系统级中实现。开发者只需要定义想执行的任务并追加到Dispatch Queue中,GCD就能生成必要的线程并计划执行任务。">
 <meta name="keywords" content="读书笔记,iOS,多线程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS多线程编程之GCD的使用">
 <meta property="og:url" content="http://yoursite.com/2016/04/15/iOS/iOS多线程编程之GCD的使用/index.html">
 <meta property="og:site_name" content="洛洛爱吃肉">
-<meta property="og:description" content="什么是线程呢? 　　1个CPU执行的CPU命令列为一条无分叉的路径即为线程。 　　这种无分叉路径不止1条,存在多条时即为多线程。 　　什么是GCD? 　　Grand Central Dispatch (GCD)是异步执行任务的技术之一。一般将应用程序中计述的线程管理用的代码在系统级中实现。开发者只需要定义想执行的任务并追加到Dispatch Queue中,GCD就能生成必要的线程并计划执行任务">
+<meta property="og:description" content="什么是线程呢? 　　1个CPU执行的CPU命令列为一条无分叉的路径即为线程。 　　这种无分叉路径不止1条,存在多条时即为多线程。 　　什么是GCD? 　　Grand Central Dispatch (GCD)是异步执行任务的技术之一。一般将应用程序中计述的线程管理用的代码在系统级中实现。开发者只需要定义想执行的任务并追加到Dispatch Queue中,GCD就能生成必要的线程并计划执行任务。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-31T03:46:21.000Z">
+<meta property="og:updated_time" content="2017-10-31T03:48:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS多线程编程之GCD的使用">
-<meta name="twitter:description" content="什么是线程呢? 　　1个CPU执行的CPU命令列为一条无分叉的路径即为线程。 　　这种无分叉路径不止1条,存在多条时即为多线程。 　　什么是GCD? 　　Grand Central Dispatch (GCD)是异步执行任务的技术之一。一般将应用程序中计述的线程管理用的代码在系统级中实现。开发者只需要定义想执行的任务并追加到Dispatch Queue中,GCD就能生成必要的线程并计划执行任务">
+<meta name="twitter:description" content="什么是线程呢? 　　1个CPU执行的CPU命令列为一条无分叉的路径即为线程。 　　这种无分叉路径不止1条,存在多条时即为多线程。 　　什么是GCD? 　　Grand Central Dispatch (GCD)是异步执行任务的技术之一。一般将应用程序中计述的线程管理用的代码在系统级中实现。开发者只需要定义想执行的任务并追加到Dispatch Queue中,GCD就能生成必要的线程并计划执行任务。">
 
 
 
@@ -403,18 +403,18 @@
       
 
       
-        <p>  <strong>什么是线程呢?</strong></p>
+        <p><strong>什么是线程呢?</strong></p>
 <p>　　1个CPU执行的CPU命令列为一条无分叉的路径即为线程。</p>
 <p>　　这种无分叉路径不止1条,存在多条时即为多线程。</p>
 <p>　　<strong>什么是GCD?</strong></p>
 <p>　　Grand Central Dispatch (GCD)是异步执行任务的技术之一。一般将应用程序中计述的线程管理用的代码在系统级中实现。开发者只需要定义想执行的任务并追加到Dispatch Queue中,GCD就能生成必要的线程并计划执行任务。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">dispatch_async(queue, ^&#123;</div><div class="line">    /*</div><div class="line">     *长时间处理</div><div class="line">     *例如访问数据库</div><div class="line">     */</div><div class="line">    </div><div class="line">    /*</div><div class="line">     *长时间处理结束,主线程使用该处理结果</div><div class="line">     */</div><div class="line">    dispatch_async(dispatch_get_main_queue(), ^&#123;    </div><div class="line">        /*</div><div class="line">         *只有主线程可以执行的处理例如用户界面的更新</div><div class="line">         */</div><div class="line">    &#125;);        </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">dispatch_async(queue, ^&#123;</div><div class="line">/*</div><div class="line">*长时间处理</div><div class="line">*例如访问数据库</div><div class="line">*/</div><div class="line"></div><div class="line">/*</div><div class="line">*长时间处理结束,主线程使用该处理结果</div><div class="line">*/</div><div class="line">dispatch_async(dispatch_get_main_queue(), ^&#123; </div><div class="line">/*</div><div class="line">*只有主线程可以执行的处理例如用户界面的更新</div><div class="line">*/</div><div class="line">&#125;); </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>　　上面的就是在后台线程中执行长时间处理,处理结束时,主线程使用该处理结果的源代码。</p>
 <p>　　<strong>开发者要做的只是定义想执行的任务并追加到适当的Dispatch Queue中。</strong></p>
 <p>　　Dispatch Queue是什么呢?如其名称所示,是执行处理的等待队列。开发者通过dispatch_async函数等API,在Block语法中记述想执行的处理并将其追加到等待队列中。Dispatch Queue 按照追加的顺序(先进先出) 执行处理。</p>
 <p>　　<strong>Dispatch Queue 有两种,一种是等待现在执行中处理的Serial Dispatch Queue,另一种是不等待现在执行中处理的Concurrent Dispatch Queue。</strong></p>
 <p>比较这两种Dispatch Queue。准备一下源代码,在dispatch_async中追加多个处理。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">dispatch_async(queue,blk0); </div><div class="line">　　 dispatch_async(queue,blk1);</div><div class="line">dispatch_async(queue,blk2);</div><div class="line">dispatch_async(queue,blk3);</div><div class="line">dispatch_async(queue,blk4);</div><div class="line">dispatch_async(queue,blk5);    </div><div class="line">　　 dispatch_async(queue,blk6);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">dispatch_async(queue,blk0); </div><div class="line">　　 dispatch_async(queue,blk1);</div><div class="line">dispatch_async(queue,blk2);</div><div class="line">dispatch_async(queue,blk3);</div><div class="line">dispatch_async(queue,blk4);</div><div class="line">dispatch_async(queue,blk5); </div><div class="line">　　 dispatch_async(queue,blk6);</div></pre></td></tr></table></figure>
 <p>　　当变量queue为Serial Dispatch Queue时,因为要等待现在执行中的处理结束,所以首先执行bkl0,blk0执行结束后,接着执行blk1,blk1执行结束后再执行blk2,如此重复。同时执行的处理数只能有1个。即执行该源代码后,一定按照一下顺序进行处理。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">blk0</div><div class="line">blk1</div><div class="line">blk2</div><div class="line">blk3</div><div class="line">blk4</div><div class="line">blk5</div><div class="line">blk6</div></pre></td></tr></table></figure>
 <p>　　当变量queue为Concurrent Dispatch Queue 时,因为不用等待现在执行中的处理结束,所以首先执行blk0,不管blk0是否结束,都开始执行后面的blk1,不管blk1是否执行结束,都开始执行后面的blk2,如此重复循环。</p>
@@ -423,7 +423,7 @@
 <p>　　假设准备4个Concurrent Dispatch Queue 用线程。首先blk0在线程0中开始执行,接着blk1在线程1中开始执行,blk2在线程2中开始执行,blk3在线程3中开始执行。线程0中blk0执行结束后开始执行blk4,由于线程1中blk1并没有执行结束,因此线程2中blk2执行结束后开始执行blk5,就这样循环往复。</p>
 <p>　　像这样在Concurrent Dispatch Queue中执行处理时,执行顺序会根据处理内容和系统状态发生改变。它不同于执行顺序固定的Serial Dispatch Queue。在不能改变执行的处理顺序或不想并行执行多个处理时使用Serial Dispatch Queue。</p>
 <p>　　虽然知道了Serial Dispatch Queue和Concurrent Dispatch Queue,但是如何才能得到这些Dispatch Queue呢,方法有两种。</p>
-<p> 　　<strong>dispatch_queue_create</strong></p>
+<p>　　<strong>dispatch_queue_create</strong></p>
 <p>　　第一种方法是通过GCD的API去生成Dispatch Queue</p>
 <p>　　通过 dispatch_queue_create函数可生成Dispatch Queue。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//创建一个串行队列</div><div class="line">dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;serialQueue&quot;, NULL);</div><div class="line">//创建一个并行队列</div><div class="line">dispatch_queue_t myConcurrentDispatchQueue = dispatch_queue_create(&quot;concurrentQueue&quot;, DISPATCH_QUEUE_CONCURRENT);</div></pre></td></tr></table></figure>
@@ -435,279 +435,148 @@
 <p>　　<strong>Main Dispatch Queue/Global Dispatch Queue</strong></p>
 <p>　　第二种方法是获取系统标准提供的Dispatch Queue</p>
 <p>　　实际上不用特意生成Dispatch Queue系统也会给我们提供几个。那就是Main Dispatch Queue 和 Global Dispatch Queue。</p>
-<p> 　　Main Dispatch Queue正如其名称中含有的”Main”一样,是在主线程中执行的Dispatch Queue。因为主线程只有一个,所以Main Dispatch Queue自然是Serial Dispatch Queue。追加到Main Dispatch Queue的处理在主线程的RunLoop中执行。由于在主线程中执行,因此要将用户界面的界面更新等一些必须在主线程中执行的处理追加到Main Dispatch Queue使用。</p>
+<p>　　Main Dispatch Queue正如其名称中含有的”Main”一样,是在主线程中执行的Dispatch Queue。因为主线程只有一个,所以Main Dispatch Queue自然是Serial Dispatch Queue。追加到Main Dispatch Queue的处理在主线程的RunLoop中执行。由于在主线程中执行,因此要将用户界面的界面更新等一些必须在主线程中执行的处理追加到Main Dispatch Queue使用。</p>
 <p>　　另一个Global Dispatch Queue是所有的应用程序都能够使用的Concurrent Dispatch Queue。没有必要通过dispatch_queue_create函数逐个生成Concurrent Dispatch Queue。只要获取Global Dispatch Queue即可。</p>
 <p>　　另外Global Dispatch Queue有4个执行优先级,分别是高优先级(High Priority)、默认优先级(Default Priority)、低优先级(Low Priority)和后台优先级(Background Priority)。但是执行优先级只是大致的判断。例如在处理内容的执行可有可无时,使用后台优先级等,只能进行这种程度的区分。</p>
 <p>　　<strong>各种 Dispatch Queue 的获取方法如下</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">    //获取主线程</div><div class="line">    dispatch_queue_t mainDispatchQueue = dispatch_get_main_queue();</div><div class="line">    //高优先级</div><div class="line">    dispatch_queue_t globalDispatchQueueHigh = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);</div><div class="line">    //默认优先级</div><div class="line">    dispatch_queue_t globalDispatchQueueDefault = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</div><div class="line">    //低优先级</div><div class="line">    dispatch_queue_t globalDispatchQueueLow = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW , 0);</div><div class="line">    //后台优先级</div><div class="line">    dispatch_queue_t globalDispatchQueueBackgroud = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND , 0);</div><div class="line">``` </div><div class="line"></div><div class="line">　　**dispa_set_target_queue**</div><div class="line"></div><div class="line">　　dispatch_queue_create函数生成的Dispatch Queue 不管是Serial Dispatch Queue还是Concurrent Dispatch Queue,都使用与默认优先级Global Dispatch Queue相同执行优先级的线程。而变更生成的Dispatch Queue 的优先级要使用dispatch_set_target_queue函数。在后台执行动作处理的Serial Dispatch Queue的生成方法如下:</div></pre></td></tr></table></figure>
-<pre><code>dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;serialQueue&quot;, NULL);
-dispatch_queue_t globalDispatchQueueBackgroud = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND , 0);    
-dispatch_set_target_queue(mySerialDispatchQueue, globalDispatchQueueBackgroud);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　指定变更优先级的Dispatch Queue为dispatch_set_target_queue函数的第一个参数,指定与要使用的执行优先级的Global Dispatch Queue为第二个参数(目标)。第一个参数不能指定系统提供的Main Dispatch Queue和Global Dispatch Queue。</div><div class="line"></div><div class="line">　　将Dispatch Queue指定为dispatch_set_target_queue函数的参数,不仅可以变更Dispatch Queue的执行优先级,还可以作成Dispatch Queue的执行阶层。如果在多个Serial Dispatch Queue中用dispatch_set_target_queue函数指定目标为某一个Serial Dispatch Queue,那么原先本应并行执行的多个Serial Dispatch Queue,在目标Serial Dispatch Queue上只能同时执行一个处理。</div><div class="line"></div><div class="line">　　在必须将不可并行执行的处理追加到多个Serial Dispatch Queue中时,如果使用dispatch_set_target_queue函数将目标指定为某一个Serial Dispatch Queue,即可放置处理并行执行。</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"> 　　**dispatch_after**</div><div class="line"></div><div class="line">　　经常会有这样的情况:想在3秒后执行处理。可能不仅限于3秒,总之,这种想在指定事件后执行处理的情况,可使用dispatch_after函数来实现。</div><div class="line"></div><div class="line">　　在3秒后将指定的Block追加到Main Dispatch Queue 中的源代码如下:</div></pre></td></tr></table></figure>
-<p> 　　dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW,3ull<em>NSEC_PER_SEC);<br>    dispatch_after(time, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{<br>        NSLog(@”3秒后”);<br>    });<br>    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 </em> NSEC_PER_SEC)), dispatch_get_main_queue(), ^{<br>         NSLog(@”3秒后”);<br>    });<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　需要注意的是,dispatch_after函数并不是在指定的时间后执行处理,而只是在指定的时间追加处理到Dispatch Queue。此源代码在3秒后用dispatch_async函数追加Block到Main Dispatch Queue的相同。</div><div class="line"></div><div class="line">　　因为Main Dispatch Queue在主线程的RunLoop中执行,所以再比如每隔1/60秒执行的RunLoop中,Block最快在3秒后执行,最慢在3秒+1/60秒后执行,并且在Main Dispatch Queue有大量处理追加或主线程的处理本身有延迟时,这个事件会更长。</div><div class="line"></div><div class="line">　　虽然在有严格时间的要求下使用时会出现问题,但在想大致延迟执行处理时,该函数是非常有效的。</div><div class="line"></div><div class="line">　　另外第二个参数指定要追加处理的Dispatch Queue,第三个参数指定记述要执行处理的Block。</div><div class="line"></div><div class="line">　　第一个参数时指定时间用的dispatch_time_t类型的值。该值使用dispatch_time函数或dispatch_walltime函数作成。</div><div class="line"></div><div class="line">　dispatch_time函数能够获取从第一个参数dispatch_time_t类型值中指定的时间开始,到第二个参数指定的毫微秒单位时间后的时间。第一个参数经常使用的值是之前源代码中出现的DISPATCH_TIME_NOW。这表示现在的时间。即以下源代码可得到表示从现在开始1秒后的dispatch_time_t的值。</div></pre></td></tr></table></figure></p>
-<pre><code>dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1ull*NSEC_PER_SEC);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　数值和NSEC_PER_SEC的乘积得到单位为毫秒的数值,&quot;ull&quot;是C语言的数值字面量是显式表示类型时使用的字符串(表示&quot;unsigned long long&quot;)。如果使用NSEC_PER_MSEC则可以以毫秒为单位计算。一下源代码为从现在开始150毫秒后时间的值。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"></div><div class="line">**Dispatch Group**</div><div class="line"></div><div class="line">　在追加到Dispatch Queue中的多个处理全部结束后想执行结束处理,这种情况会经常出现。只使用一个Serial Dispatch Queue时,只要将项执行的处理全部追加到该 Serial Dispatch Queue中并在最后追加结束处理,即可实现。但是在使用Concurrent Dispatch Queue时或同时使用多个Dispatch Queue时,源代码就会变得颇为复杂。</div><div class="line"></div><div class="line">　在这种情况下使用Dispatch Group。以下源代码为:追加3个block到Global Dispatch Queue。这个Block如果全部执行完毕。就会执行Main Dispatch Queue中结束处理用的block。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-
-dispatch_group_t group = dispatch_group_create();
-
-dispatch_group_async(group, queue, ^{
-    NSLog(@&quot;blk0&quot;);
-});
-dispatch_group_async(group, queue, ^{
-    NSLog(@&quot;blk1&quot;);
-});
-dispatch_group_async(group, queue, ^{
-    NSLog(@&quot;blk2&quot;);
-});
-dispatch_group_notify(group, queue, ^{
-    NSLog(@&quot;结束了&quot;);
-});
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">该代码执行结果如下</div></pre></td></tr></table></figure>
-<pre><code>blk1
-blk2
-blk0
-结束了
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">　因为Global Dispatch Queue 即Concurrent Dispatch Queue追加处理,多个线程并行执行,所以追加处理的执行顺序不定。执行时会发生变化。但是此执行结果的done一定是最后输出的。</div><div class="line"></div><div class="line">　无论向什么样的Dispatch Queue中追加处理,使用Dispatch Group都可监视这些处理执行的结果。一旦检测到所以处理执行结束,就可将结束的处理追加到Dispatch Queue中。这就是使用Dispatch Queue 的原因。</div><div class="line"></div><div class="line">　在追加到Dispatch Queue中的处理全部执行结束时,该源代码中使用的dispatch_group_notify函数会将执行的Block追加到Dispatch Queue中,将第一个参数指定为要监视的Dispatch Group。在追加到该Dispatch Group 的全部处理执行结束时,将第三个参数的Block追加到第二个参数的Dispatch Queue中。在dispatch_group_notify函数中不管指定什么样的Dispatch Queue,属于Dispatch Group的全部处理在追加指定的Block时都已执行结束。</div><div class="line"></div><div class="line">　另外,在Dispatch Queue中也可以使用dispatch_group_wait函数仅等待全部处理执行结束。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-
-dispatch_group_t group = dispatch_group_create();
-
-dispatch_group_async(group, queue, ^{
-    NSLog(@&quot;blk0&quot;);
-});
-dispatch_group_async(group, queue, ^{
-    NSLog(@&quot;blk1&quot;);
-});
-dispatch_group_async(group, queue, ^{
-    NSLog(@&quot;blk2&quot;);
-});
-dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">　dispatch_group_wait函数的第二个参数指定为等待的时间(超时)。它属于dispatch_time_t类型的值。该源代码使用DISPATCH_TIME_FORVER,意味着永久等待。只要属于Dispatch Group的处理尚未执行结束,就会一直等待,中途不能取消。</div><div class="line"></div><div class="line">　如同dispatch_after函数说明的那样,指定等待间隔为1秒时应作出以下处理。</div></pre></td></tr></table></figure>
-<p>  　dispatch_time_t time2 = dispatch_time(DISPATCH_TIME_NOW, 1ull*NSEC_PER_SEC);</p>
-<pre><code>long result = dispatch_group_wait(group, time2);
-
-if (result == 0) {
-    /*
-     *属于Dispatch Group的全部处理结束执行
-     */
-}else{
-    /*
-     *属于Dispatch Group的某一个处理还在执行中
-     */
-}  
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   </div><div class="line">　　如果dispatch_group_wait函数的返回值不为0,就意味着虽然过了指定时间,但属于Dispatch Group的某个处理还在执行中。如果返回值为0,那么全部执行结束。等待时间为DISPATCH_TIME_FORVER、由dispatch_group_wait函数返回时,由于属于Dispatch Group的处理必定全部执行结束,因此返回值为0。</div><div class="line"></div><div class="line">　　这里的&quot;等待&quot;是什么意思呢,这意味着一旦调用dispatch_group_wait函数,该函数就处于调用的状态而不返回。执行dispatch_group_wait函数的现在的线程(当前线程)停止。在经过dispatch_group_wait函数中指定的时间或属于指定Dispatch Group的处理全部执行之前,执行该函数的线程停止。</div><div class="line"></div><div class="line">　　指定DISPATCH_TIME_NOW,则不用任何等待即可判定属于Dispatch Group的处理是否执行结束。</div></pre></td></tr></table></figure>
-<p> long result = dispatch_group_wait(group, DISPATCH_TIME_NOW);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　在主线程的RunLoop的每次循环中,可检查执行是否结束,从而不浪费多余的等待时间,虽然这样也可以,但一般这样情况下,还是推荐dispatch_group_notify函数追加结束处理到Main Dispatch Queue中。这是因为dispatch_group_notify函数可以简化代码。</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">　　**dispatch_barrier_async**</div><div class="line">　　</div><div class="line">　　在访问数据库或文件时,如前所述,使用Serial Dispatch Queue可避免数据竞争的问题。</div><div class="line"></div><div class="line">　　写入处理确实不可以与其他的写入处理以及包含读取处理的其他某些处理并行执行。但是如果读取处理只是与读取处理并行执行,那么多个并行执行就不会发生问题。</div><div class="line"></div><div class="line">　　也就是说,为了高效率的进行访问,读取处理追加到Concurrent Dispatch Queue中,写入处理在任一个读取处理没有执行的状态下,追加到Serial Dispatch Queue中即可(在写入处理结束之前,读取处理不可执行)。</div><div class="line"></div><div class="line">　　虽然利用Dispatch Group和dispatch_set_target_queue函数也可实现,但是源代码会很复杂。</div><div class="line"></div><div class="line">　　GCD为我们提供了更为聪明的解决方法一一dispatch_barrier_async函数。该函数同dispatch_queue_create函数生成的Concurrent Dispatch Queue 一起使用。</div><div class="line"></div><div class="line">　首先dispatch_queue_create函数生成Concurrent Dispatch Queue,在dispatch_async下做追加处理。</div></pre></td></tr></table></figure></p>
-<pre><code>dispatch_queue_t queue = dispatch_queue_create(&quot;concurrentQueue&quot;, DISPATCH_QUEUE_CONCURRENT);
-</code></pre><p>　 dispatch_async(queue, blk0_for_reading);<br>    dispatch_async(queue, blk1_for_reading);<br>    dispatch_async(queue, blk2_for_reading);<br>    dispatch_async(queue, blk3_for_reading);<br>    dispatch_async(queue, blk4_for_reading);<br>    dispatch_async(queue, blk5_for_reading);<br>    dispatch_async(queue, blk6_for_reading);<br>    dispatch_async(queue, blk7_for_reading);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//获取主线程</div><div class="line">dispatch_queue_t mainDispatchQueue = dispatch_get_main_queue();</div><div class="line">//高优先级</div><div class="line">dispatch_queue_t globalDispatchQueueHigh = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);</div><div class="line">//默认优先级</div><div class="line">dispatch_queue_t globalDispatchQueueDefault = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</div><div class="line">//低优先级</div><div class="line">dispatch_queue_t globalDispatchQueueLow = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW , 0);</div><div class="line">//后台优先级</div><div class="line">dispatch_queue_t globalDispatchQueueBackgroud = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND , 0);</div></pre></td></tr></table></figure>
+<p>　　<strong>dispa_set_target_queue</strong></p>
+<p>　　dispatch_queue_create函数生成的Dispatch Queue 不管是Serial Dispatch Queue还是Concurrent Dispatch Queue,都使用与默认优先级Global Dispatch Queue相同执行优先级的线程。而变更生成的Dispatch Queue 的优先级要使用dispatch_set_target_queue函数。在后台执行动作处理的Serial Dispatch Queue的生成方法如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;serialQueue&quot;, NULL);</div><div class="line">dispatch_queue_t globalDispatchQueueBackgroud = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND , 0); </div><div class="line">dispatch_set_target_queue(mySerialDispatchQueue, globalDispatchQueueBackgroud);</div></pre></td></tr></table></figure>
+<p>　　指定变更优先级的Dispatch Queue为dispatch_set_target_queue函数的第一个参数,指定与要使用的执行优先级的Global Dispatch Queue为第二个参数(目标)。第一个参数不能指定系统提供的Main Dispatch Queue和Global Dispatch Queue。</p>
+<p>　　将Dispatch Queue指定为dispatch_set_target_queue函数的参数,不仅可以变更Dispatch Queue的执行优先级,还可以作成Dispatch Queue的执行阶层。如果在多个Serial Dispatch Queue中用dispatch_set_target_queue函数指定目标为某一个Serial Dispatch Queue,那么原先本应并行执行的多个Serial Dispatch Queue,在目标Serial Dispatch Queue上只能同时执行一个处理。</p>
+<p>　　在必须将不可并行执行的处理追加到多个Serial Dispatch Queue中时,如果使用dispatch_set_target_queue函数将目标指定为某一个Serial Dispatch Queue,即可放置处理并行执行。</p>
+<p>　　<strong>dispatch_after</strong></p>
+<p>　　经常会有这样的情况:想在3秒后执行处理。可能不仅限于3秒,总之,这种想在指定事件后执行处理的情况,可使用dispatch_after函数来实现。</p>
+<p>　　在3秒后将指定的Block追加到Main Dispatch Queue 中的源代码如下:　　</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW,3ull*NSEC_PER_SEC);</div><div class="line">dispatch_after(time, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</div><div class="line">NSLog(@&quot;3秒后&quot;);</div><div class="line">&#125;);</div><div class="line">dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">NSLog(@&quot;3秒后&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>　　需要注意的是,dispatch_after函数并不是在指定的时间后执行处理,而只是在指定的时间追加处理到Dispatch Queue。此源代码在3秒后用dispatch_async函数追加Block到Main Dispatch Queue的相同。</p>
+<p>　　因为Main Dispatch Queue在主线程的RunLoop中执行,所以再比如每隔1/60秒执行的RunLoop中,Block最快在3秒后执行,最慢在3秒+1/60秒后执行,并且在Main Dispatch Queue有大量处理追加或主线程的处理本身有延迟时,这个事件会更长。</p>
+<p>　　虽然在有严格时间的要求下使用时会出现问题,但在想大致延迟执行处理时,该函数是非常有效的。</p>
+<p>　　另外第二个参数指定要追加处理的Dispatch Queue,第三个参数指定记述要执行处理的Block。</p>
+<p>　　第一个参数时指定时间用的dispatch_time_t类型的值。该值使用dispatch_time函数或dispatch_walltime函数作成。</p>
+<p>　dispatch_time函数能够获取从第一个参数dispatch_time_t类型值中指定的时间开始,到第二个参数指定的毫微秒单位时间后的时间。第一个参数经常使用的值是之前源代码中出现的DISPATCH_TIME_NOW。这表示现在的时间。即以下源代码可得到表示从现在开始1秒后的dispatch_time_t的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1ull*NSEC_PER_SEC);</div></pre></td></tr></table></figure>
+<p>　数值和NSEC_PER_SEC的乘积得到单位为毫秒的数值,”ull”是C语言的数值字面量是显式表示类型时使用的字符串(表示”unsigned long long”)。如果使用NSEC_PER_MSEC则可以以毫秒为单位计算。一下源代码为从现在开始150毫秒后时间的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 150ull*NSEC_PER_MSEC);</div><div class="line">``` </div><div class="line">**Dispatch Group**</div><div class="line"></div><div class="line">　在追加到Dispatch Queue中的多个处理全部结束后想执行结束处理,这种情况会经常出现。只使用一个Serial Dispatch Queue时,只要将项执行的处理全部追加到该 Serial Dispatch Queue中并在最后追加结束处理,即可实现。但是在使用Concurrent Dispatch Queue时或同时使用多个Dispatch Queue时,源代码就会变得颇为复杂。</div><div class="line"></div><div class="line">　在这种情况下使用Dispatch Group。以下源代码为:追加3个block到Global Dispatch Queue。这个Block如果全部执行完毕。就会执行Main Dispatch Queue中结束处理用的block。</div></pre></td></tr></table></figure>
+<p>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</p>
+<p>dispatch_group_t group = dispatch_group_create();</p>
+<p>dispatch_group_async(group, queue, ^{<br>NSLog(@”blk0”);<br>});<br>dispatch_group_async(group, queue, ^{<br>NSLog(@”blk1”);<br>});<br>dispatch_group_async(group, queue, ^{<br>NSLog(@”blk2”);<br>});<br>dispatch_group_notify(group, queue, ^{<br>NSLog(@”结束了”);<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">该代码执行结果如下</div></pre></td></tr></table></figure></p>
+<p>blk1<br>blk2<br>blk0<br>结束了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">　因为Global Dispatch Queue 即Concurrent Dispatch Queue追加处理,多个线程并行执行,所以追加处理的执行顺序不定。执行时会发生变化。但是此执行结果的done一定是最后输出的。</div><div class="line"></div><div class="line">　无论向什么样的Dispatch Queue中追加处理,使用Dispatch Group都可监视这些处理执行的结果。一旦检测到所以处理执行结束,就可将结束的处理追加到Dispatch Queue中。这就是使用Dispatch Queue 的原因。</div><div class="line"></div><div class="line">　在追加到Dispatch Queue中的处理全部执行结束时,该源代码中使用的dispatch_group_notify函数会将执行的Block追加到Dispatch Queue中,将第一个参数指定为要监视的Dispatch Group。在追加到该Dispatch Group 的全部处理执行结束时,将第三个参数的Block追加到第二个参数的Dispatch Queue中。在dispatch_group_notify函数中不管指定什么样的Dispatch Queue,属于Dispatch Group的全部处理在追加指定的Block时都已执行结束。</div><div class="line"></div><div class="line">　另外,在Dispatch Queue中也可以使用dispatch_group_wait函数仅等待全部处理执行结束。</div></pre></td></tr></table></figure></p>
+<p>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</p>
+<p>dispatch_group_t group = dispatch_group_create();</p>
+<p>dispatch_group_async(group, queue, ^{<br>NSLog(@”blk0”);<br>});<br>dispatch_group_async(group, queue, ^{<br>NSLog(@”blk1”);<br>});<br>dispatch_group_async(group, queue, ^{<br>NSLog(@”blk2”);<br>});<br>dispatch_group_wait(group, DISPATCH_TIME_FOREVER);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">　dispatch_group_wait函数的第二个参数指定为等待的时间(超时)。它属于dispatch_time_t类型的值。该源代码使用DISPATCH_TIME_FORVER,意味着永久等待。只要属于Dispatch Group的处理尚未执行结束,就会一直等待,中途不能取消。</div><div class="line"></div><div class="line">　如同dispatch_after函数说明的那样,指定等待间隔为1秒时应作出以下处理。</div></pre></td></tr></table></figure>
+<p>　dispatch_time_t time2 = dispatch_time(DISPATCH_TIME_NOW, 1ull*NSEC_PER_SEC);</p>
+<p>long result = dispatch_group_wait(group, time2);</p>
+<p>if (result == 0) {<br>/<em>
+</em>属于Dispatch Group的全部处理结束执行<br><em>/<br>}else{<br>/</em><br><em>属于Dispatch Group的某一个处理还在执行中
+</em>/<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　如果dispatch_group_wait函数的返回值不为0,就意味着虽然过了指定时间,但属于Dispatch Group的某个处理还在执行中。如果返回值为0,那么全部执行结束。等待时间为DISPATCH_TIME_FORVER、由dispatch_group_wait函数返回时,由于属于Dispatch Group的处理必定全部执行结束,因此返回值为0。</div><div class="line"></div><div class="line">　　这里的&quot;等待&quot;是什么意思呢,这意味着一旦调用dispatch_group_wait函数,该函数就处于调用的状态而不返回。执行dispatch_group_wait函数的现在的线程(当前线程)停止。在经过dispatch_group_wait函数中指定的时间或属于指定Dispatch Group的处理全部执行之前,执行该函数的线程停止。</div><div class="line"></div><div class="line">　　指定DISPATCH_TIME_NOW,则不用任何等待即可判定属于Dispatch Group的处理是否执行结束。</div></pre></td></tr></table></figure></p>
+<p>long result = dispatch_group_wait(group, DISPATCH_TIME_NOW);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　在主线程的RunLoop的每次循环中,可检查执行是否结束,从而不浪费多余的等待时间,虽然这样也可以,但一般这样情况下,还是推荐dispatch_group_notify函数追加结束处理到Main Dispatch Queue中。这是因为dispatch_group_notify函数可以简化代码。</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">　　**dispatch_barrier_async**</div><div class="line">　　</div><div class="line">　　在访问数据库或文件时,如前所述,使用Serial Dispatch Queue可避免数据竞争的问题。</div><div class="line"></div><div class="line">　　写入处理确实不可以与其他的写入处理以及包含读取处理的其他某些处理并行执行。但是如果读取处理只是与读取处理并行执行,那么多个并行执行就不会发生问题。</div><div class="line"></div><div class="line">　　也就是说,为了高效率的进行访问,读取处理追加到Concurrent Dispatch Queue中,写入处理在任一个读取处理没有执行的状态下,追加到Serial Dispatch Queue中即可(在写入处理结束之前,读取处理不可执行)。</div><div class="line"></div><div class="line">　　虽然利用Dispatch Group和dispatch_set_target_queue函数也可实现,但是源代码会很复杂。</div><div class="line"></div><div class="line">　　GCD为我们提供了更为聪明的解决方法一一dispatch_barrier_async函数。该函数同dispatch_queue_create函数生成的Concurrent Dispatch Queue 一起使用。</div><div class="line"></div><div class="line">　首先dispatch_queue_create函数生成Concurrent Dispatch Queue,在dispatch_async下做追加处理。</div></pre></td></tr></table></figure></p>
+<p>dispatch_queue_t queue = dispatch_queue_create(“concurrentQueue”, DISPATCH_QUEUE_CONCURRENT);</p>
+<p>　 dispatch_async(queue, blk0_for_reading);<br>dispatch_async(queue, blk1_for_reading);<br>dispatch_async(queue, blk2_for_reading);<br>dispatch_async(queue, blk3_for_reading);<br>dispatch_async(queue, blk4_for_reading);<br>dispatch_async(queue, blk5_for_reading);<br>dispatch_async(queue, blk6_for_reading);<br>dispatch_async(queue, blk7_for_reading);</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">　</div><div class="line">　在 blk3_for_reading和 blk4_for_reading处理之间执行写入处理,并将写入的内容读取 blk4_for_reading 处理以及之后的处理中。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_async(queue, blk0_for_reading);
-dispatch_async(queue, blk1_for_reading);
-dispatch_async(queue, blk2_for_reading);
-dispatch_async(queue, blk3_for_reading);
-</code></pre><p>　　/<em>
+<p>dispatch_async(queue, blk0_for_reading);<br>dispatch_async(queue, blk1_for_reading);<br>dispatch_async(queue, blk2_for_reading);<br>dispatch_async(queue, blk3_for_reading);<br>　　/<em>
 　　</em>写入处理<br>　　<em>将写入的内容读取之后的处理中
-　　</em>/<br>    dispatch_async(queue, blk4_for_reading);<br>    dispatch_async(queue, blk5_for_reading);<br>    dispatch_async(queue, blk6_for_reading);<br>    dispatch_async(queue, blk7_for_reading);</p>
+　　</em>/<br>dispatch_async(queue, blk4_for_reading);<br>dispatch_async(queue, blk5_for_reading);<br>dispatch_async(queue, blk6_for_reading);<br>dispatch_async(queue, blk7_for_reading);</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">　如果向下面这样简单的在dispatch_async函数中加入写入处理,那么根据Concurrent Dispatch Queue的性质,就有可能在追加到写入处理前面的处理中读取到与期待不符的数据,还可能因非法访问导致应用程序异常结束。如果追加多个写入处理,则可能发生更多问题,比如数据竞争。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_async(queue, blk0_for_reading);
-dispatch_async(queue, blk1_for_reading);
-dispatch_async(queue, blk2_for_reading);
-dispatch_async(queue, blk3_for_reading);
-
-dispatch_async(queue, blk_for_writing);
-
-dispatch_async(queue, blk4_for_reading);
-dispatch_async(queue, blk5_for_reading);
-dispatch_async(queue, blk6_for_reading);
-dispatch_async(queue, blk7_for_reading)
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line">　</div><div class="line">　因此我们要使用dispatch_barrier_async函数。dispatch_barrier_async函数会等待追加到Concurrent Dispatch Queue上的并行执行的处理全部结束之后,再将指定的处理追加到该Concurrent Dispatch Queue中。然后由</div></pre></td></tr></table></figure>
-<p>dispatch_barrier_async(globalDispatchQueueDefault, ^{<br>        NSLog(@”writing”);<br>    });<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">追加的处理执行完毕后,Concurrent Dispatch Queue才恢复为一般的动作,追加到该Concurrent Dispatch Queue的处理又开始并行执行。</div></pre></td></tr></table></figure></p>
-<pre><code>dispatch_async(queue, blk0_for_reading);
-dispatch_async(queue, blk1_for_reading);
-dispatch_async(queue, blk2_for_reading);
-dispatch_async(queue, blk3_for_reading);
-
-dispatch_barrier_async(queue, blk_for_writing});
-
-dispatch_async(queue, blk4_for_reading);
-dispatch_async(queue, blk5_for_reading);
-dispatch_async(queue, blk6_for_reading);
-dispatch_async(queue, blk7_for_reading);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　如上所示,使用方法非常简单。仅使用dispatch_barrier_async函数代替dispatch_async函数即可。</div><div class="line"></div><div class="line">　使用dispatch_barrier_async和Concurrent Dispatch Queue可实现高效率的数据库访问和文件访问。</div><div class="line"></div><div class="line"> </div><div class="line">　**dispatch_sync**</div><div class="line">　　</div><div class="line">dispatch_async函数的&quot;async&quot;意味着&quot;非同步&quot;(asynchronous),就是将指定的Block&quot;非同步&quot;的追加到指定的Dispatch Queue中,dispatch_async函数不作任何等待。</div><div class="line"></div><div class="line">　　既然有&quot;async&apos;就有&quot;sync&quot;,即dispatch_sync函数。它意味着&quot;同步&quot;(synchronous),也就是将指定的Block&quot;同步&quot;追加到指定的Dispatch Queue中。在追加Block结束之前,dispatch_sync函数会一直等待。即意味着当前线程停止。</div><div class="line"></div><div class="line"> 　　我们假设这样一种情况:执行Main Dispatch Queue时,使用另外的线程Global Dispatch Queue进行处理,处理结束后立即使用所得到的结果。在这种情况下使用dispatch_sync函数。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-dispatch_sync(queue,^{
-/*
-*处理
-*/
-</code></pre><p>　});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　一旦调用dispatch_sync函数,那么在指定的处理执行结束之前,该函数不会返回。dispatch_sync函数可以简化源代码,也可以说是减一半的dispatch_group_wait函数。</div><div class="line"></div><div class="line">　正因为dispatch_sync函数使用简单,所以也容易出现死锁问题。</div><div class="line"></div><div class="line">　例如在主线程中执行以下源代码就会死锁。</div></pre></td></tr></table></figure></p>
-<pre><code>dispatch_queue_t queue = dispatch_get_main_queue();
-</code></pre><p> 　　 dispatch_sync(queue, ^{<br>        NSLog(@”洛洛爱吃肉”);<br>    });<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　该源代码在Main Dispatch Queue 及主线程中执行指定的Block,并等待其执行结束。而其实主线程中正在执行这些源代码,所以无法执行追加到Main Dispatch Queue 的Block。下面例子也一样。</div></pre></td></tr></table></figure></p>
-<pre><code>dispatch_queue_t queue = dispatch_get_main_queue();
-</code></pre><p> 　　dispatch_async(queue, ^{<br>　　　　　dispatch_sync(queue,^{<br>        　　NSLog(@”洛洛爱吃肉”);<br>　　　　　　});<br>    });</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">　　Main Dispatch Queue中执行的Block等待Main Dispatch Queue中要执行的Block执行结束。这样的死锁就像在画像上画画一样。</div><div class="line"></div><div class="line">　　当然 Serial Dispatch Queue 也会引起相同的问题。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_queue_t queue = dispatch_queue_create(&quot;serialQueue&quot;, NULL);
-dispatch_async(queue, ^{
-    dispatch_sync(queue, ^{
-        NSLog(@&quot;洛洛爱吃肉&quot;);
-    });
-}); 
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　另外的由dispatch_barrier_async函数中含有async可推测出,相应的也有dispatch_barrier_sync函数。dispatch_barrier_async函数的作用是等待追加的处理全部执行结束后,再追加处理到Dispatch Queue中,此外,它还与dispatch_sync函数相同,会等待追加处理的执行结束。</div><div class="line"></div><div class="line">　　</div><div class="line"></div><div class="line">　　**dispatch_apply**</div><div class="line"></div><div class="line">　　dispatch_apply函数是dispatch_sync函数与Dispatch Group的关联API。该函数按指定的次数将指定的Block追加到指定的Dispatch Queue中,并等待全部处理执行结束。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_apply(10, globalDispatchQueueDefault, ^(size_t index) {
-    NSLog(@&quot;%zu&quot;,index);
-});
-NSLog(@&quot;done&quot;);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">例如该源码的执行结果为:</div></pre></td></tr></table></figure>
-<pre><code>4
-1
-0   
-3
-2
-6    
-7
-9
-8
-5
-done
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">　　因为在Global Dispatch Queue中执行处理,所以各个处理的执行时间不定。但是输出结果中最后的done必定在最后的位置上。这是因为dispatch_apply函数会等待全部处理执行结束。</div><div class="line"></div><div class="line"> 　　第一个参数为重复次数,第二个参数为追加对象的Dispatch Queue,第三个参数为追加的处理。与到目前位置出现的例子不同,第三个参数的Block为带有参数的Block。这是为了按第一个参数重复追加Block并区分各个Block而使用。例如对NSArray类对象的所有元素执行处理时,不必一个一个编写for循环部分。</div><div class="line"></div><div class="line">　　我们来看一下下面的源代码,变量array为NSArray类对象。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-
-dispatch_apply([array count], queue, ^(size_t index) {
-    NSLog(@&quot;%zu: %@&quot;,index,[array objectAtIndex:index]);
-})
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　这样可以简单的在Global Dispatch Queue 中对所有元素执行Block。</div><div class="line"></div><div class="line">　　另外,由于dispatch_apply函数也与dispatch_sync函数相同,会等待处理执行结束,因此推荐在dispatch_async函数中非同步地执行dispatch_apply函数。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-/*
- *在Global Dispatch Queue中非同步执行
- */
-dispatch_async(queue, ^{
-    /*
-     *  Global Dispatch Queue
-     *  等待dispatch_apply函数中全部处理结束
-     */
-    dispatch_apply([array count], queue, ^(size_t index) {
-        /*
-         *并列处理包含在NSArray对象的全部对象
-         */
-        NSLog(@&quot;%zu: %@&quot;,index,[array objectAtIndex:index]);
-    });
-    /*
-     *dispatch_apply函数中的处理全部执行结束
-     */
-
-    /*
-     * 在Main Dispatch Queue 中非同步执行
-     */
-    dispatch_async(dispatch_get_main_queue(), ^{
-        /*
-         * 在Main Dispatch Queue 中执行处理
-         * 用户界面更新等
-         */
-        NSLog(@&quot;done&quot;);
-    });
-});
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**dispatch_suspend/dispatch_resume**</div><div class="line"></div><div class="line">　　当追加大量处理到Dispatch Queue时,在追加处理的过程中,有时希望不执行已追加的处理。例如演算结果被Block截获时,一些处理会对这个演算结果造成影响。在这种情况下,只要挂起Dispatch Queue即可。当可以执行时再恢复。</div><div class="line"></div><div class="line">　　dispatch_suspend函数挂起指定的Dispatch Queue。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_suspend(queue);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　dispatch_resume函数恢复指定的Dispatch Queue。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_resume(queue);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　这些函数对已经执行的处理没有影响。挂起后,追加到中但尚未执行的处理在此之后停止执行。而恢复则使得这些处理能够继续执行。</div><div class="line"></div><div class="line">　</div><div class="line"></div><div class="line">　　**Dispatch Semaphore**</div><div class="line"></div><div class="line">　　如前所述,当并行执行的处理更新数据时,会产生数据不一致的情况,有时应用程序还会异常结束。虽然使用Serial Dispatch Queue和dispatch_barrier_async函数可避免这类问题,但是有必要进行更细粒度的排他控制。</div><div class="line"></div><div class="line">　　我们来思考一下这种情况:不考虑顺序,将所有数据追加到NSMutableArray中。</div></pre></td></tr></table></figure>
-<p> dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</p>
-<pre><code>NSMutableArray *array = [[NSMutableArray alloc]init];
-
-for (int i = 0; i&lt;10000; i++) {
-    dispatch_async(queue, ^{
-        [array addObject:[NSNumber numberWithInt:i]];
-    });
-}
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　因为该源代码使用 Global Dispatch Queue 更新NSMutableArray对象,所以执行后由内存错误导致应用程序异常结束的概率很高。此时应使用Dispatch Semaphore 。</div><div class="line"></div><div class="line">　　Dispatch Semaphore是持有计数的信号,该计数是多线程编程中的计数类型信号。所谓信号,类似于过马路时常有的手旗。可以通过时举起手旗,不可以通过时放下手旗。而在Dispatch Semaphore中,使用计数来实现该功能。计数为0时等待,计数为1或大于1时,减去1而不等待。</div><div class="line"></div><div class="line">　　下面介绍一下使用方法。通过dispatch_semaphore_create函数生成Dispatch Semaphore。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　参数表示计数的初始值。本例将计数值初始化为&quot;1&quot;。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　dispatch_semaphore_wait函数等待Dispatch Semaphore的计数值大于或等于1。当计数值大于等于1,或者在待机中计数值大于等于1时,对该计数进行减法并从dispatch_semaphore_wait函数返回。第二个参数与dispatch_group_wait函数等相同,由dispatch_time_t类型值指定等待时间。该例的参数意味着永久等待。另外,dispatch_semaphore_wait函数的返回值也与dispatch_group_wait函数相同。可以像以下源代码这样,通过返回值进行分支处理。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1ull*NSEC_PER_SEC);
-long result = dispatch_semaphore_wait(semaphore, time);
-if (result == 0) {
-    /*
-     *  由于Dispatch Semaphore 的计数值达到大于等于1
-     *  或者在待机的等待时间内
-     *  Dispatch Semaphore 的计数值达到大于等于1
-     *  所以Dispatch Semaphore 的计数值减去1
-     *
-     *  可执行需要进行的排他控制的处理
-     */
-}else{
-    /*
-     *  由于Dispatch Semaphore 的计数值为0
-     *  因此在到达指定时间为止待机
-     */
-}
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　dispatch_semaphore_wait函数返回为0时,可安全的执行需要进行排他控制的处理。该处理结束时通过dispatch_semaphore_signal函数将Dispatch Semaphore的计数值加1。</div><div class="line"></div><div class="line">　　我们在前面的源代码中使用Dispatch Semaphore看看。</div></pre></td></tr></table></figure>
-<pre><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-</code></pre><p> /*</p>
-<pre><code> *  生成Dispatch Semaphore 
- *  Dispatch Semaphore的计数初始值设定为&quot;1&quot;
- *
- *  保证可访问NSMutableArray类对象的线程
- *  同时只能有一个
- */
-dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-NSMutableArray *array = [[NSMutableArray alloc]init];
-
-for (int i = 0; i&lt;10000; i++) {
-    dispatch_async(queue, ^{
-
-        /*
-         *  等待Dispatch Semaphore
-         *
-         *  一直等待,直到Dispatch Semaphore的计数值达到大于等于1。
-         */
-
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-
-        /*
-         *  由于Dispatch Semaphore的计数值达到大于等于1
-         *  所以将Dispatch Semaphore的计数值减去1
-         *  dispatch_semaphore_wait函数执行返回
-         *
-         *  即执行到此时的
-         *  Dispatch Semaphore的计数值恒为&quot;0&quot;
-         *
-         *  由于可访问的 NSMutableArray类对象的线程
-         *  只有1个
-         *  因此可安全的进行更新
-         */
-
-        [array addObject:[NSNumber numberWithInt:i]];
-
-        /*
-         *  排他控制处理结束
-         *  所以通过dispatch_semaphore_signal函数
-         *  将Dispatch Semaphore的计数值加1
-         *
-         *  如果有通过dispatch_semaphore_wait函数
-         *  等待Dispatch Semaphore 的计数值增加的线程
-         *  就由最先等待的线程执行
-         */
-        dispatch_semaphore_signal(semaphore);
-    });
-}
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　在没有 Serial Dispatch Queue和dispatch_barrier_async函数那么大粒度且一部分处理需要进行排他控制的情况下Dispatch Semaphore便可发挥威力。</div><div class="line"></div><div class="line"> 　</div><div class="line"></div><div class="line">　　**dispatch_once**</div><div class="line"></div><div class="line"> 　　dispatch_once函数是保证在应用程序中只执行一次指定处理的API。下面这种经常出现的用来进行初始化的源代码可通过dispatch_once函数简化。</div></pre></td></tr></table></figure>
-<p>   static  int initialized = NO;<br>    if (initialized == NO) {</p>
-<pre><code>    /*
-     *初始化
-     */
-
-    initialized = YES;
-}
-</code></pre><p>　　如果使用dispatch_once函数,则源代码写为:</p>
-<p>   static dispatch_once_t pred;<br>    dispatch_once (&amp;pred,^{</p>
-<pre><code>    /*
-     *初始化
-     */
-
-});
-</code></pre><p>```</p>
+<p>dispatch_async(queue, blk0_for_reading);<br>dispatch_async(queue, blk1_for_reading);<br>dispatch_async(queue, blk2_for_reading);<br>dispatch_async(queue, blk3_for_reading);</p>
+<p>dispatch_async(queue, blk_for_writing);</p>
+<p>dispatch_async(queue, blk4_for_reading);<br>dispatch_async(queue, blk5_for_reading);<br>dispatch_async(queue, blk6_for_reading);<br>dispatch_async(queue, blk7_for_reading)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　</div><div class="line">　因此我们要使用dispatch_barrier_async函数。dispatch_barrier_async函数会等待追加到Concurrent Dispatch Queue上的并行执行的处理全部结束之后,再将指定的处理追加到该Concurrent Dispatch Queue中。然后由</div></pre></td></tr></table></figure>
+<p>dispatch_barrier_async(globalDispatchQueueDefault, ^{<br>NSLog(@”writing”);<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">追加的处理执行完毕后,Concurrent Dispatch Queue才恢复为一般的动作,追加到该Concurrent Dispatch Queue的处理又开始并行执行。</div></pre></td></tr></table></figure></p>
+<p>dispatch_async(queue, blk0_for_reading);<br>dispatch_async(queue, blk1_for_reading);<br>dispatch_async(queue, blk2_for_reading);<br>dispatch_async(queue, blk3_for_reading);</p>
+<p>dispatch_barrier_async(queue, blk_for_writing});</p>
+<p>dispatch_async(queue, blk4_for_reading);<br>dispatch_async(queue, blk5_for_reading);<br>dispatch_async(queue, blk6_for_reading);<br>dispatch_async(queue, blk7_for_reading);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　如上所示,使用方法非常简单。仅使用dispatch_barrier_async函数代替dispatch_async函数即可。</div><div class="line"></div><div class="line">　使用dispatch_barrier_async和Concurrent Dispatch Queue可实现高效率的数据库访问和文件访问。</div><div class="line"></div><div class="line"></div><div class="line">　**dispatch_sync**</div><div class="line">　　</div><div class="line">dispatch_async函数的&quot;async&quot;意味着&quot;非同步&quot;(asynchronous),就是将指定的Block&quot;非同步&quot;的追加到指定的Dispatch Queue中,dispatch_async函数不作任何等待。</div><div class="line"></div><div class="line">　　既然有&quot;async&apos;就有&quot;sync&quot;,即dispatch_sync函数。它意味着&quot;同步&quot;(synchronous),也就是将指定的Block&quot;同步&quot;追加到指定的Dispatch Queue中。在追加Block结束之前,dispatch_sync函数会一直等待。即意味着当前线程停止。</div><div class="line"></div><div class="line">　　我们假设这样一种情况:执行Main Dispatch Queue时,使用另外的线程Global Dispatch Queue进行处理,处理结束后立即使用所得到的结果。在这种情况下使用dispatch_sync函数。</div></pre></td></tr></table></figure>
+<p>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);<br>dispatch_sync(queue,^{<br>/<em>
+</em>处理<br>*/<br>　});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　一旦调用dispatch_sync函数,那么在指定的处理执行结束之前,该函数不会返回。dispatch_sync函数可以简化源代码,也可以说是减一半的dispatch_group_wait函数。</div><div class="line"></div><div class="line">　正因为dispatch_sync函数使用简单,所以也容易出现死锁问题。</div><div class="line"></div><div class="line">　例如在主线程中执行以下源代码就会死锁。</div></pre></td></tr></table></figure></p>
+<p>dispatch_queue_t queue = dispatch_get_main_queue();<br>　　 dispatch_sync(queue, ^{<br>NSLog(@”洛洛爱吃肉”);<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　该源代码在Main Dispatch Queue 及主线程中执行指定的Block,并等待其执行结束。而其实主线程中正在执行这些源代码,所以无法执行追加到Main Dispatch Queue 的Block。下面例子也一样。</div></pre></td></tr></table></figure></p>
+<p>dispatch_queue_t queue = dispatch_get_main_queue();<br>　　dispatch_async(queue, ^{<br>　　　　　dispatch_sync(queue,^{<br>　　NSLog(@”洛洛爱吃肉”);<br>　　　　　　});<br>});</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">　　Main Dispatch Queue中执行的Block等待Main Dispatch Queue中要执行的Block执行结束。这样的死锁就像在画像上画画一样。</div><div class="line"></div><div class="line">　　当然 Serial Dispatch Queue 也会引起相同的问题。</div></pre></td></tr></table></figure>
+<p>dispatch_queue_t queue = dispatch_queue_create(“serialQueue”, NULL);<br>dispatch_async(queue, ^{<br>dispatch_sync(queue, ^{<br>NSLog(@”洛洛爱吃肉”);<br>});<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　另外的由dispatch_barrier_async函数中含有async可推测出,相应的也有dispatch_barrier_sync函数。dispatch_barrier_async函数的作用是等待追加的处理全部执行结束后,再追加处理到Dispatch Queue中,此外,它还与dispatch_sync函数相同,会等待追加处理的执行结束。</div><div class="line"></div><div class="line">　　</div><div class="line"></div><div class="line">　　**dispatch_apply**</div><div class="line"></div><div class="line">　　dispatch_apply函数是dispatch_sync函数与Dispatch Group的关联API。该函数按指定的次数将指定的Block追加到指定的Dispatch Queue中,并等待全部处理执行结束。</div></pre></td></tr></table></figure></p>
+<p>dispatch_apply(10, globalDispatchQueueDefault, ^(size_t index) {<br>NSLog(@”%zu”,index);<br>});<br>NSLog(@”done”);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">例如该源码的执行结果为:</div></pre></td></tr></table></figure></p>
+<p>4<br>1<br>0<br>3<br>2<br>6<br>7<br>9<br>8<br>5<br>done<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">　　因为在Global Dispatch Queue中执行处理,所以各个处理的执行时间不定。但是输出结果中最后的done必定在最后的位置上。这是因为dispatch_apply函数会等待全部处理执行结束。</div><div class="line"></div><div class="line">　　第一个参数为重复次数,第二个参数为追加对象的Dispatch Queue,第三个参数为追加的处理。与到目前位置出现的例子不同,第三个参数的Block为带有参数的Block。这是为了按第一个参数重复追加Block并区分各个Block而使用。例如对NSArray类对象的所有元素执行处理时,不必一个一个编写for循环部分。</div><div class="line"></div><div class="line">　　我们来看一下下面的源代码,变量array为NSArray类对象。</div></pre></td></tr></table></figure></p>
+<p>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</p>
+<p>dispatch_apply([array count], queue, ^(size_t index) {<br>NSLog(@”%zu: %@”,index,[array objectAtIndex:index]);<br>})</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　这样可以简单的在Global Dispatch Queue 中对所有元素执行Block。</div><div class="line"></div><div class="line">　　另外,由于dispatch_apply函数也与dispatch_sync函数相同,会等待处理执行结束,因此推荐在dispatch_async函数中非同步地执行dispatch_apply函数。</div></pre></td></tr></table></figure>
+<p>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);<br>/<em>
+</em>在Global Dispatch Queue中非同步执行<br><em>/<br>dispatch_async(queue, ^{<br>/</em></p>
+<ul>
+<li>Global Dispatch Queue</li>
+<li>等待dispatch_apply函数中全部处理结束<br><em>/<br>dispatch_apply([array count], queue, ^(size_t index) {<br>/</em><br><em>并列处理包含在NSArray对象的全部对象
+</em>/<br>NSLog(@”%zu: %@”,index,[array objectAtIndex:index]);<br>});<br>/<em>
+</em>dispatch_apply函数中的处理全部执行结束<br>*/</li>
+</ul>
+<p>/*</p>
+<ul>
+<li>在Main Dispatch Queue 中非同步执行<br><em>/<br>dispatch_async(dispatch_get_main_queue(), ^{<br>/</em></li>
+<li>在Main Dispatch Queue 中执行处理</li>
+<li>用户界面更新等<br>*/<br>NSLog(@”done”);<br>});<br>});<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**dispatch_suspend/dispatch_resume**</div><div class="line"></div><div class="line">　　当追加大量处理到Dispatch Queue时,在追加处理的过程中,有时希望不执行已追加的处理。例如演算结果被Block截获时,一些处理会对这个演算结果造成影响。在这种情况下,只要挂起Dispatch Queue即可。当可以执行时再恢复。</div><div class="line"></div><div class="line">　　dispatch_suspend函数挂起指定的Dispatch Queue。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>dispatch_suspend(queue);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　dispatch_resume函数恢复指定的Dispatch Queue。</div></pre></td></tr></table></figure></p>
+<p>dispatch_resume(queue);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　这些函数对已经执行的处理没有影响。挂起后,追加到中但尚未执行的处理在此之后停止执行。而恢复则使得这些处理能够继续执行。</div><div class="line"></div><div class="line">　</div><div class="line"></div><div class="line">　　**Dispatch Semaphore**</div><div class="line"></div><div class="line">　　如前所述,当并行执行的处理更新数据时,会产生数据不一致的情况,有时应用程序还会异常结束。虽然使用Serial Dispatch Queue和dispatch_barrier_async函数可避免这类问题,但是有必要进行更细粒度的排他控制。</div><div class="line"></div><div class="line">　　我们来思考一下这种情况:不考虑顺序,将所有数据追加到NSMutableArray中。</div></pre></td></tr></table></figure></p>
+<p>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</p>
+<p>NSMutableArray *array = [[NSMutableArray alloc]init];</p>
+<p>for (int i = 0; i<10000; i++)="" {="" dispatch_async(queue,="" ^{="" [array="" addobject:[nsnumber="" numberwithint:i]];="" });="" }="" <figure="" class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　因为该源代码使用 Global Dispatch Queue 更新NSMutableArray对象,所以执行后由内存错误导致应用程序异常结束的概率很高。此时应使用Dispatch Semaphore 。</div><div class="line"></div><div class="line">　　Dispatch Semaphore是持有计数的信号,该计数是多线程编程中的计数类型信号。所谓信号,类似于过马路时常有的手旗。可以通过时举起手旗,不可以通过时放下手旗。而在Dispatch Semaphore中,使用计数来实现该功能。计数为0时等待,计数为1或大于1时,减去1而不等待。</div><div class="line"></div><div class="line">　　下面介绍一下使用方法。通过dispatch_semaphore_create函数生成Dispatch Semaphore。</div></pre></td></tr></table></10000;></p>
+<p>dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　参数表示计数的初始值。本例将计数值初始化为&quot;1&quot;。</div></pre></td></tr></table></figure></p>
+<p>dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　dispatch_semaphore_wait函数等待Dispatch Semaphore的计数值大于或等于1。当计数值大于等于1,或者在待机中计数值大于等于1时,对该计数进行减法并从dispatch_semaphore_wait函数返回。第二个参数与dispatch_group_wait函数等相同,由dispatch_time_t类型值指定等待时间。该例的参数意味着永久等待。另外,dispatch_semaphore_wait函数的返回值也与dispatch_group_wait函数相同。可以像以下源代码这样,通过返回值进行分支处理。</div></pre></td></tr></table></figure></p>
+<p>dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1ull<em>NSEC_PER_SEC);<br>long result = dispatch_semaphore_wait(semaphore, time);<br>if (result == 0) {<br>/</em></p>
+<ul>
+<li>由于Dispatch Semaphore 的计数值达到大于等于1</li>
+<li>或者在待机的等待时间内</li>
+<li>Dispatch Semaphore 的计数值达到大于等于1</li>
+<li>所以Dispatch Semaphore 的计数值减去1<br>*</li>
+<li>可执行需要进行的排他控制的处理<br><em>/<br>}else{<br>/</em></li>
+<li>由于Dispatch Semaphore 的计数值为0</li>
+<li>因此在到达指定时间为止待机<br>*/<br>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　dispatch_semaphore_wait函数返回为0时,可安全的执行需要进行排他控制的处理。该处理结束时通过dispatch_semaphore_signal函数将Dispatch Semaphore的计数值加1。</div><div class="line"></div><div class="line">　　我们在前面的源代码中使用Dispatch Semaphore看看。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);<br>/*</p>
+<ul>
+<li>生成Dispatch Semaphore </li>
+<li>Dispatch Semaphore的计数初始值设定为”1”<br>*</li>
+<li>保证可访问NSMutableArray类对象的线程</li>
+<li>同时只能有一个<br><em>/<br>dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);<br>NSMutableArray </em>array = [[NSMutableArray alloc]init];</li>
+</ul>
+<p>for (int i = 0; i&lt;10000; i++) {<br>dispatch_async(queue, ^{</p>
+<p>/*</p>
+<ul>
+<li>等待Dispatch Semaphore<br>*</li>
+<li>一直等待,直到Dispatch Semaphore的计数值达到大于等于1。<br>*/</li>
+</ul>
+<p>dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</p>
+<p>/*</p>
+<ul>
+<li>由于Dispatch Semaphore的计数值达到大于等于1</li>
+<li>所以将Dispatch Semaphore的计数值减去1</li>
+<li>dispatch_semaphore_wait函数执行返回<br>*</li>
+<li>即执行到此时的</li>
+<li>Dispatch Semaphore的计数值恒为”0”<br>*</li>
+<li>由于可访问的 NSMutableArray类对象的线程</li>
+<li>只有1个</li>
+<li>因此可安全的进行更新<br>*/</li>
+</ul>
+<p>[array addObject:[NSNumber numberWithInt:i]];</p>
+<p>/*</p>
+<ul>
+<li>排他控制处理结束</li>
+<li>所以通过dispatch_semaphore_signal函数</li>
+<li>将Dispatch Semaphore的计数值加1<br>*</li>
+<li>如果有通过dispatch_semaphore_wait函数</li>
+<li>等待Dispatch Semaphore 的计数值增加的线程</li>
+<li>就由最先等待的线程执行<br>*/<br>dispatch_semaphore_signal(semaphore);<br>});<br>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">　　在没有 Serial Dispatch Queue和dispatch_barrier_async函数那么大粒度且一部分处理需要进行排他控制的情况下Dispatch Semaphore便可发挥威力。</div><div class="line"></div><div class="line">　</div><div class="line"></div><div class="line">　　**dispatch_once**</div><div class="line"></div><div class="line">　　dispatch_once函数是保证在应用程序中只执行一次指定处理的API。下面这种经常出现的用来进行初始化的源代码可通过dispatch_once函数简化。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>static int initialized = NO;<br>if (initialized == NO) {</p>
+<p>/<em>
+</em>初始化<br>*/</p>
+<p>initialized = YES;<br>}<br>　　如果使用dispatch_once函数,则源代码写为:</p>
+<p>static dispatch_once_t pred;<br>dispatch_once (&amp;pred,^{</p>
+<p>/<em>
+</em>初始化<br>*/</p>
+<p>});<br>```</p>
 <p>　 源代码看起来没有太大的变化。但是通过dispatch_once函数,该原代码即使在多线程环境下执行,也可保证百分比安全。</p>
 <p>　　之前的源代码在大多数情况下也是安全的。但是在多核CPU中,在正在更新表示是否初始化的标志变量时读取,就有可能多次执行初始化处理。而用dispatch_once函数初始化就不必担心这样的问题。这就是所说的单例模式,在生成单例对象时使用。</p>
 <p><a href="https://github.com/loirou/gcdDemo" target="_blank" rel="external">查看demo</a></p>
