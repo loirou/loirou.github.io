@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="洛洛爱吃肉">
 <meta property="og:description" content="用Objective-C等面向对象语言编程时,”对象”(object)就是”基本构造单元”(building block)。开发者可以通过对象来存储并传递数据。在对象之间传递数据并执行任务的过程就叫做”消息传递”(Messaging)。当程序运行起来以后,为其提供相关支持的代码叫做”Objective-C运行期环境”(Objective-C runtime),它提供了一些使得对象之间能够传递消">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-31T08:41:14.000Z">
+<meta property="og:updated_time" content="2017-10-31T08:43:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objective-C runtime的常见应用">
 <meta name="twitter:description" content="用Objective-C等面向对象语言编程时,”对象”(object)就是”基本构造单元”(building block)。开发者可以通过对象来存储并传递数据。在对象之间传递数据并执行任务的过程就叫做”消息传递”(Messaging)。当程序运行起来以后,为其提供相关支持的代码叫做”Objective-C运行期环境”(Objective-C runtime),它提供了一些使得对象之间能够传递消">
@@ -414,88 +414,8 @@
 <li>将从网络上下载的json数据进行字典转模型。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">//注意：归档解档需要遵守&lt;NSCoding&gt;协议，实现以下两个方法</div><div class="line">- (void)encodeWithCoder:(NSCoder *)aCoder &#123;</div><div class="line">    unsigned int count;</div><div class="line">    //获得指向当前类的所有属性的指针</div><div class="line">    objc_property_t *properties = class_copyPropertyList([self class], &amp;count);</div><div class="line">    </div><div class="line">    for (int i = 0; i &lt; count; i++) &#123;</div><div class="line">        //获取指向当前类的一个属性的指针</div><div class="line">        objc_property_t property = properties[i];</div><div class="line">        //获取C字符串属性名</div><div class="line">        const char *name = property_getName(property);</div><div class="line">        //C字符串转OC字符串</div><div class="line">        NSString *propertyName = [NSString stringWithUTF8String:name];</div><div class="line">        //通过关键词取值</div><div class="line">        NSString *propertyValue = [self valueForKey:propertyName];</div><div class="line">        //编码属性</div><div class="line">        [aCoder encodeObject:propertyValue forKey:propertyName];</div><div class="line">    &#125;</div><div class="line">    //记得释放</div><div class="line">    free(properties);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (instancetype)initWithCoder:(NSCoder *)aDecoder &#123;</div><div class="line">    unsigned int count;</div><div class="line">    //获得指向当前类的所有属性的指针</div><div class="line">    objc_property_t *properties = class_copyPropertyList([self class], &amp;count);</div><div class="line">    </div><div class="line">    for (int i = 0; i &lt; count; i++) &#123;</div><div class="line">        //获取指向当前类的一个属性的指针</div><div class="line">        objc_property_t property = properties[i];</div><div class="line">        //获取C字符串属性名</div><div class="line">        const char *name = property_getName(property);</div><div class="line">        //C字符串转OC字符串</div><div class="line">        NSString *propertyName = [NSString stringWithUTF8String:name];</div><div class="line">        //解码属性值</div><div class="line">        NSString *propertyValue = [aDecoder decodeObjectForKey:propertyName];</div><div class="line">        [self setValue:propertyValue forKey:propertyName];</div><div class="line">    &#125;</div><div class="line">    //记得释放</div><div class="line">    free(properties);</div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line">//重写description方法,打印出自定义的属性</div><div class="line">- (NSString *)description&#123;</div><div class="line">    NSString *string = [NSString stringWithFormat:@&quot;name=%@ \n age=%d \n apples=%@&quot;,_name,_age,_apples];</div><div class="line">    return string;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="归档解档方法"><a href="#归档解档方法" class="headerlink" title="归档解档方法"></a>归档解档方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">        //自定义类</div><div class="line">　　　　 Person *p = [[Person alloc] init];</div><div class="line">        p.name = @&quot;张三&quot;;</div><div class="line">        p.age = 18;</div><div class="line">        p.apples = @[@&quot;iphone&quot;,@&quot;ipad&quot;];</div><div class="line">        </div><div class="line">        //归档</div><div class="line">        NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:@&quot;person.archiver&quot;];</div><div class="line">        BOOL success = [NSKeyedArchiver archiveRootObject:p toFile:filePath];</div><div class="line">        if(success)&#123;</div><div class="line">            NSLog(@&quot;归档成功&quot;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        //解归档</div><div class="line">        Person *person = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];</div><div class="line">        NSLog(@&quot;%@&quot;,person);    </div><div class="line">``` </div><div class="line"></div><div class="line">##### 字典转模型</div></pre></td></tr></table></figure>
-<p>#import “NSObject+Item.h”</p>
-<p>#import <objc message.h=""></objc></p>
-<p>@implementation NSObject (Item)</p>
-<p>// 字典转模型</p>
-<ul>
-<li><p>(instancetype)objectWithDict:(NSDictionary *)dict<br>{<br>  // 创建对应模型对象<br>  id objc = [[self alloc] init];</p>
-<p>  unsigned int count = 0;</p>
-<p>  // 1.获取成员属性数组<br>  Ivar *ivarList = class_copyIvarList(self, &amp;count);</p>
-<p>  // 2.遍历所有的成员属性名,一个一个去字典中取出对应的value给模型属性赋值<br>  for (int i = 0; i &lt; count; i++) {</p>
-<pre><code>// 2.1 获取成员属性
-Ivar ivar = ivarList[i];
-
-// 2.2 获取成员属性名 C -&gt; OC 字符串
-NSString *ivarName = [NSString stringWithUTF8String:ivar_getName(ivar)];
-
-// 2.3 _成员属性名 =&gt; 字典key
-NSString *key = [ivarName substringFromIndex:1];
-
-// 2.4 去字典中取出对应value给模型属性赋值
-id value = dict[key];
-
-// 获取成员属性类型
-NSString *ivarType = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];
-
-// 二级转换,字典中还有字典,也需要把对应字典转换成模型
-//
-// 判断下value,是不是字典
-if ([value isKindOfClass:[NSDictionary class]] &amp;&amp; ![ivarType containsString:@&quot;NS&quot;]) { 
-</code></pre><p>　　　　　　　//  是字典对象,并且属性名对应类型是自定义类型</p>
-<pre><code>// user User
-
-// 处理类型字符串 @\&quot;User\&quot; -&gt; User
-ivarType = [ivarType stringByReplacingOccurrencesOfString:@&quot;@&quot; withString:@&quot;&quot;];
-ivarType = [ivarType stringByReplacingOccurrencesOfString:@&quot;\&quot;&quot; withString:@&quot;&quot;];
-</code></pre><p>　　　　 //自定义对象,并且值是字典</p>
-<pre><code>// value :user 字典 -&gt; User模型
-</code></pre><p>　　　　// 获取模型(user)类对象<br>　　　　Class modalClass = NSClassFromString(ivarType);</p>
-</li>
-</ul>
-<p>　　　　//字典转模型<br>　　　　if(modalClass){<br>　　　　　　　　value = [modalClass objectWithDict:value];</p>
-<p>　　　　}</p>
-<pre><code>    // 三级转换：NSArray中也是字典，把数组中的字典转换成模型.
-    // 判断值是否是数组
-
-    if ([value isKindOfClass:[NSArray class]]) {
-        // 判断对应类有没有实现字典数组转模型数组的协议
-        if ([self respondsToSelector:@selector(arrayContainModelClass)]) {
-
-            // 转换成id类型，就能调用任何对象的方法
-            id idSelf = self;
-
-            // 获取数组中字典对应的模型
-            NSString *type =  [idSelf arrayContainModelClass][key];
-
-            // 生成模型
-            Class classModel = NSClassFromString(type);
-            NSMutableArray *arrM = [NSMutableArray array];
-            // 遍历字典数组，生成模型数组
-            for (NSDictionary *dict in value) {
-                // 字典转模型
-                id model =  [classModel objectWithDict:dict];
-                [arrM addObject:model];
-            }
-
-            // 把模型数组赋值给value
-            value = arrM;
-
-        }
-    }
-
-    // 2.5 KVC字典转模型
-    if (value) {
-
-        [objc setValue:value forKey:key];
-    }
-}
-
-// 返回对象
-return objc;
-</code></pre><p>}</p>
-<p>@end<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 2.交换方法,可以是不同类的方法,也可以是同类的,用在修改全局属性很便利.</div></pre></td></tr></table></figure></p>
+<h5 id="归档解档方法"><a href="#归档解档方法" class="headerlink" title="归档解档方法"></a>归档解档方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//自定义类</div><div class="line">　　　　 Person *p = [[Person alloc] init];</div><div class="line">p.name = @&quot;张三&quot;;</div><div class="line">p.age = 18;</div><div class="line">p.apples = @[@&quot;iphone&quot;,@&quot;ipad&quot;];</div><div class="line"></div><div class="line">//归档</div><div class="line">NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:@&quot;person.archiver&quot;];</div><div class="line">BOOL success = [NSKeyedArchiver archiveRootObject:p toFile:filePath];</div><div class="line">if(success)&#123;</div><div class="line">    NSLog(@&quot;归档成功&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">//解归档</div><div class="line">Person *person = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];</div><div class="line">NSLog(@&quot;%@&quot;,person);</div></pre></td></tr></table></figure>
+<h4 id="字典转模型"><a href="#字典转模型" class="headerlink" title="字典转模型"></a>字典转模型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div></pre></td><td class="code"><pre><div class="line">#import &quot;NSObject+Item.h&quot;</div><div class="line">#import &lt;objc/message.h&gt;</div><div class="line"></div><div class="line">@implementation NSObject (Item)</div><div class="line"></div><div class="line">// 字典转模型</div><div class="line">+ (instancetype)objectWithDict:(NSDictionary *)dict</div><div class="line">&#123;</div><div class="line">    // 创建对应模型对象</div><div class="line">    id objc = [[self alloc] init];</div><div class="line"></div><div class="line">    unsigned int count = 0;</div><div class="line">    </div><div class="line">    // 1.获取成员属性数组</div><div class="line">    Ivar *ivarList = class_copyIvarList(self, &amp;count);</div><div class="line">    </div><div class="line">    // 2.遍历所有的成员属性名,一个一个去字典中取出对应的value给模型属性赋值</div><div class="line">    for (int i = 0; i &lt; count; i++) &#123;</div><div class="line">        </div><div class="line">        // 2.1 获取成员属性</div><div class="line">        Ivar ivar = ivarList[i];</div><div class="line">        </div><div class="line">        // 2.2 获取成员属性名 C -&gt; OC 字符串</div><div class="line">        NSString *ivarName = [NSString stringWithUTF8String:ivar_getName(ivar)];</div><div class="line">        </div><div class="line">        // 2.3 _成员属性名 =&gt; 字典key</div><div class="line">        NSString *key = [ivarName substringFromIndex:1];</div><div class="line">        </div><div class="line">        // 2.4 去字典中取出对应value给模型属性赋值</div><div class="line">        id value = dict[key];</div><div class="line">        </div><div class="line">        // 获取成员属性类型</div><div class="line">        NSString *ivarType = [NSString stringWithUTF8String:ivar_getTypeEncoding(ivar)];</div><div class="line">        </div><div class="line">        // 二级转换,字典中还有字典,也需要把对应字典转换成模型</div><div class="line">        //</div><div class="line">        // 判断下value,是不是字典</div><div class="line">        if ([value isKindOfClass:[NSDictionary class]] &amp;&amp; ![ivarType containsString:@&quot;NS&quot;]) &#123; </div><div class="line">　　　　　　　//  是字典对象,并且属性名对应类型是自定义类型</div><div class="line">            // user User</div><div class="line">            </div><div class="line">            // 处理类型字符串 @\&quot;User\&quot; -&gt; User</div><div class="line">            ivarType = [ivarType stringByReplacingOccurrencesOfString:@&quot;@&quot; withString:@&quot;&quot;];</div><div class="line">            ivarType = [ivarType stringByReplacingOccurrencesOfString:@&quot;\&quot;&quot; withString:@&quot;&quot;];</div><div class="line">　　　　 //自定义对象,并且值是字典</div><div class="line">       // value :user 字典 -&gt; User模型</div><div class="line">　　　　// 获取模型(user)类对象</div><div class="line">　　　　Class modalClass = NSClassFromString(ivarType);</div><div class="line"></div><div class="line">　　　　//字典转模型</div><div class="line">　　　　if(modalClass)&#123;</div><div class="line">　　　　　　　　value = [modalClass objectWithDict:value];</div><div class="line"></div><div class="line">　　　　&#125;</div><div class="line"></div><div class="line">        // 三级转换：NSArray中也是字典，把数组中的字典转换成模型.</div><div class="line">        // 判断值是否是数组</div><div class="line"></div><div class="line">        if ([value isKindOfClass:[NSArray class]]) &#123;</div><div class="line">            // 判断对应类有没有实现字典数组转模型数组的协议</div><div class="line">            if ([self respondsToSelector:@selector(arrayContainModelClass)]) &#123;</div><div class="line">                </div><div class="line">                // 转换成id类型，就能调用任何对象的方法</div><div class="line">                id idSelf = self;</div><div class="line">                </div><div class="line">                // 获取数组中字典对应的模型</div><div class="line">                NSString *type =  [idSelf arrayContainModelClass][key];</div><div class="line">                </div><div class="line">                // 生成模型</div><div class="line">                Class classModel = NSClassFromString(type);</div><div class="line">                NSMutableArray *arrM = [NSMutableArray array];</div><div class="line">                // 遍历字典数组，生成模型数组</div><div class="line">                for (NSDictionary *dict in value) &#123;</div><div class="line">                    // 字典转模型</div><div class="line">                    id model =  [classModel objectWithDict:dict];</div><div class="line">                    [arrM addObject:model];</div><div class="line">                &#125;</div><div class="line">                </div><div class="line">                // 把模型数组赋值给value</div><div class="line">                value = arrM;</div><div class="line">                </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        // 2.5 KVC字典转模型</div><div class="line">        if (value) &#123;</div><div class="line">            </div><div class="line">            [objc setValue:value forKey:key];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    // 返回对象</div><div class="line">    return objc;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div><div class="line">``` </div><div class="line"></div><div class="line">#### 2.交换方法,可以是不同类的方法,也可以是同类的,用在修改全局属性很便利.</div></pre></td></tr></table></figure>
 <p> 　　Method one =  class_getInstanceMethod([Person0 class], @selector(oneMethod));</p>
 <pre><code>Method two =  class_getInstanceMethod([Person1 class], @selector(twoMethod));
 method_exchangeImplementations(one, two);
@@ -790,7 +710,7 @@ NSLog(@&quot;XiaoMing change name  is %@&quot;,self.person.name);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#那什么是Objective-C-runtime"><span class="nav-number">1.</span> <span class="nav-text">那什么是Objective-C runtime?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#runtime的常见方法"><span class="nav-number">2.</span> <span class="nav-text">runtime的常见方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#runtime在开发中的用途"><span class="nav-number">3.</span> <span class="nav-text">runtime在开发中的用途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-动态的遍历一个类的所有成员变量，属性-方法-协议等-可用于字典转模型-归档解档操作"><span class="nav-number">3.1.</span> <span class="nav-text">1.动态的遍历一个类的所有成员变量，属性,方法,协议等,可用于字典转模型,归档解档操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#归档解档方法"><span class="nav-number">3.1.1.</span> <span class="nav-text">归档解档方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#那什么是Objective-C-runtime"><span class="nav-number">1.</span> <span class="nav-text">那什么是Objective-C runtime?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#runtime的常见方法"><span class="nav-number">2.</span> <span class="nav-text">runtime的常见方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#runtime在开发中的用途"><span class="nav-number">3.</span> <span class="nav-text">runtime在开发中的用途</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-动态的遍历一个类的所有成员变量，属性-方法-协议等-可用于字典转模型-归档解档操作"><span class="nav-number">3.1.</span> <span class="nav-text">1.动态的遍历一个类的所有成员变量，属性,方法,协议等,可用于字典转模型,归档解档操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#归档解档方法"><span class="nav-number">3.1.1.</span> <span class="nav-text">归档解档方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典转模型"><span class="nav-number">3.2.</span> <span class="nav-text">字典转模型</span></a></li></ol></li></ol></div>
             
 
           </div>
