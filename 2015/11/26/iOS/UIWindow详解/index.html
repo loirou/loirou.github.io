@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS,动画与绘图," />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="有时候页面跳转或视图切换的时候,需要做成特定的效果,常见的push、pop、present、dismiss效果如下,注意要添加代理 push默认动画效果1234567891011    CATransition *transition = [CATransition animation];    transition.duration = 0.3f;    transition.timingFun">
-<meta name="keywords" content="iOS,动画与绘图">
+<meta name="description" content="UIScreen(屏幕),UIWindow(窗口)，UIView(视图)是iOS的几个基本界面元素。其中UIWindow(窗口)和UIView(视图)是为iPhone应用程序构造用户界面的可视组件。UIWindow为内容显示提供背景平台，UIView负责绝大部分的内容描画，并负责响应用户的交互。 1.UIScreen一般也只是用来获取屏幕大小12345CGRect screenBounds =">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动画切换效果之push、pop、present、dismiss">
-<meta property="og:url" content="http://yoursite.com/2017/05/08/动画与绘图/动画切换效果之push、pop、present、dismiss/index.html">
+<meta property="og:title" content="UIWindow详解">
+<meta property="og:url" content="http://yoursite.com/2015/11/26/iOS/UIWindow详解/index.html">
 <meta property="og:site_name" content="洛洛爱吃肉">
-<meta property="og:description" content="有时候页面跳转或视图切换的时候,需要做成特定的效果,常见的push、pop、present、dismiss效果如下,注意要添加代理 push默认动画效果1234567891011    CATransition *transition = [CATransition animation];    transition.duration = 0.3f;    transition.timingFun">
+<meta property="og:description" content="UIScreen(屏幕),UIWindow(窗口)，UIView(视图)是iOS的几个基本界面元素。其中UIWindow(窗口)和UIView(视图)是为iPhone应用程序构造用户界面的可视组件。UIWindow为内容显示提供背景平台，UIView负责绝大部分的内容描画，并负责响应用户的交互。 1.UIScreen一般也只是用来获取屏幕大小12345CGRect screenBounds =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-30T05:48:16.000Z">
+<meta property="og:updated_time" content="2017-10-31T02:11:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="动画切换效果之push、pop、present、dismiss">
-<meta name="twitter:description" content="有时候页面跳转或视图切换的时候,需要做成特定的效果,常见的push、pop、present、dismiss效果如下,注意要添加代理 push默认动画效果1234567891011    CATransition *transition = [CATransition animation];    transition.duration = 0.3f;    transition.timingFun">
+<meta name="twitter:title" content="UIWindow详解">
+<meta name="twitter:description" content="UIScreen(屏幕),UIWindow(窗口)，UIView(视图)是iOS的几个基本界面元素。其中UIWindow(窗口)和UIView(视图)是为iPhone应用程序构造用户界面的可视组件。UIWindow为内容显示提供背景平台，UIView负责绝大部分的内容描画，并负责响应用户的交互。 1.UIScreen一般也只是用来获取屏幕大小12345CGRect screenBounds =">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/08/动画与绘图/动画切换效果之push、pop、present、dismiss/"/>
+  <link rel="canonical" href="http://yoursite.com/2015/11/26/iOS/UIWindow详解/"/>
 
 
 
 
 
-  <title>动画切换效果之push、pop、present、dismiss | 洛洛爱吃肉</title>
+  <title>UIWindow详解 | 洛洛爱吃肉</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/动画与绘图/动画切换效果之push、pop、present、dismiss/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/11/26/iOS/UIWindow详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="loirou">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">动画切换效果之push、pop、present、dismiss</h1>
+          <h1 class="post-title" itemprop="name headline">UIWindow详解</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-08T10:55:03+08:00">
-                2017-05-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-26T14:35:00+08:00">
+                2015-11-26
               </time>
             
 
@@ -372,7 +372,7 @@
 
           
           
-             <span id="/2017/05/08/动画与绘图/动画切换效果之push、pop、present、dismiss/" class="leancloud_visitors" data-flag-title="动画切换效果之push、pop、present、dismiss">
+             <span id="/2015/11/26/iOS/UIWindow详解/" class="leancloud_visitors" data-flag-title="UIWindow详解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,35 +403,46 @@
       
 
       
-        <p>有时候页面跳转或视图切换的时候,需要做成特定的效果,常见的push、pop、present、dismiss效果如下,注意要添加<strong><caanimationdelegate></caanimationdelegate></strong>代理</p>
-<h4 id="push默认动画效果"><a href="#push默认动画效果" class="headerlink" title="push默认动画效果"></a>push默认动画效果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">    CATransition *transition = [CATransition animation];</div><div class="line">    transition.duration = 0.3f;</div><div class="line">    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];</div><div class="line">    transition.type = kCATransitionPush;</div><div class="line">    transition.subtype = kCATransitionFromRight;</div><div class="line">    transition.delegate = self;</div><div class="line">    [self.contentView.layer addAnimation:transition forKey:nil];</div><div class="line">    [self.contentView addSubview:self.productDetailController.view];</div><div class="line"></div><div class="line">```  </div><div class="line">#### pop默认动画效果</div></pre></td></tr></table></figure>
-<pre><code>CATransition *transition = [CATransition animation];
-transition.duration = 0.3f;
-transition.timingFunction = [CAMediaTimingFunctionfunctionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-transition.type = kCATransitionPush;
-transition.subtype = kCATransitionFromLeft;
-transition.delegate = self;
-[self.view.superview.layer addAnimation:transition forKey:nil];
-[self.view removeFromSuperview];
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### present默认动画效果</div></pre></td></tr></table></figure>
-<pre><code>CATransition *transition = [CATransition animation];
-transition.duration = 0.4f;
-transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-transition.type = kCATransitionMoveIn;
-transition.subtype = kCATransitionFromTop;
-transition.delegate = self;
-[[self currentNavigationController].view.layer addAnimation:transition forKey:nil];
-[[self currentNavigationController] pushViewController:playVC animated:NO];
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#### dismiss默认动画效果</div></pre></td></tr></table></figure>
-<pre><code>CATransition *transition = [CATransition animation];
-transition.duration = 0.3f;
-transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-transition.type = kCATransitionReveal;
-transition.subtype = kCATransitionFromBottom;
-transition.delegate = self;
-[self.navigationController.view.layer addAnimation:transition forKey:nil];
-[self.navigationController popViewControllerAnimated:NO];
-</code></pre><p>```</p>
+        <p>　UIScreen(屏幕),UIWindow(窗口)，UIView(视图)是iOS的几个基本界面元素。其中UIWindow(窗口)和UIView(视图)是为iPhone应用程序构造用户界面的可视组件。UIWindow为内容显示提供背景平台，UIView负责绝大部分的内容描画，并负责响应用户的交互。</p>
+<h3 id="1-UIScreen一般也只是用来获取屏幕大小"><a href="#1-UIScreen一般也只是用来获取屏幕大小" class="headerlink" title="1.UIScreen一般也只是用来获取屏幕大小"></a>1.UIScreen一般也只是用来获取屏幕大小</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CGRect screenBounds = [[UIScreen mainScreen] bounds];</div><div class="line">//返回的是带有状态栏的Rect (0.0,0.0,320.0,480.0)</div><div class="line"></div><div class="line">CGRect viewBounds = [[UIScreen mainScreen] applicationFrame];</div><div class="line">//不包含状态栏的Rect(0.0,20.0,320.0,480.0)[iphone状态栏高度20像素]</div></pre></td></tr></table></figure>
+<h3 id="2-视图是UIView类的实例，负责在屏幕上定义一个矩形区域。"><a href="#2-视图是UIView类的实例，负责在屏幕上定义一个矩形区域。" class="headerlink" title="2.视图是UIView类的实例，负责在屏幕上定义一个矩形区域。"></a>2.视图是UIView类的实例，负责在屏幕上定义一个矩形区域。</h3><p>视图在展示用户界面及响应用户界面交互方面发挥关键作用。每个视图对象都要负责渲染视图矩形区域中的内容，并响应该区域中发生的操作事件。视图是应用程序与用户交互的重要机制。</p>
+<p>在iOS中视图和视图控制器紧密协作，视图控制器的作用是处理视图的装载与卸载、处理由于设备旋转导致的界面旋转，以及和用于构建复杂用户界面的高级导航对象进行交互。</p>
+<h3 id="3-下面重点谈谈UIWindow"><a href="#3-下面重点谈谈UIWindow" class="headerlink" title="3.下面重点谈谈UIWindow"></a>3.下面重点谈谈UIWindow</h3><p>UIWindow对象是所有UIView的根，管理和协调的应用程序的显示。一般应用程序只有一个UIWindow对象，即使有多个UIWindow对象，也只有一个UIWindow可以接受到用户的触屏事件。</p>
+<p>在Mac OS X中，NSWindow的父类是NSResponder；而在iPhone OS中，UIWindow的父类是UIView。因此，UIWindow窗口在iOS中也是一个视图对象。</p>
+<p>在创建应用程序窗口时，应该总是将其初始的边框尺寸设置为整个屏幕的大小。如果您的窗口是从 nib文件装载得到，Interface Builder并不允许创建比屏幕尺寸小的窗口；然而，如果您的窗口是通过编程方式创建的，则必须在创建时传入期望的边框矩形。除了屏幕矩形之外，没有理由传入其它边框矩形。屏幕矩形可以通过UIScreen对象来取得，具体代码如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];</div><div class="line"></div><div class="line"> self.window.rootViewController = viewController;</div><div class="line"></div><div class="line">//UIWindow有一个根视图控制器—这个视图控制器负责配置当窗体显示时最先显示的视图。</div><div class="line"></div><div class="line">[self.window makeKeyAndVisible];</div><div class="line">//这行代码会让包含了视图控制器视图的Window窗口显示在屏幕上。</div></pre></td></tr></table></figure>
+<h4 id="一、UIWindow是一种特殊的UIView，通常在一个程序中只会有一个UIWindow，但可以手动创建多个UIWindow，同时加到程序里面。UIWindow在程序中主要起到三个作用："><a href="#一、UIWindow是一种特殊的UIView，通常在一个程序中只会有一个UIWindow，但可以手动创建多个UIWindow，同时加到程序里面。UIWindow在程序中主要起到三个作用：" class="headerlink" title="一、UIWindow是一种特殊的UIView，通常在一个程序中只会有一个UIWindow，但可以手动创建多个UIWindow，同时加到程序里面。UIWindow在程序中主要起到三个作用："></a>一、UIWindow是一种特殊的UIView，通常在一个程序中只会有一个UIWindow，但可以手动创建多个UIWindow，同时加到程序里面。UIWindow在程序中主要起到三个作用：</h4><p>　　1、作为容器，包含app所要显示的所有视图</p>
+<p>　　2、传递触摸消息到程序中view和其他对象</p>
+<p>　　3、与UIViewController协同工作，方便完成设备方向旋转的支持</p>
+<h4 id="二、通常我们可以采取两种方法将view添加到UIWindow中："><a href="#二、通常我们可以采取两种方法将view添加到UIWindow中：" class="headerlink" title="二、通常我们可以采取两种方法将view添加到UIWindow中："></a>二、通常我们可以采取两种方法将view添加到UIWindow中：</h4><p>　　1、addSubview</p>
+<p>　　直接将view通过addSubview方式添加到window中，程序负责维护view的生命周期以及刷新，但是并不会为去理会view对应的ViewController，因此采用这种方法将view添加到window以后，我们还要保持view对应的ViewController的有效性， 不能过早释放。</p>
+<p>　　2、rootViewController</p>
+<p>　　rootViewController时UIWindow的一个遍历方法，通过设置该属性为要添加view对应的ViewController，UIWindow将会自动将其view添加到当前window中，同时负责ViewController和view的生命周期的维护，防止其过早释放</p>
+<h4 id="三、WindowLevel"><a href="#三、WindowLevel" class="headerlink" title="三、WindowLevel"></a>三、WindowLevel</h4><p>　　UIWindow在显示的时候会根据UIWindowLevel进行排序的，即Level高的将排在所有Level比他低的层级的前面。下面我们来看UIWindowLevel的定义：<br>　　<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　UIKIT_EXTERN const UIWindowLevel UIWindowLevelNormal;</div><div class="line">　　UIKIT_EXTERN const UIWindowLevel UIWindowLevelAlert;</div><div class="line">　　UIKIT_EXTERN const UIWindowLevel UIWindowLevelStatusBar __TVOS_PROHIBITED;</div><div class="line">　 typedef CGFloat UIWindowLevel;</div></pre></td></tr></table></figure></p>
+<p>　　　　<br>    iOS系统中定义了三个window层级，其中每一个层级又可以分好多子层级(从UIWindow的头文件中可以看到成员变量CGFloat _windowSublevel;)，不过系统并没有把则个属性开出来。UIWindow的默认级别是UIWindowLevelNormal，我们打印输出这三个level的值分别如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NSLog(@&quot;%f %f %f&quot;,UIWindowLevelAlert,UIWindowLevelNormal,UIWindowLevelStatusBar);</div><div class="line">//2000.000000 0.000000 1000.000000</div></pre></td></tr></table></figure>
+<p>　　window在创建的时候，默认是UIWindowLevelNormal(0.0),这个值越大，层次越靠上，也就是说</p>
+<p>windowLevel大于0，小于1000的时候，在statusbar之下，在默认的window之上<br>windowLevel大于1000的时候，就在statusbar之上了。
+　　</p>
+<h4 id="四、keywindow"><a href="#四、keywindow" class="headerlink" title="四、keywindow"></a>四、keywindow</h4><p>　　keyWindow是获取键盘和其他非触摸事件的window，同一时间只能有一个window为keywindow。所以，如果自己创建的Window要相应除触摸外的事件，要设置为keyWindow</p>
+<p>方法</p>
+<ul>
+<li>(void)becomeKeyWindow;                               // 不可直接调用</li>
+<li><p>(void)resignKeyWindow;                               // 不可直接调用</p>
+</li>
+<li><p>(void)makeKeyWindow;</p>
+</li>
+<li>(void)makeKeyAndVisible;                             // 大部分apps 通过调用这个方法显示主window并将window设为key,否则用视图的隐藏属性</li>
+<li><p>(void)sendEvent:(UIEvent *)event;                    // 通过UIApplication 调用来分发任务给window 中的视图</p>
+</li>
+<li><p>(CGPoint)convertPoint:(CGPoint)point toWindow:(UIWindow *)window;    // 把该window中的一个坐标转换成在目标window中时的坐标值</p>
+</li>
+<li>(CGPoint)convertPoint:(CGPoint)point fromWindow:(UIWindow *)window;  // 把目标window中的一个坐标转换成在该window中时的坐标值</li>
+<li>(CGRect)convertRect:(CGRect)rect toWindow:(UIWindow *)window;  // 把该window中的一个矩阵转换成在目标window中时的矩阵值</li>
+<li>(CGRect)convertRect:(CGRect)rect fromWindow:(UIWindow *)window;// 把目标window中的一个矩阵转换成在该window中时的矩阵值<br>常量</li>
+</ul>
+<p>监测window的通知名称：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">UIKIT_EXTERN NSString *const UIWindowDidBecomeVisibleNotification; // 当window激活时并展示在界面的时候触发，返回空</div><div class="line">UIKIT_EXTERN NSString *const UIWindowDidBecomeHiddenNotification;  // 当window隐藏的时候触发，暂时没有实际测，返回空</div><div class="line">UIKIT_EXTERN NSString *const UIWindowDidBecomeKeyNotification;     // 当window被设置为keyWindow时触发，返回空</div><div class="line">UIKIT_EXTERN NSString *const UIWindowDidResignKeyNotification;     // 当window的key位置被取代时触发，返回空</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -457,8 +468,6 @@ transition.delegate = self;
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            <a href="/tags/动画与绘图/" rel="tag"># 动画与绘图</a>
-          
         </div>
       
 
@@ -470,8 +479,8 @@ transition.delegate = self;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/07/计算机网络/HTTP笔记/" rel="next" title="HTTP笔记">
-                <i class="fa fa-chevron-left"></i> HTTP笔记
+              <a href="/2015/11/19/知识/操作系统Unix、Windows、Mac OS、Linux的故事/" rel="next" title="操作系统Unix、Windows、Mac OS、Linux的故事">
+                <i class="fa fa-chevron-left"></i> 操作系统Unix、Windows、Mac OS、Linux的故事
               </a>
             
           </div>
@@ -480,8 +489,8 @@ transition.delegate = self;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/24/PHP/PHP案例-信息管理系统/" rel="prev" title="PHP案例-信息管理系统">
-                PHP案例-信息管理系统 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/12/16/知识/如何快速掌握一门技术/" rel="prev" title="如何快速掌握一门技术">
+                如何快速掌握一门技术 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -646,7 +655,7 @@ transition.delegate = self;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#push默认动画效果"><span class="nav-number">1.</span> <span class="nav-text">push默认动画效果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-UIScreen一般也只是用来获取屏幕大小"><span class="nav-number">1.</span> <span class="nav-text">1.UIScreen一般也只是用来获取屏幕大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-视图是UIView类的实例，负责在屏幕上定义一个矩形区域。"><span class="nav-number">2.</span> <span class="nav-text">2.视图是UIView类的实例，负责在屏幕上定义一个矩形区域。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-下面重点谈谈UIWindow"><span class="nav-number">3.</span> <span class="nav-text">3.下面重点谈谈UIWindow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、UIWindow是一种特殊的UIView，通常在一个程序中只会有一个UIWindow，但可以手动创建多个UIWindow，同时加到程序里面。UIWindow在程序中主要起到三个作用："><span class="nav-number">3.1.</span> <span class="nav-text">一、UIWindow是一种特殊的UIView，通常在一个程序中只会有一个UIWindow，但可以手动创建多个UIWindow，同时加到程序里面。UIWindow在程序中主要起到三个作用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、通常我们可以采取两种方法将view添加到UIWindow中："><span class="nav-number">3.2.</span> <span class="nav-text">二、通常我们可以采取两种方法将view添加到UIWindow中：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、WindowLevel"><span class="nav-number">3.3.</span> <span class="nav-text">三、WindowLevel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、keywindow"><span class="nav-number">3.4.</span> <span class="nav-text">四、keywindow</span></a></li></ol></li></ol></div>
             
 
           </div>
