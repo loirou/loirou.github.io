@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="洛洛爱吃肉">
 <meta property="og:description" content="Blocks是C语言的扩充功能。用一句话来表示Blocks的扩充功能:带有自动变量(局部变量)的匿名函数。 block其实是一个代码块，但是它的神奇之处在于在内联(inline)执行的时候(这和C++很像)还可以传递参数。同时block本身也可以被作为参数在方法和函数间传递，这就给予了block无限的可能。 Block一般有如下几种使用情况:1、作为一个本地变量（local variable） 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-31T08:22:22.000Z">
+<meta property="og:updated_time" content="2017-10-31T08:23:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block小结">
 <meta name="twitter:description" content="Blocks是C语言的扩充功能。用一句话来表示Blocks的扩充功能:带有自动变量(局部变量)的匿名函数。 block其实是一个代码块，但是它的神奇之处在于在内联(inline)执行的时候(这和C++很像)还可以传递参数。同时block本身也可以被作为参数在方法和函数间传递，这就给予了block无限的可能。 Block一般有如下几种使用情况:1、作为一个本地变量（local variable） 1">
@@ -429,7 +429,7 @@
 <h4 id="修改-block-之外的变量"><a href="#修改-block-之外的变量" class="headerlink" title="修改 block 之外的变量"></a>修改 block 之外的变量</h4><p>　　默认情况下，在程序块中访问的外部变量是复制过去的，即写操作不对原变量生效。比如下面的语句:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">//将Block定义在方法内部</div><div class="line">int x = 100;</div><div class="line">void (^sumXAndYBlock)(int) = ^(int y)&#123;</div><div class="line">x = x+y;</div><div class="line">printf(&quot;new x value is %d&quot;,x);</div><div class="line">&#125;;</div><div class="line">sumXAndYBlock(50);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>　　这段代码有什么问题呢，Xcode会提示x变量错误信息：Variable is not assigning (missing <strong>block type)，这时候给int x = 100;语句前面加上</strong>block关键字即可，如下:</p>
-<p>　　__block int x = 100;//这样在Block的{}体内，就可以修改外部变量了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　__block int x = 100;//这样在Block的&#123;&#125;体内，就可以修改外部变量了。</div></pre></td></tr></table></figure>
 <h4 id="Block循环引用"><a href="#Block循环引用" class="headerlink" title="Block循环引用"></a>Block循环引用</h4><p>　　刚刚说过，block在iOS开发中被视作是对象，因此其生命周期会一直等到持有者的生命周期结束了才会结束。另一方面，由于block捕获变量的机制，使得持有block的对象也可能被block持有，从而形成循环引用，导致两者都不能被释放:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@interface ViewController ()&#123;</div><div class="line">void (^_cycleReferenceBlock)(void);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@implementation ViewController</div><div class="line"></div><div class="line">- (void)viewDidLoad &#123; </div><div class="line">　　　[super viewDidLoad]; </div><div class="line">　　　　_cycleReferenceBlock = ^&#123; </div><div class="line">　　　　　　NSLog(@&quot;%@&quot;, self); </div><div class="line">　　　　　　//引发循环引用 </div><div class="line">　　　　 &#125;; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>遇到这种代码编译器只会告诉你存在警告，很多时候我们都是忽略警告的，这最后会导致内存泄露，两者都无法释放。跟普通变量存在<strong>block关键字一样的，系统提供给我们</strong>weak的关键字用来修饰对象变量，声明这是一个弱引用的对象，从而解决了循环引用的问题：</p>
@@ -487,8 +487,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/24/PHP/jQuery选择器/" rel="prev" title="jQuery选择器">
-                jQuery选择器 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/29/iOS/Objective-C runtime的常见应用/" rel="prev" title="Objective-C runtime的常见应用">
+                Objective-C runtime的常见应用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
