@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="洛洛爱吃肉">
 <meta property="og:description" content="要进入Web的世界,在你面前只有一个障碍,那就是要学会它的语言.HTML和CSS就是我们用来创建网页的语言Web服务器存储并提供由HTML和CSS创建的网页.浏览器获取网页,并根据HTML和CSS显示网页的内容.1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;!doctype html&amp;gt;    &amp;l">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-01T03:20:06.000Z">
+<meta property="og:updated_time" content="2017-11-01T03:36:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML简单介绍及常见元素">
 <meta name="twitter:description" content="要进入Web的世界,在你面前只有一个障碍,那就是要学会它的语言.HTML和CSS就是我们用来创建网页的语言Web服务器存储并提供由HTML和CSS创建的网页.浏览器获取网页,并根据HTML和CSS显示网页的内容.1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;!doctype html&amp;gt;    &amp;l">
@@ -424,7 +424,7 @@
 </ul>
 <p>通过HTML,我们利用标记来表示内容提供结构.我们把匹配标记以及它们包围的内容称为元素.</p>
 <p>而元素是什么呢?它通常由三部分组成:一个开始标记、内容和一个结束标记。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">不过有些元素(比如&lt;img&gt;)有所例外。</div></pre></td></tr></table></figure>
+<p><code>不过有些元素(比如&lt;img&gt;)有所例外。</code></p>
 <p><strong>下面来介绍下常见的元素:</strong></p>
 <h4 id="HTML-标题（Heading"><a href="#HTML-标题（Heading" class="headerlink" title="HTML 标题（Heading)"></a>HTML 标题（Heading)</h4><p><code>是通过 &lt;h1&gt; - &lt;h6&gt; 等标签进行定义的。从&lt;h1&gt;到&lt;h6&gt;,字体由大到小.除非创建一个非常复杂,庞大的文档,否则一般不会用到&lt;h3&gt;以后的标题.</code></p>
 <p>例如:</p>
@@ -432,44 +432,44 @@
 <h4 id="HTML-注释"><a href="#HTML-注释" class="headerlink" title="HTML 注释"></a>HTML 注释</h4><p>可以将注释插入 HTML 代码中，这样可以提高其可读性，使代码更易被人理解。浏览器会忽略注释，也不会显示它们。</p>
 <p>注释是这样写的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!-- This is a comment --&gt;</div></pre></td></tr></table></figure>
-<h4 id="HTML-段落"><a href="#HTML-段落" class="headerlink" title="HTML 段落"></a>HTML 段落</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">是通过 &lt;p&gt; 标签进行定义的。</div></pre></td></tr></table></figure>
+<h4 id="HTML-段落"><a href="#HTML-段落" class="headerlink" title="HTML 段落"></a>HTML 段落</h4><p><code>是通过 &lt;p&gt; 标签进行定义的。</code></p>
 <p>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;This is a paragraph.&lt;/p&gt;</div><div class="line">&lt;p&gt;This is another paragraph.&lt;/p&gt;</div></pre></td></tr></table></figure>
-<h4 id="HTML-水平线"><a href="#HTML-水平线" class="headerlink" title="HTML 水平线"></a>HTML 水平线</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;hr /&gt; 标签在 HTML 页面中创建水平线。</div></pre></td></tr></table></figure>
+<h4 id="HTML-水平线"><a href="#HTML-水平线" class="headerlink" title="HTML 水平线"></a>HTML 水平线</h4><p><code>&lt;hr /&gt; 标签在 HTML 页面中创建水平线。</code></p>
 <p>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;This is a paragraph&lt;/p&gt;</div><div class="line">&lt;hr /&gt;</div><div class="line">&lt;p&gt;This is a paragraph&lt;/p&gt;</div><div class="line">&lt;hr /&gt;</div><div class="line">&lt;p&gt;This is a paragraph&lt;/p&gt;</div></pre></td></tr></table></figure>
 <p>hr 元素可用于分隔内容。</p>
-<h4 id="HTML-折行"><a href="#HTML-折行" class="headerlink" title="HTML 折行"></a>HTML 折行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">如果您希望在不产生一个新段落的情况下进行换行（新行），请使用 &lt;br /&gt; 标签：</div></pre></td></tr></table></figure>
+<h4 id="HTML-折行"><a href="#HTML-折行" class="headerlink" title="HTML 折行"></a>HTML 折行</h4><p><code>如果您希望在不产生一个新段落的情况下进行换行（新行），请使用 &lt;br /&gt; 标签</code></p>
 <p>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;This is&lt;br /&gt;a para&lt;br /&gt;graph with line breaks&lt;/p&gt;</div></pre></td></tr></table></figure>
 <p><br> 元素是一个空的 HTML 元素。由于关闭标签没有任何意义，因此它没有结束标签。</p>
-<h4 id="HTML-链接"><a href="#HTML-链接" class="headerlink" title="HTML 链接"></a>HTML 链接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">是通过 &lt;a&gt; 标签进行定义的。</div></pre></td></tr></table></figure>
+<h4 id="HTML-链接"><a href="#HTML-链接" class="headerlink" title="HTML 链接"></a>HTML 链接</h4><p><code>是通过 &lt;a&gt; 标签进行定义的。</code></p>
 <p>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;http://www.w3school.com.cn&quot;&gt;This is a link&lt;/a&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">其中&lt;a&gt;元素的href属性指定了连接的目标文件.</div></pre></td></tr></table></figure>
-<h4 id="HTML-图像"><a href="#HTML-图像" class="headerlink" title="HTML 图像"></a>HTML 图像</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">是通过 &lt;img&gt; 标签进行定义的。</div></pre></td></tr></table></figure>
+<p><code>其中&lt;a&gt;元素的href属性指定了连接的目标文件.</code></p>
+<h4 id="HTML-图像"><a href="#HTML-图像" class="headerlink" title="HTML 图像"></a>HTML 图像</h4><p><code>是通过 &lt;img&gt; 标签进行定义的。</code></p>
 <p>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;https://c2.staticflickr.com/4/3689/10613180113_fdf7bcd316_b.jpg&quot; alt=&quot;Drinks&quot;&gt;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">其中&lt;img&gt;元素的src属性指定了在web页面上显示的图像文件的位置,alt属性需要指定描述这个图像的一些文本.</div></pre></td></tr></table></figure>
 <p><strong>这里的例如href,src,alt,都是元素的属性,写法都一样,首先是属性名,后面是一个等于号,然后是双引号括起来的属性值.</strong></p>
 <h4 id="无序列表unorderlist"><a href="#无序列表unorderlist" class="headerlink" title="无序列表unorderlist"></a>无序列表unorderlist</h4><p>无序列表是一个项目的列表，此列项目使用粗体圆点（典型的小黑圆圈）进行标记。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">无序列表始于 &lt;ul&gt; 标签。每个列表项始于 &lt;li&gt;</div></pre></td></tr></table></figure>
+<p><code>无序列表始于 &lt;ul&gt; 标签。每个列表项始于 &lt;li&gt;</code></p>
 <p>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">&lt;li&gt;Coffee&lt;/li&gt;</div><div class="line">&lt;li&gt;Milk&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
 <h4 id="有序列表orderlist"><a href="#有序列表orderlist" class="headerlink" title="有序列表orderlist"></a>有序列表orderlist</h4><p>同样，有序列表也是一列项目，列表项目使用数字进行标记。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">有序列表始于 &lt;ol&gt; 标签。每个列表项始于 &lt;li&gt; 标签。</div></pre></td></tr></table></figure>
+<p><code>有序列表始于 &lt;ol&gt; 标签。每个列表项始于 &lt;li&gt; 标签。</code></p>
 <p>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ol&gt;</div><div class="line">&lt;li&gt;Coffee&lt;/li&gt;</div><div class="line">&lt;li&gt;Milk&lt;/li&gt;</div><div class="line">&lt;/ol&gt;</div></pre></td></tr></table></figure>
-<h4 id="简短的引用"><a href="#简短的引用" class="headerlink" title="简短的引用"></a>简短的引用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">通过&lt;q&gt;元素可以为现有的文字里添加简短的引用</div></pre></td></tr></table></figure>
+<h4 id="简短的引用"><a href="#简短的引用" class="headerlink" title="简短的引用"></a>简短的引用</h4><p><code>通过&lt;q&gt;元素可以为现有的文字里添加简短的引用</code></p>
 <p>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;You&apos;ll find us right in the center of downtown Webville.&lt;q&gt;If you need help finding us,&lt;/q&gt; checkout out </div><div class="line">　　our Come join us!</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure>
-<h4 id="很长的引用"><a href="#很长的引用" class="headerlink" title="很长的引用"></a>很长的引用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">可以使用&lt;blockquote&gt;元素来为一段或多段文字添加引用</div></pre></td></tr></table></figure>
+<h4 id="很长的引用"><a href="#很长的引用" class="headerlink" title="很长的引用"></a>很长的引用</h4><p><code>可以使用&lt;blockquote&gt;元素来为一段或多段文字添加引用</code></p>
 <p>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;blockquote&gt; Passing cars, When you can&apos;t see,</div><div class="line">　　　　　　　　 May get You,&lt;br/&gt;</div><div class="line">    　　　　　　A glimpse,&lt;br/&gt;</div><div class="line">    　　　　　　Of eternity.</div><div class="line">&lt;/blockquote&gt;</div></pre></td></tr></table></figure>
-<h4 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">可以使用&lt;em&gt;元素来标记你想用不同方式显示的文本,比如你想强调一个要点</div></pre></td></tr></table></figure>
+<h4 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h4><p><code>可以使用&lt;em&gt;元素来标记你想用不同方式显示的文本,比如你想强调一个要点</code></p>
 <p>例如:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;Join us any evening for refreshing cinversation and maybe a game or two of &lt;em&gt;Dance Dance Revolution&lt;/em&gt;.Wireless access is always provided; BYOWS (Bring your own Web Server).</div><div class="line">&lt;/p&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">现在已经知道了很多基本的元素了,其他还有显示计算机代码的&lt;code&gt;元素,显示时间或日期的&lt;time&gt;元素等等就不列举了.</div></pre></td></tr></table></figure>
+<p><code>现在已经知道了很多基本的元素了,其他还有显示计算机代码的&lt;code&gt;元素,显示时间或日期的&lt;time&gt;元素等等就不列举了.</code></p>
 
       
     </div>
@@ -612,7 +612,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
