@@ -407,7 +407,7 @@
 <p>需求:在UIControlStateNormal 和selected 两种状态下文字颜色分别为白色和红色<br>每次点击的时候把这个按钮的isSelected设为yes 或no<br>当我当前选中的按钮为buttonA时，再点击这个按钮buttonA，<br>按钮的颜色会在点击的时候变回白色，松开鼠标又变回了红色</p>
 <p>找到解决方法了,在这个地方<a href="http://commandshift.co.uk/blog/2013/04/16/uibutton-control-states/" target="_blank" rel="external">http://commandshift.co.uk/blog/2013/04/16/uibutton-control-states/</a></p>
 <p>原来UIControlStateSelected ｜ UIControlStateHighlighted 和 UIControlStateSelected 是两种不同的状态, 在isSelected状态时再点击按钮就变成了UIControlStateSelected ｜ UIControlStateHighlighted的状态.我前面一直自顾自以为前面的状态包含了后面这种状态,都没想到把两个方法放在一起试.总结一下方法就是,设置成在这两种情况下的颜色都为红色,问题解决. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[self.button setBackgroundImage:normal forState:UIControlStateNormal];</div><div class="line">[self.button setBackgroundImage:highlighted forState:UIControlStateHighlighted];</div><div class="line">[self.button setBackgroundImage:selected forState:UIControlStateSelected];</div><div class="line">[self.button setBackgroundImage:selectedHighlighted forState:UIControlStateSelected | UIControlStateHighlighted];</div></pre></td></tr></table></figure>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[<span class="literal">self</span>.button <span class="built_in">set</span>BackgroundImage:normal <span class="keyword">for</span>State:UIControlStateNormal];</div><div class="line">[<span class="literal">self</span>.button <span class="built_in">set</span>BackgroundImage:highlighted <span class="keyword">for</span>State:UIControlStateHighlighted];</div><div class="line">[<span class="literal">self</span>.button <span class="built_in">set</span>BackgroundImage:selected <span class="keyword">for</span>State:UIControlStateSelected];</div><div class="line">[<span class="literal">self</span>.button <span class="built_in">set</span>BackgroundImage:selectedHighlighted <span class="keyword">for</span>State:UIControlStateSelected | UIControlStateHighlighted];</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -444,8 +444,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/31/iOS/iOS在控制器中监听是否点击Home键以及重新进入界面的方法/" rel="next" title="iOS在控制器中监听是否点击Home键以及重新进入界面的方法">
-                <i class="fa fa-chevron-left"></i> iOS在控制器中监听是否点击Home键以及重新进入界面的方法
+              <a href="/2017/07/31/iOS/iOS获取Label高度的几种方法与对比/" rel="next" title="iOS获取Label高度的几种方法与对比">
+                <i class="fa fa-chevron-left"></i> iOS获取Label高度的几种方法与对比
               </a>
             
           </div>
